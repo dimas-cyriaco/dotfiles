@@ -112,3 +112,4 @@ inoremap <c-c> <nop>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
+" vim:set ft=vim et sw=2:
