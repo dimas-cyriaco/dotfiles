@@ -4,8 +4,6 @@ let mapleader = " "
 
 " Plugins {{{
 
-set runtimepath+=/home/dimas/code/mpc/
-
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tpope/vim-sensible'
@@ -35,12 +33,9 @@ call plug#end()
 
 " Configs {{{
 colorscheme gruvbox
-set  clipboard+=unnamedplus
+set clipboard+=unnamedplus
+set noswapfile
 set background=dark
-
-for f in split(glob('~/.config/nvim/optionals/*.vim'), '\n')
-    exe 'source' f
-endfor
 " }}}
 
 " Typescript {{{
@@ -88,6 +83,10 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.config/nvim/bundle/vim-snippets/snippets'
+
+imap <c-j>     <Plug>(neosnippet_expand_or_jump)
+smap <c-j>     <Plug>(neosnippet_expand_or_jump)
+xmap <c-j>     <Plug>(neosnippet_expand_target)
 " }}}
 
 " Syntastic {{{
