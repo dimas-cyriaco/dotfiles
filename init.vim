@@ -1,55 +1,66 @@
 " Dimas Cyriaco
 
+let mapleader = " "
+
 " Plugins {{{
+
+set runtimepath+=/home/dimas/code/mpc/
+
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'tpope/vim-sensible'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'scrooloose/syntastic'
 Plug 'tomtom/tcomment_vim'
-Plug 'Shougo/unite.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'Shougo/vimproc.vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'scrooloose/nerdtree'
 Plug 'honza/vim-snippets'
-
-for f in split(glob('~/.config/nvim/optionals/*.vim'), '\n')
-    exe 'source' f
-endfor
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 " }}}
 
-" Editor Configs {{{
-syntax on
+" Configs {{{
 colorscheme gruvbox
+set  clipboard+=unnamedplus
 set background=dark
-set clipboard+=unnamedplus
+
+for f in split(glob('~/.config/nvim/optionals/*.vim'), '\n')
+    exe 'source' f
+endfor
 " }}}
 
-" Deoplete {{{
-let g:deoplete#enable_at_startup = 1
+" Typescript {{{
+let g:syntastic_typescript_tsc_fname = ''
+let g:typescript_compiler_options = ''
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 " }}}
 
-" StatusLine {{{
+" Airline {{{
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 " }}}
 
-" Syntastic {{{
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" }}}
+" Neosnippet {{{
+" Enable Deoplete on startup
+let g:deoplete#enable_at_startup = 1
 
-" NeoSnippet {{{
 " <Tab> completion:
 " 1. If popup menu is visible, select and insert next item
 " 2. Otherwise, if within a snippet, jump to next input
@@ -77,6 +88,28 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.config/nvim/bundle/vim-snippets/snippets'
+" }}}
+
+" Syntastic {{{
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" }}}
+
+" Mappings {{{
+nnoremap <silent> <leader>w :w<CR>
+nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>so :source %<CR>
+nnoremap <silent> <leader>si :source $MYVIMRC<CR>
+nnoremap <leader>ei :vsplit $MYVIMRC<CR>
+nnoremap <leader>h <c-w>h
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <leader>l <c-w>l
+inoremap jk <esc>
+inoremap <esc> <nop>
+inoremap <c-c> <nop>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
