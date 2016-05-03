@@ -7,6 +7,7 @@ let mapleader = " "
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tpope/vim-sensible'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'editorconfig/editorconfig-vim'
@@ -21,6 +22,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
+Plug 'keith/rspec.vim'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-endwise'
@@ -82,7 +84,8 @@ endfunction "}}}
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.config/nvim/bundle/vim-snippets/snippets'
+" let g:neosnippet#snippets_directory='~/.config/nvim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 imap <c-j>     <Plug>(neosnippet_expand_or_jump)
 smap <c-j>     <Plug>(neosnippet_expand_or_jump)
@@ -102,6 +105,10 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>so :source %<CR>
 nnoremap <silent> <leader>si :source $MYVIMRC<CR>
 nnoremap <leader>ei :vsplit $MYVIMRC<CR>
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>as :NeoSnippetEdit<CR>
 nnoremap <leader>h <c-w>h
 nnoremap <leader>j <c-w>j
 nnoremap <leader>k <c-w>k
@@ -110,6 +117,8 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
 " }}}
+
+autocmd BufNewFile,BufRead *_spec.rb set filetype=rspec
 
 " vim:foldmethod=marker:foldlevel=0
 " vim:set ft=vim et sw=2:
