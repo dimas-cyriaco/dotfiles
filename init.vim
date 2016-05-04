@@ -121,6 +121,7 @@ inoremap <c-c> <nop>
 " }}}
 
 autocmd BufNewFile,BufRead *_spec.rb set filetype=rspec
+autocmd BufNewFile,BufRead *.rb setlocal foldmethod=indent
 
 " vim:foldmethod=marker:foldlevel=0
 " vim:set ft=vim et sw=2:
