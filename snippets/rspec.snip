@@ -4,3 +4,18 @@ snippet     iie
 abbr        it { is_expected.to ... }
 options     head
         it { is_expected.to ${1} }
+
+snippet     desc
+abbr        describe '...' do ... end
+options     head
+        describe '${1}' do
+                ${2}
+        end
+
+snippet     it
+abbr        it '...' do ... end
+options     head
+        it '${1}' do
+                ${2}
+        end
+        
