@@ -37,6 +37,7 @@ call plug#end()
 colorscheme gruvbox
 set clipboard+=unnamedplus
 set noswapfile
+set number
 set background=dark
 " }}}
 
@@ -104,11 +105,12 @@ nnoremap <silent> <leader>w :w<CR>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>so :source %<CR>
 nnoremap <silent> <leader>si :source $MYVIMRC<CR>
-nnoremap <leader>ei :vsplit $MYVIMRC<CR>
-nnoremap <leader>pi :PlugInstall<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>as :NeoSnippetEdit<CR>
+nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
+nnoremap <silent> <leader>pi :PlugInstall<CR>
+nnoremap <silent> <leader>m :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :BuffergatorToggle<CR>
+nnoremap <silent> <leader>f :NERDTreeFind<CR>
+nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
 nnoremap <leader>h <c-w>h
 nnoremap <leader>j <c-w>j
 nnoremap <leader>k <c-w>k
