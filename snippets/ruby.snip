@@ -1,3 +1,13 @@
 snippet bp
 abbr binding.pry
   binding.pry
+
+snippet     ho
+abbr        has_one ...
+options     head
+        has_one ${1:relationship}
+
+snippet     vpo
+abbr        validate ..., presence: true
+options     head
+        validates :${1:attribute}, presence: true
