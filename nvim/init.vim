@@ -6,6 +6,7 @@ let mapleader = " "
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'rking/ag.vim'
 Plug 'low-ghost/nerdtree-fugitive'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
@@ -129,6 +130,7 @@ inoremap <c-c> <nop>
 autocmd BufNewFile,BufRead *_spec.rb set filetype=rspec
 autocmd BufNewFile,BufRead *.rb setlocal foldmethod=indent
 set diffopt+=vertical
+set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·
 
 " vim:foldmethod=marker:foldlevel=0
 " vim:set ft=vim et sw=2:
