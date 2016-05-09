@@ -6,6 +6,8 @@ let mapleader = " "
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'low-ghost/nerdtree-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -24,6 +26,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'keith/rspec.vim'
 Plug 'majutsushi/tagbar'
 Plug 'honza/vim-snippets'
@@ -125,6 +128,7 @@ inoremap <c-c> <nop>
 
 autocmd BufNewFile,BufRead *_spec.rb set filetype=rspec
 autocmd BufNewFile,BufRead *.rb setlocal foldmethod=indent
+set diffopt+=vertical
 
 " vim:foldmethod=marker:foldlevel=0
 " vim:set ft=vim et sw=2:
