@@ -36,6 +36,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-repeat'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 " }}}
