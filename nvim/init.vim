@@ -37,6 +37,8 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 " }}}
@@ -102,10 +104,26 @@ xmap <c-j>     <Plug>(neosnippet_expand_target)
 " }}}
 
 " Syntastic {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 " }}}
 
 " Mappings {{{
