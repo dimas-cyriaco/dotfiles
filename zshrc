@@ -124,3 +124,6 @@ function git_prompt_info() {
 
 PROMPT='$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info)
 $reset_color→ '
+export PATH="/home/dimas/.linuxbrew/bin:$PATH"
+export MANPATH="/home/dimas/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/dimas/.linuxbrew/share/info:$INFOPATH"
