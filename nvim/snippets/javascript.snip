@@ -4,3 +4,10 @@ options     head
         "use strict"
 
         ${1}
+
+snippet     aget
+abbr        app.get('...', function(req, resp) {...});
+options     head
+        app.get('${1}', function(req, res) {
+          ${2}
+        });
