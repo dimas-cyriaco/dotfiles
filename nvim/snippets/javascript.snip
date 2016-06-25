@@ -11,3 +11,29 @@ options     head
         app.get('${1}', function(req, res) {
           ${2}
         });
+
+snippet     desc
+abbr        describe('...', () => { ... });
+options     head
+        describe('${1:description}', () => {
+          ${2}
+        });
+
+snippet     it
+abbr        it('...', () => { ... });
+options     head
+         it('${1:description}', () => {
+           ${2}
+         });
+        
+snippet     afunc
+abbr        () => { ... }
+        () => {
+          ${1}
+        }
+
+snippet     imp
+abbr        import ... from '...';
+options     head
+        import ${1:something} from '${2:somewhere}';
+        ${3}

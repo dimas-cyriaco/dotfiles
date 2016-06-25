@@ -88,7 +88,11 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 alias ll="clear && ls -lh"
 alias la="clear && ls -lah"
-alias g="clear & gss"
+alias g="clear && gss"
+alias dcb="clear && docker-compose build"
+alias dcu="clear && docker-compose up"
+alias dc="dcb && dcu"
+alias task="clear && task"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
@@ -118,8 +122,9 @@ function put_spacing() {
 }
 
 function git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  if [ -d .git ]; then
+    echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  fi
 }
 
 PROMPT='$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info)
@@ -127,3 +132,11 @@ $reset_color→ '
 export PATH="/home/dimas/.linuxbrew/bin:$PATH"
 export MANPATH="/home/dimas/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/dimas/.linuxbrew/share/info:$INFOPATH"
+
+# capslock acts as control
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+
+export NPM_USER=descomplica
+export NPM_PASS=coelhopato1234
+export NPM_EMAIL=dimas.cyriaco@descomplica.com.br
+
