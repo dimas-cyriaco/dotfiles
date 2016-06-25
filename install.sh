@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-sudo pacman -S --needed git
-sudo pacman -S --needed zsh
+sudo pacman -Sq --needed --noconfirm git
+sudo pacman -Sq --needed --noconfirm zsh
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo pacman -S --needed tmux
-sudo pacman -S --needed neovim
-sudo pacman -S --needed ctags
-sudo pacman -S --needed the_silver_searcher
-sudo pacman -S --needed hub
-sudo pacman -S --needed xclip
-sudo pacman -S --needed python-pip
+sudo pacman -Sq --needed --noconfirm tmux
+sudo pacman -Sq --needed --noconfirm neovim
+sudo pacman -Sq --needed --noconfirm ctags
+sudo pacman -Sq --needed --noconfirm the_silver_searcher
+sudo pacman -Sq --needed --noconfirm hub
+sudo pacman -Sq --needed --noconfirm xclip
+sudo pacman -Sq --needed --noconfirm python-pip
 sudo pip install neovim
 
 nvim +PlugInstall +qall
