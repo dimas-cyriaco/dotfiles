@@ -37,7 +37,6 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 
 call plug#end()
@@ -49,6 +48,9 @@ set clipboard+=unnamedplus
 set noswapfile
 set number
 set background=dark
+set foldmethod=syntax
+set nofoldenable
+set foldlevel=1
 " }}}
 
 " Typescript {{{
@@ -126,6 +128,10 @@ highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 " }}}
 
+" Fugitive {{{
+set previewheight=15 
+" }}}
+
 " Mappings {{{
 nnoremap <silent> <leader>w :w<CR>
 nnoremap <silent> <leader>q :q<CR>
@@ -144,6 +150,15 @@ nnoremap <leader>l <c-w>l
 inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
+" }}}
+
+" NERDTree {{{
+let NERDTreeShowHidden=1
+" }}}
+
+" Javascript syntax {{{
+let g:javascript_plugin_flow = 1
+let javaScript_fold=1
 " }}}
 
 set diffopt+=vertical
