@@ -13,8 +13,8 @@ sudo pacman -Sq --needed --noconfirm xclip
 sudo pacman -Sq --needed --noconfirm python-pip
 sudo pip install neovim
 
-nvim +PlugInstall +qall
-nvim +UpdateRemotePlugins +qall
+nvim +PlugInstall +qall >/dev/null
+nvim +UpdateRemotePlugins +qall >/dev/null
 
 ln -sf $(pwd)/zshrc $HOME/.zshrc
 ln -sf $(pwd)/nvim $HOME/.config/nvim

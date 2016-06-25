@@ -14,35 +14,32 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-airline/vim-airline'
 Plug 'Shougo/vimproc.vim'
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
-Plug 'xolox/vim-misc'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'keith/rspec.vim'
 Plug 'majutsushi/tagbar'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 " }}}
 
 " Configs {{{
+syntax on
 colorscheme gruvbox
 set clipboard+=unnamedplus
 set noswapfile
@@ -51,14 +48,8 @@ set background=dark
 set foldmethod=syntax
 set nofoldenable
 set foldlevel=1
-" }}}
-
-" Typescript {{{
-let g:syntastic_typescript_tsc_fname = ''
-let g:typescript_compiler_options = ''
-
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
+set shiftwidth=2
 " }}}
 
 " Airline {{{
@@ -103,6 +94,11 @@ let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 imap <c-j>     <Plug>(neosnippet_expand_or_jump)
 smap <c-j>     <Plug>(neosnippet_expand_or_jump)
 xmap <c-j>     <Plug>(neosnippet_expand_target)
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 " }}}
 
 " Syntastic {{{
@@ -161,8 +157,13 @@ let g:javascript_plugin_flow = 1
 let javaScript_fold=1
 " }}}
 
+" delimitMate {{{
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
+let delimitMate_jump_expansion = 1
+" }}}
+
 set diffopt+=vertical
-set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
 
 " vim:foldmethod=marker:foldlevel=0
 " vim:set ft=vim et sw=2:
