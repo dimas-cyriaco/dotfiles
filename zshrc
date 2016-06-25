@@ -82,9 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 alias ll="clear && ls -lh"
 alias la="clear && ls -lah"
@@ -93,6 +90,7 @@ alias dcb="clear && docker-compose build"
 alias dcu="clear && docker-compose up"
 alias dc="dcb && dcu"
 alias task="clear && task"
+alias tmux="TERM=xterm-256color tmux"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
