@@ -91,6 +91,8 @@ alias dcu="clear && docker-compose up"
 alias dc="dcb && dcu"
 alias task="clear && task"
 alias tmux="TERM=xterm-256color tmux"
+alias lpc="lpass --password -c "
+alias lps="lpass ls | grep "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
