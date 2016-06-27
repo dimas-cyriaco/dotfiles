@@ -34,6 +34,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
+Plug 'xolox/vim-notes'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 " }}}
@@ -56,6 +58,21 @@ set shiftwidth=2
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
 " }}}
 
 " Neosnippet {{{
@@ -161,6 +178,10 @@ let javaScript_fold=1
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
+" }}}
+
+" {{{ Vim-notes
+let g:notes_directories = ['~/Dropbox/Notes/Work']
 " }}}
 
 set diffopt+=vertical
