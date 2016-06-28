@@ -85,20 +85,20 @@ let g:deoplete#enable_at_startup = 1
 " 3. Otherwise, if preceding chars are whitespace, insert tab char
 " 4. Otherwise, start manual autocomplete
 imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-	\ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
-	\ : (<SID>is_whitespace() ? "\<Tab>"
-	\ : deoplete#mappings#manual_complete()))
+  \ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
+  \ : (<SID>is_whitespace() ? "\<Tab>"
+  \ : deoplete#mappings#manual_complete()))
 
 smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-	\ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
-	\ : (<SID>is_whitespace() ? "\<Tab>"
-	\ : deoplete#mappings#manual_complete()))
+  \ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
+  \ : (<SID>is_whitespace() ? "\<Tab>"
+  \ : deoplete#mappings#manual_complete()))
 
 inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:is_whitespace() "{{{
-	let col = col('.') - 1
-	return ! col || getline('.')[col - 1] =~? '\s'
+  let col = col('.') - 1
+  return ! col || getline('.')[col - 1] =~? '\s'
 endfunction "}}}
 
 " Enable snipMate compatibility feature.
@@ -142,7 +142,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 " }}}
 
 " Fugitive {{{
-set previewheight=15 
+set previewheight=15
 " }}}
 
 " Mappings {{{
