@@ -36,6 +36,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
 Plug 'xolox/vim-notes'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'terryma/vim-expand-region'
 
 call plug#end()
 " }}}
@@ -142,13 +143,13 @@ highlight link SyntasticStyleWarningSign SignColumn
 " }}}
 
 " Fugitive {{{
-set previewheight=15
+set previewheight=20
 " }}}
 
 " Mappings {{{
 nnoremap <silent> <leader>w :w<CR>
 nnoremap <silent> <leader>q :q<CR>
-nnoremap <silent> <leader>so :source %<CR>
+nnoremap <silent> <leader>ss :source %<CR>
 nnoremap <silent> <leader>si :source $MYVIMRC<CR>
 nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>pi :PlugInstall<CR>
