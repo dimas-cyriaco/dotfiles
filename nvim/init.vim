@@ -34,6 +34,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
+Plug 'xolox/vim-notes'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'terryma/vim-expand-region'
 
 call plug#end()
 " }}}
@@ -56,6 +59,21 @@ set shiftwidth=2
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
 " }}}
 
 " Neosnippet {{{
@@ -68,20 +86,20 @@ let g:deoplete#enable_at_startup = 1
 " 3. Otherwise, if preceding chars are whitespace, insert tab char
 " 4. Otherwise, start manual autocomplete
 imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-	\ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
-	\ : (<SID>is_whitespace() ? "\<Tab>"
-	\ : deoplete#mappings#manual_complete()))
+  \ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
+  \ : (<SID>is_whitespace() ? "\<Tab>"
+  \ : deoplete#mappings#manual_complete()))
 
 smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-	\ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
-	\ : (<SID>is_whitespace() ? "\<Tab>"
-	\ : deoplete#mappings#manual_complete()))
+  \ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
+  \ : (<SID>is_whitespace() ? "\<Tab>"
+  \ : deoplete#mappings#manual_complete()))
 
 inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:is_whitespace() "{{{
-	let col = col('.') - 1
-	return ! col || getline('.')[col - 1] =~? '\s'
+  let col = col('.') - 1
+  return ! col || getline('.')[col - 1] =~? '\s'
 endfunction "}}}
 
 " Enable snipMate compatibility feature.
@@ -125,13 +143,13 @@ highlight link SyntasticStyleWarningSign SignColumn
 " }}}
 
 " Fugitive {{{
-set previewheight=15 
+set previewheight=20
 " }}}
 
 " Mappings {{{
 nnoremap <silent> <leader>w :w<CR>
 nnoremap <silent> <leader>q :q<CR>
-nnoremap <silent> <leader>so :source %<CR>
+nnoremap <silent> <leader>ss :source %<CR>
 nnoremap <silent> <leader>si :source $MYVIMRC<CR>
 nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>pi :PlugInstall<CR>
@@ -161,6 +179,10 @@ let javaScript_fold=1
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
+" }}}
+
+" {{{ Vim-notes
+let g:notes_directories = ['~/Dropbox/Notes/Work']
 " }}}
 
 set diffopt+=vertical

@@ -16,6 +16,9 @@ sudo pip install neovim
 nvim +PlugInstall +qall >/dev/null
 nvim +UpdateRemotePlugins +qall >/dev/null
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
+
 ln -sf $(pwd)/zshrc $HOME/.zshrc
 ln -sf $(pwd)/nvim $HOME/.config/nvim
 ln -sf $(pwd)/tmux/tmux.conf $HOME/.tmux.conf

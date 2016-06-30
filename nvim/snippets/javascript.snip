@@ -37,3 +37,12 @@ abbr        import ... from '...';
 options     head
         import ${1:something} from '${2:somewhere}';
         ${3}
+
+snippet     tcf
+abbr        try { ... } catch (e) { fail(e); }
+options     head
+        try {
+          ${1:TARGET}
+        } catch (e) {
+          fail(e);
+        }
