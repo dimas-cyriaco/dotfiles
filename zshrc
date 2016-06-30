@@ -91,6 +91,7 @@ alias dcu="clear && docker-compose up"
 alias dc="dcb && dcu"
 alias task="clear && task"
 alias tmux="TERM=xterm-256color tmux"
+alias dot="source ~/.zshrc"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
 ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
@@ -134,7 +135,14 @@ export INFOPATH="/home/dimas/.linuxbrew/share/info:$INFOPATH"
 # capslock acts as control
 /usr/bin/setxkbmap -option "ctrl:nocaps"
 
+# NPM login {{{
 export NPM_USER=descomplica
 export NPM_PASS=coelhopato1234
 export NPM_EMAIL=dimas.cyriaco@descomplica.com.br
+# }}}
+
+# Go Lang {{{
+export GOPATH=~/code
+export PATH=$PATH:~/code/bin
+# }}}
 
