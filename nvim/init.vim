@@ -31,12 +31,12 @@ Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
 Plug 'xolox/vim-notes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-expand-region'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 " }}}
@@ -49,8 +49,7 @@ set noswapfile
 set number
 set background=dark
 set foldmethod=syntax
-set nofoldenable
-set foldlevel=1
+set foldlevel=3
 set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
 set shiftwidth=2
 " }}}
@@ -181,11 +180,37 @@ let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
 " }}}
 
-" {{{ Vim-notes
+" Vim-notes {{{
 let g:notes_directories = ['~/Dropbox/Notes/Work']
 " }}}
 
+" Diff options {{{
 set diffopt+=vertical
+" }}}
 
-" vim:foldmethod=marker:foldlevel=0
-" vim:set ft=vim et sw=2:
+" JSX {{{
+let g:jsx_ext_required = 0
+" }}}
+
+fu! CustomFoldText()
+    "get first non-blank line
+    let fs = v:foldstart
+    while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
+    endwhile
+    if fs > v:foldend
+        let line = getline(v:foldstart)
+    else
+        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+    endif
+
+    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    let foldSize = 1 + v:foldend - v:foldstart
+    let foldSizeStr = " " . foldSize . " lines "
+    let foldLevelStr = repeat("+--", v:foldlevel)
+    let lineCount = line("$")
+    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
+    let expansionString = repeat(".", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
+    return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+endf
+set foldtext=CustomFoldText()
+
