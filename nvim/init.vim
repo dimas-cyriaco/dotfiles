@@ -192,6 +192,9 @@ set diffopt+=vertical
 let g:jsx_ext_required = 0
 " }}}
 
+" Indent pasted text
+nnoremap p p=`]
+
 fu! CustomFoldText()
     "get first non-blank line
     let fs = v:foldstart
