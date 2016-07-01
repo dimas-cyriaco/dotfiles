@@ -19,6 +19,8 @@ nvim +UpdateRemotePlugins +qall >/dev/null
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
 
+git config --global core.editor nvim
+
 ln -sf $(pwd)/zshrc $HOME/.zshrc
 ln -sf $(pwd)/nvim $HOME/.config/nvim
 ln -sf $(pwd)/tmux/tmux.conf $HOME/.tmux.conf
