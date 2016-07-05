@@ -37,6 +37,7 @@ Plug 'xolox/vim-notes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-expand-region'
 Plug 'mxw/vim-jsx'
+Plug 'cakebaker/scss-syntax.vim'
 
 call plug#end()
 " }}}
@@ -49,7 +50,7 @@ set noswapfile
 set number
 set background=dark
 set foldmethod=syntax
-set foldlevel=3
+set foldlevel=99
 set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
 set shiftwidth=2
 " }}}
@@ -119,10 +120,6 @@ endif
 " }}}
 
 " Syntastic {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 1
@@ -130,7 +127,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 
-let g:syntastic_error_symbol = '❌'
+let g:syntastic_error_symbol = '✗'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩'
@@ -189,7 +186,7 @@ set diffopt+=vertical
 " }}}
 
 " JSX {{{
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 " }}}
 
 " Indent pasted text
