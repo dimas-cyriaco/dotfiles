@@ -13,4 +13,6 @@ nvim +PlugInstall +qall >/dev/null
 nvim +UpdateRemotePlugins +qall >/dev/null
 
 git config --global core.editor nvim
+git config --global user.email "email-here"
+git config --global user.name "name-here"
 
