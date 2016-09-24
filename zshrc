@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/dimas/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -86,9 +86,9 @@ alias dot="source ~/.zshrc"
 alias lpc="lpass --password -c "
 alias lps="lpass ls | grep "
 
-export PATH="/home/dimas/.linuxbrew/bin:$PATH"
-export MANPATH="/home/dimas/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/dimas/.linuxbrew/share/info:$INFOPATH"
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # capslock acts as control
 /usr/bin/setxkbmap -option "ctrl:nocaps"
