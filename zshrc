@@ -100,8 +100,8 @@ export NPM_EMAIL=dimas.cyriaco@descomplica.com.br
 # }}}
 
 # Go Lang {{{
-export GOPATH=~/code
-export PATH=$PATH:~/code/bin
+export GOPATH=~/dev
+export PATH=$PATH:~/dev/bin
 # }}}
 
 export TERM="xterm-256color"
