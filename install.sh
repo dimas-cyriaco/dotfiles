@@ -3,6 +3,9 @@
 # Required packages: git, zsh, neovim, ctags, the_silver_searcher, hub, xclip, python-pip
 
 chsh -s $(which zsh)
+# or
+# sudo usermod -s $(which zsh) $USER
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sudo pip install neovim
 
