@@ -85,6 +85,7 @@ alias tmux="TERM=xterm-256color tmux"
 alias dot="source ~/.zshrc"
 alias lpc="lpass --password -c "
 alias lps="lpass ls | grep "
+alias cdd="cd $HOME/dev/src/github.com/descomplica"
 
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
