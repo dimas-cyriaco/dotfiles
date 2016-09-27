@@ -30,7 +30,6 @@ Plug 'majutsushi/tagbar'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-repeat'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
 Plug 'xolox/vim-notes'
@@ -115,9 +114,9 @@ smap <c-j>     <Plug>(neosnippet_expand_or_jump)
 xmap <c-j>     <Plug>(neosnippet_expand_target)
 
 " For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif
 " }}}
 
 " Syntastic {{{
@@ -132,6 +131,8 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩'
+
+let g:syntastic_javascript_eslint_exec = 'node_modules/eslint/bin/eslint.js'
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
@@ -154,13 +155,16 @@ nnoremap <silent> <leader>m :NERDTreeToggle<CR>
 nnoremap <silent> <leader>n :BuffergatorToggle<CR>
 nnoremap <silent> <leader>f :NERDTreeFind<CR>
 nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
-nnoremap <leader>h <c-w>h
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
-nnoremap <leader>l <c-w>l
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
 inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
+
+if has('nvim')
+  nmap <BS> <C-W>h
+endif
 " }}}
 
 " NERDTree {{{
