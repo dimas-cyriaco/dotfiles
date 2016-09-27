@@ -110,3 +110,9 @@ export BULLETTRAIN_DIR_FG=black
 export BULLETTRAIN_TIME_BG=#2C2C2C
 export BULLETTRAIN_TIME_FG=white
 export BULLETTRAIN_EXEC_TIME_SHOW=true
+
+# Github Hub settings {{{
+eval "$(hub alias -s)"
+fpath=(~/.zsh/completions $fpath) 
+autoload -U compinit && compinit
+# }}}
