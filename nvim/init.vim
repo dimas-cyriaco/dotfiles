@@ -46,6 +46,7 @@ call plug#end()
 syntax on
 colorscheme gruvbox
 set clipboard+=unnamedplus
+set hidden
 set noswapfile
 set number
 set background=dark
