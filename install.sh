@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# Required packages: git, zsh, neovim, ctags, the_silver_searcher, hub, xclip, python-pip
+# Required packages: git, zsh, neovim, ctags, the_silver_searcher, hub, xclip, python-pip3
 
-chsh -s $(which zsh)
+sudo usermod -s $(which zsh) $USER
 # or
-# sudo usermod -s $(which zsh) $USER
+# chsh -s $(which zsh)
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo pip install neovim
+sudo pip3 install neovim
 
 ln -sf $(pwd)/zshrc $HOME/.zshrc
 ln -sf $(pwd)/nvim $HOME/.config/nvim
@@ -17,6 +17,5 @@ nvim +PlugInstall +qall
 nvim +UpdateRemotePlugins +qall
 
 git config --global core.editor nvim
-git config --global user.email "email-here"
-git config --global user.name "name-here"
-
+git config --global user.email $USER_EMAIL
+git config --global user.name $USER_FULL_NAME
