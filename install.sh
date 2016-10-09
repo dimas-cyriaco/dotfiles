@@ -11,9 +11,10 @@ sudo pip install neovim
 
 ln -sf $(pwd)/zshrc $HOME/.zshrc
 ln -sf $(pwd)/nvim $HOME/.config/nvim
+ln -sf $(pwd)/bullet-train.zsh-theme $HOME/.oh-my-zsh/themes/bullet-train.zsh-theme
 
-nvim +PlugInstall +qall >/dev/null
-nvim +UpdateRemotePlugins +qall >/dev/null
+nvim +PlugInstall +qall
+nvim +UpdateRemotePlugins +qall
 
 git config --global core.editor nvim
 git config --global user.email "email-here"
