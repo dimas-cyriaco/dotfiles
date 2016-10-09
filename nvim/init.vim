@@ -6,6 +6,7 @@ let mapleader = " "
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'xolox/vim-misc'
 Plug 'rking/ag.vim'
 Plug 'low-ghost/nerdtree-fugitive'
 Plug 'tpope/vim-fugitive'
@@ -14,7 +15,6 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
