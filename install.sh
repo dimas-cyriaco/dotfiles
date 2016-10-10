@@ -1,6 +1,34 @@
 #!/usr/bin/env bash
 
-# Required packages: git, zsh, neovim, ctags, the_silver_searcher, hub, xclip, python-pip3
+fail() {
+  echo $1
+  exit 1
+}
+
+assert_installed() {
+  hash $1 2>/dev/null
+  if [ $? -eq 1 ]; then
+    fail "$1 is not installed"
+  fi
+}
+
+assert_installed git
+assert_installed zsh
+assert_installed nvim
+assert_installed ctags
+assert_installed ag
+assert_installed go
+assert_installed hub
+assert_installed xclip
+assert_installed pip3
+
+if [ -z "$USER_EMAIL" ]; then
+  fail "USER_EMAIL is not set"
+fi
+
+if [ -z "$USER_FULL_NAME" ]; then
+  fail "USER_EMAIL is not set"
+fi
 
 sudo usermod -s $(which zsh) $USER
 # or
