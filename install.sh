@@ -30,6 +30,13 @@ if [ -z "$USER_FULL_NAME" ]; then
   fail "USER_EMAIL is not set"
 fi
 
+ssh_key_file="$HOME/.ssh/id_rsa.pub"
+if [ ! -f "$ssh_key_file" ]; then
+  ssh-keygen -t rsa
+fi
+
+cat "$ssh_key_file"
+
 sudo usermod -s $(which zsh) $USER
 # or
 # chsh -s $(which zsh)
