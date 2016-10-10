@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -96,13 +96,13 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # NPM login {{{
 export NPM_USER=descomplica
-export NPM_PASS=coelhopato1234
+export NPM_PASS=
 export NPM_EMAIL=dimas.cyriaco@descomplica.com.br
 # }}}
 
 # Go Lang {{{
 export GOPATH=~/dev
-export PATH=$PATH:~/dev/bin
+export PATH=$PATH:$HOME/dev/bin:$HOME/bin
 # }}}
 
 export TERM="xterm-256color"
