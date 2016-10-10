@@ -86,6 +86,8 @@ alias dot="source ~/.zshrc"
 alias lpc="lpass --password -c "
 alias lps="lpass ls | grep "
 alias cdd="cd $HOME/dev/src/github.com/descomplica"
+alias drc="docker rm $(docker ps -a -q)"
+alias dri="docker rmi $(docker images -q)"
 
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
