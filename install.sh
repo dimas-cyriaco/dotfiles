@@ -39,8 +39,8 @@ sudo pip3 install neovim
 
 ln -sf $(pwd)/zshrc $HOME/.zshrc
 ln -sf $(pwd)/nvim $HOME/.config/nvim
-ln -sf $(pwd)/bullet-train.zsh-theme $HOME/.oh-my-zsh/themes/bullet-train.zsh-theme
-ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
+cp -sf $(pwd)/bullet-train.zsh-theme $HOME/.oh-my-zsh/themes/bullet-train.zsh-theme
+cp -sf $(pwd)/.gitconfig $HOME/.gitconfig
 
 nvim +PlugInstall +qall
 nvim +UpdateRemotePlugins +qall
