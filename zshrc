@@ -22,13 +22,14 @@ else
   export EDITOR='nvim'
 fi
 
-alias cdd="cd $HOME/dev/src/github.com/descomplica"
 alias dc="dcb && dcu"
-alias dcb="clear && docker-compose build"
-alias dcu="clear && docker-compose up"
+alias dbuild="clear && docker-compose build"
+alias dup="clear && docker-compose up"
+alias dfull="dbuild && dup"
 alias dot="source ~/.zshrc"
 alias drc="docker rm $(docker ps -a -q)"
 alias dri="docker rmi $(docker images -q)"
+alias dclear="drc && dri"
 alias g="clear && gss"
 alias la="clear && ls -lah"
 alias ll="clear && ls -lh"
@@ -36,6 +37,17 @@ alias lpc="lpass --password -c "
 alias lps="lpass ls | grep "
 alias task="clear && task"
 alias tmux="TERM=xterm-256color tmux"
+alias tk="task"
+alias tm="timew"
+alias ts="timew summary"
+
+function cdd() {
+  cd $HOME/dev/src/github.com/descomplica/$1
+}
+
+function dbash() {
+  docker-compose exec $1 bash
+}
 
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
