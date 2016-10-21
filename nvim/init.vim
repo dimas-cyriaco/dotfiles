@@ -8,7 +8,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'xolox/vim-misc'
 Plug 'rking/ag.vim'
-Plug 'low-ghost/nerdtree-fugitive'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -24,8 +23,6 @@ Plug 'scrooloose/syntastic'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
@@ -37,6 +34,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-expand-region'
 Plug 'mxw/vim-jsx'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'romgrk/vimfiler-prompt'
 
 call plug#end()
 " }}}
@@ -54,6 +54,25 @@ set foldlevel=99
 set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
 set shiftwidth=2
 " }}}
+
+" Vimfiler {{{
+let g:vimfiler_safe_mode_by_default = 0
+let g:vimfiler_as_default_explorer = 1
+set fillchars=vert:│,fold:─
+let g:vimfiler_tree_leaf_icon = "⋮"
+let g:vimfiler_tree_opened_icon = "▼"
+let g:vimfiler_tree_closed_icon = "▷"
+
+autocmd VimEnter * if !argc() | VimFiler | endif
+autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
+
+noremap <silent> <Leader>f :VimFilerExplorer -winwidth=35 -split -force-hide -find<CR>
+noremap <silent> <Leader>m :VimFilerExplorer -find -toggle<CR>
+" }}}
+
+let g:buffergator_sort_regime = "filepath"
+let g:buffergator_show_full_directory_path = "false"
+let g:buffergator_split_size = 60
 
 " Airline {{{
 set statusline+=%#warningmsg#
@@ -151,9 +170,7 @@ nnoremap <silent> <leader>ss :source %<CR>
 nnoremap <silent> <leader>si :source $MYVIMRC<CR>
 nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>pi :PlugInstall<CR>
-nnoremap <silent> <leader>m :NERDTreeToggle<CR>
 nnoremap <silent> <leader>n :BuffergatorToggle<CR>
-nnoremap <silent> <leader>f :NERDTreeFind<CR>
 nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
@@ -165,10 +182,6 @@ inoremap <c-c> <nop>
 if has('nvim')
   nmap <BS> <C-W>h
 endif
-" }}}
-
-" NERDTree {{{
-let NERDTreeShowHidden=1
 " }}}
 
 " Javascript syntax {{{
