@@ -6,37 +6,39 @@ let mapleader = " "
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'xolox/vim-misc'
-Plug 'rking/ag.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sensible'
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug '907th/vim-auto-save'
 Plug 'Raimondi/delimitMate'
-Plug 'xolox/vim-easytags'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'tomtom/tcomment_vim'
-Plug 'vim-airline/vim-airline'
-Plug 'Shougo/vimproc.vim'
-Plug 'scrooloose/syntastic'
 Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'majutsushi/tagbar'
-Plug 'honza/vim-snippets'
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-repeat'
-Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-surround'
-Plug 'xolox/vim-notes'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'terryma/vim-expand-region'
-Plug 'mxw/vim-jsx'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'honza/vim-snippets'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'majutsushi/tagbar'
+Plug 'morhetz/gruvbox'
+Plug 'mxw/vim-jsx'
+Plug 'nelstrom/vim-markdown-folding'
+Plug 'pangloss/vim-javascript'
+Plug 'rking/ag.vim'
 Plug 'romgrk/vimfiler-prompt'
+Plug 'scrooloose/syntastic'
+Plug 'terryma/vim-expand-region'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 
 call plug#end()
 " }}}
@@ -44,15 +46,16 @@ call plug#end()
 " Configs {{{
 syntax on
 colorscheme gruvbox
+set background=dark
 set clipboard+=unnamedplus
+set foldlevel=99
+set foldmethod=syntax
 set hidden
+set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
 set noswapfile
 set number
-set background=dark
-set foldmethod=syntax
-set foldlevel=99
-set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
 set shiftwidth=2
+set title
 " }}}
 
 " Vimfiler {{{
@@ -69,6 +72,14 @@ autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
 noremap <silent> <Leader>f :VimFilerExplorer -winwidth=35 -split -force-hide -find<CR>
 noremap <silent> <Leader>m :VimFilerExplorer -find -toggle<CR>
 " }}}
+
+let g:tagbar_type_markdown = {
+  \ 'ctagstype' : 'markdown',
+  \ 'kinds' : [
+  \ 'h:headings'
+  \ ],
+  \ 'sort' : 0,
+  \ }
 
 let g:buffergator_sort_regime = "filepath"
 let g:buffergator_show_full_directory_path = "false"
@@ -232,3 +243,23 @@ fu! CustomFoldText()
 endf
 set foldtext=CustomFoldText()
 
+" {{{ Auto Save
+let g:auto_save = 1
+let g:auto_save_silent = 1
+" }}}
+
+" {{{ Writing mode
+func! WordProcessorMode() 
+  setlocal formatoptions=1 
+  setlocal noexpandtab 
+  map j gj 
+  map k gk
+  setlocal spell spelllang=en_us 
+  set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+  set complete+=s
+  set formatprg=par
+  setlocal wrap 
+  setlocal linebreak 
+endfu 
+com! WP call WordProcessorMode()
+"}}}
