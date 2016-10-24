@@ -74,7 +74,7 @@ autocmd VimEnter * if !argc() | VimFiler | endif
 autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
 
 noremap <silent> <Leader>f :VimFiler -split -force-hide -find<CR>
-noremap <silent> <Leader>m :VimFiler -split -force-hide <CR>
+noremap <silent> <Leader>m :VimFiler -split -force-hide -project<CR>
 " }}}
 
 let g:tagbar_type_markdown = {
