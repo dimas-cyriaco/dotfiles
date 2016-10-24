@@ -32,6 +32,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'romgrk/vimfiler-prompt'
 Plug 'scrooloose/syntastic'
+Plug 'ternjs/tern_for_vim'
 Plug 'terryma/vim-expand-region'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
@@ -77,6 +78,7 @@ noremap <silent> <Leader>f :VimFiler -split -force-hide -find<CR>
 noremap <silent> <Leader>m :VimFiler -split -force-hide -project<CR>
 " }}}
 
+" Tagbar {{{
 let g:tagbar_type_markdown = {
   \ 'ctagstype' : 'markdown',
   \ 'kinds' : [
@@ -84,11 +86,14 @@ let g:tagbar_type_markdown = {
   \ ],
   \ 'sort' : 0,
   \ }
-noremap <silent> <Leader>t :Tagbar<CR>
+nmap <silent> <F8> :TagbarToggle<CR>
+" }}}
 
+" Buffergator {{{
 let g:buffergator_sort_regime = "filepath"
 let g:buffergator_show_full_directory_path = "false"
 let g:buffergator_split_size = 60
+" }}}
 
 " Airline {{{
 set statusline+=%#warningmsg#
