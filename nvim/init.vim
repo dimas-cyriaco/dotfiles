@@ -15,11 +15,14 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'bilalq/lite-dfm'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'honza/vim-snippets'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'majutsushi/tagbar'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
@@ -80,6 +83,7 @@ let g:tagbar_type_markdown = {
   \ ],
   \ 'sort' : 0,
   \ }
+noremap <silent> <Leader>t :Tagbar<CR>
 
 let g:buffergator_sort_regime = "filepath"
 let g:buffergator_show_full_directory_path = "false"
@@ -249,17 +253,19 @@ let g:auto_save_silent = 1
 " }}}
 
 " {{{ Writing mode
+autocmd! User GoyoEnter Limelight
 func! WordProcessorMode() 
   setlocal formatoptions=1 
   setlocal noexpandtab 
-  map j gj 
-  map k gk
   setlocal spell spelllang=en_us 
   set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
   set complete+=s
   set formatprg=par
   setlocal wrap 
   setlocal linebreak 
+  let g:limelight_conceal_ctermfg = 'gray'
+  let g:limelight_conceal_ctermfg = 240
+  Goyo
 endfu 
 com! WP call WordProcessorMode()
 "}}}
