@@ -14,6 +14,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimshell.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bilalq/lite-dfm'
 Plug 'cakebaker/scss-syntax.vim'
@@ -65,15 +66,15 @@ set title
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_as_default_explorer = 1
 set fillchars=vert:│,fold:─
-let g:vimfiler_tree_leaf_icon = "⋮"
+let g:vimfiler_tree_leaf_icon = "|"
 let g:vimfiler_tree_opened_icon = "▼"
 let g:vimfiler_tree_closed_icon = "▷"
 
 autocmd VimEnter * if !argc() | VimFiler | endif
 autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
 
-noremap <silent> <Leader>f :VimFilerExplorer -winwidth=35 -split -force-hide -find<CR>
-noremap <silent> <Leader>m :VimFilerExplorer -find -toggle<CR>
+noremap <silent> <Leader>f :VimFiler -split -force-hide -find<CR>
+noremap <silent> <Leader>m :VimFiler -split -force-hide <CR>
 " }}}
 
 let g:tagbar_type_markdown = {
