@@ -6,7 +6,7 @@ let mapleader = " "
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug '907th/vim-auto-save'
+Plug '907th/vim-auto-save' 
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/neosnippet-snippets'
@@ -15,7 +15,7 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/vimshell.vim'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'bilalq/lite-dfm'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -31,7 +31,7 @@ Plug 'nelstrom/vim-markdown-folding'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'romgrk/vimfiler-prompt'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'ternjs/tern_for_vim'
 Plug 'terryma/vim-expand-region'
 Plug 'tomtom/tcomment_vim'
@@ -39,11 +39,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-notes'
 
 call plug#end()
 " }}}
@@ -96,24 +96,24 @@ let g:buffergator_split_size = 60
 " }}}
 
 " Airline {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
-let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V',
-    \ '' : 'V',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
+" set statusline+=%#warningmsg#
+" " set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme='wombat'
+" let g:airline_mode_map = {
+"     \ '__' : '-',
+"     \ 'n'  : 'N',
+"     \ 'i'  : 'I',
+"     \ 'R'  : 'R',
+"     \ 'c'  : 'C',
+"     \ 'v'  : 'V',
+"     \ 'V'  : 'V',
+"     \ '' : 'V',
+"     \ 's'  : 'S',
+"     \ 'S'  : 'S',
+"     \ '' : 'S',
+"     \ }
 " }}}
 
 " Neosnippet {{{
@@ -160,24 +160,24 @@ xmap <c-j>     <Plug>(neosnippet_expand_target)
 " }}}
 
 " Syntastic {{{
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-let g:syntastic_javascript_eslint_exec = 'node_modules/eslint/bin/eslint.js'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_loc_list_height = 5
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_javascript_checkers = ['eslint']
+"
+" let g:syntastic_error_symbol = '✗'
+" let g:syntastic_style_error_symbol = '⁉️'
+" let g:syntastic_warning_symbol = '⚠️'
+" let g:syntastic_style_warning_symbol = '💩'
+"
+" let g:syntastic_javascript_eslint_exec = 'node_modules/eslint/bin/eslint.js'
+"
+" highlight link SyntasticErrorSign SignColumn
+" highlight link SyntasticWarningSign SignColumn
+" highlight link SyntasticStyleErrorSign SignColumn
+" highlight link SyntasticStyleWarningSign SignColumn
 " }}}
 
 " Fugitive {{{
@@ -217,7 +217,7 @@ let delimitMate_jump_expansion = 1
 " }}}
 
 " Vim-notes {{{
-let g:notes_directories = ['~/Dropbox/Notes/Work']
+" let g:notes_directories = ['~/Dropbox/Notes/Work']
 " }}}
 
 " Diff options {{{
@@ -253,11 +253,6 @@ fu! CustomFoldText()
 endf
 set foldtext=CustomFoldText()
 
-" {{{ Auto Save
-let g:auto_save = 1
-let g:auto_save_silent = 1
-" }}}
-
 " {{{ Writing mode
 autocmd! User GoyoEnter Limelight
 func! WordProcessorMode() 
@@ -275,3 +270,8 @@ func! WordProcessorMode()
 endfu 
 com! WP call WordProcessorMode()
 "}}}
+
+" {{{ Auto Save 
+let g:auto_save = 1 
+let g:auto_save_silent = 1 
+" }}} 
