@@ -23,7 +23,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'honza/vim-snippets'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/limelight.vim'
 Plug 'majutsushi/tagbar'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
@@ -56,7 +56,7 @@ set clipboard+=unnamedplus
 set foldlevel=99
 set foldmethod=syntax
 set hidden
-set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
+" set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
 set noswapfile
 set number
 set shiftwidth=2
@@ -254,18 +254,18 @@ endf
 set foldtext=CustomFoldText()
 
 " {{{ Writing mode
-autocmd! User GoyoEnter Limelight
-func! WordProcessorMode() 
-  setlocal formatoptions=1 
-  setlocal noexpandtab 
-  setlocal spell spelllang=en_us 
+" autocmd! User GoyoEnter Limelight
+func! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  setlocal spell spelllang=en_us
   set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
   set complete+=s
   set formatprg=par
-  setlocal wrap 
-  setlocal linebreak 
-  let g:limelight_conceal_ctermfg = 'gray'
-  let g:limelight_conceal_ctermfg = 240
+  setlocal wrap
+  setlocal linebreak
+  " let g:limelight_conceal_ctermfg = 'gray'
+  " let g:limelight_conceal_ctermfg = 240
   Goyo
 endfu 
 com! WP call WordProcessorMode()
