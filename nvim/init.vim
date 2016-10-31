@@ -6,6 +6,7 @@ let mapleader = " "
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'neomake/neomake'
 Plug 'vim-scripts/fountain.vim'
 Plug 'tpope/vim-markdown'
 Plug 'reedes/vim-wheel'
@@ -27,7 +28,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'honza/vim-snippets'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/goyo.vim'
-" Plug 'junegunn/limelight.vim'
 Plug 'majutsushi/tagbar'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
@@ -35,7 +35,6 @@ Plug 'nelstrom/vim-markdown-folding'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'romgrk/vimfiler-prompt'
-" Plug 'scrooloose/syntastic'
 Plug 'ternjs/tern_for_vim'
 Plug 'terryma/vim-expand-region'
 Plug 'tomtom/tcomment_vim'
@@ -50,6 +49,10 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'xolox/vim-notes'
 
 call plug#end()
+" }}}
+
+" NeoMake {{{
+autocmd! BufWritePost * Neomake
 " }}}
 
 let g:wheel#scroll_on_wrap = 1      " 0=disable, 1=enable (default)
@@ -163,27 +166,6 @@ xmap <c-j>     <Plug>(neosnippet_expand_target)
 " if has('conceal')
 "   set conceallevel=2 concealcursor=niv
 " endif
-" }}}
-
-" Syntastic {{{
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_loc_list_height = 5
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_javascript_checkers = ['eslint']
-"
-" let g:syntastic_error_symbol = '✗'
-" let g:syntastic_style_error_symbol = '⁉️'
-" let g:syntastic_warning_symbol = '⚠️'
-" let g:syntastic_style_warning_symbol = '💩'
-"
-" let g:syntastic_javascript_eslint_exec = 'node_modules/eslint/bin/eslint.js'
-"
-" highlight link SyntasticErrorSign SignColumn
-" highlight link SyntasticWarningSign SignColumn
-" highlight link SyntasticStyleErrorSign SignColumn
-" highlight link SyntasticStyleWarningSign SignColumn
 " }}}
 
 " Fugitive {{{
