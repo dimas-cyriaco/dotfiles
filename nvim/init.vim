@@ -199,6 +199,8 @@ nnoremap <c-k> <c-w>k
 inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
+noremap <ScrollWheelUp> <C-Y>
+noremap <ScrollWheelDown> <C-E>
 
 if has('nvim')
   nmap <BS> <C-W>h

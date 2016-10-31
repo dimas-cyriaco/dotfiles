@@ -40,6 +40,8 @@ alias tmux="TERM=xterm-256color tmux"
 alias tk="task"
 alias tm="timew"
 alias ts="timew summary"
+alias enable_colemak="setxkbmap us -variant colemak"
+alias disable_colemak="setxkbmap br"
 
 function cdd() {
   cd $HOME/dev/src/github.com/descomplica/$1
@@ -47,6 +49,11 @@ function cdd() {
 
 function dbash() {
   docker-compose exec $1 bash
+}
+
+function hello() {
+  curl -d "Username=09092534714&Password=1234" https://prd.pontofopag.com.br/Registrador/ponto
+  task sync
 }
 
 export PATH="$HOME/.linuxbrew/bin:$PATH"
