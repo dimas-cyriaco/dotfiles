@@ -6,6 +6,10 @@ let mapleader = " "
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'vim-scripts/fountain.vim'
+Plug 'tpope/vim-markdown'
+Plug 'reedes/vim-wheel'
+Plug 'reedes/vim-pencil'
 Plug '907th/vim-auto-save' 
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim'
@@ -23,7 +27,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'honza/vim-snippets'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/limelight.vim'
 Plug 'majutsushi/tagbar'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
@@ -39,8 +43,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Plug 'xolox/vim-easytags'
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
@@ -48,15 +52,17 @@ Plug 'tpope/vim-surround'
 call plug#end()
 " }}}
 
+let g:wheel#scroll_on_wrap = 1      " 0=disable, 1=enable (default)
+
 " Configs {{{
 syntax on
 colorscheme gruvbox
 set background=dark
 set clipboard+=unnamedplus
+set cursorline
 set foldlevel=99
 set foldmethod=syntax
 set hidden
-set list listchars=tab:▸\ ,eol:¬,trail:·,tab:»·,extends:.,precedes:.
 set noswapfile
 set number
 set shiftwidth=2
@@ -96,24 +102,24 @@ let g:buffergator_split_size = 60
 " }}}
 
 " Airline {{{
-" set statusline+=%#warningmsg#
-" " set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:airline_powerline_fonts = 1
-" let g:airline_theme='wombat'
-" let g:airline_mode_map = {
-"     \ '__' : '-',
-"     \ 'n'  : 'N',
-"     \ 'i'  : 'I',
-"     \ 'R'  : 'R',
-"     \ 'c'  : 'C',
-"     \ 'v'  : 'V',
-"     \ 'V'  : 'V',
-"     \ '' : 'V',
-"     \ 's'  : 'S',
-"     \ 'S'  : 'S',
-"     \ '' : 'S',
-"     \ }
+set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
 " }}}
 
 " Neosnippet {{{
@@ -193,9 +199,10 @@ nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>n :BuffergatorToggle<CR>
 nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
+nnoremap <leader>h <c-w>h
+nnoremap <leader>l <c-w>l
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
 inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
@@ -256,21 +263,24 @@ endf
 set foldtext=CustomFoldText()
 
 " {{{ Writing mode
-autocmd! User GoyoEnter Limelight
-func! WordProcessorMode() 
-  setlocal formatoptions=1 
-  setlocal noexpandtab 
-  setlocal spell spelllang=en_us 
+" autocmd! User GoyoEnter Limelight
+func! WritingMode()
+  setlocal formatoptions=1
+  setlocal spell spelllang=en_us
   set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
   set complete+=s
-  set formatprg=par
-  setlocal wrap 
-  setlocal linebreak 
-  let g:limelight_conceal_ctermfg = 'gray'
-  let g:limelight_conceal_ctermfg = 240
+  " set formatprg=par
+  " setlocal wrap
+  " setlocal linebreak
+  set textwidth=70
+  set formatoptions+=t
+  set formatoptions-=t
+  " let g:limelight_conceal_ctermfg = 'gray'
+  " let g:limelight_conceal_ctermfg = 240
   Goyo
+  Pencil
 endfu 
-com! WP call WordProcessorMode()
+com! WM call WritingMode()
 "}}}
 
 " {{{ Auto Save 

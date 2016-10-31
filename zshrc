@@ -56,6 +56,11 @@ function hello() {
   task sync
 }
 
+function start_media() {
+  nzbget
+  sickrage
+}
+
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
