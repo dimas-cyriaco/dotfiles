@@ -20,7 +20,7 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/vimshell.vim'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'bilalq/lite-dfm'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -44,8 +44,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'xolox/vim-easytags'
-" Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-notes'
 
 call plug#end()
@@ -53,6 +53,8 @@ call plug#end()
 
 " NeoMake {{{
 autocmd! BufWritePost * Neomake
+
+let g:neomake_javascript_enabled_makers = ['ctags']
 " }}}
 
 let g:wheel#scroll_on_wrap = 1      " 0=disable, 1=enable (default)
