@@ -6,11 +6,6 @@ let mapleader = " "
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'neomake/neomake'
-Plug 'vim-scripts/fountain.vim'
-Plug 'tpope/vim-markdown'
-Plug 'reedes/vim-wheel'
-Plug 'reedes/vim-pencil'
 Plug '907th/vim-auto-save' 
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim'
@@ -29,24 +24,30 @@ Plug 'honza/vim-snippets'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/goyo.vim'
 Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-markdown-folding'
+Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
+Plug 'reedes/vim-pencil'
+Plug 'reedes/vim-wheel'
 Plug 'rking/ag.vim'
 Plug 'romgrk/vimfiler-prompt'
 Plug 'ternjs/tern_for_vim'
 Plug 'terryma/vim-expand-region'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/fountain.vim'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-notes'
+Plug 'yggdroot/indentline'
 
 call plug#end()
 " }}}
@@ -74,6 +75,9 @@ set shiftwidth=2
 set title
 " }}}
 
+let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+
 " Vimfiler {{{
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_as_default_explorer = 1
@@ -82,11 +86,12 @@ let g:vimfiler_tree_leaf_icon = "|"
 let g:vimfiler_tree_opened_icon = "▼"
 let g:vimfiler_tree_closed_icon = "▷"
 
-autocmd VimEnter * if !argc() | VimFiler | endif
+" autocmd VimEnter * if !argc() | VimFiler | endif
 autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
 
 noremap <silent> <Leader>f :VimFiler -split -force-hide -find<CR>
 noremap <silent> <Leader>m :VimFiler -split -force-hide -project<CR>
+noremap <silent> <F9> :VimFiler -split -force-hide -project -toggle<CR>
 " }}}
 
 " Tagbar {{{
@@ -97,6 +102,7 @@ let g:tagbar_type_markdown = {
   \ ],
   \ 'sort' : 0,
   \ }
+let g:tagbar_left = 1
 nmap <silent> <F8> :TagbarToggle<CR>
 " }}}
 
@@ -157,7 +163,6 @@ endfunction "}}}
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
-" let g:neosnippet#snippets_directory='~/.config/nvim/bundle/vim-snippets/snippets'
 let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 imap <c-j>     <Plug>(neosnippet_expand_or_jump)
@@ -182,6 +187,7 @@ nnoremap <silent> <leader>si :source $MYVIMRC<CR>
 nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>n :BuffergatorToggle<CR>
+nnoremap <silent> <F7> :BuffergatorToggle<CR>
 nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
 nnoremap <leader>h <c-w>h
 nnoremap <leader>l <c-w>l
@@ -207,10 +213,6 @@ let javaScript_fold=1
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
-" }}}
-
-" Vim-notes {{{
-" let g:notes_directories = ['~/Dropbox/Notes/Work']
 " }}}
 
 " Diff options {{{
@@ -253,14 +255,9 @@ func! WritingMode()
   setlocal spell spelllang=en_us
   set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
   set complete+=s
-  " set formatprg=par
-  " setlocal wrap
-  " setlocal linebreak
   set textwidth=70
   set formatoptions+=t
   set formatoptions-=t
-  " let g:limelight_conceal_ctermfg = 'gray'
-  " let g:limelight_conceal_ctermfg = 240
   Goyo
   Pencil
 endfu 
