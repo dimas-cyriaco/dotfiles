@@ -18,11 +18,13 @@ Plug 'Shougo/vimshell.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'bilalq/lite-dfm'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'honza/vim-snippets'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/goyo.vim'
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-line'
 Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
@@ -52,6 +54,9 @@ Plug 'yggdroot/indentline'
 call plug#end()
 " }}}
 
+let g:ctrlp_custom_ignore = '\v[\/]$'
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules
+
 " NeoMake {{{
 autocmd! BufWritePost * Neomake
 
@@ -71,6 +76,7 @@ set foldmethod=syntax
 set hidden
 set noswapfile
 set number
+set relativenumber
 set shiftwidth=2
 set title
 " }}}
@@ -196,8 +202,6 @@ nnoremap <leader>k <c-w>k
 inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
-noremap <ScrollWheelUp> <C-Y>
-noremap <ScrollWheelDown> <C-E>
 
 if has('nvim')
   nmap <BS> <C-W>h

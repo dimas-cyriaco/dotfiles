@@ -47,7 +47,19 @@ options     head
           fail(e);
         }
 
+snippet     cw
+abbr        console.warn(...)
+options     head
+        console.warn(${1});
+        ${2}
+
 snippet     ce
 abbr        console.error(...)
 options     head
         console.error(${2});
+
+snippet     const
+abbr        const ${1} = ${2}
+options     head
+        const ${1} = ${2}
+        
