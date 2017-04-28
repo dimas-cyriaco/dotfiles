@@ -13,6 +13,7 @@ install golang
 install xclip
 install python3
 install python3-pip
+install taskwarrior
 
 export GOPATH=$HOME/dev
 export PATH=$PATH:$HOME/dev/bin:$HOME/bin
