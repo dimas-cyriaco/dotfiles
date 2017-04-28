@@ -8,7 +8,7 @@ ZSH_THEME="bullet-train"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker docker-compose git taskwarrior)
+plugins=(git taskwarrior)
 
 # User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
@@ -27,8 +27,8 @@ alias dbuild="clear && docker-compose build"
 alias dup="clear && docker-compose up"
 alias dfull="dbuild && dup"
 alias dot="source ~/.zshrc"
-alias drc="docker rm $(docker ps -a -q)"
-alias dri="docker rmi $(docker images -q)"
+# alias drc="docker rm $(docker ps -a -q)"
+# alias dri="docker rmi $(docker images -q)"
 alias dclear="drc && dri"
 alias g="clear && gss"
 alias la="clear && ls -lah"
@@ -56,23 +56,8 @@ function hello() {
   task sync
 }
 
-function start_media() {
-  nzbget
-  sickrage
-}
-
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-
 # capslock acts as control
 /usr/bin/setxkbmap -option "ctrl:nocaps"
-
-# NPM login {{{
-export NPM_USER=descomplica
-export NPM_PASS=
-export NPM_EMAIL=dimas.cyriaco@descomplica.com.br
-# }}}
 
 # Go Lang {{{
 export GOPATH=~/dev
