@@ -10,6 +10,9 @@ ZSH_THEME="bullet-train"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git taskwarrior)
 
+autoload -Uz compinit
+compinit
+
 # User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
@@ -44,7 +47,7 @@ alias enable_colemak="setxkbmap us -variant colemak"
 alias disable_colemak="setxkbmap br"
 
 function cdd() {
-  cd $HOME/dev/src/github.com/descomplica/$1
+  cd $HOME/dev/$1
 }
 
 function dbash() {
@@ -75,3 +78,5 @@ eval "$(hub alias -s)"
 fpath=(~/.zsh/completions $fpath) 
 autoload -U compinit && compinit
 # }}}
+
+export NPM_TOKEN=''
