@@ -80,3 +80,6 @@ autoload -U compinit && compinit
 # }}}
 
 export NPM_TOKEN=''
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"

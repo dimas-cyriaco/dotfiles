@@ -92,11 +92,15 @@ let g:vimfiler_tree_leaf_icon = "|"
 let g:vimfiler_tree_opened_icon = "▼"
 let g:vimfiler_tree_closed_icon = "▷"
 
-" autocmd VimEnter * if !argc() | VimFiler | endif
+call vimfiler#custom#profile('default', 'context', {
+     \ 'safe' : 0,
+     \ 'edit_action' : 'tabopen',
+     \ })
+
 autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
 
 noremap <silent> <Leader>f :VimFiler -split -force-hide -find<CR>
-noremap <silent> <Leader>m :VimFiler -split -force-hide -project<CR>
+noremap <silent> <Leader>m :VimFiler -split -force-hide<CR>
 noremap <silent> <F9> :VimFiler -split -force-hide -project -toggle<CR>
 " }}}
 
