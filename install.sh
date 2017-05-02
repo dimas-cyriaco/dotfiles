@@ -27,7 +27,7 @@ if [ -z "$USER_EMAIL" ]; then
 fi
 
 if [ -z "$USER_FULL_NAME" ]; then
-  fail "USER_EMAIL is not set"
+  fail "USER_FULL_NAME is not set"
 fi
 
 ssh_key_file="$HOME/.ssh/id_rsa.pub"
