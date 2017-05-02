@@ -195,10 +195,8 @@ nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>n :BuffergatorToggle<CR>
 nnoremap <silent> <F7> :BuffergatorToggle<CR>
 nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
-nnoremap <leader>h <c-w>h
-nnoremap <leader>l <c-w>l
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
@@ -224,7 +222,7 @@ set diffopt+=vertical
 " }}}
 
 " JSX {{{
-let g:jsx_ext_required = 1
+let g:jsx_ext_required = 0
 " }}}
 
 " Indent pasted text
