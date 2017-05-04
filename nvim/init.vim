@@ -61,6 +61,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_
 autocmd! BufWritePost * Neomake
 
 let g:neomake_javascript_enabled_makers = ['ctags']
+let g:neomake_jsx_enabled_makers = ['ctags']
 " }}}
 
 let g:wheel#scroll_on_wrap = 1      " 0=disable, 1=enable (default)
@@ -270,7 +271,3 @@ endfu
 com! WM call WritingMode()
 "}}}
 
-" {{{ Auto Save 
-let g:auto_save = 1 
-let g:auto_save_silent = 1 
-" }}} 
