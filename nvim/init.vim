@@ -61,6 +61,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_
 autocmd! BufWritePost * Neomake
 
 let g:neomake_javascript_enabled_makers = ['ctags']
+let g:neomake_jsx_enabled_makers = ['ctags']
 " }}}
 
 let g:wheel#scroll_on_wrap = 1      " 0=disable, 1=enable (default)
@@ -198,10 +199,8 @@ nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>n :BuffergatorToggle<CR>
 nnoremap <silent> <F7> :BuffergatorToggle<CR>
 nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
-nnoremap <leader>h <c-w>h
-nnoremap <leader>l <c-w>l
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
@@ -227,7 +226,7 @@ set diffopt+=vertical
 " }}}
 
 " JSX {{{
-let g:jsx_ext_required = 1
+let g:jsx_ext_required = 0
 " }}}
 
 " Indent pasted text
@@ -271,7 +270,3 @@ endfu
 com! WM call WritingMode()
 "}}}
 
-" {{{ Auto Save 
-let g:auto_save = 1 
-let g:auto_save_silent = 1 
-" }}} 
