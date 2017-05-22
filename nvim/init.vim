@@ -95,7 +95,6 @@ let g:vimfiler_tree_closed_icon = "▷"
 
 call vimfiler#custom#profile('default', 'context', {
      \ 'safe' : 0,
-     \ 'edit_action' : 'tabopen',
      \ })
 
 autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>

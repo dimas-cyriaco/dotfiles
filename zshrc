@@ -46,6 +46,10 @@ alias ts="timew summary"
 alias enable_colemak="setxkbmap us -variant colemak"
 alias disable_colemak="setxkbmap br"
 
+alias tdt="task +DUETODAY ls"
+alias tod="task +OVERDUE ls"
+alias tdw="task +WEEK ls"
+
 function cdd() {
   cd $HOME/dev/$1
 }
