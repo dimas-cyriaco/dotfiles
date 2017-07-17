@@ -1,3 +1,5 @@
 nvim/plugged/
 nvim/.init.vim-rplugin~
 nvim/nvim
+
+nvim/\.netrwhist

@@ -8,7 +8,7 @@ ZSH_THEME="bullet-train"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git taskwarrior)
+plugins=(git git-extras taskwarrior)
 
 autoload -Uz compinit
 compinit
@@ -78,12 +78,13 @@ export BULLETTRAIN_TIME_FG=white
 export BULLETTRAIN_EXEC_TIME_SHOW=true
 
 # Github Hub settings {{{
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 fpath=(~/.zsh/completions $fpath) 
 autoload -U compinit && compinit
 # }}}
 
 export NPM_TOKEN=''
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+# export PATH="$PATH:/opt/mssql-tools/bin"
