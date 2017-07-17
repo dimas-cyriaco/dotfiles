@@ -164,3 +164,5 @@ function! UpdateJavascriptTags() abort
 endfunction
 nnoremap <leader>ujt :call UpdateJavascriptTags()<CR>
 
+autocmd BufNewFile,BufRead *.rb set makeprg=rake
+
