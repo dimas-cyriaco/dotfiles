@@ -158,3 +158,9 @@ let g:gitgutter_map_keys = 0
 
 let g:neomake_rspec_maker = { 'exe': 'bundle', 'args': ['exec', 'rspec'] }
 let g:neomake_rmtemp_maker = { 'exe': 'rm', 'args': ['-r', 'tmp/capybara'] }
+
+function! UpdateJavascriptTags() abort
+  execute '!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
+endfunction
+nnoremap <leader>ujt :call UpdateJavascriptTags()<CR>
+
