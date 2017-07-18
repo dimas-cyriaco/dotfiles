@@ -145,7 +145,7 @@ call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
 call denite#custom#option('_', 'highlight_matched_range', 'None')
-call denite#custom#option('_', 'highlight_matched_char', 'None')
+call denite#custom#option('_', 'highlight_matched_char', 'Underlined')
 
 nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
