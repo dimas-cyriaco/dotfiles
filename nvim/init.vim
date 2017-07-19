@@ -158,11 +158,15 @@ let g:gitgutter_map_keys = 0
 
 let g:neomake_rspec_maker = { 'exe': 'bundle', 'args': ['exec', 'rspec'] }
 let g:neomake_rmtemp_maker = { 'exe': 'rm', 'args': ['-r', 'tmp/capybara'] }
+let g:neomake_javascript_eslint_maker = {
+      \ 'exe': './node_modules/.bin/eslint',
+      \ 'args': ['--verbose']
+      \ }
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 function! UpdateJavascriptTags() abort
   execute '!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
 endfunction
 nnoremap <leader>ujt :call UpdateJavascriptTags()<CR>
-
 autocmd BufNewFile,BufRead *.rb set makeprg=rake
 
