@@ -85,6 +85,9 @@ nnoremap <silent> <leader>h <c-w>h
 nnoremap <silent> <leader>j <c-w>j
 nnoremap <silent> <leader>k <c-w>k
 nnoremap <silent> <leader>l <c-w>l
+nnoremap <silent> <leader>tf ?it(<CR>if<esc>:noh<CR>
+nnoremap <silent> <leader>tu ?fit(<CR>x:noh<CR>
+nnoremap <silent> <leader>zz zMzvzazA
 nnoremap ; :
 
 nnoremap <up> <nop>
