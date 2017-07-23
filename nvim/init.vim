@@ -34,6 +34,7 @@ if dein#load_state('/home/dimas/.cache/dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('neomake/neomake')
+  call dein#add('tpope/vim-rails')
 
   call dein#end()
   call dein#save_state()
