@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="bullet-train"
+# ZSH_THEME="bullet-train"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -68,7 +68,7 @@ function hello() {
 
 # Go Lang {{{
 export GOPATH=~/dev
-export PATH=$PATH:$HOME/dev/bin:$HOME/bin
+export PATH=$PATH:$HOME/dev/bin:$HOME/bin:$HOME/.cargo/bin/
 # }}}
 
 export TERM="xterm-256color"
@@ -88,3 +88,10 @@ export NPM_TOKEN=''
 # eval "$(rbenv init -)"
 # export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 # export PATH="$PATH:/opt/mssql-tools/bin"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/dimas/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/dimas/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/dimas/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/dimas/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh

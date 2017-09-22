@@ -18,8 +18,7 @@ assert_installed nvim
 assert_installed ctags
 assert_installed ag
 assert_installed go
-assert_installed hub
-assert_installed xclip
+# assert_installed yriac
 assert_installed pip3
 
 if [ -z "$USER_EMAIL" ]; then
