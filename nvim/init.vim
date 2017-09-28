@@ -36,6 +36,7 @@ if dein#load_state('/home/dimas/.cache/dein')
   call dein#add('neomake/neomake')
   call dein#add('tpope/vim-rails')
   call dein#add('whatyouhide/vim-gotham')
+  call dein#add('majutsushi/tagbar')
 
   call dein#end()
   call dein#save_state()
@@ -55,6 +56,7 @@ syntax on
 colorscheme gotham
 set background=dark
 set clipboard+=unnamedplus
+set colorcolumn=80
 set cursorline
 set foldenable
 set foldlevel=99
@@ -64,8 +66,11 @@ set noswapfile
 set number
 set relativenumber
 set shiftwidth=2
+set softtabstop=2
 set splitright
+set tabstop=2
 set title
+set titlestring=%(\ %{expand(\"%:p\")}\ %a%)
 " }}}
 
 " Mappings {{{
@@ -90,6 +95,7 @@ nnoremap <silent> <leader>l <c-w>l
 nnoremap <silent> <leader>tf ?it(<CR>if<esc>:noh<CR>
 nnoremap <silent> <leader>tu ?fit(<CR>x:noh<CR>
 nnoremap <silent> <leader>zz zMzvzazA
+nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap ; :
 
 nnoremap <up> <nop>
@@ -137,7 +143,7 @@ let g:vimfiler_as_default_explorer = 1
 
 nnoremap <silent> <Leader>f :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit -find -project<CR>
 nnoremap <silent> <Leader>m :VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
-nnoremap <silent> <F9> :VimFilerExplorer -project<CR>
+nnoremap <silent> <F9> :VimFilerExplorer -project -winwidth=55<CR>
 
 call denite#custom#var('file_rec', 'command',
       \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
@@ -152,6 +158,7 @@ call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
 call denite#custom#option('_', 'highlight_matched_range', 'None')
 call denite#custom#option('_', 'highlight_matched_char', 'Underlined')
 
+" Print region name
 nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
