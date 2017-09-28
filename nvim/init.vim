@@ -62,6 +62,8 @@ set foldenable
 set foldlevel=99
 set foldmethod=syntax
 set hidden
+set incsearch
+set noshowmode
 set noswapfile
 set number
 set relativenumber
@@ -73,30 +75,49 @@ set title
 set titlestring=%(\ %{expand(\"%:p\")}\ %a%)
 " }}}
 
-" Mappings {{{
-nnoremap <silent> <leader>w  :w<CR>
-nnoremap <silent> <leader>q  :q<CR>
-nnoremap <silent> <leader>ss :source %<CR>
-nnoremap <silent> <leader>si :source $MYVIMRC<CR>
-nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
-nnoremap <silent> <leader>di :call dein#install()<CR>
+" Atalhos {{{
+
+" Reselecionar conteúdo colado
+nnoremap <silent> <expr> gV "`[".getregtype(v:register)[0]."`]"
+
+nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
-nnoremap <silent> <leader>p  :Denite file_rec -reversed<CR>
-nnoremap <silent> <leader>n  :Denite buffer -mode=normal -reversed<CR>
+nnoremap <silent> <leader>di :call dein#install()<CR>
+nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>g  :Denite grep -mode=normal -reversed<CR>
-nnoremap <silent> <leader>z0 :set foldlevel=0<CR>
-nnoremap <silent> <leader>z1 :set foldlevel=1<CR>
-nnoremap <silent> <leader>z2 :set foldlevel=2<CR>
-nnoremap <silent> <leader>z9 :set foldlevel=9<CR>
 nnoremap <silent> <leader>h <c-w>h
 nnoremap <silent> <leader>j <c-w>j
 nnoremap <silent> <leader>k <c-w>k
 nnoremap <silent> <leader>l <c-w>l
+nnoremap <silent> <leader>n  :Denite buffer -mode=normal -reversed<CR>
+nnoremap <silent> <leader>p  :Denite file_rec -reversed<CR>
+
+" Fechar buffer atual e ir para ultimo buffer editado
+nnoremap <silent> <leader>q  :bd<CR>
+
+" Fechar nvim
+nnoremap <silent> <leader>Q  :q<CR>
+
+nnoremap <silent> <leader>si :source $MYVIMRC<CR>
+nnoremap <silent> <leader>ss :source %<CR>
+
+" Open tagbar
+nnoremap <silent> <leader>tt :TagbarOpenAutoClose<CR>
+
 nnoremap <silent> <leader>tf ?it(<CR>if<esc>:noh<CR>
 nnoremap <silent> <leader>tu ?fit(<CR>x:noh<CR>
+nnoremap <silent> <leader>w  :w<CR>
+nnoremap <silent> <leader>z0 :set foldlevel=0<CR>
+nnoremap <silent> <leader>z1 :set foldlevel=1<CR>
+nnoremap <silent> <leader>z2 :set foldlevel=2<CR>
+nnoremap <silent> <leader>z9 :set foldlevel=9<CR>
 nnoremap <silent> <leader>zz zMzvzazA
-nnoremap <silent> <F8> :TagbarToggle<CR>
-nnoremap ; :
+nnoremap <silent> fjfj :bd<CR>
+
+" Desabilitar modo Ex
+nnoremap <silent> Q <Nop>
+
+nnoremap <silent> ; :
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -113,6 +134,8 @@ inoremap <expr><TAB>
 " }}}
 
 let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
+
+let g:tagbar_compact = 1
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_ignore_case = 1
