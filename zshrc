@@ -7,6 +7,8 @@ plugins=(git git-extras)
 autoload -Uz compinit
 compinit
 
+source $ZSH/oh-my-zsh.sh
+
 export BULLETTRAIN_DIR_FG=black
 export BULLETTRAIN_EXEC_TIME_SHOW=true
 export BULLETTRAIN_PROMPT_CHAR=("%{$fg[white]%}λ")
@@ -17,8 +19,6 @@ export GOPATH=~/dev
 export NPM_TOKEN=''
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/dev/bin:$HOME/bin:$HOME/.cargo/bin/"
 export TERM="xterm-256color"
-
-source $ZSH/oh-my-zsh.sh
 
 alias disable_colemak="setxkbmap br"
 alias dot="source ~/.zshrc"
@@ -34,7 +34,7 @@ function cdd() {
 
 /usr/bin/setxkbmap -option "ctrl:nocaps" # capslock acts as control
 
-fpath=(~/.zsh/completions $fpath) 
+fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
 # tabtab source for serverless package
