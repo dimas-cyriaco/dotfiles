@@ -126,11 +126,9 @@ nnoremap <right> <nop>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
 inoremap jk <esc>
-imap <C-j> <Plug>(neosnippet_expand_or_jump)
-inoremap <expr><TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <C-b> <Plug>(neosnippet_expand_or_jump)
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+			\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 " }}}
 
 let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
