@@ -50,7 +50,12 @@ options     head
 snippet     cl
 abbr        console.log(...)
 options     head
-        console.log(${1});
+        console.log(${1:message});${2}
+
+snippet     cd
+abbr        console.dir(...)
+options     head
+        console.dir(${1:object});${2}
 
 snippet     cw
 abbr        console.warn(...)
