@@ -22,6 +22,7 @@ if dein#load_state('/home/dimas/.cache/dein')
   call dein#add('editorconfig/editorconfig-vim')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('ternjs/tern_for_vim')
+  call dein#add('carlitux/deoplete-ternjs')
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/vimfiler.vim')
   call dein#add('tomtom/tcomment_vim')
@@ -63,6 +64,7 @@ set foldlevel=99
 set foldmethod=syntax
 set hidden
 set incsearch
+set noautochdir
 set noshowmode
 set noswapfile
 set number
@@ -82,15 +84,15 @@ nnoremap <silent> <expr> gV "`[".getregtype(v:register)[0]."`]"
 
 nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <silent> <leader>as :NeoSnippetEdit<CR>
-nnoremap <silent> <leader>di :call dein#install()<CR>
 nnoremap <silent> <leader>ei :vsplit $MYVIMRC<CR>
-nnoremap <silent> <leader>g  :Denite grep -mode=normal -reversed<CR>
+nnoremap <silent> <leader>s  :Denite grep -mode=normal -reversed<CR>
 nnoremap <silent> <leader>h <c-w>h
 nnoremap <silent> <leader>j <c-w>j
 nnoremap <silent> <leader>k <c-w>k
 nnoremap <silent> <leader>l <c-w>l
 nnoremap <silent> <leader>n  :Denite buffer -mode=normal -reversed<CR>
 nnoremap <silent> <leader>p  :Denite file_rec -reversed<CR>
+nnoremap <silent> <leader>d :TernDef<CR>
 
 " Fechar buffer atual e ir para ultimo buffer editado
 nnoremap <silent> <leader>q  :bd<CR>
@@ -205,3 +207,4 @@ endfunction
 nnoremap <leader>ujt :call UpdateJavascriptTags()<CR>
 autocmd BufNewFile,BufRead *.rb set makeprg=rake
 
+let g:startify_change_to_dir=0
