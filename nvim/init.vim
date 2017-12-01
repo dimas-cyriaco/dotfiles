@@ -93,6 +93,7 @@ nnoremap <silent> <leader>l <c-w>l
 nnoremap <silent> <leader>n  :Denite buffer -mode=normal -reversed<CR>
 nnoremap <silent> <leader>p  :Denite file_rec -reversed<CR>
 nnoremap <silent> <leader>d :TernDef<CR>
+nnoremap <silent> <leader>u :TernRefs<CR>
 
 " Fechar buffer atual e ir para ultimo buffer editado
 nnoremap <silent> <leader>q  :bd<CR>
@@ -201,10 +202,10 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 let g:javascript_plugin_flow = 1
 
-function! UpdateJavascriptTags() abort
-  execute '!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
-endfunction
-nnoremap <leader>ujt :call UpdateJavascriptTags()<CR>
 autocmd BufNewFile,BufRead *.rb set makeprg=rake
 
 let g:startify_change_to_dir=0
+
+" Use tern_for_vim.
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
