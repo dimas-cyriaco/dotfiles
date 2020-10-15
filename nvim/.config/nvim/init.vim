@@ -21,6 +21,16 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('tpope/vim-surround')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('alvan/vim-closetag')
+  call dein#add('neoclide/coc.nvim', { 'rev': 'release' })
+  call dein#add('neoclide/coc-json', { 'build': 'yarn install --frozen-lockfile' })
+  call dein#add('neoclide/coc-tsserver', { 'build': 'yarn install --frozen-lockfile' })
+  call dein#add('neoclide/coc-snippets', { 'build': 'yarn install --frozen-lockfile' })
+  call dein#add('prettier/vim-prettier')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('mhinz/vim-startify')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('lambdalisue/gina.vim')
 
   call dein#end()
   call dein#save_state()
@@ -70,6 +80,13 @@ set noshowmode
 " Wrap long lines
 set wrap
 
+" Disable backup files
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 
@@ -96,7 +113,7 @@ nnoremap <leader>l <C-w>l
 " Keybinding
 
 " Close window
-nnoremap <leader>wq :q<CR>
+nnoremap <leader>wc :q<CR>
 
 " Save file
 nnoremap <leader>fs :w<CR>
@@ -111,7 +128,7 @@ nnoremap <leader>ie :vsplit $MYVIMRC<CR>
 inoremap tn <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
-inoremap : <nop>
+noremap : <nop>
 
 nnoremap <leader>. @q
 
@@ -137,8 +154,8 @@ call defx#custom#option('_', {
             \ 'preview_height': 20
             \ })
 
-nnoremap <leader>ft :Defx<CR>
-nnoremap <leader>fo :Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>
+nnoremap <silent><leader>ft :Defx<CR>
+nnoremap <silent><leader>fo :Defx -resume -search=`expand('%:p')` `getcwd()`<CR>zz
 
 " function! s:map_defx(key, action)
   " nnoremap <silent><buffer><expr> key action
@@ -152,14 +169,14 @@ augroup defx_settings
   function! s:defx_my_settings() abort
     " Define mappings
     " call s:map_defx(<CR> defx#do_action('open'))
-    nnoremap <silent><buffer><expr> <CR> defx#do_action('open')
+    nnoremap <silent><buffer><expr> <CR> defx#do_action('multi', ['drop', 'quit'])
+    nnoremap <silent><buffer><expr> o defx#do_action('drop')
     nnoremap <silent><buffer><expr> c defx#do_action('copy')
     nnoremap <silent><buffer><expr> m defx#do_action('move')
     nnoremap <silent><buffer><expr> p defx#do_action('paste')
-    nnoremap <silent><buffer><expr> l defx#do_action('open')
+    nnoremap <silent><buffer><expr> l defx#do_action('open_tree', 'toggle')
     nnoremap <silent><buffer><expr> E defx#do_action('open', 'vsplit')
     nnoremap <silent><buffer><expr> P defx#do_action('preview')
-    nnoremap <silent><buffer><expr> o defx#do_action('open_tree', 'toggle')
     nnoremap <silent><buffer><expr> K defx#do_action('new_directory')
     nnoremap <silent><buffer><expr> N defx#do_action('new_file')
     nnoremap <silent><buffer><expr> M defx#do_action('new_multiple_files')
@@ -205,32 +222,6 @@ call denite#custom#var('grep', 'final_opts', [])
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
 
-" \ 'split': 'floating',
-" let s:denite_options = {'default' : {
-" \ 'start_filter': 1,
-" \ 'auto_resize': 1,
-" \ 'source_names': 'short',
-" \ 'prompt': '🔍',
-" \ 'winrow': 1,
-" \ 'vertical_preview': 1
-" \ }}
-
-" try
-" " Loop through denite options and enable them
-" function! s:profile(opts) abort
-"   for l:fname in keys(a:opts)
-"     for l:dopt in keys(a:opts[l:fname])
-"       call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
-"     endfor
-"   endfor
-" endfunction
-
-" call s:profile(s:denite_options)
-" catch
-"   echo 'Denite not installed. It should work after running :PlugInstall'
-" endtry
-
-" call denite#custom#source('file/rec', 'sorters', ['sorter_sublime'])
 " call denite#custom#option('_',
 " 	\ 'max_dynamic_update_candidates', 1000000)
 
@@ -246,17 +237,17 @@ augroup denite_settings
     nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
     nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
     nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
-    nnoremap <silent><buffer><expr> <C-v> denite#do_map('do_action', 'vsplit')
+    nnoremap <silent><buffer><expr> E denite#do_map('do_action', 'vsplit')
     nnoremap <silent><buffer><expr> <C-x> denite#do_map('do_action', 'split')
     nnoremap <silent><buffer><expr> q denite#do_map('quit')
     nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
     nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
   endfunction
 
-  " autocmd FileType denite-filter call s:denite_filter_my_settings()
-  " function! s:denite_filter_my_settings() abort
-  "   inoremap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
-  "   inoremap <silent><buffer><expr> <Esc> denite#do_map('quit')
+  autocmd FileType denite-filter call s:denite_filter_my_settings()
+  function! s:denite_filter_my_settings() abort
+    inoremap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
+    " inoremap <silent><buffer><expr> <Esc> denite#do_map('quit')
   "   nnoremap <silent><buffer><expr> <Esc>
   "  denite#do_map('quit')
   "   nnoremap <silent><buffer><expr> q denite#do_map('quit')
@@ -264,7 +255,7 @@ augroup denite_settings
   "   inoremap <silent><buffer><expr> <C-t> denite#do_map('do_action', 'tabopen')
   "   inoremap <silent><buffer><expr> <C-v> denite#do_map('do_action', 'vsplit')
   "   inoremap <silent><buffer><expr> <C-h> denite#do_map('do_action', 'split')
-  " endfunction
+  endfunction
 augroup END
 
 
@@ -289,3 +280,75 @@ augroup END
 " JSX
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx"
+
+" CoC specific configs
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+augroup coc_settings
+  " Use tab for trigger completion with characters ahead and navigate.
+  inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+  
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  " Use <c-d> to trigger completion.
+  inoremap <silent><expr> <c-d> coc#refresh()
+
+  " format on enter, <cr> could be remapped by other vim plugin
+  inoremap <silent><expr> <c-cr> pumvisible() ? coc#_select_confirm()
+                                \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+  " GoTo code navigation.
+  nnoremap <silent> gd <Plug>(coc-definition)
+  nnoremap <silent> gy <Plug>(coc-type-definition)
+  nnoremap <silent> gi <Plug>(coc-implementation)
+  nnoremap <silent> gr <Plug>(coc-references)
+
+  nnoremap <silent><leader>d :call CocActionAsync('doHover')<cr>
+augroup END
+
+" Prettier
+
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#exec_cmd_async = 1
+
+augroup prettier_settings
+  autocmd!
+
+  nnoremap <silent><leader>ff :PrettierAsync<cr>
+augroup END
+
+" Airline settings
+
+let g:airline_powerline_fonts = 1
+
+" Coc Snippet
+
+augroup coc_snippet_settings
+  autocmd!
+
+  imap <c-o> <Plug>(coc-snippets-expand)
+  nnoremap <leader>sl :CocList snippets<cr>
+  nnoremap <leader>se :CocCommand snippets.editSnippets<cr>
+augroup END
