@@ -342,6 +342,8 @@ augroup END
 " Airline settings
 
 let g:airline_powerline_fonts = 1
+let g:airline_theme='gruvbox'
+let g:airline_section_y='%{system("node --version")[0:-2]}'
 
 " Coc Snippet
 
@@ -351,4 +353,13 @@ augroup coc_snippet_settings
   imap <c-o> <Plug>(coc-snippets-expand)
   nnoremap <leader>sl :CocList snippets<cr>
   nnoremap <leader>se :CocCommand snippets.editSnippets<cr>
+augroup END
+
+" Gina settings
+
+augroup gina_settings
+  autocmd!
+
+  nnoremap <silent><leader>gs :Gina status<cr>
+  nnoremap <silent><leader>gc :Gina commit<cr>
 augroup END
