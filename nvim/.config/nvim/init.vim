@@ -1,3 +1,4 @@
+" Dein configuration {{{
 if &compatible
   set NOCOMPATIBLE
 endif
@@ -16,8 +17,6 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('Shougo/denite.nvim')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('tpope/vim-commentary')
-  " call dein#add('pangloss/vim-javascript.git')
-  " call dein#add('MaxMEllon/vim-jsx-pretty')
   call dein#add('tpope/vim-surround')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('alvan/vim-closetag')
@@ -25,12 +24,14 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('neoclide/coc-json', { 'build': 'yarn install --frozen-lockfile' })
   call dein#add('neoclide/coc-tsserver', { 'build': 'yarn install --frozen-lockfile' })
   call dein#add('neoclide/coc-snippets', { 'build': 'yarn install --frozen-lockfile' })
-  call dein#add('prettier/vim-prettier')
+  call dein#add('prettier/vim-prettier', { 'build': 'yarn install' })
   call dein#add('airblade/vim-gitgutter')
   call dein#add('mhinz/vim-startify')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
+  " call dein#add('vim-airline/vim-airline')
+  " call dein#add('vim-airline/vim-airline-themes')
   call dein#add('lambdalisue/gina.vim')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('itchyny/vim-gitbranch')
 
   call dein#end()
   call dein#save_state()
@@ -42,8 +43,9 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+" }}}
 
-" Configuraçoes
+" Configuraçoes {{{
 
 " Leader
 let mapleader=" "
@@ -87,12 +89,21 @@ set nowritebackup
 " Give more space for displaying messages.
 set cmdheight=2
 
+" }}}
+
+" Terminal settings {{{
+
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 
-" Terminal settings
-" start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+augroup terminal_settings
+  autocmd!
+
+  " Terminal settings
+  " start terminal in insert mode
+  autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+augroup END
+
 " open terminal on ctrl+n
 function! OpenTerminal()
   vsplit term://zsh
@@ -109,8 +120,9 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+" }}}
 
-" Keybinding
+" Keybinding {{{
 
 " Close window
 nnoremap <leader>wc :q<CR>
@@ -135,7 +147,9 @@ nnoremap <leader>. @q
 " Abbreviations
 iabbrev @@ dimascyriaco@pm.me
 
-" File Explorer
+" }}}
+
+" Defx setings {{{
 
 call defx#custom#column('icon', {
       \ 'directory_icon': '▸',
@@ -157,10 +171,6 @@ call defx#custom#option('_', {
 nnoremap <silent><leader>ft :Defx<CR>
 nnoremap <silent><leader>fo :Defx -resume -search=`expand('%:p')` `getcwd()`<CR>zz
 
-" function! s:map_defx(key, action)
-  " nnoremap <silent><buffer><expr> key action
-" endfunction
-
 augroup defx_settings
   autocmd!
 
@@ -168,19 +178,18 @@ augroup defx_settings
 
   function! s:defx_my_settings() abort
     " Define mappings
-    " call s:map_defx(<CR> defx#do_action('open'))
     nnoremap <silent><buffer><expr> <CR> defx#do_action('multi', ['drop', 'quit'])
     nnoremap <silent><buffer><expr> o defx#do_action('drop')
     nnoremap <silent><buffer><expr> c defx#do_action('copy')
     nnoremap <silent><buffer><expr> m defx#do_action('move')
     nnoremap <silent><buffer><expr> p defx#do_action('paste')
-    nnoremap <silent><buffer><expr> l defx#do_action('open_tree', 'toggle')
-    nnoremap <silent><buffer><expr> E defx#do_action('open', 'vsplit')
+    nnoremap <silent><buffer><expr> t defx#do_action('open_tree', 'toggle')
+    nnoremap <silent><buffer><expr> E defx#do_action('multi', [['open', vsplit], 'quit'])
     nnoremap <silent><buffer><expr> P defx#do_action('preview')
     nnoremap <silent><buffer><expr> K defx#do_action('new_directory')
     nnoremap <silent><buffer><expr> N defx#do_action('new_file')
     nnoremap <silent><buffer><expr> M defx#do_action('new_multiple_files')
-    nnoremap <silent><buffer><expr> C defx#do_action('toggle_columns',                'mark:indent:icon:filename:type:size:time')
+    nnoremap <silent><buffer><expr> C defx#do_action('toggle_columns', 'mark:indent:icon:filename:type:size:time')
     nnoremap <silent><buffer><expr> S defx#do_action('toggle_sort', 'time')
     nnoremap <silent><buffer><expr> d defx#do_action('remove')
     nnoremap <silent><buffer><expr> r defx#do_action('rename')
@@ -189,8 +198,6 @@ augroup defx_settings
     nnoremap <silent><buffer><expr> yy defx#do_action('yank_path')
     nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')
     nnoremap <silent><buffer><expr> ; defx#do_action('repeat')
-    nnoremap <silent><buffer><expr> h defx#do_action('cd', ['..'])
-    nnoremap <silent><buffer><expr> ~ defx#do_action('cd')
     nnoremap <silent><buffer><expr> q defx#do_action('quit')
     nnoremap <silent><buffer><expr> <Space> defx#do_action('toggle_select') . 'j'
     nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')
@@ -202,11 +209,13 @@ augroup defx_settings
   endfunction
 augroup END
 
-" Denite
+" }}}
+
+" Denite {{{
 
 " Use ripgrep to find files.
 call denite#custom#var('file/rec', 'command',
-	\ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
+  \ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
 
 " Use ripgrep to grep files.
 call denite#custom#var('grep', 'command', ['rg'])
@@ -258,7 +267,9 @@ augroup denite_settings
   endfunction
 augroup END
 
+" }}}
 
+" Javascript Settings {{{
 augroup javascript_settings
   autocmd!
 
@@ -273,15 +284,15 @@ augroup END
 " Folding
 
 augroup javascript_folding
-    autocmd!
-    autocmd FileType javascript setlocal foldmethod=syntax
+  autocmd!
+  autocmd FileType javascript setlocal foldmethod=syntax
 augroup END
 
 " JSX
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx"
 
-" CoC specific configs
+" CoC specific configs {{{
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -300,10 +311,10 @@ endif
 augroup coc_settings
   " Use tab for trigger completion with characters ahead and navigate.
   inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-  
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
   function! s:check_back_space() abort
@@ -326,9 +337,11 @@ augroup coc_settings
 
   nnoremap <silent><leader>d :call CocActionAsync('doHover')<cr>
 augroup END
+" }}}
 
-" Prettier
+" Prettier {{{
 
+let g:prettier#config#config_precedence = 'file-override'
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#exec_cmd_async = 1
@@ -339,14 +352,15 @@ augroup prettier_settings
   nnoremap <silent><leader>ff :PrettierAsync<cr>
 augroup END
 
+" }}}
+
 " Airline settings
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
-let g:airline_section_y='%{system("node --version")[0:-2]}'
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme='gruvbox'
+" let g:airline_section_y='%{system("node --version")[0:-2]}'
 
-" Coc Snippet
-
+" Coc Snippet {{{
 augroup coc_snippet_settings
   autocmd!
 
@@ -354,12 +368,98 @@ augroup coc_snippet_settings
   nnoremap <leader>sl :CocList snippets<cr>
   nnoremap <leader>se :CocCommand snippets.editSnippets<cr>
 augroup END
+" }}}
 
-" Gina settings
+" Gina settings {{{
 
 augroup gina_settings
   autocmd!
 
   nnoremap <silent><leader>gs :Gina status<cr>
   nnoremap <silent><leader>gc :Gina commit<cr>
+augroup END
+
+" }}}
+
+" Startify settings {{{
+
+" Don't 'cd' to bookmark dir
+let g:startify_change_to_dir = 0
+
+" }}}
+
+" Lightline settings {{{
+
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'nodeversion', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'LightlineGitBranch',
+      \   'mode': 'LightlineMode',
+      \   'fileformat': 'LightlineFileformat',
+      \   'filetype': 'LightlineFiletype',
+      \   'filename': 'LightlineFilename',
+      \ },
+      \ 'component_function_visible_condition': {
+      \   'gitbranch': 1,
+      \ },
+      \ 'component': {
+      \   'lineinfo': '%3l:%-2v%<',
+      \ },
+      \ 'mode_map': {
+      \   'n' : 'N',
+      \   'i' : 'I',
+      \   'R' : 'R',
+      \   'v' : 'V',
+      \   'V' : 'VL',
+      \   "\<C-v>": 'VB',
+      \   'c' : 'C',
+      \   's' : 'S',
+      \   'S' : 'SL',
+      \   "\<C-s>": 'SB',
+      \   't': 'T',
+      \ },
+      \ }
+
+function! LightlineGitBranch()
+  return &filetype ==# 'denite' ? '':
+        \ &filetype ==# 'denite-filter' ? '' :
+        \ &filetype ==# 'defx' ? '' :
+        \ gitbranch#name()
+endfunction
+
+function! LightlineNodeVersion()
+  return system("node --version")[0:-2]
+endfunction
+
+function! LightlineMode()
+  return &filetype ==# 'denite' ? 'Denite':
+        \ &filetype ==# 'denite-filter' ? 'Denite' :
+        \ &filetype ==# 'defx' ? 'Defx' :
+        \ lightline#mode()
+endfunction
+
+function! LightlineFilename()
+  return &filetype ==# 'denite' ? '':
+        \ &filetype ==# 'denite-filter' ? '' :
+        \ &filetype ==# 'defx' ? '' :
+        \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+" }}}
+
+augroup vim_ft_settings
+  autocmd!
+
+  autocmd FileType vim setlocal foldmethod=marker
 augroup END
