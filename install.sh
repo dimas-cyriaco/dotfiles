@@ -3,18 +3,21 @@
 brew install git
 brew install neovim
 brew install zplug
+brew install stow
+brew install nvm
+
 brew cask install alacritty
 brew cask install font-sauce-code-pro-nerd-font
 brew cask install github
 
-echo "stow zsh"
 stow zsh
-echo "stow nvim"
 stow nvim
-echo "stow alacritty"
 stow alacritty
 
 sudo pip3 install pynvim
+
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $TMPDIR/installer.sh
+sh $TMPDIR/installer.sh ~/.cache/dein
 
 nvim +call dein#install()
 nvim +UpdateRemotePlugins +qall
