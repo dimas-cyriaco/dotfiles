@@ -1,25 +1,15 @@
 #!/usr/bin/env bash
 
-fail() {
-  echo $1
-  exit 1
-}
+brew install git
+brew install neovim
+brew cask install alacritty
+brew install zplug
+# brew tap homebrew/cask-fonts
+brew cask install font-sauce-code-pro-nerd-font
 
-assert_installed() {
-  hash $1 2>/dev/null
-  if [ $? -eq 1 ]; then
-    fail "$1 is not installed"
-  fi
-}
-
-assert_installed git
-assert_installed zsh
-assert_installed nvim
-assert_installed ctags
-assert_installed ag
-assert_installed go
-# assert_installed yriac
-assert_installed pip3
+stow zsh
+stow neovim
+stow alacritty
 
 if [ -z "$USER_EMAIL" ]; then
   fail "USER_EMAIL is not set"
@@ -36,19 +26,9 @@ fi
 
 cat "$ssh_key_file"
 
-sudo usermod -s $(which zsh) $USER
-# or
-# chsh -s $(which zsh)
+sudo pip3 install pynvim
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo pip3 install neovim
-
-ln -sf $(pwd)/zshrc $HOME/.zshrc
-ln -sf $(pwd)/nvim $HOME/.config/nvim
-cp -sf $(pwd)/bullet-train.zsh-theme $HOME/.oh-my-zsh/themes/bullet-train.zsh-theme
-cp -sf $(pwd)/.gitconfig $HOME/.gitconfig
-
-nvim +PlugInstall +qall
+nvim +call dein#install()
 nvim +UpdateRemotePlugins +qall
 
 git config --global core.editor nvim

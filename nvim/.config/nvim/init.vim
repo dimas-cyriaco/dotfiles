@@ -3,7 +3,7 @@ if &compatible
   set NOCOMPATIBLE
 endif
 
-set runtimepath+=/Users/dimascyriaco/.local/share/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/dimascyriaco/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#begin('/Users/dimascyriaco/.local/share/dein')
