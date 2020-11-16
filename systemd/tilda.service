@@ -1,8 +1,0 @@
-[Unit]
-Description=Tilda
-
-[Service]
-ExecStart=/usr/bin/tilda
-
-[Install]
-WantedBy=multi-user.target
