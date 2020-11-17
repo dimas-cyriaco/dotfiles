@@ -21,12 +21,14 @@ stow alacritty
 echo "127.0.0.1 local.jusbrasil.com.br" | sudo tee -a /etc/hosts
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | zsh
+
+zsh
+nvm install 10
+nvm alias default 10
+nvm use 10
+
 npm install -g avn avn-nvm
 avn setup
-
-nvm install 14
-nvm alias default 14
-nvm use 14
 
 npm install -g yarn
 
