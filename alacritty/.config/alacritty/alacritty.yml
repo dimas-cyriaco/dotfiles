@@ -16,9 +16,12 @@ env:
 
 # Window dimensions in character columns and lines
 # (changes require restart)
-dimensions:
-  columns: 180
-  lines: 48
+window:
+  # dimensions:
+  #   columns: 180
+  #   lines: 48
+
+  startup_mode: Maximized
 
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.

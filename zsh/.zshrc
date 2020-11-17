@@ -20,7 +20,7 @@ export ALIEN_USE_NERD_FONT=1
 export NVM_DIR="$HOME/.nvm"
 
 # Options
-setopt autocd autopushd \ pushdignoredups
+setopt autocd autopushd pushdignoredups
 setopt inc_append_history
 setopt share_history
 
