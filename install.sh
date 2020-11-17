@@ -17,6 +17,7 @@ brew cask install bartender
 stow zsh
 stow nvim
 stow alacritty
+stow git
 
 echo "127.0.0.1 local.jusbrasil.com.br" | sudo tee -a /etc/hosts
 

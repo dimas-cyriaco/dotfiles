@@ -14,10 +14,14 @@
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
   wip = !git add -u && git commit -m "WIP" 
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [user]
-	email = dimascyriaco@gmail.com
-  name = Dimas
-	name = Dimas
+	name = Dimas Cyriaco
+	email = dimascyriaco@pm.me
 [pager]
   diff = diff-so-fancy | less --tabs=4 -RFX
   show = diff-so-fancy | less --tabs=4 -RFX
