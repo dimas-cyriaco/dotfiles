@@ -4,7 +4,6 @@ brew install git
 brew install neovim
 brew install zplug
 brew install stow
-brew install nvm
 
 brew cask install alacritty
 brew cask install font-sauce-code-pro-nerd-font
@@ -19,12 +18,23 @@ stow zsh
 stow nvim
 stow alacritty
 
+echo "127.0.0.1 local.jusbrasil.com.br" | sudo tee -a /etc/hosts
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | zsh
+npm install -g avn avn-nvm
+avn setup
+
+nvm install 14
+nvm alias default 14
+nvm use 14
+
+npm install -g yarn
+
 sudo pip3 install pynvim
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $TMPDIR/installer.sh
 sh $TMPDIR/installer.sh ~/.cache/dein
 
-nvim +call dein#install()
 nvim +UpdateRemotePlugins +qall
 
 if [ -z "$NEXUS_EMAIL" ]; then
@@ -33,7 +43,7 @@ if [ -z "$NEXUS_EMAIL" ]; then
 
   npm set registry https://nexus.apps.jusbr.com/repository/npm-all/
   npm set email $NEXUS_EMAIL
-  npm set _auth $(echo -n "$GITHUB_USERNAME:$GITHUB_ACCESS_TOKEN" | base64)
+  npm set _auth $(echo -n $GITHUB_USERNAME:$GITHUB_ACCESS_TOKEN | base64)
   npm set always-auth true
 fi
 
