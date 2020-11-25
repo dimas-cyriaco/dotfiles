@@ -11,6 +11,7 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('/Users/dimascyriaco/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('wsdjeg/dein-ui.vim')
+  
   call dein#add('reedes/vim-wheel')
   call dein#add('morhetz/gruvbox')
   call dein#add('Shougo/defx.nvim')
@@ -27,11 +28,11 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('prettier/vim-prettier', { 'build': 'yarn install' })
   call dein#add('airblade/vim-gitgutter')
   call dein#add('mhinz/vim-startify')
-  " call dein#add('vim-airline/vim-airline')
-  " call dein#add('vim-airline/vim-airline-themes')
   call dein#add('lambdalisue/gina.vim')
   call dein#add('itchyny/lightline.vim')
   call dein#add('itchyny/vim-gitbranch')
+  call dein#add('MaxMEllon/vim-jsx-pretty')
+  call dein#add('peitalin/vim-jsx-typescript')
 
   call dein#end()
   call dein#save_state()
@@ -89,6 +90,15 @@ set nowritebackup
 " Give more space for displaying messages.
 set cmdheight=2
 
+" Setup persistent undo
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+set undolevels=1000
+set undoreload=10000
+
 " }}}
 
 " Terminal settings {{{
@@ -140,7 +150,7 @@ nnoremap <leader>ie :vsplit $MYVIMRC<CR>
 inoremap tn <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
-noremap : <nop>
+" noremap : <nop>
 
 nnoremap <leader>. @q
 
