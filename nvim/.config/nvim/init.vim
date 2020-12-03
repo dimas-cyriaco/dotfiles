@@ -33,6 +33,9 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('itchyny/vim-gitbranch')
   call dein#add('MaxMEllon/vim-jsx-pretty')
   call dein#add('peitalin/vim-jsx-typescript')
+  call dein#add('jparise/vim-graphql')
+  call dein#add('editorconfig/editorconfig-vim')
+  call dein#add('christoomey/vim-tmux-navigator')
 
   call dein#end()
   call dein#save_state()
@@ -120,19 +123,10 @@ function! OpenTerminal()
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
-" Movement
-" TODO: Mudar o leader quando for terminal para nao ser <SPACE>
-tnoremap <leader>h <C-\><C-n><C-w>h
-tnoremap <leader>j <C-\><C-n><C-w>j
-tnoremap <leader>k <C-\><C-n><C-w>k
-tnoremap <leader>l <C-\><C-n><C-w>l
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
-" }}}
-
 " Keybinding {{{
+
+" Show documentation
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " Close window
 nnoremap <leader>wc :q<CR>

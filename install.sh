@@ -4,6 +4,7 @@ brew install git
 brew install neovim
 brew install zplug
 brew install stow
+brew install tmux
 
 brew cask install alacritty
 brew cask install font-sauce-code-pro-nerd-font
@@ -18,6 +19,7 @@ stow zsh
 stow nvim
 stow alacritty
 stow git
+stow tmux
 
 echo "127.0.0.1 local.jusbrasil.com.br" | sudo tee -a /etc/hosts
 
@@ -39,6 +41,8 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh $TMPDIR/installer.sh ~/.cache/dein
 
 nvim +UpdateRemotePlugins +qall
+
+git clone https://github.com/tmux-plugins/tpm $XDG_CONFIG_HOME/tmux/plugins/tpm
 
 if [ -z "$NEXUS_EMAIL" ]; then
   : ${GITHUB_USERNAME?"Need to set GITHUB_USERNAME"}
