@@ -42,3 +42,5 @@ bindkey -v
 # Aliases
 alias la="ls -lah"
 alias ll="ls -lh"
+alias eiv="nvim $HOME/dotfiles/nvim/.config/nvim/init.vim"
+alias dot="source $HOME/.zshrc"

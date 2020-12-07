@@ -36,6 +36,8 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('jparise/vim-graphql')
   call dein#add('editorconfig/editorconfig-vim')
   call dein#add('christoomey/vim-tmux-navigator')
+  call dein#add('dart-lang/dart-vim-plugin')
+  call dein#add('thosakwe/vim-flutter')
 
   call dein#end()
   call dein#save_state()
@@ -54,20 +56,23 @@ endif
 " Leader
 let mapleader=" "
 
-" Mouse support
+" Suporte a mouse
 set mouse=a
 
-" Set relative line numbers
+" Habilita número de linhas e linhas relativas
 set number
 set relativenumber
 
-" Set color scheme to gruvbox
+" Configura cores para gruvbox
 colorscheme gruvbox
 
-" Don't show last command
+" Aumenta limite de linhas copiadas
+set viminfo='20,<1000,s1000
+
+" Não mostra ultimo comando
 set noshowcmd
 
-" Insert spaces when TAB is pressed.
+" Insere espaços no lugar de TABs
 set expandtab
 
 " Disable line/column number in status line
@@ -101,7 +106,6 @@ set undodir=/tmp/.vim-undo-dir
 set undofile
 set undolevels=1000
 set undoreload=10000
-
 " }}}
 
 " Terminal settings {{{
@@ -122,6 +126,7 @@ function! OpenTerminal()
   vsplit term://zsh
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
+" }}}
 
 " Keybinding {{{
 
@@ -148,9 +153,28 @@ inoremap <c-c> <nop>
 
 nnoremap <leader>. @q
 
+" CoC mappings
+nmap <silent><leader> gd <Plug>(coc-definition)
+nmap <silent><leader> gy <Plug>(coc-type-definition)
+nmap <silent><leader> gi <Plug>(coc-implementation)
+nmap <silent><leader> gr <Plug>(coc-references)
+
+" Flutter
+nnoremap <leader>fa :FlutterRun<cr>
+nnoremap <leader>fq :FlutterQuit<cr>
+nnoremap <leader>fr :FlutterHotReload<cr>
+nnoremap <leader>fR :FlutterHotRestart<cr>
+nnoremap <leader>fD :FlutterVisualDebug<cr>
+
 " Abbreviations
 iabbrev @@ dimascyriaco@pm.me
 
+" }}}
+
+" Vim Wheel {{{
+let g:wheel#map#mouse = 0
+let g:wheel#map#up   = '<M-k>'
+let g:wheel#map#down = '<M-j>'
 " }}}
 
 " Defx setings {{{
@@ -295,12 +319,25 @@ augroup END
 " JSX
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx"
+" }}}
 
 " CoC specific configs {{{
+
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
@@ -329,17 +366,75 @@ augroup coc_settings
   " Use <c-d> to trigger completion.
   inoremap <silent><expr> <c-d> coc#refresh()
 
+  " Make <CR> auto-select the first completion item and notify coc.nvim to
   " format on enter, <cr> could be remapped by other vim plugin
   inoremap <silent><expr> <c-cr> pumvisible() ? coc#_select_confirm()
                                 \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  
+  " Use `[g` and `]g` to navigate diagnostics
+  " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+  nmap <silent><leader>dn <Plug>(coc-diagnostic-prev)
+  nmap <silent><leader>dp <Plug>(coc-diagnostic-next)
 
   " GoTo code navigation.
-  nnoremap <silent> gd <Plug>(coc-definition)
-  nnoremap <silent> gy <Plug>(coc-type-definition)
-  nnoremap <silent> gi <Plug>(coc-implementation)
-  nnoremap <silent> gr <Plug>(coc-references)
+  nnoremap <silent><leader>gd :call CocActionAsync('jumpDefinition')<cr>
+  nnoremap <silent><leader>gy <Plug>(coc-type-definition)
+  nnoremap <silent><leader>gi <Plug>(coc-implementation)
+  nnoremap <silent><leader>gr <Plug>(coc-references)
 
-  nnoremap <silent><leader>d :call CocActionAsync('doHover')<cr>
+  nnoremap <silent><leader>ds :call CocActionAsync('doHover')<cr>
+
+  " Highlight the symbol and its references when holding the cursor.
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+
+  " Symbol renaming.
+  nmap <leader>rn <Plug>(coc-rename)
+
+  " Formatting selected code.
+  xmap <leader>fc  <Plug>(coc-format-selected)
+  nmap <leader>fc  <Plug>(coc-format-selected)
+
+  " Applying codeAction to the selected region.
+  nmap <leader>a  <Plug>(coc-codeaction-selected)
+  " Remap keys for applying codeAction to the current buffer.
+  nmap <leader>cf  <Plug>(coc-codeaction)
+
+  " Remap <C-f> and <C-b> for scroll float windows/popups.
+  if has('nvim-0.4.0') || has('patch-8.2.0750')
+    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  endif
+
+  " Mappings for CoCList
+  " Show all diagnostics.
+  nnoremap <silent><nowait> <space>la  :<C-u>CocList diagnostics<cr>
+  " Manage extensions.
+  nnoremap <silent><nowait> <space>le  :<C-u>CocList extensions<cr>
+  " Show commands.
+  nnoremap <silent><nowait> <space>lc  :<C-u>CocList commands<cr>
+  " Find symbol of current document.
+  nnoremap <silent><nowait> <space>lo  :<C-u>CocList outline<cr>
+  " Search workspace symbols.
+  nnoremap <silent><nowait> <space>ls  :<C-u>CocList -I symbols<cr>
+  " Do default action for next item.
+  nnoremap <silent><nowait> <space>lj  :<C-u>CocNext<CR>
+  " Do default action for previous item.
+  nnoremap <silent><nowait> <space>lk  :<C-u>CocPrev<CR>
+  " Resume latest coc list.
+  nnoremap <silent><nowait> <space>lp  :<C-u>CocListResume<CR>
+
+  " Add `:Format` command to format current buffer.
+  command! -nargs=0 Format :call CocAction('format')
+
+  " Add `:Fold` command to fold current buffer.
+  command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+  " Add `:OR` command for organize imports of the current buffer.
+  command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 augroup END
 " }}}
 
@@ -358,11 +453,12 @@ augroup END
 
 " }}}
 
-" Airline settings
+" Airline settings {{{
 
 " let g:airline_powerline_fonts = 1
 " let g:airline_theme='gruvbox'
 " let g:airline_section_y='%{system("node --version")[0:-2]}'
+" }}}
 
 " Coc Snippet {{{
 augroup coc_snippet_settings
@@ -462,8 +558,10 @@ endfunction
 
 " }}}
 
+" Folding Settins {{{
 augroup vim_ft_settings
   autocmd!
 
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
+" }}}
