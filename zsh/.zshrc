@@ -20,6 +20,20 @@ export ALIEN_USE_NERD_FONT=1
 export NVM_DIR="$HOME/.nvm"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# Theme
+
+export ALIEN_SECTIONS_LEFT=(
+  exit
+  path
+  vcs_branch:async
+  vcs_status:async
+  vcs_dirty:async
+  newline
+  ssh
+  venv
+  prompt
+)
+
 # Options
 setopt autocd autopushd pushdignoredups
 setopt inc_append_history
