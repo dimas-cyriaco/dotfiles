@@ -56,6 +56,9 @@ endif
 " Leader
 let mapleader=" "
 
+" Disable paste
+" set nopaste
+
 " Suporte a mouse
 set mouse=a
 
@@ -352,9 +355,21 @@ endif
 augroup coc_settings
   " Use tab for trigger completion with characters ahead and navigate.
   inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  let g:coc_snippet_next = '<tab>'
+  " inoremap <silent><expr> <TAB>
+  "   \ pumvisible() ? "\<C-n>" :
+  "   \ <SID>check_back_space() ? "\<TAB>" :
+  "   \ coc#refresh()
 
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
@@ -395,7 +410,9 @@ augroup coc_settings
   nmap <leader>fc  <Plug>(coc-format-selected)
 
   " Applying codeAction to the selected region.
+  vmap <leader>a  <Plug>(coc-codeaction-selected)
   nmap <leader>a  <Plug>(coc-codeaction-selected)
+  nmap <leader>cl  <Plug>(coc-codeaction-line)
   " Remap keys for applying codeAction to the current buffer.
   nmap <leader>cf  <Plug>(coc-codeaction)
 
@@ -464,7 +481,6 @@ augroup END
 augroup coc_snippet_settings
   autocmd!
 
-  imap <c-o> <Plug>(coc-snippets-expand)
   nnoremap <leader>sl :CocList snippets<cr>
   nnoremap <leader>se :CocCommand snippets.editSnippets<cr>
 augroup END
@@ -559,9 +575,9 @@ endfunction
 " }}}
 
 " Folding Settins {{{
-augroup vim_ft_settings
+augroup fold_marker_settings
   autocmd!
 
-  autocmd FileType vim setlocal foldmethod=marker
+  autocmd FileType vim,tmux setlocal foldmethod=marker
 augroup END
 " }}}
