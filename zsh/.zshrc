@@ -19,6 +19,7 @@ export ALIEN_THEME="gruvbox"
 export ALIEN_USE_NERD_FONT=1
 export NVM_DIR="$HOME/.nvm"
 export XDG_CONFIG_HOME="$HOME/.config"
+export PROJECTS_PATH="$HOME/Projetos"
 
 # Theme
 
@@ -59,3 +60,6 @@ alias ll="ls -lh"
 alias eiv="nvim $HOME/dotfiles/nvim/.config/nvim/init.vim"
 alias dot="source $HOME/.zshrc"
 alias hg="history 1 | grep "
+alias otz="dmux -P flutter -s task_zen $PROJECTS_PATH/task_zen"
+alias orc="dmux -P react -s jusbrasil-rc $PROJECTS_PATH/react-components"
+alias odot="dmux -P dev -s dotfiles $HOME/dotfiles"
