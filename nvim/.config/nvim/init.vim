@@ -366,10 +366,6 @@ augroup coc_settings
   endfunction
 
   let g:coc_snippet_next = '<tab>'
-  " inoremap <silent><expr> <TAB>
-  "   \ pumvisible() ? "\<C-n>" :
-  "   \ <SID>check_back_space() ? "\<TAB>" :
-  "   \ coc#refresh()
 
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
@@ -470,13 +466,6 @@ augroup END
 
 " }}}
 
-" Airline settings {{{
-
-" let g:airline_powerline_fonts = 1
-" let g:airline_theme='gruvbox'
-" let g:airline_section_y='%{system("node --version")[0:-2]}'
-" }}}
-
 " Coc Snippet {{{
 augroup coc_snippet_settings
   autocmd!
@@ -574,7 +563,7 @@ endfunction
 
 " }}}
 
-" Folding Settins {{{
+" Folding Settings {{{
 augroup fold_marker_settings
   autocmd!
 
