@@ -1,3 +1,5 @@
+syntax enable
+
 " Dein configuration {{{
 if &compatible
   set NOCOMPATIBLE
@@ -18,8 +20,6 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('Shougo/denite.nvim')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('tpope/vim-commentary')
-  call dein#add('tpope/vim-surround')
-  call dein#add('jiangmiao/auto-pairs')
   call dein#add('alvan/vim-closetag')
   call dein#add('neoclide/coc.nvim', { 'rev': 'release' })
   call dein#add('neoclide/coc-json', { 'build': 'yarn install --frozen-lockfile' })
@@ -38,13 +38,13 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('dart-lang/dart-vim-plugin')
   call dein#add('thosakwe/vim-flutter')
+  call dein#add('/kristijanhusak/defx-icons')
 
   call dein#end()
   call dein#save_state()
 endif
 
 filetype plugin indent on
-syntax enable
 
 if dein#check_install()
   call dein#install()
@@ -67,7 +67,15 @@ set number
 set relativenumber
 
 " Configura cores para gruvbox
+set background=dark
 colorscheme gruvbox
+
+highlight! link SignColumn LineNr
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
 
 " Aumenta limite de linhas copiadas
 set viminfo='20,<1000,s1000
@@ -200,7 +208,7 @@ call defx#custom#option('_', {
             \ })
 
 nnoremap <silent><leader>ft :Defx<CR>
-nnoremap <silent><leader>fo :Defx -resume -search=`expand('%:p')` `getcwd()`<CR>zz
+nnoremap <silent><leader>fo :CocCommand explorer<cr>
 
 augroup defx_settings
   autocmd!
