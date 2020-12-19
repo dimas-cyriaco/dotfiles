@@ -15,8 +15,6 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('wsdjeg/dein-ui.vim')
   
   call dein#add('reedes/vim-wheel')
-  call dein#add('morhetz/gruvbox')
-  call dein#add('Shougo/defx.nvim')
   call dein#add('Shougo/denite.nvim')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('tpope/vim-commentary')
@@ -38,7 +36,7 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('dart-lang/dart-vim-plugin')
   call dein#add('thosakwe/vim-flutter')
-  call dein#add('/kristijanhusak/defx-icons')
+  call dein#add('lifepillar/vim-gruvbox8')
 
   call dein#end()
   call dein#save_state()
@@ -68,14 +66,20 @@ set relativenumber
 
 " Configura cores para gruvbox
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox8
 
-highlight! link SignColumn LineNr
+" highlight! link SignColumn LineNr
 highlight clear SignColumn
-highlight GitGutterAdd ctermfg=green
-highlight GitGutterChange ctermfg=yellow
-highlight GitGutterDelete ctermfg=red
-highlight GitGutterChangeDelete ctermfg=yellow
+highlight GitGutterAdd ctermfg=green ctermbg=NONE
+highlight GitGutterChange ctermfg=yellow ctermbg=NONE
+highlight GitGutterDelete ctermfg=red ctermbg=NONE
+highlight GitGutterChangeDelete ctermfg=yellow ctermbg=NONE
+
+let g:gitgutter_sign_added='┃'
+let g:gitgutter_sign_modified='┃'
+let g:gitgutter_sign_removed='◢'
+let g:gitgutter_sign_removed_first_line='◥'
+let g:gitgutter_sign_modified_removed='◢'
 
 " Aumenta limite de linhas copiadas
 set viminfo='20,<1000,s1000
@@ -188,66 +192,8 @@ let g:wheel#map#up   = '<M-k>'
 let g:wheel#map#down = '<M-j>'
 " }}}
 
-" Defx setings {{{
-
-call defx#custom#column('icon', {
-      \ 'directory_icon': '▸',
-      \ 'opened_icon': '▾',
-      \ 'root_icon': ' ',
-      \ })
-
-call defx#custom#option('_', {
-            \ 'winwidth': 35,
-            \ 'split': 'vertical',
-            \ 'direction': 'topleft',
-            \ 'show_ignored_files': 1,
-            \ 'floating_preview': 1,
-            \ 'vertical_preview': 1,
-            \ 'preview_width': 80,
-            \ 'preview_height': 20
-            \ })
-
-nnoremap <silent><leader>ft :Defx<CR>
+" Explorer setings {{{
 nnoremap <silent><leader>fo :CocCommand explorer<cr>
-
-augroup defx_settings
-  autocmd!
-
-  autocmd FileType defx call s:defx_my_settings()
-
-  function! s:defx_my_settings() abort
-    " Define mappings
-    nnoremap <silent><buffer><expr> <CR> defx#do_action('multi', ['drop', 'quit'])
-    nnoremap <silent><buffer><expr> o defx#do_action('drop')
-    nnoremap <silent><buffer><expr> c defx#do_action('copy')
-    nnoremap <silent><buffer><expr> m defx#do_action('move')
-    nnoremap <silent><buffer><expr> p defx#do_action('paste')
-    nnoremap <silent><buffer><expr> t defx#do_action('open_tree', 'toggle')
-    nnoremap <silent><buffer><expr> E defx#do_action('multi', [['open', vsplit], 'quit'])
-    nnoremap <silent><buffer><expr> P defx#do_action('preview')
-    nnoremap <silent><buffer><expr> K defx#do_action('new_directory')
-    nnoremap <silent><buffer><expr> N defx#do_action('new_file')
-    nnoremap <silent><buffer><expr> M defx#do_action('new_multiple_files')
-    nnoremap <silent><buffer><expr> C defx#do_action('toggle_columns', 'mark:indent:icon:filename:type:size:time')
-    nnoremap <silent><buffer><expr> S defx#do_action('toggle_sort', 'time')
-    nnoremap <silent><buffer><expr> d defx#do_action('remove')
-    nnoremap <silent><buffer><expr> r defx#do_action('rename')
-    nnoremap <silent><buffer><expr> ! defx#do_action('execute_command')
-    nnoremap <silent><buffer><expr> x defx#do_action('execute_system')
-    nnoremap <silent><buffer><expr> yy defx#do_action('yank_path')
-    nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')
-    nnoremap <silent><buffer><expr> ; defx#do_action('repeat')
-    nnoremap <silent><buffer><expr> q defx#do_action('quit')
-    nnoremap <silent><buffer><expr> <Space> defx#do_action('toggle_select') . 'j'
-    nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')
-    nnoremap <silent><buffer><expr> j line('.') == line('$') ? 'gg' : 'j'
-    nnoremap <silent><buffer><expr> k line('.') == 1 ? 'G' : 'k'
-    nnoremap <silent><buffer><expr> <C-l> defx#do_action('redraw')
-    nnoremap <silent><buffer><expr> <C-g> defx#do_action('print')
-    nnoremap <silent><buffer><expr> cd defx#do_action('change_vim_cwd')
-  endfunction
-augroup END
-
 " }}}
 
 " Denite {{{
@@ -295,14 +241,6 @@ augroup denite_settings
   autocmd FileType denite-filter call s:denite_filter_my_settings()
   function! s:denite_filter_my_settings() abort
     inoremap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
-    " inoremap <silent><buffer><expr> <Esc> denite#do_map('quit')
-  "   nnoremap <silent><buffer><expr> <Esc>
-  "  denite#do_map('quit')
-  "   nnoremap <silent><buffer><expr> q denite#do_map('quit')
-  "   inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
-  "   inoremap <silent><buffer><expr> <C-t> denite#do_map('do_action', 'tabopen')
-  "   inoremap <silent><buffer><expr> <C-v> denite#do_map('do_action', 'vsplit')
-  "   inoremap <silent><buffer><expr> <C-h> denite#do_map('do_action', 'split')
   endfunction
 augroup END
 
@@ -539,7 +477,6 @@ let g:lightline = {
 function! LightlineGitBranch()
   return &filetype ==# 'denite' ? '':
         \ &filetype ==# 'denite-filter' ? '' :
-        \ &filetype ==# 'defx' ? '' :
         \ gitbranch#name()
 endfunction
 
@@ -550,14 +487,12 @@ endfunction
 function! LightlineMode()
   return &filetype ==# 'denite' ? 'Denite':
         \ &filetype ==# 'denite-filter' ? 'Denite' :
-        \ &filetype ==# 'defx' ? 'Defx' :
         \ lightline#mode()
 endfunction
 
 function! LightlineFilename()
   return &filetype ==# 'denite' ? '':
         \ &filetype ==# 'denite-filter' ? '' :
-        \ &filetype ==# 'defx' ? '' :
         \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
 endfunction
 
