@@ -145,8 +145,11 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 " Keybinding {{{
 
+" Adiciona ; no final da linha
+nnoremap <silent><leader>; :execute "normal! mqA;\<lt>esc>`q"<cr>
+
 " Show documentation
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent>K :call <SID>show_documentation()<CR>
 
 " Close window
 nnoremap <leader>wc :q<CR>
@@ -154,12 +157,22 @@ nnoremap <leader>wc :q<CR>
 " Save file
 nnoremap <leader>fs :w<CR>
 nnoremap ; :
+
 " Convert to uppercase
 noremap <c-u> viwU
 inoremap <c-u> <esc>viwUea
 
+" Abre o init.vim
 nnoremap <leader>ie :vsplit $MYVIMRC<CR>
-        nnoremap <leader>is :source $MYVIMRC<CR>
+
+" Source init.vim
+nnoremap <leader>is :source $MYVIMRC<CR>
+
+" nnoremap <silent><leader>gg :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+" that's
+" that's
+" thats
+" thats
 
 inoremap tn <esc>
 inoremap <esc> <nop>
@@ -394,6 +407,11 @@ augroup coc_settings
 
   " Add `:OR` command for organize imports of the current buffer.
   command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+  let g:markdown_fenced_languages = [
+      \ 'vim',
+      \ 'help'
+      \]
 augroup END
 " }}}
 
