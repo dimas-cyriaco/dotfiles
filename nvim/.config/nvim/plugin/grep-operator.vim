@@ -3,13 +3,13 @@ vnoremap <leader>gg :<c-u>call GrepOperator(visualmode())<cr>
 
 function! GrepOperator(type)
   if a:type ==# 'v'
-    execute "normal! `<v`>y"
+    normal! `<v`>y
   elseif a:type ==# 'char'
-    execute "normal! `[v`]y"
+    normal! `[v`]y
   else
     return
   endif
 
-  silent execute "grep! -R" . shellescape(@@) . " ."
+  silent execute "grep! -R " . shellescape(@@) . " ."
   copen
 endfunction
