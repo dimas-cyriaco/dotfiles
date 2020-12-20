@@ -1,65 +1,18 @@
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+my_shdir=$XDG_CONFIG_HOME/zsh
 
-zplug "eendroroy/alien"
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load --verbose
-
-# ENV Variables
-export ALIEN_THEME="gruvbox"
-export ALIEN_USE_NERD_FONT=1
-export NVM_DIR="$HOME/.nvm"
-export XDG_CONFIG_HOME="$HOME/.config"
-export PROJECTS_PATH="$HOME/Projetos"
-
-# Theme
-
-export ALIEN_SECTIONS_LEFT=(
-  exit
-  path
-  vcs_branch:async
-  vcs_status:async
-  vcs_dirty:async
-  newline
-  ssh
-  venv
-  prompt
+# This order can be important. I like to make sure all the envars are
+# set so subsequent functions etc can make use of them.
+# Doing actions.sh early to avoid 3rd-party stuff overriding anything.
+my_configs=(
+  env_vars.sh
+  plugins.zsh
+  options.zsh
+  theme.zsh
+  aliases.zsh
+  plugins.zsh
 )
 
-# Options
-setopt autocd autopushd pushdignoredups
-setopt inc_append_history
-setopt share_history
-
-# Autocomplete
-autoload -U compinit
-compinit
-
-# Vim keybinginds
-bindkey -v
-
-# NVM config
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# AVN config
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
-# Aliases
-alias la="ls -lah"
-alias ll="ls -lh"
-alias eiv="nvim $HOME/dotfiles/nvim/.config/nvim/init.vim"
-alias dot="source $HOME/.zshrc"
-alias hg="history 1 | grep "
-alias otz="dmux -P flutter -s task_zen $PROJECTS_PATH/task_zen"
-alias orc="dmux -P react -s jusbrasil-rc $PROJECTS_PATH/react-components"
-alias odot="dmux -P dev -s dotfiles $HOME/dotfiles"
+# Source all the Zsh-specific and sh-generic files.
+for f in $my_configs; do
+  [[ -f $my_shdir/$f ]] && . $my_shdir/$f
+done

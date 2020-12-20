@@ -121,6 +121,8 @@ set undodir=/tmp/.vim-undo-dir
 set undofile
 set undolevels=1000
 set undoreload=10000
+
+autocmd! bufwritepost init.vim source %
 " }}}
 
 " Terminal settings {{{
@@ -135,13 +137,6 @@ augroup terminal_settings
   " start terminal in insert mode
   autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
 augroup END
-
-" open terminal on ctrl+n
-function! OpenTerminal()
-  vsplit term://zsh
-endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
-" }}}
 
 " Keybinding {{{
 

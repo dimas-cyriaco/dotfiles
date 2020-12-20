@@ -5,6 +5,10 @@ brew install neovim
 brew install zplug
 brew install stow
 brew install tmux
+brew install ripgrep
+brew install fzf
+brew install dmux
+brew install bat
 
 brew cask install alacritty
 brew cask install font-sauce-code-pro-nerd-font
@@ -13,7 +17,6 @@ brew cask install slack
 brew cask install notion
 brew cask install steam
 brew cask install adobe-creative-cloud
-brew cask install bartender
 
 stow zsh
 stow nvim
