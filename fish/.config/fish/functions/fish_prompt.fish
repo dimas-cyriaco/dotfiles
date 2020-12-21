@@ -1,84 +1,61 @@
-function fish_prompt --description 'Write out the prompt'
-    set -l last_pipestatus $pipestatus
+# name: clearance
+# ---------------
+# Based on idan. Display the following bits on the left:
+# - Virtualenv name (if applicable, see https://github.com/adambrenecki/virtualfish)
+# - Current directory name
+# - Git branch and dirty state (if inside a git repo)
 
-    if not set -q __fish_git_prompt_show_informative_status
-        set -g __fish_git_prompt_show_informative_status 1
-    end
-    if not set -q __fish_git_prompt_hide_untrackedfiles
-        set -g __fish_git_prompt_hide_untrackedfiles 1
-    end
-    if not set -q __fish_git_prompt_color_branch
-        set -g __fish_git_prompt_color_branch magenta --bold
-    end
-    if not set -q __fish_git_prompt_showupstream
-        set -g __fish_git_prompt_showupstream "informative"
-    end
-    if not set -q __fish_git_prompt_char_upstream_ahead
-        set -g __fish_git_prompt_char_upstream_ahead "↑"
-    end
-    if not set -q __fish_git_prompt_char_upstream_behind
-        set -g __fish_git_prompt_char_upstream_behind "↓"
-    end
-    if not set -q __fish_git_prompt_char_upstream_prefix
-        set -g __fish_git_prompt_char_upstream_prefix ""
-    end
-    if not set -q __fish_git_prompt_char_stagedstate
-        set -g __fish_git_prompt_char_stagedstate "●"
-    end
-    if not set -q __fish_git_prompt_char_dirtystate
-        set -g __fish_git_prompt_char_dirtystate "✚"
-    end
-    if not set -q __fish_git_prompt_char_untrackedfiles
-        set -g __fish_git_prompt_char_untrackedfiles "…"
-    end
-    if not set -q __fish_git_prompt_char_invalidstate
-        set -g __fish_git_prompt_char_invalidstate "✖"
-    end
-    if not set -q __fish_git_prompt_char_cleanstate
-        set -g __fish_git_prompt_char_cleanstate "✔"
-    end
-    if not set -q __fish_git_prompt_color_dirtystate
-        set -g __fish_git_prompt_color_dirtystate blue
-    end
-    if not set -q __fish_git_prompt_color_stagedstate
-        set -g __fish_git_prompt_color_stagedstate yellow
-    end
-    if not set -q __fish_git_prompt_color_invalidstate
-        set -g __fish_git_prompt_color_invalidstate red
-    end
-    if not set -q __fish_git_prompt_color_untrackedfiles
-        set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal
-    end
-    if not set -q __fish_git_prompt_color_cleanstate
-        set -g __fish_git_prompt_color_cleanstate green --bold
-    end
+function _git_branch_name
+  echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
+end
 
-    set -l color_cwd
-    set -l prefix
-    set -l suffix
-    switch "$USER"
-        case root toor
-            if set -q fish_color_cwd_root
-                set color_cwd $fish_color_cwd_root
-            else
-                set color_cwd $fish_color_cwd
-            end
-            set suffix '#'
-        case '*'
-            set color_cwd $fish_color_cwd
-            set suffix '$'
+function _git_is_dirty
+  echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
+end
+
+function fish_prompt
+  set -l last_status $status
+
+  set -l cyan (set_color cyan)
+  set -l yellow (set_color yellow)
+  set -l red (set_color red)
+  set -l blue (set_color blue)
+  set -l green (set_color green)
+  set -l normal (set_color normal)
+
+  set -l cwd $blue(pwd | sed "s:^$HOME:~:")
+
+  # Output the prompt, left to right
+
+  # Add a newline before new prompts
+  echo -e ''
+
+  # Display [venvname] if in a virtualenv
+  if set -q VIRTUAL_ENV
+      echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
+  end
+
+  # Print pwd or full path
+  echo -n -s $cwd $normal
+
+  # Show git branch and status
+  if [ (_git_branch_name) ]
+    set -l git_branch (_git_branch_name)
+
+    if [ (_git_is_dirty) ]
+      set git_info '(' $yellow $git_branch "±" $normal ')'
+    else
+      set git_info '(' $green $git_branch $normal ')'
     end
+    echo -n -s ' · ' $git_info $normal
+  end
 
-    # PWD
-    set_color $color_cwd
-    echo -n (prompt_pwd)
-    set_color normal
+  set -l prompt_color $red
+  if test $last_status = 0
+    set prompt_color $normal
+  end
 
-    printf '%s ' (fish_vcs_prompt)
-
-    set -l pipestatus_string (__fish_print_pipestatus "[" "] " "|" (set_color $fish_color_status) (set_color --bold $fish_color_status) $last_pipestatus)
-    echo -n $pipestatus_string
-    set_color normal
-
-    echo -n "$suffix "
+  # Terminate with a nice prompt char
+  echo -e ''
+  echo -e -n -s $prompt_color '⟩ ' $normal
 end
