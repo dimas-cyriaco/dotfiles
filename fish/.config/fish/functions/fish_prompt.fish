@@ -27,9 +27,6 @@ function fish_prompt
 
   # Output the prompt, left to right
 
-  # Add a newline before new prompts
-  echo -e ''
-
   # Display [venvname] if in a virtualenv
   if set -q VIRTUAL_ENV
       echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
@@ -57,5 +54,5 @@ function fish_prompt
 
   # Terminate with a nice prompt char
   echo -e ''
-  echo -e -n -s $prompt_color '⟩ ' $normal
+  echo -e -n -s $prompt_color '➤ ' $normal
 end

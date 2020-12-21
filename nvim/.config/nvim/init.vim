@@ -1,5 +1,3 @@
-syntax enable
-
 " Dein configuration {{{
 if &compatible
   set NOCOMPATIBLE
@@ -27,7 +25,6 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('mhinz/vim-startify')
   call dein#add('lambdalisue/gina.vim')
-  call dein#add('itchyny/lightline.vim')
   call dein#add('itchyny/vim-gitbranch')
   call dein#add('MaxMEllon/vim-jsx-pretty')
   call dein#add('peitalin/vim-jsx-typescript')
@@ -36,26 +33,21 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('dart-lang/dart-vim-plugin')
   call dein#add('thosakwe/vim-flutter')
-  call dein#add('lifepillar/vim-gruvbox8')
+  call dein#add('arcticicestudio/nord-vim')
+  call dein#add('itchyny/lightline.vim')
 
   call dein#end()
   call dein#save_state()
 endif
 
 filetype plugin indent on
-
-if dein#check_install()
-  call dein#install()
-endif
+syntax enable
 " }}}
 
 " Configuraçoes {{{
 
 " Leader
 let mapleader=" "
-
-" Disable paste
-" set nopaste
 
 " Suporte a mouse
 set mouse=a
@@ -65,21 +57,15 @@ set number
 set relativenumber
 
 " Configura cores para gruvbox
-set background=dark
-colorscheme gruvbox8
-
-" highlight! link SignColumn LineNr
-highlight clear SignColumn
-highlight GitGutterAdd ctermfg=green ctermbg=NONE
-highlight GitGutterChange ctermfg=yellow ctermbg=NONE
-highlight GitGutterDelete ctermfg=red ctermbg=NONE
-highlight GitGutterChangeDelete ctermfg=yellow ctermbg=NONE
+colorscheme nord
 
 " Aumenta limite de linhas copiadas
 set viminfo='20,<1000,s1000
 
 " Não mostra ultimo comando
 set noshowcmd
+set noshowmode
+set shortmess+=F
 
 " Insere espaços no lugar de TABs
 set expandtab
@@ -94,9 +80,6 @@ set splitbelow
 " Automatically re-read file if a change was detected outside of vim
 set autoread
 
-" Don't dispay mode in command line (airilne already shows it)
-set noshowmode
-
 " Wrap long lines
 set wrap
 
@@ -105,7 +88,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Setup persistent undo
 if !isdirectory("/tmp/.vim-undo-dir")
@@ -116,10 +99,10 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
-autocmd! bufwritepost init.vim source %
+" autocmd! bufwritepost init.vim source %
 " }}}
 
-" Keybinding 
+" Keybinding {{{
 
 " Adiciona ; no final da linha
 nnoremap <silent><leader>; :execute "normal! mqA;\<lt>esc>`q"<cr>
@@ -129,10 +112,10 @@ nnoremap <silent><leader>fo :OpenExplorer<cr>
 " nnoremap <silent>K :call <SID>show_documentation()<CR>
 
 " Close window
-nnoremap <leader>wc :q<CR>
+nnoremap <silent><leader>wc :q<CR>
 
 " Save file
-nnoremap <leader>fs :w<CR>
+nnoremap <silent><leader>fs :w<CR>
 nnoremap ; :
 
 " Convert to uppercase
@@ -172,4 +155,4 @@ nnoremap <silent><space>la :ListDiagnostics<cr>
 " Abbreviations
 iabbrev @@ dimascyriaco@pm.me
 
-" 
+" }}} 
