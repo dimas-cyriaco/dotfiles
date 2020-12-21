@@ -1,3 +1,6 @@
+#!/bin/zsh
+# shellcheck shell=bash
+
 export XDG_CONFIG_HOME="$HOME/.config"
 
 my_shdir=$XDG_CONFIG_HOME/zsh
@@ -8,7 +11,8 @@ my_configs=(
   options.zsh
   theme.zsh
   aliases.zsh
-  plugins.zsh
+  fzf.zsh
+  keybindings.zsh
 )
 
 for f in $my_configs; do

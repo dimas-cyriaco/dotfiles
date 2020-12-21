@@ -119,7 +119,7 @@ set undoreload=10000
 autocmd! bufwritepost init.vim source %
 " }}}
 
-" Keybinding {{{
+" Keybinding 
 
 " Adiciona ; no final da linha
 nnoremap <silent><leader>; :execute "normal! mqA;\<lt>esc>`q"<cr>
@@ -172,4 +172,4 @@ nnoremap <silent><space>la :ListDiagnostics<cr>
 " Abbreviations
 iabbrev @@ dimascyriaco@pm.me
 
-" }}}
+" 
