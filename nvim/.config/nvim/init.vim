@@ -35,6 +35,8 @@ if dein#load_state('/Users/dimascyriaco/.local/share/dein')
   call dein#add('thosakwe/vim-flutter')
   call dein#add('arcticicestudio/nord-vim')
   call dein#add('itchyny/lightline.vim')
+  call dein#add('junegunn/fzf', { 'build': './install ' })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'junegunn/fction-ionzf' })
 
   call dein#end()
   call dein#save_state()
@@ -46,113 +48,79 @@ syntax enable
 
 " Configuraçoes {{{
 
-" Leader
 let mapleader=" "
 
-" Suporte a mouse
+set autoread
+set cmdheight=1
+set expandtab
 set mouse=a
-
-" Habilita número de linhas e linhas relativas
-set number
-set relativenumber
-
-" Configura cores para gruvbox
-colorscheme nord
-
-" Aumenta limite de linhas copiadas
-set viminfo='20,<1000,s1000
-
-" Não mostra ultimo comando
+set nobackup
+set noruler
 set noshowcmd
 set noshowmode
-set shortmess+=F
-
-" Insere espaços no lugar de TABs
-set expandtab
-
-" Disable line/column number in status line
-set noruler
-
-" Set split direction
-set splitright
-set splitbelow
-
-" Automatically re-read file if a change was detected outside of vim
-set autoread
-
-" Wrap long lines
-set wrap
-
-" Disable backup files
-set nobackup
 set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=1
+set number
+set relativenumber
+set shortmess+=F
+set splitright
+set viminfo='20,<1000,s1000
+set wrap
 
 " Setup persistent undo
 if !isdirectory("/tmp/.vim-undo-dir")
-    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+  call mkdir("/tmp/.vim-undo-dir", "", 0700)
 endif
+
 set undodir=/tmp/.vim-undo-dir
 set undofile
 set undolevels=1000
 set undoreload=10000
 
-" autocmd! bufwritepost init.vim source %
+colorscheme nord
+
 " }}}
 
 " Keybinding {{{
 
-" Adiciona ; no final da linha
-nnoremap <silent><leader>; :execute "normal! mqA;\<lt>esc>`q"<cr>
-nnoremap <silent><leader>fo :OpenExplorer<cr>
-
-" Show documentation
-" nnoremap <silent>K :call <SID>show_documentation()<CR>
-
-" Close window
-nnoremap <silent><leader>wc :q<CR>
-
-" Save file
-nnoremap <silent><leader>fs :w<CR>
 nnoremap ; :
-
-" Convert to uppercase
-noremap <c-u> viwU
-inoremap <c-u> <esc>viwUea
-
-" Abre o init.vim
-nnoremap <leader>ie :vsplit $MYVIMRC<CR>
-
-" Source init.vim
-nnoremap <leader>is :source $MYVIMRC<CR>
-
-" nnoremap <silent><leader>gg :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
-
 inoremap tn <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
-" noremap : <nop>
 
-nnoremap <leader>. @q
-
-" CoC mappings
-nmap <silent><leader> gd <Plug>(coc-definition)
-nmap <silent><leader> gy <Plug>(coc-type-definition)
-nmap <silent><leader> gi <Plug>(coc-implementation)
-nmap <silent><leader> gr <Plug>(coc-references)
-
-" Flutter
-nnoremap <leader>fa :FlutterRun<cr>
-nnoremap <leader>fq :FlutterQuit<cr>
-nnoremap <leader>fr :FlutterHotReload<cr>
-nnoremap <leader>fR :FlutterHotRestart<cr>
-nnoremap <leader>fD :FlutterVisualDebug<cr>
-
-nnoremap <silent><space>la :ListDiagnostics<cr>
+nnoremap <silent><leader>ds :ShowDocumentation<cr>
+nnoremap <silent><leader>fD :FlutterVisualDebug<cr>
+nnoremap <silent><leader>fR :FlutterHotRestart<cr>
+nnoremap <silent><leader>fa :FlutterRun<cr>
+nnoremap <silent><leader>fo :OpenExplorer<cr>
+nnoremap <silent><leader>fq :FlutterQuit<cr>
+nnoremap <silent><leader>fr :FlutterHotReload<cr>
+nnoremap <silent><leader>fs :SaveFile<cr>
+nnoremap <silent><leader>gd :GoToDefinition
+nnoremap <silent><leader>gi :GoToImplementation
+nnoremap <silent><leader>gr :GoToReferences
+nnoremap <silent><leader>gy :GoToTypeDefinitions
+nnoremap <silent><leader>ie :EditInit<cr>
+nnoremap <silent><leader>is :ReloadInit<cr>
+nnoremap <silent><leader>la :ListDiagnostics<cr>
+vnoremap <silent><leader>sm :SortMappingsByKey<cr>
+nnoremap <silent><leader>wc :CloseWindow<cr>
 
 " Abbreviations
 iabbrev @@ dimascyriaco@pm.me
 
 " }}} 
+
+" Commands {{{
+
+command! -range SortMappingsByKey <line1>,<line2>sort /leader/
+command! CloseWindow q
+command! EditInit vsplit $myvimrc
+command! GoToDefinition <Plug>(coc-definition)
+command! GoToImplementation <Plug>(coc-implementation)
+command! GoToReferences <Plug>(coc-references)
+command! GoToTypeDefinitions <Plug>(coc-type-definition)
+command! ReloadInit source $myvimrc
+command! SaveFile w
+command! ShowDocumentation call <SID>show_documentation()
+
+" }}}
