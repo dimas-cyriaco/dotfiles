@@ -1,6 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR EDITOR:nvim
+SETUVAR --export FZF_DEFAULT_COMMAND:rg\x20\x2d\x2dfiles\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dglob\x20\x22\x21\x2egit/\x2a\x22
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25\x20\x2d\x2dlayout\x20reverse\x20\x2d\x2dinfo\x20inline\x20\x2d\x2dborder\x20\x20\x2d\x2dpreview\x2dwindow\x20down\x3a1\x3anoborder\x20\x2d\x2dcolor\x20\x22fg\x3a\x23bbccdd\x2cfg\x2b\x3a\x23ddeeff\x2cbg\x3a\x23334455\x2cpreview\x2dbg\x3a\x23223344\x2cborder\x3a\x23778899\x22
 SETUVAR NVM_DIR:/Users/dimascyriaco/\x2envim
 SETUVAR --path PROJECTS_PATH:/Users/dimascyriaco/Projetos
 SETUVAR SHELL:/usr/local/bin/fish

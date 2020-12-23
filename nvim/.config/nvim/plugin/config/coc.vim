@@ -83,12 +83,31 @@ nnoremap <leader>sl :CocList snippets<cr>
 nnoremap <leader>se :CocCommand snippets.editSnippets<cr>
 
 " Use tab for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB> custom#coc#HandleTab()
-" inoremap <silent><TAB> <esc>:TriggerCompletion<cr>i
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+let g:coc_explorer_global_presets = {
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\     'sources': [{'name': 'file', 'expand': v:true}]
+\   },
+\   'default': {
+\     'sources': [{'name': 'file', 'expand': v:true}],
+\     'width': 32
+\   },
+\   'buffer': {
+\     'sources': [{'name': 'buffer', 'expand': v:true}]
+\   },
+\ }
 
 " Commands
 command! OpenExplorer CocCommand explorer
-command! TriggerCompletion :call custom#coc#HandleTab()
+command! OpenFloatingExplorer CocCommand explorer --preset floating
+" command! TriggerCompletion :call custom#coc#HandleTab()
 command! -nargs=0 OrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
 command! -nargs=0 Format :call CocAction('format')
