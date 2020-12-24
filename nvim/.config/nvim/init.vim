@@ -1,43 +1,51 @@
+" vim-plug config {{{
+call plug#begin()
+
+Plug 'reedes/vim-wheel'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary'
+Plug 'alvan/vim-closetag'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-snippets', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-pairs', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'iamcco/coc-flutter', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-startify'
+Plug 'lambdalisue/gina.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'jparise/vim-graphql'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'build': './install ' }
+Plug 'junegunn/fzf.vim', { 'depends': 'junegunn/fction-ionzf' }
+
+call plug#end()
+" }}}
+
 " Dein configuration {{{
-set runtimepath+=/Users/dimascyriaco/.cache/dein/repos/github.com/Shougo/dein.vim
+" set runtimepath+=/Users/dimascyriaco/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('/Users/dimascyriaco/.local/share/dein')
-  call dein#begin('/Users/dimascyriaco/.local/share/dein')
+" if dein#load_state('/Users/dimascyriaco/.local/share/dein')
+"   call dein#begin('/Users/dimascyriaco/.local/share/dein')
 
-  call dein#add('/Users/dimascyriaco/.local/share/dein/repos/github.com/Shougo/dein.vim')
+"   call dein#add('/Users/dimascyriaco/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
-  call dein#add('wsdjeg/dein-ui.vim')
+"   call dein#add('wsdjeg/dein-ui.vim')
   
-  call dein#add('reedes/vim-wheel')
-  call dein#add('sheerun/vim-polyglot')
-  call dein#add('tpope/vim-commentary')
-  call dein#add('alvan/vim-closetag')
-  call dein#add('neoclide/coc.nvim', { 'rev': 'release' })
-  call dein#add('neoclide/coc-json', { 'build': 'yarn install --frozen-lockfile' })
-  call dein#add('neoclide/coc-tsserver', { 'build': 'yarn install --frozen-lockfile' })
-  call dein#add('neoclide/coc-snippets', { 'build': 'yarn install --frozen-lockfile' })
-  call dein#add('neoclide/coc-pairs', { 'build': 'yarn install --frozen-lockfile' })
-  call dein#add('iamcco/coc-flutter', { 'build': 'yarn install --frozen-lockfile' })
-  call dein#add('prettier/vim-prettier', { 'build': 'yarn install' })
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('mhinz/vim-startify')
-  call dein#add('lambdalisue/gina.vim')
-  call dein#add('itchyny/vim-gitbranch')
-  call dein#add('MaxMEllon/vim-jsx-pretty')
-  call dein#add('peitalin/vim-jsx-typescript')
-  call dein#add('jparise/vim-graphql')
-  call dein#add('editorconfig/editorconfig-vim')
-  call dein#add('christoomey/vim-tmux-navigator')
-  call dein#add('dart-lang/dart-vim-plugin')
-  call dein#add('thosakwe/vim-flutter')
-  call dein#add('arcticicestudio/nord-vim')
-  call dein#add('itchyny/lightline.vim')
-  call dein#add('junegunn/fzf', { 'build': './install ' })
-  call dein#add('junegunn/fzf.vim', { 'depends': 'junegunn/fction-ionzf' })
+"   call dein#add()
 
-  call dein#end()
-  call dein#save_state()
-endif
+"   call dein#end()
+"   call dein#save_state()
+" endif
 " }}}
 
 " Configuraçoes {{{
