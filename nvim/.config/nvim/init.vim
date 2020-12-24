@@ -1,32 +1,32 @@
 " vim-plug config {{{
 call plug#begin()
 
-Plug 'reedes/vim-wheel'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-commentary'
-Plug 'alvan/vim-closetag'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-snippets', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-pairs', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'iamcco/coc-flutter', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-startify'
-Plug 'lambdalisue/gina.vim'
-Plug 'itchyny/vim-gitbranch'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'jparise/vim-graphql'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-pairs', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-snippets', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
-Plug 'arcticicestudio/nord-vim'
-Plug 'itchyny/lightline.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'build': './install ' }
 Plug 'junegunn/fzf.vim', { 'depends': 'junegunn/fction-ionzf' }
+Plug 'lambdalisue/gina.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-commentary'
+Plug 'thosakwe/vim-flutter'
+Plug 'itchyny/vim-gitbranch'
+Plug 'airblade/vim-gitgutter'
+Plug 'jparise/vim-graphql'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'sheerun/vim-polyglot'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'mhinz/vim-startify'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'reedes/vim-wheel'
 
 call plug#end()
 " }}}
