@@ -1,26 +1,28 @@
 " vim-plug config {{{
 call plug#begin()
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'weirongxu/coc-explorer', { 'branch': 'release' }
-Plug 'neoclide/coc-eslint', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'iamcco/coc-flutter', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc.nvim',      { 'branch': 'release' }
+Plug 'weirongxu/coc-explorer', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-eslint',    { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-eslint',    { 'do': 'yarn install --frozen-lockfile' }
+Plug 'iamcco/coc-flutter',     { 'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/coc-highlight', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-pairs', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-prettier', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-snippets', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'iamcco/coc-vimlsp', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-json',      { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-pairs',     { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-prettier',  { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-snippets',  { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neoclide/coc-tsserver',  { 'do': 'yarn install --frozen-lockfile' }
+Plug 'iamcco/coc-vimlsp',      { 'do': 'yarn install --frozen-lockfile' }
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf', { 'build': './install ' }
-Plug 'junegunn/fzf.vim', { 'depends': 'junegunn/fction-ionzf' }
+Plug 'junegunn/fzf',           { 'build': './install ' }
+Plug 'junegunn/fzf.vim',       { 'depends': 'junegunn/fction-ionzf' }
 Plug 'lambdalisue/gina.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/vim-easy-align'
 Plug 'thosakwe/vim-flutter'
 Plug 'itchyny/vim-gitbranch'
 Plug 'airblade/vim-gitgutter'
@@ -28,10 +30,16 @@ Plug 'jparise/vim-graphql'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'sheerun/vim-polyglot'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier',  { 'do': 'yarn install' }
 Plug 'mhinz/vim-startify'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'reedes/vim-wheel'
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap <leader>ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap <leader>ga <Plug>(EasyAlign)
 
 call plug#end()
 " }}}
