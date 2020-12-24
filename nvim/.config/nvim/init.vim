@@ -45,7 +45,6 @@ endif
 let mapleader=" "
 
 set clipboard+=unnamedplus
-set cmdheight=1
 set expandtab
 set mouse=a
 set nobackup
@@ -77,32 +76,39 @@ colorscheme nord
 
 nnoremap ; :
 inoremap tn <esc>
-inoremap <esc> <nop>
-inoremap <c-c> <nop>
+inoremap <esc><nop>
+inoremap <c-c><nop>
+nnoremap <silent> \ :GrepProject <cr>
 
-nnoremap <silent><leader>/  :BLines<cr>
-nnoremap <silent><leader>b  :Buffers<cr>
-nnoremap <silent><leader>ds :ShowDocumentation<cr>
-nnoremap <silent><leader>fD :FlutterVisualDebug<cr>
-nnoremap <silent><leader>fR :FlutterHotRestart<cr>
-nnoremap <silent><leader>fa :FlutterRun<cr>
-nnoremap <silent><leader>fo :OpenFloatingExplorer<cr>
-nnoremap <silent><leader>fq :FlutterQuit<cr>
-nnoremap <silent><leader>fr :FlutterHotReload<cr>
-nnoremap <silent><leader>fs :SaveFile<cr>
-nnoremap <silent><leader>gd :GoToDefinition
-nnoremap <silent><leader>gi :GoToImplementation
-nnoremap <silent><leader>gr :GoToReferences
-nnoremap <silent><leader>gy :GoToTypeDefinitions
-nnoremap <silent><leader>ie :EditInit<cr>
-nnoremap <silent><leader>is :ReloadInit<cr>
-nnoremap <silent><leader>la :ListDiagnostics<cr>
-nnoremap <silent><leader>p  :Files<cr>
-vnoremap <silent><leader>sm :SortMappingsByKey<cr>
-nnoremap <silent><leader>wc :CloseWindow<cr>
-
-nnoremap \ :Rg<cr>
-inoremap <silent><expr> <cr> custom#coc#HandleEnter()
+nnoremap <silent><leader>/  :BLines <cr>
+nnoremap <silent><leader>a  :CodeActionSelection <cr>
+nnoremap <silent><leader>b  :Buffers <cr>
+nnoremap <silent><leader>cf :CodeAction <cr>
+nnoremap <silent><leader>cl :CodeActionLine <cr>
+nnoremap <silent><leader>fD :FlutterVisualDebug <cr>
+nnoremap <silent><leader>fR :FlutterHotRestart <cr>
+nnoremap <silent><leader>fa :FlutterRun <cr>
+nnoremap <silent><leader>fc :FormatSelection <cr>
+nnoremap <silent><leader>ff :PrettierAsync <cr>
+nnoremap <silent><leader>fo :OpenFloatingExplorer <cr>
+nnoremap <silent><leader>fq :FlutterQuit <cr>
+nnoremap <silent><leader>fr :FlutterHotReload <cr>
+nnoremap <silent><leader>fs :SaveFile <cr>
+nnoremap <silent><leader>gc :GitCommit <cr>
+nnoremap <silent><leader>gd :GoToDefinition <cr>
+nnoremap <silent><leader>gi :GoToImplementation <cr>
+nnoremap <silent><leader>gr :GoToReferences <cr>
+nnoremap <silent><leader>gs :GitStatus <cr>
+nnoremap <silent><leader>gy :GoToTypeDefinitions <cr>
+nnoremap <silent><leader>ie :EditInit <cr>
+nnoremap <silent><leader>is :ReloadInit <cr>
+nnoremap <silent><leader>la :ListDiagnostics <cr>
+nnoremap <silent><leader>p  :Files <cr>
+nnoremap <silent><leader>qt :OpenQuickfix <cr>
+nnoremap <silent><leader>se :EditSnippets <cr>
+nnoremap <silent><leader>sl :ListSnippets <cr>
+vnoremap <silent><leader>sm :SortMappingsByKey <cr>
+nnoremap <silent><leader>wc :CloseWindow <cr>
 
 " Abbreviations
 iabbrev @@ dimascyriaco@pm.me
@@ -114,13 +120,8 @@ iabbrev @@ dimascyriaco@pm.me
 command! -range SortMappingsByKey <line1>,<line2>sort /leader/
 command! CloseWindow q
 command! EditInit vsplit $MYVIMRC
-command! GoToDefinition <Plug>(coc-definition)
-command! GoToImplementation <Plug>(coc-implementation)
-command! GoToReferences <Plug>(coc-references)
-command! GoToTypeDefinitions <Plug>(coc-type-definition)
 command! ReloadInit source $MYVIMRC
 command! SaveFile w
-command! ShowDocumentation call <SID>show_documentation()
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(

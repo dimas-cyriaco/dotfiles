@@ -1,2 +1,2 @@
-nnoremap <silent><leader>gs :Gina status<cr>
-nnoremap <silent><leader>gc :Gina commit<cr>
+command! GitStatus Gina status
+command! GitStatus Gina commit

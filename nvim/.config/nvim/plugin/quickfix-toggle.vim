@@ -1,5 +1,3 @@
-nnoremap <leader>qt :call QuickfixToggle()<cr>
-
 let g:quickfix_is_open = 0
 
 function! QuickfixToggle()
@@ -14,3 +12,4 @@ function! QuickfixToggle()
   endif
 endfunction
 
+command! OpenQuickfix call QuickfixToggle()
