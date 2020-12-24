@@ -31,23 +31,6 @@ Plug 'reedes/vim-wheel'
 call plug#end()
 " }}}
 
-" Dein configuration {{{
-" set runtimepath+=/Users/dimascyriaco/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" if dein#load_state('/Users/dimascyriaco/.local/share/dein')
-"   call dein#begin('/Users/dimascyriaco/.local/share/dein')
-
-"   call dein#add('/Users/dimascyriaco/.local/share/dein/repos/github.com/Shougo/dein.vim')
-
-"   call dein#add('wsdjeg/dein-ui.vim')
-  
-"   call dein#add()
-
-"   call dein#end()
-"   call dein#save_state()
-" endif
-" }}}
-
 " Configuraçoes {{{
 
 let mapleader=" "
