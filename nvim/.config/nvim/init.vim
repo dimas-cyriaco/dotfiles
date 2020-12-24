@@ -35,7 +35,6 @@ Plug 'mhinz/vim-startify'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'reedes/vim-wheel'
 
-
 call plug#end()
 " }}}
 
