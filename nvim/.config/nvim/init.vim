@@ -35,11 +35,6 @@ Plug 'mhinz/vim-startify'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'reedes/vim-wheel'
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap <leader>ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap <leader>ga <Plug>(EasyAlign)
 
 call plug#end()
 " }}}
@@ -98,6 +93,8 @@ nnoremap <silent><leader>fo :OpenFloatingExplorer <cr>
 nnoremap <silent><leader>fq :FlutterQuit <cr>
 nnoremap <silent><leader>fr :FlutterHotReload <cr>
 nnoremap <silent><leader>fs :SaveFile <cr>
+xmap <leader>ga <Plug>(EasyAlign)
+nmap <leader>ga <Plug>(EasyAlign)
 nnoremap <silent><leader>gc :GitCommit <cr>
 nnoremap <silent><leader>gd :GoToDefinition <cr>
 nnoremap <silent><leader>gi :GoToImplementation <cr>
