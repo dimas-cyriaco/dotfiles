@@ -4,12 +4,13 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'modified' ],
       \             [ 'filename' ] ],
-      \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'gitbranch' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'cocstatus' ], [ 'gitbranch' ] ],
       \ },
       \ 'component_function': {
       \   'gitbranch': 'LightlineGitBranch',
       \   'mode': 'LightlineMode',
       \   'filename': 'LightlineFilename',
+      \   'cocstatus': 'coc#status',
       \ },
       \ 'component_function_visible_condition': {
       \   'gitbranch': 1,
@@ -54,3 +55,6 @@ function! LightlineFilename()
         \ &filetype ==# 'denite-filter' ? '' :
         \ file_name !=# '' ? file_name : '[No Name]'
 endfunction
+
+" Use auocmd to force lightline update.
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()

@@ -15,6 +15,17 @@ endif
 let g:coc_snippet_next = '<tab>'
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 
 let g:markdown_fenced_languages = [
     \ 'vim',
@@ -36,6 +47,9 @@ let g:coc_explorer_global_presets = {
 \   },
 \ }
 
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent><leader>h :call CocActionAsync('doHover')<cr>
+inoremap <silent><expr><c-e> CocActionAsync('showSignatureHelp')
 inoremap <silent><expr><cr> custom#coc#HandleEnter()
 inoremap <silent><expr><c-d> coc#refresh()
 inoremap <silent><expr><c-d> coc#refresh()
@@ -50,15 +64,7 @@ inoremap <silent><expr><TAB>
 command! -nargs=0 Format :call CocAction('format')
 command! -nargs=0 OrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
-command! CodeAction <Plug>(coc-codeaction)
-command! CodeActionLine <Plug>(coc-codeaction-line)
-command! CodeActionSelection <Plug>(coc-codeaction-selected)
 command! EditSnippets CocCommand snippets.editSnippets
-command! FormatSelection <Plug>(coc-format-selected)
-command! GoToDefinition <Plug>(coc-definition)
-command! GoToImplementation <Plug>(coc-implementation)
-command! GoToReferences <Plug>(coc-references)
-command! GoToTypeDefinitions <Plug>(coc-type-definition)
 command! ListDiagnostics CocList diagnostics
 command! ListSnippets CocList snippets
 command! OpenExplorer CocCommand explorer
