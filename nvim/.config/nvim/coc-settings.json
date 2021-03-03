@@ -12,6 +12,7 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.quitOnOpen": true,
+  "flutter.openDevLogSplitCommand": "botright 10split",
   "diagnostic-languageserver.enable": true,
   "diagnostic-languageserver.filetypes": {
     "vim": "vint"

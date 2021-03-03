@@ -6,6 +6,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 my_shdir=$XDG_CONFIG_HOME/zsh
 
 my_configs=(
+  deno.zsh
   env_vars.sh
   plugins.zsh
   options.zsh
@@ -18,3 +19,6 @@ my_configs=(
 for f in $my_configs; do
   [[ -f $my_shdir/$f ]] && . $my_shdir/$f
 done
+
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
