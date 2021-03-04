@@ -5,7 +5,7 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'junegunn/fzf',           { 'build': './install ' }
 " Plug 'junegunn/fzf.vim',       { 'depends': 'junegunn/fction-ionzf' }
 Plug 'lambdalisue/gina.vim'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
@@ -30,7 +30,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
-
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 call plug#end()
 " " }}}
 
@@ -42,8 +42,8 @@ let mapleader=" "
 let g:maplocaleader = ','
 
 set clipboard+=unnamedplus
-set hidden
 set expandtab
+set hidden
 set mouse=a
 set nobackup
 set nohlsearch
@@ -54,6 +54,7 @@ set nowritebackup
 set number
 set relativenumber
 set splitright
+set updatetime=100
 set viminfo='20,<1000,s1000
 set wrap
 
@@ -84,7 +85,7 @@ nnoremap <silent><leader>dq :OpenQuickfix <cr>
 let g:which_key_map.d = {}
 let g:which_key_map.d.q = 'Toogle quickfix'
 
-nnoremap <silent><leader>w :w <cr>
+nnoremap <silent><leader>w :silent w <cr>
 let g:which_key_map.w = 'Save file'
 
 nnoremap <silent><leader>q :q <cr>
@@ -133,7 +134,7 @@ call which_key#register('<Space>', "g:which_key_map")
 " Abbreviations
 iabbrev @@ dimascyriaco@pm.me
 
-" }}} 
+" }}}
 
 " Commands {{{
 
@@ -146,7 +147,7 @@ set completeopt=menuone,noinsert,noselect
 let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
-lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.tsserver.setup{}
 
 let g:closetag_filenames = "*.html,*.jsx,*.tsx"
 let g:closetag_filetypes = "html,javascript.jsx,typescript.jsx"
@@ -163,3 +164,10 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+autocmd BufEnter * lua require'completion'.on_attach()
+
+luafile ~/.config/nvim/evilline.lua
+
+set -g fish_user_paths "/usr/local/opt/redis@3.2/bin" $fish_user_paths
+
+set -U fish_gretting

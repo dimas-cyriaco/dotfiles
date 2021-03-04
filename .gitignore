@@ -1,3 +1,9 @@
 nvim/.config/nvim/.netrwhist
 tmux/.config/tmux/plugins
 nvim/.config/nvim/plugged/
+.DS_Store
+fish/.config/fish/conf.d/
+fish/.config/fish/completions/
+fish/.config/fish/fish_variables
+fish/.config/fish/functions/
+zsh/.config/zsh/_deno
