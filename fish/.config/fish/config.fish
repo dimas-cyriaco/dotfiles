@@ -14,3 +14,7 @@ set -g fish_user_paths "/usr/local/opt/redis@3.2/bin" $fish_user_paths
 function port-forward
   kubectl port-forward svc/network-graphql-playground 8080:80
 end
+
+set -g fish_user_paths "/usr/local/opt/redis@3.2/bin" $fish_user_paths
+
+set -U fish_gretting

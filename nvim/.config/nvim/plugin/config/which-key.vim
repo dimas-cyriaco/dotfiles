@@ -1,1 +1,0 @@
-highlight default link WhichKeySeperator healthSuccess

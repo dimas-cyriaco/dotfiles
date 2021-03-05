@@ -1,0 +1,6 @@
+require('config.closetag')
+require('config.colorscheme')
+require('config.completion')
+require('config.galaxyline')
+require('config.gina')
+require('config.nvim-tree')
