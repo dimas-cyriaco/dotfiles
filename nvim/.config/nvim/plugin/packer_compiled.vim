@@ -36,6 +36,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
+  ["completion-buffers"] = {
+    loaded = true,
+    path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/completion-buffers"
+  },
   ["completion-nvim"] = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/completion-nvim"

@@ -18,3 +18,24 @@ end
 set -g fish_user_paths "/usr/local/opt/redis@3.2/bin" $fish_user_paths
 
 set -U fish_gretting
+
+function __nvm_use_on_cd --on-variable PWD --description 'Use Node.js version specified by project'
+    # if test -e package.json
+    #   nvm use (jq --monochrome-output --raw-output '.devEngines.node' package.json)
+    #   return
+    # end
+
+    if test -e .nvmrc
+       nvm use
+       return
+    end
+
+    if test -e .node-version
+       nvm use (cat .node-version)
+       return
+    end
+end
+
+set --universal nvm_default_version v15
+
+set -U N_PREFIX $HOME/.config/n
