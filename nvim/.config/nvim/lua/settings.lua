@@ -30,3 +30,7 @@ opt('o', 'undofile', true)
 opt('o', 'undolevels', 1000)
 opt('o', 'undoreload', 10000)
 
+cmd [[set shortmess-=F]]
+
+cmd [[set foldmethod=expr]]
+cmd [[set foldexpr=nvim_treesitter#foldexpr()]]

@@ -9,5 +9,5 @@ map('<leader>q', ':q<cr>')
 
 -- Editing init files
 map('<leader>ne', ':vsplit $MYVIMRC<cr>')
-map('<leader>ns', ':source $MYVIMRC<cr>')
+map('<leader>ns', ':luafile $MYVIMRC<cr>')
 

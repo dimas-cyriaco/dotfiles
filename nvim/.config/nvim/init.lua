@@ -26,7 +26,7 @@ local utils = require('utils')
 local map = utils.map
 
 -- Terminal mappings
-map('<leader>tn', '<c-\\><c-n>', {mode = 't'})
+-- map('<leader>tn', '<c-\\><c-n>', {mode = 't'})
 vim.cmd [[au BufEnter * if &buftype == 'terminal' | :startinsert | endif]]
 
 require('telescope').setup{
@@ -43,10 +43,5 @@ require('telescope').setup{
     },
   }
 }
-
-vim.cmd [[highlight LspDiagnosticsDefaultError guifg=Red]]
-vim.cmd [[highlight LspDiagnosticsDefaultHint guifg=LightGrey]]
-vim.cmd [[highlight LspDiagnosticsDefaultInformation guifg=LightBlue]]
-vim.cmd [[highlight LspDiagnosticsDefaultWarning guifg=Orange]]
 
 map('<leader>b', ":lua require('config/telescope').buffers()<cr>")

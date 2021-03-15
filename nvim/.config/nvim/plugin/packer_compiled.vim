@@ -56,13 +56,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/gina.vim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+  },
   ["nlua.nvim"] = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/nlua.nvim"
-  },
-  ["nord-vim"] = {
-    loaded = true,
-    path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/nord-vim"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -72,6 +72,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -79,6 +83,10 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  playground = {
+    loaded = true,
+    path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -116,21 +124,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
   },
-  ["vim-js"] = {
-    loaded = true,
-    path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/vim-js"
-  },
-  ["vim-jsx-pretty"] = {
-    loaded = true,
-    path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
-  },
   ["vim-polyglot"] = {
     loaded = true,
     path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/vim-polyglot"
-  },
-  ["vim-prettier"] = {
-    loaded = true,
-    path = "/Users/dimascyriaco/.local/share/nvim/site/pack/packer/start/vim-prettier"
   },
   ["vim-snippets"] = {
     loaded = true,
