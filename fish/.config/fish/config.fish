@@ -3,11 +3,15 @@ set -U EDITOR nvim
 set -U SHELL /usr/local/bin/fish
 set -U PROJECTS_PATH $HOME/Projetos
 set -gx PATH $HOME/.pub-cache/bin $PATH
+set -gx PATH $PROJECTS/jusbr-kube/scripts $PATH
+set -U FISH_CONFIG $XDG_CONFIG_HOME/fish/config.fish
 
 set -Ux FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -Ux FZF_DEFAULT_OPTS '--height 40% --layout reverse --info inline --border  --preview-window down:1:noborder --color "fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899"'
 
-source $HOME/.secrets.fish
+function setenv; set -gx $argv; end
+source ~/.env
+
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 set -g fish_user_paths "/usr/local/opt/redis@3.2/bin" $fish_user_paths
 
@@ -39,3 +43,18 @@ end
 set --universal nvm_default_version v15
 
 set -U N_PREFIX $HOME/.config/n
+
+function dot
+    source $FISH_CONFIG
+end
+
+function hg
+    history | grep $argv
+end
+
+function posix-source
+	for i in (cat $argv)
+		set arr (echo $i |tr = \n)
+  		set -gx $arr[1] $arr[2]
+	end
+end
