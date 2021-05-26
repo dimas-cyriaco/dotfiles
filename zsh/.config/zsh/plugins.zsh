@@ -1,12 +1,14 @@
-source $ZPLUG_HOME/init.zsh
+# shellcheck disable=SC1091
+source "$ZPLUG_HOME"/init.zsh
 
 zplug "eendroroy/alien"
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug 'pierpo/fzf-yarn'
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
-    if read -q; then
+    if read -r -q; then
         echo; zplug install
     fi
 fi
@@ -14,6 +16,7 @@ fi
 zplug load
 
 # Fzf
+# shellcheck disable=SC1090
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --info inline --border  --preview-window down:1:noborder --color "fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899"'

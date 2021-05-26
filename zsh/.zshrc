@@ -16,8 +16,8 @@ my_configs=(
   keybindings.zsh
 )
 
-for f in $my_configs; do
-  [[ -f $my_shdir/$f ]] && . $my_shdir/$f
+for f in "${my_configs[@]}"; do
+  [[ -f $my_shdir/$f ]] && . "$my_shdir"/"$f"
 done
 
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
