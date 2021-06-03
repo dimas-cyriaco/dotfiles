@@ -1,9 +1,8 @@
 # shellcheck disable=SC1091
 source "$ZPLUG_HOME"/init.zsh
 
-zplug "eendroroy/alien"
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug 'pierpo/fzf-yarn'
+zplug 'zsh-users/zsh-autosuggestions'
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -14,6 +13,18 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+
+# Z
+source /usr/local/etc/profile.d/z.sh
+
+# like normal z when used with arguments but displays an fzf prompt when used without.
+unalias z 2> /dev/null
+z() {
+    [ $# -gt 0 ] && _z "$*" && return
+    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
+
 
 # Fzf
 # shellcheck disable=SC1090

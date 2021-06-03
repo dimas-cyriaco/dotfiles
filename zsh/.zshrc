@@ -10,10 +10,11 @@ my_configs=(
   env_vars.sh
   plugins.zsh
   options.zsh
-  theme.zsh
+  # theme.zsh
   aliases.zsh
   fzf.zsh
   keybindings.zsh
+  functions.zsh
 )
 
 for f in "${my_configs[@]}"; do
@@ -30,3 +31,9 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 export SDKMAN_DIR="/Users/dimascyriaco/.sdkman"
 # shellcheck disable=SC1091
 [[ -s "/Users/dimascyriaco/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/dimascyriaco/.sdkman/bin/sdkman-init.sh"
+
+eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /Users/dimascyriaco/.config/broot/launcher/bash/br
