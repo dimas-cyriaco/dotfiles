@@ -8,6 +8,7 @@ my_shdir=$XDG_CONFIG_HOME/zsh
 my_configs=(
   deno.zsh
   env_vars.sh
+  secrets.sh
   plugins.zsh
   options.zsh
   # theme.zsh

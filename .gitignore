@@ -8,3 +8,4 @@ fish/.config/fish/fish_variables
 fish/.config/fish/functions/
 zsh/.config/zsh/_deno
 nvim/.config/nvim/plugin/packer_compiled.vim
+zsh/.config/zsh/secrets.sh
