@@ -4,15 +4,11 @@ brew install git
 brew install neovim
 brew install zplug
 brew install stow
-brew install tmux
 brew install ripgrep
 brew install fzf
-brew install dmux
 brew install bat
-brew install fish
 brew install git-delta
 brew install gotop
-brew install flutter
 brew install yarn
 
 brew cask install alacritty
@@ -23,7 +19,7 @@ brew cask install notion
 brew cask install insomnia
 
 stow zsh
-stow nvim
+stow lvim
 stow alacritty
 stow git
 stow tmux
@@ -42,14 +38,8 @@ avn setup
 
 npm install -g yarn
 
-sudo pip3 install pynvim
-
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $TMPDIR/installer.sh
-sh $TMPDIR/installer.sh ~/.cache/dein
-
-nvim +UpdateRemotePlugins +qall
-
-git clone https://github.com/tmux-plugins/tpm $XDG_CONFIG_HOME/tmux/plugins/tpm
+# Install LunarVim
+LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)
 
 if [ -z "$NEXUS_EMAIL" ]; then
   : ${GITHUB_USERNAME?"Need to set GITHUB_USERNAME"}
