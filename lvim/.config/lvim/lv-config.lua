@@ -153,6 +153,7 @@ O.user_which_key = {
 		h = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
 	},
 	t = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "Projects" },
+  d = { "<cmd>b#<cr>", "Switch Buffers" }
 }
 
 require("telescope").load_extension("project")
