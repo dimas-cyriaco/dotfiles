@@ -100,6 +100,13 @@ local orgmode_config = {
 		require("orgmode").setup({
 			org_agenda_files = { "~/Documents/org/*" },
 			org_default_notes_file = "~/Documents/org/Notes.org",
+			org_agenda_templates = {
+				j = {
+					description = "Journal",
+					template = "\n*** %<%Y-%m-%d> %<%A>\n**** %U\n\n%?",
+					target = "~/Documents/org/Journal.org",
+				},
+			},
 		})
 
 		require("compe").setup({
