@@ -11,7 +11,6 @@ my_configs=(
   secrets.sh
   plugins.zsh
   options.zsh
-  # theme.zsh
   aliases.zsh
   fzf.zsh
   keybindings.zsh
