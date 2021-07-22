@@ -24,7 +24,7 @@
 	email = dimascyriaco@pm.me
 [core]
   pager = delta
-	editor = nvim
+	editor = lvim
 
 [interactive]
     diffFilter = delta --color-only
