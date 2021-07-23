@@ -24,12 +24,13 @@ O.keys.leader_key = ";"
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 O.plugin.dashboard.active = true
+O.plugin.nvimtree.hide_dotfiles = 0
+O.plugin.nvimtree.show_icons.git = 0
+O.plugin.nvimtree.side = "left"
+O.plugin.terminal.active = true
 O.plugin.terminal.active = true
 O.plugin.zen.active = false
 O.plugin.zen.window.height = 0.90
-O.plugin.nvimtree.side = "left"
-O.plugin.nvimtree.show_icons.git = 0
-O.plugin.terminal.active = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 O.treesitter.ensure_installed = "maintained"
@@ -153,7 +154,7 @@ O.user_which_key = {
 		h = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
 	},
 	t = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "Projects" },
-  d = { "<cmd>b#<cr>", "Switch Buffers" }
+	d = { "<cmd>b#<cr>", "Switch Buffers" },
 }
 
 require("telescope").load_extension("project")
