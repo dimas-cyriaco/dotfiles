@@ -25,7 +25,7 @@ O.keys.leader_key = ";"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 O.plugin.dashboard.active = true
 O.plugin.nvimtree.hide_dotfiles = 0
-O.plugin.nvimtree.show_icons.git = 0
+O.plugin.nvimtree.show_icons.git = 1
 O.plugin.nvimtree.side = "left"
 O.plugin.terminal.active = true
 O.plugin.terminal.active = true
