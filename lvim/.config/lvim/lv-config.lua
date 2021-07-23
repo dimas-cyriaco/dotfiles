@@ -13,7 +13,7 @@ an executable
 O.lang.scala.metals.active = true
 
 O.auto_close_tree = 0
-O.colorscheme = "tokyonight"
+O.colorscheme = "spacegray"
 O.completion.autocomplete = true
 -- O.default_options.scrolloff = 999
 O.default_options.timeoutlen = 100
