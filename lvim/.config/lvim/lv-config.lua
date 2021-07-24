@@ -155,6 +155,7 @@ O.user_which_key = {
 	},
 	t = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "Projects" },
 	d = { "<cmd>b#<cr>", "Switch Buffers" },
+  f = { "<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git,--type,f<CR>", "Find File"}
 }
 
 require("telescope").load_extension("project")
