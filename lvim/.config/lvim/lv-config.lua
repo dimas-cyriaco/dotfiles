@@ -134,28 +134,28 @@ O.user_plugins = {
 
 -- Additional Leader bindings for WhichKey
 O.user_which_key = {
-	T = {
-		name = "Tabs",
-		t = { "<cmd>BufferPick<cr>", "Select Tab" },
-		p = { "<cmd>BufferPrevious<cr>", "Go to previous Tab" },
-		n = { "<cmd>BufferNext<cr>", "Go to next Tab" },
-		c = { "<cmd>BufferCloseAllButCurrent<cr>", "Close others" },
-	},
+	d = { "<cmd>b#<cr>", "Switch Buffers" },
 	D = {
 		name = "Diagnostics",
+		d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
+		l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+		q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+		r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 		t = { "<cmd>TroubleToggle<cr>", "trouble" },
 		w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace" },
-		d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
-		q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
-		l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-		r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 	},
+	f = { "<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git,--type,f<CR>", "Find File" },
 	l = {
 		h = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
 	},
 	t = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "Projects" },
-	d = { "<cmd>b#<cr>", "Switch Buffers" },
-  f = { "<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git,--type,f<CR>", "Find File"}
+	T = {
+		name = "Tabs",
+		c = { "<cmd>BufferCloseAllButCurrent<cr>", "Close others" },
+		n = { "<cmd>BufferNext<cr>", "Go to next Tab" },
+		p = { "<cmd>BufferPrevious<cr>", "Go to previous Tab" },
+		t = { "<cmd>BufferPick<cr>", "Select Tab" },
+	},
 }
 
 require("telescope").load_extension("project")
