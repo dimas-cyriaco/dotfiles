@@ -1,0 +1,21 @@
+[nvim]
+number_of_panes = 1
+session_name = "nvim"
+commands = ["nvim"]
+
+[dev]
+number_of_panes = 2
+session_name = "dev"
+commands = ["nvim"]
+
+[react]
+layout = "a3ca,192x43,0,0{126x43,0,0,1,65x43,127,0[65x21,127,0,2,65x21,127,22,3]}"
+number_of_panes = 3
+session_name = "frontend"
+commands = ["nvim", "yarn start", "yarn jest"]
+
+[flutter]
+layout = "a3ca,192x43,0,0{126x43,0,0,1,65x43,127,0[65x21,127,0,2,65x21,127,22,3]}"
+number_of_panes = 3
+session_name = "flutter"
+commands = ["nvim", "flutter run", "flutter pub global run devtools"]
