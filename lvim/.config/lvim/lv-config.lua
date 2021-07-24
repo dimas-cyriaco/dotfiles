@@ -13,7 +13,7 @@ an executable
 O.lang.scala.metals.active = true
 
 O.auto_close_tree = 0
-O.colorscheme = "spacegray"
+O.colorscheme = "nord"
 O.completion.autocomplete = true
 -- O.default_options.scrolloff = 999
 O.default_options.timeoutlen = 100
@@ -119,9 +119,9 @@ local orgmode_config = {
 }
 
 O.user_plugins = {
-	{ "folke/tokyonight.nvim" },
 	{ "nvim-telescope/telescope-project.nvim" },
 	{ "karb94/neoscroll.nvim" },
+	{ "arcticicestudio/nord-vim" },
 	lsp_signature_config,
 	hop_config,
 	trouble_config,
