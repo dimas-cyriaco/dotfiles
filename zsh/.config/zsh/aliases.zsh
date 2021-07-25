@@ -1,5 +1,5 @@
-alias la="ls -lah"
-alias ll="ls -lh"
+alias la="lsd -Al --group-dirs first"
+alias ll="lsd -A1 --group-dirs first"
 alias eiv='nvim $HOME/dotfiles/nvim/.config/nvim/init.vim'
 alias dot='source $HOME/.zshrc'
 alias hg="history 1 | grep "
