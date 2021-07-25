@@ -1,3 +1,6 @@
+#!/bin/zsh
+# shellcheck shell=bash
+
 setopt autocd autopushd pushdignoredups
 setopt inc_append_history
 setopt share_history
