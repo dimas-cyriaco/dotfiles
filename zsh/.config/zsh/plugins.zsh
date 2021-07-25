@@ -49,3 +49,7 @@ gt() {
     fzf-tmux --multi --preview-window right:70% \
              --preview 'git show --color=always {} | head -'$LINES
 }
+
+# zsh-vim-mode
+
+export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
