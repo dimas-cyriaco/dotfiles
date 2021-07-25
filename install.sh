@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
 
+brew install tmux
 brew install git
 brew install neovim
 brew install zplug
 brew install stow
 brew install ripgrep
+brew install fd
 brew install fzf
 brew install bat
 brew install git-delta
-brew install gotop
+brew install bpytop
 brew install yarn
+brew install ranger
+brew install lazygit
+brew install lazydocker
+brew install lazynpm
+brew install z
 
 brew cask install alacritty
 brew cask install font-sauce-code-pro-nerd-font
