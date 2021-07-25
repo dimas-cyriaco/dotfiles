@@ -2,8 +2,6 @@
 # shellcheck shell=bash
 
 export ZPLUG_HOME=/usr/local/opt/zplug
-export ALIEN_THEME="gruvbox"
-export ALIEN_USE_NERD_FONT=1
 export NVM_DIR="$HOME/.nvm"
 export PROJECTS_PATH="$HOME/Projetos"
 export PATH=/Users/dimascyriaco/.cargo/bin:$PATH
