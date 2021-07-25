@@ -10,46 +10,45 @@ an executable
 
 -- general
 
-O.lang.scala.metals.active = true
+-- lvim.lang.scala.metals.active = true
 
-O.auto_close_tree = 0
-O.colorscheme = "nord"
-O.completion.autocomplete = true
--- O.default_options.scrolloff = 999
-O.default_options.timeoutlen = 100
-O.default_options.wrap = true
-O.format_on_save = true
-O.keys.leader_key = ";"
+lvim.leader = ";"
+lvim.auto_close_tree = 0
+lvim.colorscheme = "nord"
+-- lvim.completion.autocomplete = true
+-- lvim.default_options.scrolloff = 999
+-- lvim.default_options.timeoutlen = 100
+-- lvim.default_options.wrap = true
+lvim.format_on_save = true
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-O.plugin.dashboard.active = true
-O.plugin.nvimtree.hide_dotfiles = 0
-O.plugin.nvimtree.show_icons.git = 1
-O.plugin.nvimtree.side = "left"
-O.plugin.terminal.active = true
-O.plugin.terminal.active = true
-O.plugin.zen.active = false
-O.plugin.zen.window.height = 0.90
+lvim.builtin.dashboard.active = true
+lvim.builtin.nvimtree.hide_dotfiles = 0
+lvim.builtin.nvimtree.show_icons.git = 1
+-- lvim.builtin.nvimtree.side = "left"
+lvim.builtin.terminal.active = true
+-- lvim.builtin.zen.active = false
+-- lvim.builtin.zen.window.height = 0.90
 
 -- if you don't want all the parsers change this to a table of the ones you want
-O.treesitter.ensure_installed = "maintained"
-O.treesitter.ignore_install = { "haskell" }
-O.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.highlight.enabled = true
 
 -- python
-O.lang.python.diagnostics.virtual_text = true
-O.lang.python.analysis.use_library_code_types = true
+-- lvim.lang.python.diagnostics.virtual_text = true
+-- lvim.lang.python.analysis.use_library_code_types = true
 -- to change default formatter from yapf to black
--- O.lang.python.formatter.exe = "black"
--- O.lang.python.formatter.args = {"-"}
+-- lvim.lang.python.formatter.exe = "black"
+-- lvim.lang.python.formatter.args = {"-"}
 
 -- go
 -- to change default formatter from gofmt to goimports
--- O.lang.formatter.go.exe = "goimports"
+-- lvim.lang.formatter.go.exe = "goimports"
 
 -- javascript
-O.lang.tsserver.linter = nil
+-- lvim.lang.tsserver.linter = nil
 
 -- Additional Plugins
 local hop_config = {
@@ -118,7 +117,7 @@ local orgmode_config = {
 	end,
 }
 
-O.user_plugins = {
+lvim.plugins = {
 	{ "nvim-telescope/telescope-project.nvim" },
 	{ "karb94/neoscroll.nvim" },
 	{ "arcticicestudio/nord-vim" },
@@ -131,33 +130,33 @@ O.user_plugins = {
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- O.user_autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}
+-- lvim.user_autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}
 
 -- Additional Leader bindings for WhichKey
-O.user_which_key = {
-	d = { "<cmd>b#<cr>", "Switch Buffers" },
-	D = {
-		name = "Diagnostics",
-		d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
-		l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-		q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
-		r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
-		t = { "<cmd>TroubleToggle<cr>", "trouble" },
-		w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace" },
-	},
-	f = { "<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git,--type,f<CR>", "Find File" },
-	l = {
-		h = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-	},
-	t = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "Projects" },
-	T = {
-		name = "Tabs",
-		c = { "<cmd>BufferCloseAllButCurrent<cr>", "Close others" },
-		n = { "<cmd>BufferNext<cr>", "Go to next Tab" },
-		p = { "<cmd>BufferPrevious<cr>", "Go to previous Tab" },
-		t = { "<cmd>BufferPick<cr>", "Select Tab" },
-	},
-}
+-- local mappings = {
+-- 	d = { "<cmd>b#<cr>", "Switch Buffers" }
+	-- D = {
+		-- name = "Diagnostics",
+		-- d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
+		-- l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+		-- q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+		-- r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+		-- t = { "<cmd>TroubleToggle<cr>", "trouble" },
+		-- w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace" },
+	-- },
+	-- f = { "<cmd>Telescope find_files find_command=fd,--hidden,--exclude,.git,--type,f<CR>", "Find File" },
+	-- l = {
+		-- h = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+	-- },
+	-- t = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "Projects" },
+	-- T = {
+		-- name = "Tabs",
+		-- c = { "<cmd>BufferCloseAllButCurrent<cr>", "Close others" },
+		-- n = { "<cmd>BufferNext<cr>", "Go to next Tab" },
+		-- p = { "<cmd>BufferPrevious<cr>", "Go to previous Tab" },
+		-- t = { "<cmd>BufferPick<cr>", "Select Tab" },
+	-- },
+-- }
 
 require("telescope").load_extension("project")
 require("gitlinker").setup()
@@ -165,4 +164,4 @@ require("neoscroll").setup()
 
 vim.cmd("let g:nvim_tree_group_empty = 1")
 
--- vim.cmd("nnoremap <silent> <leader>lh :lua vim.lsp.buf.signature_help()<CR>")
+vim.cmd("nnoremap <silent> <leader>lh :lua vim.lsp.buf.signature_help()<CR>")
