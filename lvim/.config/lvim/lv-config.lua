@@ -122,6 +122,7 @@ O.user_plugins = {
 	{ "nvim-telescope/telescope-project.nvim" },
 	{ "karb94/neoscroll.nvim" },
 	{ "arcticicestudio/nord-vim" },
+	{ "christoomey/vim-tmux-navigator" },
 	lsp_signature_config,
 	hop_config,
 	trouble_config,
