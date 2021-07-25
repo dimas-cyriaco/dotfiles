@@ -17,9 +17,9 @@ brew install lazygit
 brew install lazydocker
 brew install lazynpm
 brew install z
+brew install font-fira-code-nerd-font
 
 brew cask install alacritty
-brew cask install font-sauce-code-pro-nerd-font
 brew cask install github
 brew cask install slack
 brew cask install notion
