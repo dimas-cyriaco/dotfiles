@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
 
-brew install tmux
-brew install git
-brew install neovim
-brew install zplug
-brew install stow
-brew install ripgrep
-brew install fd
-brew install fzf
 brew install bat
-brew install git-delta
 brew install bpytop
-brew install yarn
-brew install ranger
-brew install lazygit
-brew install lazydocker
-brew install lazynpm
-brew install z
+brew install fd
 brew install font-fira-code-nerd-font
+brew install fzf
+brew install git
+brew install git-delta
+brew install lazydocker
+brew install lazygit
+brew install lazynpm
 brew install lsd
+brew install neovim
+brew install ranger
+brew install ripgrep
+brew install stow
+brew install tmux
+brew install yarn
+brew install z
+brew install zplug
 
 brew cask install alacritty
 brew cask install github
-brew cask install slack
-brew cask install notion
 brew cask install insomnia
+brew cask install notion
+brew cask install slack
 
 stow alacritty
 stow git
