@@ -26,11 +26,16 @@ brew cask install slack
 brew cask install notion
 brew cask install insomnia
 
-stow zsh
-stow lvim
 stow alacritty
 stow git
+stow karabiner
+stow limelight
+stow lvim
+stow skhd
+stow starship
 stow tmux
+stow yabai
+stow zsh
 
 echo "127.0.0.1 local.jusbrasil.com.br" | sudo tee -a /etc/hosts
 
