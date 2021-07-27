@@ -7,8 +7,8 @@ hyper - k : yabai -m window --focus north
 hyper - l : yabai -m window --focus east
 
 hyper - n : yabai -m display --focus recent
-hyper - u : yabai -m space --focus prev
-hyper - i : yabai -m space --focus next
+# hyper - u : yabai -m space --focus prev
+# hyper - i : yabai -m space --focus next
 
 # Focus specific space
 hyper - 1 : yabai -m space --focus 1
