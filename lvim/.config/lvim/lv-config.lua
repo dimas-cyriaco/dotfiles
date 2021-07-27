@@ -108,12 +108,21 @@ lvim.plugins = {
 	{ "arcticicestudio/nord-vim" },
 	{ "christoomey/vim-tmux-navigator" },
 	{ "mateusbraga/vim-spell-pt-br" },
+	{ "scalameta/nvim-metals" },
 	lsp_signature_config,
 	hop_config,
 	trouble_config,
 	gitlinker_config,
 	orgmode_config,
 }
+
+vim.cmd([[augroup scala]])
+vim.cmd([[autocmd!]])
+vim.cmd([[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]])
+vim.cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(require'metals'.bare_config)]])
+vim.cmd([[augroup end]])
+--
+vim.g["metals_server_version"] = "0.10.2+46-e7ab8592-SNAPSHOT"
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.user_autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}
