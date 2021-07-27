@@ -21,6 +21,7 @@ lvim.colorscheme = "nord"
 -- lvim.default_options.wrap = true
 lvim.format_on_save = true
 
+vim.cmd("set relativenumber")
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
