@@ -1,6 +1,3 @@
-#!/bin/zsh
-# shellcheck shell=bash
-
 alias la="lsd -Al --group-dirs first"
 alias ll="lsd -A1 --group-dirs first"
 alias elv='nvim $HOME/dotfiles/lvim/.config/lvim/lv-config.lua'
