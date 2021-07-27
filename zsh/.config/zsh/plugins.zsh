@@ -1,9 +1,10 @@
+# shellcheck shell=bash
+
 # shellcheck disable=SC1091
 source "$ZPLUG_HOME"/init.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'zsh-users/zsh-autosuggestions'
-# zplug "jeffreytse/zsh-vi-mode"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
