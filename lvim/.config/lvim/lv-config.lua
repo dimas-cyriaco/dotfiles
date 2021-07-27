@@ -19,6 +19,7 @@ lvim.format_on_save = true
 
 vim.cmd("set timeoutlen=150")
 vim.cmd("set relativenumber")
+vim.cmd("set spelllang=pt_br,en")
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -106,6 +107,7 @@ lvim.plugins = {
 	{ "karb94/neoscroll.nvim" },
 	{ "arcticicestudio/nord-vim" },
 	{ "christoomey/vim-tmux-navigator" },
+	{ "mateusbraga/vim-spell-pt-br" },
 	lsp_signature_config,
 	hop_config,
 	trouble_config,
