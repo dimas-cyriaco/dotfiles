@@ -5,6 +5,3 @@ setopt share_history
 # Autocomplete
 autoload -U compinit
 compinit
-
-# Vim keybinginds
-bindkey -v
