@@ -10,6 +10,14 @@ hyper - n : yabai -m display --focus recent
 hyper - u : yabai -m space --focus prev
 hyper - i : yabai -m space --focus next
 
+# Focus specific space
+hyper - 1 : yabai -m space --focus 1
+hyper - 2 : yabai -m space --focus 2
+hyper - 3 : yabai -m space --focus 3
+hyper - 4 : yabai -m space --focus 4
+hyper - 5 : yabai -m space --focus 5
+hyper - 6 : yabai -m space --focus 6
+
 hyper - f : yabai -m window --toggle zoom-fullscreen;\
                  yabai -m space --toggle padding
 
