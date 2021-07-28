@@ -109,12 +109,15 @@ lvim.plugins = {
 	{ "christoomey/vim-tmux-navigator" },
 	{ "mateusbraga/vim-spell-pt-br" },
 	{ "scalameta/nvim-metals" },
+	{ "megalithic/zk.nvim" },
 	lsp_signature_config,
 	hop_config,
 	trouble_config,
 	gitlinker_config,
 	orgmode_config,
 }
+
+require("zk_config")
 
 vim.cmd([[augroup scala]])
 vim.cmd([[autocmd!]])
