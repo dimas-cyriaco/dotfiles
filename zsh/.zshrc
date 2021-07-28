@@ -3,6 +3,9 @@
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# Fix bug: https://github.com/ohmyzsh/ohmyzsh/issues/4607
+export FPATH="/usr/local/share/zsh/functions:$FPATH"
+
 my_shdir=$XDG_CONFIG_HOME/zsh
 
 my_configs=(
