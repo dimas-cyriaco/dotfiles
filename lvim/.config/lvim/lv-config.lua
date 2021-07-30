@@ -1,16 +1,4 @@
---[[
-O is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
 -- general
-
--- lvim.lang.scala.metals.active = true
 
 lvim.leader = ";"
 lvim.auto_close_tree = 0
@@ -21,20 +9,15 @@ vim.cmd("set timeoutlen=150")
 vim.cmd("set relativenumber")
 vim.cmd("set spelllang=pt_br,en")
 
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.nvimtree.hide_dotfiles = 0
 lvim.builtin.nvimtree.show_icons.git = 1
--- lvim.builtin.nvimtree.side = "left"
 lvim.builtin.terminal.active = true
 
--- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
--- Additional Plugins
 local hop_config = {
 	"phaazon/hop.nvim",
 	event = "BufRead",
@@ -110,6 +93,7 @@ lvim.plugins = {
 	{ "mateusbraga/vim-spell-pt-br" },
 	{ "scalameta/nvim-metals" },
 	{ "megalithic/zk.nvim" },
+	{ "romgrk/doom-one.vim" },
 	lsp_signature_config,
 	hop_config,
 	trouble_config,
