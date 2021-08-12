@@ -86,6 +86,7 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
+# Nord
 colors:
   primary:
     background: "#2e3440"

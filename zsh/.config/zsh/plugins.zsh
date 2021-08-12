@@ -5,6 +5,7 @@ source "$ZPLUG_HOME"/init.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'zsh-users/zsh-autosuggestions'
+zplug "agkozak/zsh-z"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -17,14 +18,11 @@ fi
 zplug load
 
 
-# Z
-source /usr/local/etc/profile.d/z.sh
-
 # like normal z when used with arguments but displays an fzf prompt when used without.
 unalias z 2> /dev/null
 z() {
-    [ $# -gt 0 ] && _z "$*" && return
-    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+    [ $# -gt 0 ] && zshz "$*" && return
+    cd "$(zshz -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
 
 

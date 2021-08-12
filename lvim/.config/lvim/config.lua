@@ -94,6 +94,8 @@ lvim.plugins = {
 	{ "scalameta/nvim-metals" },
 	{ "megalithic/zk.nvim" },
 	{ "romgrk/doom-one.vim" },
+  { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } },
+  { "mboughaba/i3config.vim" },
 	lsp_signature_config,
 	hop_config,
 	trouble_config,
