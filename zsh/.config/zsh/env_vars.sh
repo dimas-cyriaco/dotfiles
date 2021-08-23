@@ -11,6 +11,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export HISTSIZE=5000               #How many lines of history to keep in memory
 export HISTFILE=~/.zsh_history     #Where to save history to disk
 export SAVEHIST=5000               #Number of history entries to save to disk
+export EDITOR=lvim
+export SPECTRE_ASKPASS='sap'
 
 # NVM config
 # shellcheck disable=SC1091
