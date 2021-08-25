@@ -242,6 +242,8 @@ label-volume-foreground = ${root.foreground}
 label-muted = 婢: 0%
 label-muted-foreground = #666
 
+click-right = pavucontrol
+
 [module/alsa]
 type = internal/alsa
 
