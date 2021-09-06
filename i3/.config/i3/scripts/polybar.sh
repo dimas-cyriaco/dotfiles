@@ -8,6 +8,6 @@ killall -q polybar
 
 # Launch Polybar, using default config location ~/.config/polybar/config
 # polybar default &
-MONITOR="HDMI-0" polybar --reload default &
-MONITOR="HDMI-1" polybar --reload default &
+MONITOR="HDMI-A-0" polybar --reload default &
+MONITOR="DisplayPort-0" polybar --reload default &
 

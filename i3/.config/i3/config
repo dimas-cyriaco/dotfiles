@@ -241,10 +241,10 @@ set $ws10 "10"
 #workspace $ws5 output HDMI-1
 
 # Bind program to workspace and focus to them on startup.
-assign [class="(?i)firefox"] $ws2
-assign [class="Thunar"] $ws4
-assign [class="Thunderbird"] $ws5
-assign [class="Slack"] $ws1
+# assign [class="(?i)firefox"] $ws2
+# assign [class="Thunar"] $ws4
+# assign [class="Thunderbird"] $ws5
+# assign [class="Slack"] $ws1
 
 # Automatic set focus new window if it opens on another workspace.
 for_window [class=Alacritty] focus
@@ -282,6 +282,9 @@ exec --no-startup-id nm-applet
 
 # Set wallpaper.
 exec --no-startup-id nitrogen --restore
+
+# Start clipboard manager
+exec --no-startup-id xfce4-clipman
 
 # Set powersavings for display.
 exec --no-startup-id xset s 480 dpms 600 600 600
