@@ -10,7 +10,7 @@ font pango:Rubik 14
 # Set the mod key to the winkey.
 set $mod Mod4
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 1
 
 ####################
 # Workspace layout #
@@ -27,8 +27,8 @@ workspace_layout default
 new_window pixel 1
 
 # Set inner/outer gaps
-gaps inner 8
-gaps outer 4
+gaps inner 0
+gaps outer 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position.
 floating_modifier $mod
@@ -131,16 +131,15 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Return exec alacritty
 
 # Kill focused window.
-bindsym $mod+c kill
+bindsym $mod+Shift+c kill
 
 # exit-menu.
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
+bindsym $mod+Shift+q exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
 
-# Lock the system.
-bindsym $mod+Shift+l exec ~/.config/i3/scripts/blur-lock.sh
+bindsym $mod+Shift+e exec alacritty -e lvim ~/.config/i3/config
 
 # Reload the configuration file.
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+t reload
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3).
 bindsym $mod+Shift+r restart
@@ -156,10 +155,10 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 
 # Move focused window.
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+b move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
 
 # Split in horizontal orientation.
 bindsym $mod+b split h
@@ -327,7 +326,7 @@ set $base0E #c0b7f9
 set $base0F #fcc09e
 
 # class		        	    border	bground text	  indicator	child_border
-client.focused          #5DD98B #a3be8c #ffffff #81a1c1
+client.focused          #5DD98B #a3be8c #ffffff #81a1c1 #88C0D0
 client.unfocused        #2e3440 #2e3440 #888888 #2e3440
 client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
 client.placeholder      #2e3440 #2e3440 #888888 #2e3440
@@ -335,36 +334,10 @@ client.urgent           #900000 #900000 #ffffff #900000
 
 client.background       #242424
 
-################
-# Bar settings #
-################
-
-bar {
-  mode invisible
-  position top
-  height 35
-  status_command i3blocks -c ~/.config/i3/i3blocks.conf
-  tray_output primary
-  tray_padding 0
-  strip_workspace_numbers yes
-
-  colors {
-    separator  $base01
-    background $base01
-    statusline #81a1c1
-      
-    #                  border  background text
-    focused_workspace  $base01 $base01    #81a1c1 
-    active_workspace   $base01 $base02    $base03
-    inactive_workspace $base01 $base01    #4c566a
-    urgent_workspace   $base01 $base01    $base08
-    binding_mode       $base01 #81a1c1    #2e3440
-	}
-}
-
 # Keybindings
 
 bindsym $mod+space exec rofi -modi drun -show drun
+bindsym $mod+y exec rofi -show run
 
 # Rofi window change menu bindings.
 
