@@ -57,11 +57,14 @@ font-3 = FiraCode Nerd Font Mono:pixelsize=20;1
 font-4 = FontAwesome5Brands:pixelsize=14;1
 
 modules-left = i3
-modules-center = mpd timer date
-modules-right = xbacklight memory cpu filesystem battery temperature pulseaudio powermenu
+modules-center = timer date
+modules-right = memory cpu filesystem battery temperature pulseaudio powermenu
 
 tray-position = right
 tray-padding = 1
+wm-restack = i3
+tray-offset-y = 0
+; tray-reparent = true
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -242,7 +245,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = 婢: 0%
 label-muted-foreground = #666
 
-click-right = pavucontrol
+click-right = change-audio
 
 [module/alsa]
 type = internal/alsa
