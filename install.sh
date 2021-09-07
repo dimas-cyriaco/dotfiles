@@ -19,6 +19,7 @@ brew install tmux
 brew install yarn
 brew install z
 brew install zplug
+# pacman -S pkgfile
 
 brew cask install alacritty
 brew cask install github
