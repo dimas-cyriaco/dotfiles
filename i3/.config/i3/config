@@ -34,6 +34,9 @@ gaps outer 0
 floating_modifier $mod
 
 # Switch to workspace.
+bindsym $mod+n    workspace  prev_on_output
+bindsym $mod+m    workspace  next_on_output
+
 bindsym $mod+u    workspace  $ws1
 bindsym $mod+i    workspace  $ws2
 bindsym $mod+o    workspace  $ws3
@@ -106,7 +109,7 @@ bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # Move workspace to other monitor.
-bindsym $mod+m move workspace to output left
+bindsym $mod+d move workspace to output left
 
 # Resize window.
 mode "resize" {
@@ -212,8 +215,8 @@ bindsym $mod+Shift+p exec /usr/local/bin/switch-audio-port
 ## App shortcuts ##
 ###################
 
-bindsym $mod+w exec /usr/bin/firefox
-bindsym $mod+n exec /usr/bin/thunar
+# bindsym $mod+w exec /usr/bin/firefox
+# bindsym $mod+n exec /usr/bin/thunar
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 #######################
