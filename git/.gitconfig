@@ -15,27 +15,24 @@
   wip = !git add -u && git commit -m "WIP"
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [user]
-	name = Dimas Cyriaco
-	email = dimascyriaco@pm.me
+  name = Dimas Cyriaco
+  email = dimascyriaco@pm.me
 [core]
   pager = delta
-	editor = lvim
-
+  editor = lvim
 [interactive]
-    diffFilter = delta --color-only
-
+  diffFilter = delta --color-only
 [delta]
-    features = side-by-side line-numbers decorations
-    whitespace-error-style = 22 reverse
-
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
 [delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold yellow ul
-    file-decoration-style = none
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
 [init]
-	defaultBranch = master
+  defaultBranch = master
