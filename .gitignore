@@ -11,3 +11,5 @@ nvim/.config/nvim/plugin/packer_compiled.vim
 tmux/.config/tmux/plugins
 zsh/.config/zsh/_deno
 zsh/.config/zsh/secrets.sh
+
+nvim/.config/nvim/plugin/packer_compiled.lua
