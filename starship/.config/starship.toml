@@ -20,3 +20,5 @@ disabled = false
 disabled = false
 symbol = "✖ "
 
+[package]
+disabled = true
