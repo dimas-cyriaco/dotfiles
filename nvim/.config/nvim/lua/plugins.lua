@@ -26,7 +26,12 @@ return require("packer").startup({
   function(use)
     use("wbthomason/packer.nvim")
     use("b3nj5m1n/kommentary")
-    use("arcticicestudio/nord-vim")
+    use({
+      "arcticicestudio/nord-vim",
+      config = function()
+        vim.cmd([[colorscheme nord]])
+      end,
+    })
     use("neovim/nvim-lspconfig")
     use("kyazdani42/nvim-web-devicons")
 
@@ -74,13 +79,13 @@ return require("packer").startup({
       end,
     })
 
-    use({
-      "marko-cerovac/material.nvim",
-      config = function()
-        require("material").setup()
-        vim.cmd([[colorscheme material]])
-      end,
-    })
+    -- use({
+    -- "marko-cerovac/material.nvim",
+    -- config = function()
+    -- require("material").setup()
+    -- vim.cmd([[colorscheme material]])
+    -- end,
+    -- })
 
     use({
       "kyazdani42/nvim-tree.lua",
