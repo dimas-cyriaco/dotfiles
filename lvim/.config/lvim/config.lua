@@ -90,6 +90,12 @@ lvim.plugins = {
 -- end
 
 -- set a formatter if you want to override the default lsp one (if it exists)
+lvim.lang.lua.formatters = {
+	{
+		exe = "stylua",
+		args = {},
+	},
+}
 lvim.lang.python.formatters = {
 	{
 		exe = "black",
