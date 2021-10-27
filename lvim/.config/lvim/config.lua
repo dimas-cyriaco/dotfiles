@@ -61,6 +61,7 @@ lvim.plugins = {
 	{ "mateusbraga/vim-spell-pt-br" },
 	{ "scalameta/nvim-metals" },
 	{ "arcticicestudio/nord-vim" },
+  { "folke/trouble.nvim" },
 }
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
