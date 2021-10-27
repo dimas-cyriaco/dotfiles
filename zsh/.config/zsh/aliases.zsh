@@ -13,6 +13,7 @@ alias lg='lazygit'
 alias ll="lsd -A1 --group-dirs first"
 alias ln='lazynpm'
 alias nr='npm run'
+alias nvim='lvim'
 alias pf='kubectl port-forward svc/network-graphql-playground 8080:80'
 alias s='spectre -t x'
 alias t='clear && task'
