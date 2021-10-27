@@ -1,31 +1,31 @@
 #!/usr/bin/env bash
 
-brew install bat
-brew install bpytop
-brew install fd
-brew install font-fira-code-nerd-font
-brew install fzf
-brew install git
-brew install git-delta
-brew install lazydocker
-brew install lazygit
-brew install lazynpm
-brew install lsd
-brew install neovim
-brew install ranger
-brew install ripgrep
-brew install stow
-brew install tmux
-brew install yarn
-brew install z
-brew install zplug
-# pacman -S pkgfile
+# Packages
+# bat
+# bpytop
+# fd
+# font-fira-code-nerd-font
+# fzf
+# git
+# git-delta
+# lazydocker
+# lazygit
+# lazynpm
+# lsd
+# neovim
+# ranger
+# ripgrep
+# stow
+# tmux
+# yarn
+# z
+# zplug
 
-brew cask install alacritty
-brew cask install github
-brew cask install insomnia
-brew cask install notion
-brew cask install slack
+# Apps
+# alacritty
+# github
+# insomnia
+# slack
 
 stow alacritty
 stow git
@@ -53,7 +53,7 @@ avn setup
 npm install -g yarn
 
 # Install LunarVim
-LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)
 
 if [ -z "$NEXUS_EMAIL" ]; then
   : ${GITHUB_USERNAME?"Need to set GITHUB_USERNAME"}
