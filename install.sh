@@ -3,6 +3,7 @@
 # Packages
 # bat
 # bpytop
+# broot
 # fd
 # font-fira-code-nerd-font
 # fzf
@@ -15,17 +16,23 @@
 # neovim
 # ranger
 # ripgrep
+# spotifyd
+# spotify-tui
 # stow
 # tmux
 # yarn
 # z
+# zellitj
 # zplug
 
 # Apps
 # alacritty
+# firefox
 # github
 # insomnia
 # slack
+# steam
+# lutris
 
 stow alacritty
 stow git
