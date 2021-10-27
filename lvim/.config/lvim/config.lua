@@ -29,15 +29,15 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
--- }
+lvim.builtin.which_key.mappings["t"] = {
+	name = "+Trouble",
+	r = { "<cmd>Trouble lsp_references<cr>", "References" },
+	f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+	d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
+	q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+	l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+	w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+}
 
 vim.cmd("set timeoutlen=150")
 vim.cmd("set relativenumber")
@@ -61,7 +61,7 @@ lvim.plugins = {
 	{ "mateusbraga/vim-spell-pt-br" },
 	{ "scalameta/nvim-metals" },
 	{ "arcticicestudio/nord-vim" },
-  { "folke/trouble.nvim" },
+	{ "folke/trouble.nvim" },
 }
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers
