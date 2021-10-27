@@ -39,6 +39,11 @@ lvim.builtin.which_key.mappings["t"] = {
 	w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
 }
 
+lvim.builtin.which_key.mappings["f"] = {
+	"<cmd>Telescope find_files find_command=fd,--hidden,--follow,--type,file,--exclude,'.git',--exclude,'node_modules'<cr>",
+	"Files",
+}
+
 vim.cmd("set timeoutlen=150")
 vim.cmd("set relativenumber")
 vim.cmd("set spelllang=pt_br,en")
