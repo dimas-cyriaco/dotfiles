@@ -2,6 +2,10 @@
 
 alias dot='source $HOME/.zshrc'
 alias en='nvim $HOME/dotfiles/lvim/.config/lvim/lv-config.lua'
+alias hcp='hc Pomodoro'
+alias hca='hc Água'
+alias hcy='hc Ynab'
+alias hce='hc Exercicio'
 alias hg="history 1 | grep "
 alias hl="habito list"
 alias hll="habito list -l"
