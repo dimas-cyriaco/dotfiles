@@ -173,3 +173,5 @@ vim.g["metals_server_version"] = "0.10.2+46-e7ab8592-SNAPSHOT"
 -- }
 require("neoscroll").setup()
 vim.cmd("let g:nvim_tree_group_empty = 1")
+
+require("zk_config")
