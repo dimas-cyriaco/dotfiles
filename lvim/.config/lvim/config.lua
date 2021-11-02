@@ -120,6 +120,12 @@ lvim.plugins = {
 		end,
 	},
 	{
+		"Pocco81/AutoSave.nvim",
+		config = function()
+			require("autosave").setup()
+		end,
+	},
+	{
 		"karb94/neoscroll.nvim",
 		config = function()
 			require("neoscroll").setup()
