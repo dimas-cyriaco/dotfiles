@@ -6,6 +6,20 @@ lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.colorscheme = "nord"
 
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldcolumn = "1"
+vim.o.foldlevelstart = 1
+
+function _G.custom_fold_text()
+	local line = vim.fn.getline(vim.v.foldstart)
+	local line_count = vim.v.foldend - vim.v.foldstart + 1
+	return line .. " " .. line_count .. " lines"
+end
+
+vim.opt.foldtext = "v:lua.custom_fold_text()"
+vim.opt.fillchars = { eob = "-", fold = " " }
+vim.opt.viewoptions:remove("options")
 -- keymappings [view all the defaults by pressing <leader>Lk]
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
