@@ -107,8 +107,27 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.plugins = {
-	{ "karb94/neoscroll.nvim" },
 	{ "christoomey/vim-tmux-navigator" },
+	{
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("neoscroll").setup()
+
+			local t = {}
+			-- Syntax: t[keys] = {function, {function arguments}}
+			t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
+			t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
+			t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450" } }
+			t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450" } }
+			t["<C-k>"] = { "scroll", { "-1", "true", "0", nil } }
+			t["<C-j>"] = { "scroll", { "1", "true", "0", nil } }
+			t["zt"] = { "zt", { "250" } }
+			t["zz"] = { "zz", { "250" } }
+			t["zb"] = { "zb", { "250" } }
+
+			require("neoscroll.config").set_mappings(t)
+		end,
+	},
 	{ "mateusbraga/vim-spell-pt-br" },
 	{ "scalameta/nvim-metals" },
 	{ "arcticicestudio/nord-vim" },
