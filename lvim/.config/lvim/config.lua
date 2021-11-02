@@ -62,6 +62,10 @@ require("telescope").setup({
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+
+lvim.builtin.bufferline.active = false
+vim.cmd([[ set showtabline=0 ]])
+
 lvim.builtin.which_key.mappings["t"] = {
 	name = "+Trouble",
 	r = { "<cmd>Trouble lsp_references<cr>", "References" },
