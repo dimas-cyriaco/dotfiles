@@ -108,6 +108,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.plugins = {
 	{ "karb94/neoscroll.nvim" },
+	{ "christoomey/vim-tmux-navigator" },
 	{ "mateusbraga/vim-spell-pt-br" },
 	{ "scalameta/nvim-metals" },
 	{ "arcticicestudio/nord-vim" },
