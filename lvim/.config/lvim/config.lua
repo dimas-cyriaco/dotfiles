@@ -137,6 +137,13 @@ lvim.plugins = {
 		event = "BufRead",
 	},
 	{
+		"windwp/nvim-ts-autotag",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+	{
 		"karb94/neoscroll.nvim",
 		config = function()
 			require("neoscroll").setup()
