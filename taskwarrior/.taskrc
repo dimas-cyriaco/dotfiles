@@ -39,3 +39,4 @@ context.pr=+work +pr
 context.work=+work -techfriday -oncall
 context=personal
 
+context.rice=+rice
