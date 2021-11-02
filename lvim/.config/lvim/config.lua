@@ -30,7 +30,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- lvim.builtin.telescope.on_config_done = function()
---   local actions = require "telescope.actions"
+-- local actions = require("telescope.actions")
+-- local bufnr = actions.get_selected_entry()
 --   -- for input mode
 --   lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_next
 --   lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
@@ -40,6 +41,25 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --   lvim.builtin.telescope.defaults.mappings.n["<C-j>"] = actions.move_selection_next
 --   lvim.builtin.telescope.defaults.mappings.n["<C-k>"] = actions.move_selection_previous
 -- end
+
+require("telescope").setup({
+	pickers = {
+		buffers = {
+			show_all_buffers = true,
+			sort_lastused = false,
+			sort_mru = true,
+			previewer = false,
+			mappings = {
+				i = {
+					["<c-d>"] = "delete_buffer",
+				},
+				n = {
+					["<c-d>"] = "delete_buffer",
+				},
+			},
+		},
+	},
+})
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -56,6 +76,13 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.which_key.mappings["f"] = {
 	"<cmd>Telescope find_files find_command=fd,--hidden,--follow,--type,file,--exclude,'.git',--exclude,'node_modules'<cr>",
 	"Files",
+}
+
+lvim.builtin.which_key.mappings["b"] = {
+	b = {
+		"<cmd>Telescope buffers<cr>",
+		"Buffers",
+	},
 }
 
 vim.cmd("set timeoutlen=150")
