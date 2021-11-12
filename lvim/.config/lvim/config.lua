@@ -6,20 +6,23 @@ lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.colorscheme = "nord"
 
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-vim.wo.foldcolumn = "1"
-vim.o.foldlevelstart = 1
+-- vim.wo.foldmethod = "expr"
+-- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.wo.foldcolumn = "1"
+-- vim.o.foldlevelstart = 1
 
-function _G.custom_fold_text()
-	local line = vim.fn.getline(vim.v.foldstart)
-	local line_count = vim.v.foldend - vim.v.foldstart + 1
-	return line .. " " .. line_count .. " lines"
-end
+-- function _G.custom_fold_text()
+-- 	local line = vim.fn.getline(vim.v.foldstart)
+-- 	local line_count = vim.v.foldend - vim.v.foldstart + 1
+-- 	return line .. " " .. line_count .. " lines"
+-- end
 
-vim.opt.foldtext = "v:lua.custom_fold_text()"
-vim.opt.fillchars = { eob = "-", fold = " " }
-vim.opt.viewoptions:remove("options")
+-- vim.opt.foldtext = "v:lua.custom_fold_text()"
+-- vim.opt.fillchars = { eob = "-", fold = " " }
+-- vim.opt.viewoptions:remove("options")
+
+-- Folded, FoldColumn
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -88,6 +91,16 @@ lvim.builtin.which_key.mappings["b"] = {
 	},
 }
 
+lvim.builtin.which_key.mappings["a"] = {
+	name = "+Harpoon",
+	a = { ":lua require('harpoon.mark').add_file()<cr>", "Add file" },
+	u = { ":lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to file 1" },
+	i = { ":lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to file 2" },
+	o = { ":lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to file 3" },
+	p = { ":lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to file 4" },
+	s = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show List" },
+}
+
 vim.cmd("set timeoutlen=150")
 vim.cmd("set relativenumber")
 vim.cmd("set spelllang=pt_br,en")
@@ -95,11 +108,12 @@ vim.cmd("set spelllang=pt_br,en")
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
-lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.hide_dotfiles = 0
+lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.update_cwd = false
+lvim.builtin.project.manual_mode = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {}
@@ -108,6 +122,15 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.plugins = {
 	{ "christoomey/vim-tmux-navigator" },
+	{
+		"code-biscuits/nvim-biscuits",
+		config = function()
+			require("nvim-biscuits").setup({
+				cursor_line_only = true,
+			})
+		end,
+	},
+	{ "ThePrimeagen/harpoon" },
 	{
 		"folke/persistence.nvim",
 		event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -119,12 +142,12 @@ lvim.plugins = {
 			})
 		end,
 	},
-	{
-		"Pocco81/AutoSave.nvim",
-		config = function()
-			require("autosave").setup()
-		end,
-	},
+	-- {
+	-- 	"Pocco81/AutoSave.nvim",
+	-- 	config = function()
+	-- 		require("autosave").setup()
+	-- 	end,
+	-- },
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "BufRead",

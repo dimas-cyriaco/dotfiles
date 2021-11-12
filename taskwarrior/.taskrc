@@ -37,6 +37,8 @@ context.friday=+techfriday
 context.oncall=+oncall
 context.pr=+work +pr
 context.work=+work -techfriday -oncall
-context=personal
 
 context.rice=+rice
+context.current.read=proj:RemoveLawsuit.CPF
+context.current.write=proj:RemoveLawsuit.CPF
+context=friday

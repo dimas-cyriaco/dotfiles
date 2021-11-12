@@ -1,0 +1,194 @@
+{
+  "auto": {
+    "cleanup": {
+      "days": 12,
+      "played": false,
+      "unfinished": false,
+      "unplayed": false
+    },
+    "retries": 3,
+    "update": {
+      "enabled": true,
+      "frequency": 20
+    }
+  },
+  "check_connection": true,
+  "device_sync": {
+    "after_sync": {
+      "delete_episodes": false,
+      "mark_episodes_played": false,
+      "sync_disks": false
+    },
+    "custom_sync_name": "{episode.sortdate}_{episode.title}",
+    "custom_sync_name_enabled": false,
+    "delete_played_episodes": false,
+    "device_folder": "/media/big/Dropbox/Media/Podcasts",
+    "device_type": "filesystem",
+    "max_filename_length": 120,
+    "one_folder_per_podcast": true,
+    "playlists": {
+      "create": true,
+      "folder": "Playlists",
+      "two_way_sync": false,
+      "use_absolute_path": true
+    },
+    "skip_played_episodes": true
+  },
+  "downloads": {
+    "chronological_order": true
+  },
+  "extensions": {
+    "enabled": [
+      "gtk_statusicon",
+      "minimize_on_start",
+      "update_feeds_on_startup",
+      "youtube-dl",
+      "rockbox_coverart",
+      "tagging"
+    ],
+    "gtk_statusicon": {
+      "download_progress_bar": false
+    },
+    "rockbox_coverart": {
+      "art_name_on_device": "cover.jpg"
+    },
+    "tagging": {
+      "always_remove_tags": false,
+      "auto_embed_coverart": false,
+      "genre_tag": "Podcast",
+      "modify_tags": true,
+      "set_artist_to_album": false,
+      "set_version": 4,
+      "strip_album_from_title": true
+    },
+    "youtube-dl": {
+      "manage_channel": true,
+      "manage_downloads": true
+    }
+  },
+  "limit": {
+    "bandwidth": {
+      "enabled": false,
+      "kbps": 500.0
+    },
+    "downloads": {
+      "concurrent": 1,
+      "concurrent_max": 16,
+      "enabled": true
+    },
+    "episodes": 200
+  },
+  "mygpo": {
+    "device": {
+      "caption": "gPodder on dimas-pc",
+      "type": "desktop",
+      "uid": "dimas-pc"
+    },
+    "enabled": false,
+    "password": "",
+    "server": "gpodder.net",
+    "username": ""
+  },
+  "player": {
+    "audio": "default",
+    "video": "default"
+  },
+  "software_update": {
+    "check_on_startup": true,
+    "interval": 5,
+    "last_check": 1635991810
+  },
+  "ui": {
+    "cli": {
+      "colors": true
+    },
+    "gtk": {
+      "download_list": {
+        "remove_finished": true
+      },
+      "episode_list": {
+        "always_show_new": true,
+        "columns": 20,
+        "descriptions": true,
+        "view_mode": 3
+      },
+      "html_shownotes": true,
+      "live_search_delay": 200,
+      "new_episodes": "download",
+      "podcast_list": {
+        "all_episodes": true,
+        "hide_empty": false,
+        "sections": true,
+        "view_mode": 1
+      },
+      "search_always_visible": false,
+      "state": {
+        "channel_editor": {
+          "height": 480,
+          "maximized": false,
+          "width": 400,
+          "x": 3161,
+          "y": 319
+        },
+        "config_editor": {
+          "height": -1,
+          "maximized": false,
+          "width": -1,
+          "x": -1,
+          "y": -1
+        },
+        "episode_selector": {
+          "height": 400,
+          "maximized": false,
+          "width": 600,
+          "x": 2581,
+          "y": 359
+        },
+        "episode_window": {
+          "height": 400,
+          "maximized": false,
+          "width": 500,
+          "x": -1,
+          "y": -1
+        },
+        "export_to_local_folder": {
+          "height": 400,
+          "maximized": false,
+          "width": 500,
+          "x": -1,
+          "y": -1
+        },
+        "main_window": {
+          "episode_column_order": [],
+          "episode_column_sort_id": 12,
+          "episode_column_sort_order": false,
+          "episode_list_size": 511,
+          "height": 1038,
+          "maximized": false,
+          "paned_position": 244,
+          "width": 958,
+          "x": 2880,
+          "y": 40
+        },
+        "preferences": {
+          "height": 952,
+          "maximized": false,
+          "width": 863,
+          "x": 2731,
+          "y": 92
+        }
+      },
+      "toolbar": false
+    }
+  },
+  "vimeo": {
+    "fileformat": "720p"
+  },
+  "youtube": {
+    "preferred_fmt_id": 18,
+    "preferred_fmt_ids": [],
+    "preferred_hls_fmt_id": 93,
+    "preferred_hls_fmt_ids": []
+  }
+}
+

@@ -2,11 +2,15 @@
 # shellcheck shell=bash
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export GPODDER_DOWNLOAD_DIR=/media/big/Dropbox/Media/Podcasts/
 
 # Fix bug: https://github.com/ohmyzsh/ohmyzsh/issues/4607
 export FPATH="/usr/local/share/zsh/functions:$FPATH"
 
 my_shdir=$XDG_CONFIG_HOME/zsh
+
+. /usr/share/fzf/key-bindings.zsh
+. /usr/share/fzf/completion.zsh
 
 my_configs=(
   deno.zsh

@@ -261,6 +261,7 @@ key_bindings:
   - { key: C, mods: Alt, chars: "\x1bc" }
   - { key: X, mods: Command, chars: "\x1bx" }
   - { key: Space, mods: Control, chars: "\x00" }
+  - { key: Semicolon, mods: Alt, chars: "" }
 
 # Mouse bindings
 #

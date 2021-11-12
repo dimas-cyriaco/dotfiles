@@ -10,6 +10,8 @@ font pango:Rubik 14
 # Set the mod key to the winkey.
 set $mod Mod4
 
+focus_follows_mouse no
+
 for_window [class="^.*"] border pixel 1
 
 ####################
