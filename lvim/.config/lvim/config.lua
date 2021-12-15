@@ -66,7 +66,7 @@ require("telescope").setup({
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
-lvim.builtin.bufferline.active = false
+-- lvim.builtin.bufferline.active = false
 vim.cmd([[ set showtabline=0 ]])
 
 lvim.builtin.which_key.mappings["t"] = {
@@ -120,6 +120,10 @@ lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+-- lvim.lsp.override = { "dart" }
+
+-- function _G.custom_fold_text()
+-- 	local line = vim.fn.getline(vim.v.foldstart)
 lvim.plugins = {
 	{ "christoomey/vim-tmux-navigator" },
 	{
@@ -142,12 +146,6 @@ lvim.plugins = {
 			})
 		end,
 	},
-	-- {
-	-- 	"Pocco81/AutoSave.nvim",
-	-- 	config = function()
-	-- 		require("autosave").setup()
-	-- 	end,
-	-- },
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "BufRead",
@@ -155,10 +153,16 @@ lvim.plugins = {
 			require("lsp_signature").setup()
 		end,
 	},
-	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		event = "BufRead",
-	},
+	-- {
+	-- 	"JoosepAlviste/nvim-ts-context-commentstring",
+	-- 	event = "BufRead",
+	-- },
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  },
 	{
 		"windwp/nvim-ts-autotag",
 		event = "InsertEnter",
@@ -186,8 +190,8 @@ lvim.plugins = {
 			t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
 			t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450" } }
 			t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450" } }
-			t["<C-k>"] = { "scroll", { "-1", "true", "0", nil } }
-			t["<C-j>"] = { "scroll", { "1", "true", "0", nil } }
+			t["<M-k>"] = { "scroll", { "-1", "true", "0", nil } }
+			t["<M-j>"] = { "scroll", { "1", "true", "0", nil } }
 			t["zt"] = { "zt", { "250" } }
 			t["zz"] = { "zz", { "250" } }
 			t["zb"] = { "zb", { "250" } }
@@ -195,8 +199,18 @@ lvim.plugins = {
 			require("neoscroll.config").set_mappings(t)
 		end,
 	},
+  {
+    "akinsho/flutter-tools.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function ()
+      require("flutter-tools").setup{
+        dev_log = {
+          open_cmd = 'tabedit'
+        },
+      }
+    end
+  },
 	{ "mateusbraga/vim-spell-pt-br" },
-	{ "scalameta/nvim-metals" },
 	{ "arcticicestudio/nord-vim" },
 	{ "folke/trouble.nvim" },
 }
@@ -239,6 +253,8 @@ lvim.lang.python.formatters = {
 		args = {},
 	},
 }
+
+lvim.lang.dart.lsp.enabled = true
 -- set an additional linter
 -- lvim.lang.python.linters = {
 --   {
@@ -258,45 +274,39 @@ formatters.setup({
 	{
 		exe = "prettier",
 		filetypes = {
-			"javascriptreact",
-			"javascript",
-			"typescriptreact",
-			"typescript",
-			"json",
+			-- "javascriptreact",
+			-- "javascript",
+			-- "typescriptreact",
+			-- "typescript",
+			-- "json",
 			"markdown",
 		},
 	},
 })
 
 -- ESLint
-local linters = require("lvim.lsp.null-ls.linters")
-linters.setup({
-	{
-		exe = "eslint",
-		filetypes = {
-			"javascriptreact",
-			"javascript",
-			"typescriptreact",
-			"typescript",
-			"vue",
-		},
-	},
-})
+-- local linters = require("lvim.lsp.null-ls.linters")
+-- linters.setup({
+-- 	{
+-- 		exe = "eslint",
+-- 		filetypes = {
+-- 			"javascriptreact",
+-- 			"javascript",
+-- 			"typescriptreact",
+-- 			"typescript",
+-- 			"vue",
+-- 		},
+-- 	},
+-- })
 
-vim.cmd([[augroup scala]])
-vim.cmd([[autocmd!]])
-vim.cmd([[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]])
-vim.cmd([[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(require'metals'.bare_config)]])
-vim.cmd([[augroup end]])
---
-vim.g["metals_server_version"] = "0.10.2+46-e7ab8592-SNAPSHOT"
--- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"}, {
---         "ray-x/lsp_signature.nvim",
---         config = function() require"lsp_signature".on_attach() end,
---         event = "InsertEnter"
---     }
+require'lspconfig'.denols.setup{
+  init_options = {
+    lint = true,
+  },
+}
+
+-- nvim_lsp.denols.setup {
+--   on_attach = on_attach,
 -- }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
