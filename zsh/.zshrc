@@ -1,22 +1,14 @@
 #!/bin/zsh
 # shellcheck shell=bash
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export GPODDER_DOWNLOAD_DIR=/media/big/Dropbox/Media/Podcasts/
-
-# Fix bug: https://github.com/ohmyzsh/ohmyzsh/issues/4607
-export FPATH="/usr/local/share/zsh/functions:$FPATH"
+autoload -Uz compinit
+compinit
 
 my_shdir=$XDG_CONFIG_HOME/zsh
 
-# . /usr/share/fzf/key-bindings.zsh
-# . /usr/share/fzf/completion.zsh
-
 my_configs=(
-  deno.zsh
   env_vars.sh
   secrets.sh
-  plugins.zsh
   options.zsh
   aliases.zsh
   fzf.zsh
@@ -29,15 +21,7 @@ for f in "${my_configs[@]}"; do
   [[ -f $my_shdir/$f ]] && . "$my_shdir"/"$f"
 done
 
-# shellcheck disable=SC1091
-# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-# shellcheck disable=SC1091
-# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="/Users/dimascyriaco/.sdkman"
-# shellcheck disable=SC1091
-# [[ -s "/Users/dimascyriaco/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/dimascyriaco/.sdkman/bin/sdkman-init.sh"
+source ${HOME}/.zsh_plugins.sh
 
 eval "$(starship init zsh)"
 

@@ -1,9 +1,9 @@
 #!/bin/zsh
 # shellcheck shell=bash
 
-export ZPLUG_HOME=/usr/local/opt/zplug
+export XDG_CONFIG_HOME="$HOME/.config"
 export NVM_DIR="$HOME/.nvm"
-export PROJECTS_PATH="$HOME/Projetos"
+export CODE_PATH="$HOME/code"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
@@ -12,8 +12,7 @@ export HISTFILE="$HOME/.zhistory"
 export HISTSIZE=5000               #How many lines of history to keep in memory
 export HISTFILE=~/.zsh_history     #Where to save history to disk
 export SAVEHIST=5000               #Number of history entries to save to disk
-export EDITOR=lvim
-export SPECTRE_ASKPASS='sap'
+export EDITOR=nvim
 
 # NVM config
 # shellcheck disable=SC1091
