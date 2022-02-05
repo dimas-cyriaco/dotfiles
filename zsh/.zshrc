@@ -4,6 +4,8 @@
 autoload -Uz compinit
 compinit
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 my_shdir=$XDG_CONFIG_HOME/zsh
 
 my_configs=(

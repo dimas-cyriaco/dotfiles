@@ -22,3 +22,6 @@ symbol = "✖ "
 
 [package]
 disabled = true
+
+[aws]
+disabled = false
