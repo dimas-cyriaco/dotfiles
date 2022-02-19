@@ -25,6 +25,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # shellcheck disable=SC1091
 [[ -s "$HOME"/.avn/bin/avn.sh ]] && source "$HOME"/.avn/bin/avn.sh # load avn
 
-export AWS_PROFILE=personal
+# export AWS_PROFILE=personal
+export AWS_PROFILE=motrix
 
 unset BROWSER

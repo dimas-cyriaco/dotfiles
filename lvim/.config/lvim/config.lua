@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "onedark"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = ";"
@@ -46,10 +46,17 @@ lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
+  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
+  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Diagnostics" },
+}
+
+lvim.builtin.which_key.mappings["j"] = {
+  name = "+Jest",
+  j = { "<cmd>lua require'jester'.run{ path_to_jest = './node_modules/.bin/jest' }<CR>", "Run nearest Test" },
+  f = { "<cmd>lua require'jester'.run_file{ path_to_jest = './node_modules/.bin/jest' }<CR>", "Run file" },
+  l = { "<cmd>lua require'jester'.run_last{ path_to_jest = './node_modules/.bin/jest' }<CR>", "Run last Test" },
 }
 
 -- TODO: User Config for predefined plugins
@@ -57,6 +64,7 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
+lvim.builtin.bufferline.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 
@@ -102,25 +110,25 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
 --   { command = "black", filetypes = { "python" } },
 --   { command = "isort", filetypes = { "python" } },
---   {
---     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--print-with", "100" },
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+  {
+    -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+    exe = "prettier",
+    ---@usage arguments to pass to the formatter
+    -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+    -- extra_args = { "--print-with", "100" },
+    ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+  },
+}
 
 -- -- set additional linters
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { exe = "eslint", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" } },
 --   {
 --     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
 --     command = "shellcheck",
@@ -133,13 +141,67 @@ lvim.builtin.treesitter.highlight.enabled = true
 --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
 --     filetypes = { "javascript", "python" },
 --   },
--- }
+}
 
 -- Additional Plugins
 lvim.plugins = {
   {"folke/tokyonight.nvim"},
   {"folke/trouble.nvim"},
+  {"David-Kunz/jester"},
+  {'navarasu/onedark.nvim',
+    config = function()
+      require('onedark').setup {
+        style = 'darker'
+      }
+      require('onedark').load()
+    end
+  },
+  {
+    "nacro90/numb.nvim",
+    event = "BufRead",
+    config = function()
+    require("numb").setup {
+      show_numbers = true, -- Enable 'number' for the window while peeking
+      show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+    }
+    end,
+  },
+  {
+    "folke/lsp-colors.nvim",
+    event = "BufRead",
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function()
+      require "lsp_signature".setup()
+    end
+  },
+  {
+    "karb94/neoscroll.nvim",
+    event = "WinScrolled",
+    config = function()
+      require('neoscroll').setup({
+        -- All these keys will be mapped to their corresponding default scrolling animation
+        mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>', '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+        hide_cursor = true,          -- Hide cursor while scrolling
+        stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+        use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
+        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+        easing_function = nil,        -- Default easing function
+        pre_hook = nil,              -- Function to run before the scrolling animation starts
+        post_hook = nil,              -- Function to run after the scrolling animation ends
+      })
+    end
+  },
 }
+
+lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+
+vim.wo.foldmethod="expr"
+vim.o.foldexpr="nvim_treesitter#foldexpr()"
+vim.wo.foldenable=true
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
