@@ -59,6 +59,16 @@ lvim.builtin.which_key.mappings["j"] = {
   l = { "<cmd>lua require'jester'.run_last{ path_to_jest = './node_modules/.bin/jest' }<CR>", "Run last Test" },
 }
 
+lvim.builtin.which_key.mappings["a"] = {
+  name = "+Harpoon",
+  m = { "<cmd>lua require'harpoon.ui'.toggle_quick_menu()<cr>", "Show List" },
+  a = { "<cmd>lua require'harpoon.mark'.add_file()<cr>", "Add Mark" },
+  u = { "<cmd>lua require'harpoon.ui'.nav_file(1)<cr>", "Add Mark" },
+  i = { "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", "Add Mark" },
+  o = { "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", "Add Mark" },
+  p = { "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", "Add Mark" }
+}
+
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
@@ -145,6 +155,7 @@ linters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
+  {"christoomey/vim-tmux-navigator"},
   {"folke/tokyonight.nvim"},
   {"folke/trouble.nvim"},
   {"David-Kunz/jester"},
@@ -195,6 +206,54 @@ lvim.plugins = {
       })
     end
   },
+  {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    config = function ()
+      require'nvim-treesitter.configs'.setup {
+        textobjects = {
+          select = {
+            enable = true,
+
+            -- Automatically jump forward to textobj, similar to targets.vim
+            lookahead = true,
+
+            keymaps = {
+              -- You can use the capture groups defined in textobjects.scm
+              ["af"] = "@function.outer",
+              ["if"] = "@function.inner",
+              ["ac"] = "@class.outer",
+              ["ic"] = "@class.inner",
+            },
+          },
+        },
+      }
+    end
+  },
+  {
+    "RRethy/nvim-treesitter-textsubjects",
+    config = function ()
+      require('nvim-treesitter.configs').setup {
+        textsubjects = {
+          enable = true,
+          -- prev_selection = ',', -- (Optional) keymap to select the previous selection
+          keymaps = {
+            ['<cr>'] = 'textsubjects-smart',
+            [';'] = 'textsubjects-container-outer',
+            ['i;'] = 'textsubjects-container-inner',
+          },
+        },
+      }
+    end
+  },
+  { 'ThePrimeagen/harpoon',
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-lua/popup.nvim" },
+    },
+    config = function ()
+      require("telescope").load_extension('harpoon')
+    end
+  }
 }
 
 lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
@@ -203,8 +262,65 @@ vim.wo.foldmethod="expr"
 vim.o.foldexpr="nvim_treesitter#foldexpr()"
 vim.wo.foldenable=true
 
+local actions = require "telescope.actions"
+require("telescope").setup {
+  pickers = {
+    buffers = {
+      mappings = {
+        i = {
+          ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+        }
+      }
+    }
+  }
+}
+
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+
+local ls = require "luasnip"
+local types = require "luasnip.util.types"
+
+vim.keymap.set({ "i", "s" }, "<c-l>", function ()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  end
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<c-h>", function ()
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  end
+end, { silent = true })
+
+vim.keymap.set("i", "<c-k>", function ()
+  if ls.choice_active() then
+    ls.change_choice()
+  end
+end, { silent = true })
+
+ls.config.set_config {
+  history = true,
+
+  updateevents = "TextChanged,TextChangedI",
+
+  enable_autosnippets = true,
+
+  ext_opts = {
+    [types.choiceNode] = {
+      active = {
+        virt_text = { { "<-", "Error" } },
+      },
+    },
+  },
+}
+
+require "user.snippets"
+
+lvim.builtin.which_key.mappings["S"] = {
+  name = "+LuaSnip",
+  r = { "<cmd>source ~/.config/lvim/lua/user/snippets.lua<cr>", "Reload Snippets" },
+}
 
