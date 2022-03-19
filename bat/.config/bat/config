@@ -1,6 +1,6 @@
 # Set the highlighting theme.
 # Run `bat --list-themes` for a list of all available themes.
---theme="Nord"
+# --theme="Nord"
 
 # Show Git modifications.
 --style="changes"
