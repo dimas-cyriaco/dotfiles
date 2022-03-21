@@ -9,6 +9,6 @@ formatters.setup {
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { exe = "eslint", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" } },
+  { exe = "xo", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" } },
 }
 

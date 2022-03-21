@@ -11,3 +11,4 @@ alias ln='lazynpm'
 alias nr='npm run'
 alias nvim='lvim'
 alias s="npm run sls -- "
+alias awsp="source _awsp"
