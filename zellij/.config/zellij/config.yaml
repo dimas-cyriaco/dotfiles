@@ -1,0 +1,62 @@
+---
+# Configuration for zellij.
+
+# In order to troubleshoot your configuration try using the following command:
+# `zellij setup --check`
+# It should show current config locations and features that are enabled.
+keybinds:
+  unbind: [ Ctrl: 'p', Ctrl: 'n', Ctrl: 'h', Ctrl: 'l']
+  normal:
+    - action: [SwitchToMode: Pane,]
+      key: [Ctrl: 'r',]
+  pane:
+    - action: [SwitchToMode: Normal,]
+      key: [Ctrl: 'r', Char: "\n", Char: ' ', Esc]
+
+plugins:
+    - path: tab-bar
+      tag: tab-bar
+    - path: status-bar
+      tag: status-bar
+    - path: strider
+      tag: strider
+
+# Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
+# eg. when terminal window with an active zellij session is closed
+# Options:
+#   - detach (Default)
+#   - quit
+#on_force_close: quit
+
+# Send a request for a simplified ui (without arrow fonts) to plugins
+# Options:
+#   - true
+#   - false (Default)
+simplified_ui: false
+
+# Choose the path to the default shell that zellij will use for opening new panes
+# Default: $SHELL
+# default_shell: fish
+
+# Toggle between having pane frames around the panes
+# Options:
+#   - true
+#   - false (default)
+#no_pane_frames: true
+
+# Choose the theme that is specified in the themes section.
+# Default: default
+# theme: default
+
+# Choose the mode that zellij uses when starting up.
+# Default: normal
+#default_mode: locked
+
+# Toggle enabling the mouse mode.
+# On certain configurations, or terminals this could
+# potentially interfere with copying text.
+# Options:
+#   - true
+#   - false (default)
+#disable_mouse_mode: true
+

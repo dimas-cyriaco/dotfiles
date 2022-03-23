@@ -9,6 +9,5 @@ alias lg='lazygit'
 alias ll="lsd -A1 --group-dirs first"
 alias ln='lazynpm'
 alias nr='npm run'
-alias nvim='lvim'
 alias s="npm run sls -- "
 alias awsp="source _awsp"
