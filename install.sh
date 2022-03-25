@@ -1,5 +1,20 @@
 #!/usr/bin/env bash
 
+brew install --head neovim
+brew install antibody
+brew install fzf
+
+# Install FZF extra functionality.
+/opt/homebrew/opt/fzf/install
+
+# alacritty
+# bat
+# broot
+# karabiner
+# starship \
+# stow \
+# tmux
+
 stow alacritty
 stow git
 stow karabiner
@@ -8,7 +23,7 @@ stow starship
 stow tmux
 stow zsh
 
-# echo "127.0.0.1 local.jusbrasil.com.br" | sudo tee -a /etc/hosts
+echo "127.0.0.1 local.motrix.global" | sudo tee -a /etc/hosts
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | zsh
 
@@ -24,17 +39,4 @@ npm install -g awsp
 # avn setup
 
 npm install -g yarn
-
-# Install LunarVim
-bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/lunarvim/rolling/utils/installer/install.sh)
-
-# if [ -z "$NEXUS_EMAIL" ]; then
-  # : ${GITHUB_USERNAME?"Need to set GITHUB_USERNAME"}
-  # : ${GITHUB_ACCESS_TOKEN?"Need to set GITHUB_ACCESS_TOKEN"}
-
-#   npm set registry https://nexus.apps.jusbr.com/repository/npm-all/
-#   npm set email $NEXUS_EMAIL
-#   npm set _auth $(echo -n $GITHUB_USERNAME:$GITHUB_ACCESS_TOKEN | base64)
-#   npm set always-auth true
-# fi
 
