@@ -1,92 +1,33 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator
-
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty it self.
-env:
-  # TERM env customization.
-  #
-  # If this property is not set, alacritty will set it to xterm-256color.
-  #
-  # Note that some xterm terminfo databases don't declare support for italics.
-  # You can verify this by checking for the presence of `smso` and `sitm` in
-  # `infocmp xterm-256color`.
-  TERM: xterm-256color
-
-# Window dimensions in character columns and lines
-# (changes require restart)
 window:
-  # dimensions:
-  #   columns: 180
-  #   lines: 48
-
-  # Background opacity
   opacity: 1.0
-
   startup_mode: Maximized
-
-# Adds this many blank pixels of padding around the window
-# Units are physical pixels; this is not DPI aware.
-# (change requires restart)
-# padding:
-#   x: 2
-#   y: 2
-
-# The FreeType rasterizer needs to know the device DPI for best results
-# (changes require restart)
-# dpi:
-# x: 96.0
-# y: 96.0
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
 
-# Font configuration (changes require restart)
 font:
-  # The normal (roman) font face to use.
   normal:
     family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
     style: Regular
 
-  # The bold font face
   bold:
     family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
     style: Bold
 
-  # The italic font face
   italic:
     family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
     style: Italic
 
-  # The bold italic font face
   bold_italic:
     family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
-    # Style can be specified to pick a specific face.
     style: Bold Italic
 
-  # Point size of the font
   size: 18
-
-  # Offset is the extra space around each character. offset.y can be thought of
-  # as modifying the linespacing, and offset.x as modifying the letter spacing.
-  offset:
-    x: 0
-    y: 0
-
-  # Glyph offset determines the locations of the glyphs within their cells with
-  # the default being at the bottom. Increase the x offset to move the glyph to
-  # the right, increase the y offset to move the glyph upward.
-  glyph_offset:
-    x: 0
-    y: 0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # Should display the render timer
 render_timer: false
@@ -317,6 +258,7 @@ key_bindings:
   - { key: X, mods: Command, chars: "\x1bx" }
   - { key: Semicolon, mods: Control, chars: "" }
   - { key: Semicolon, mods: Alt, chars: "" }
+  - { key: Space, mods: Control, chars: "\x00" }
 
 # Mouse bindings
 #
@@ -345,13 +287,9 @@ selection:
 
 hide_cursor_when_typing: false
 
-# Live config reload (changes require restart)
+cursor:
+  style:
+    shape: Block
+  vi_mode_style: Block
+
 live_config_reload: true
-# Shell
-#
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login

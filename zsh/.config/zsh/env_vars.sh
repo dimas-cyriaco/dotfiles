@@ -25,3 +25,11 @@ export EDITOR=nvim
 export AWS_PROFILE=motrix
 
 unset BROWSER
+
+# Vi mode settings
+export KEYTIMEOUT=1
+
+function zvm_config() {
+  export ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
+  export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+}

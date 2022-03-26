@@ -13,3 +13,5 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 autoload -U compinit
 compinit
 
+# VI Mode
+bindkey -v
