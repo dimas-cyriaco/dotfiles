@@ -1,7 +1,6 @@
 default_mode: locked
 keybinds:
     unbind: true
-    # the prefix key ^b
     locked:
         - action: [SwitchToMode: Normal,]
           key: [ Ctrl: 'b',]
@@ -9,9 +8,11 @@ keybinds:
           key: [ Alt: 'h' ]
         - action: [MoveFocusOrTab: Right]
           key: [ Alt: 'l', ]
+        - action: [MoveFocus: Up]
+          key: [ Alt: 'k' ]
+        - action: [MoveFocus: Down]
+          key: [ Alt: 'j', ]
     normal:
-        # send the prefix-key ^b on pressing b in normal mode
-        # then switch back to locked mode
         - action: [Write: [2,], SwitchToMode: Locked]
           key: [Char: 'b']
         - action: [SwitchToMode: Locked,]
@@ -346,3 +347,18 @@ keybinds:
           key: [Ctrl: 'q',]
         - action: [Detach,]
           key: [Char: 'd',]
+
+themes:
+  default:
+    bg: [36, 40, 59]
+    fg: [192, 202, 245]
+    black: [29, 32, 47]
+    red: [247, 118, 142]
+    green: [158, 206, 106]
+    yellow: [224, 175, 104]
+    blue: [122, 162, 247]
+    magenta: [187, 154, 247]
+    cyan: [125, 207, 255]
+    white: [169, 177, 214]
+    orange: [255, 158, 100]
+    gray: [65, 72, 104]

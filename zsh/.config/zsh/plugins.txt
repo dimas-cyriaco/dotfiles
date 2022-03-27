@@ -11,3 +11,6 @@ zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 
 jeffreytse/zsh-vi-mode
+torifat/npms
+jedahan/ripz
+jscutlery/nx-completion

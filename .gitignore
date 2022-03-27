@@ -16,3 +16,5 @@ nvim/.config/nvim/plugin/packer_compiled.lua
 nvim/.config/nvim/session
 
 .luarc.json
+todo.md
+
