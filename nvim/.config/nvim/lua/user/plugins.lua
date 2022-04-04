@@ -71,6 +71,17 @@ return packer.startup(function(use)
 	use("romgrk/nvim-treesitter-context")
 
 	use({
+		"renerocksai/telekasten.nvim",
+		requires = {
+			"renerocksai/calendar-vim",
+			"nvim-telescope/telescope-symbols.nvim",
+			"mzlogin/vim-markdown-toc",
+		},
+	})
+
+	use({ "iamcco/markdown-preview.nvim", ft = "markdown", run = "cd app && yarn install" })
+
+	use({
 		"jghauser/fold-cycle.nvim",
 		config = function()
 			require("fold-cycle").setup()

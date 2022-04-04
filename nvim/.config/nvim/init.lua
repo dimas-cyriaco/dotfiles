@@ -13,6 +13,7 @@ require("user.lightbulb")
 require("user.toggleterm")
 require("user.gitsigns")
 require("user.context_vt")
+require("user.telekasten")
 
 -- local ui = vim.api.nvim_list_uis()[1]
 
