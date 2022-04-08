@@ -1,10 +1,15 @@
+local success, telekasten = pcall(require, "telekasten")
+if not success then
+	return
+end
+
 local home = vim.fn.expand("~/Notes")
 -- NOTE for Windows users:
 -- - don't use Windows
 -- - try WSL2 on Windows and pretend you're on Linux
 -- - if you **must** use Windows, use "/Users/myname/zettelkasten" instead of "~/zettelkasten"
 -- - NEVER use "C:\Users\myname" style paths
-require("telekasten").setup({
+telekasten.setup({
 	home = home,
 
 	-- if true, telekasten will be enabled when opening a note within the configured home
