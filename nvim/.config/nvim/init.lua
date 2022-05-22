@@ -22,7 +22,7 @@ require("jabs").setup({
 	width = 80,
 	height = 20,
 	border = "shadow", -- none, single, double, rounded, solid, shadow, (or an array or chars)
-	--
+
 	-- -- Options for preview window
 	-- preview_position = 'left', -- top, bottom, left, right
 	-- preview = {
@@ -39,3 +39,5 @@ require("jabs").setup({
 vim.wo.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.wo.foldenable = false
+
+vim.cmd([[set guifont=FiraCode\ Nerd\ Font:h18,\ MesloLGS\ NF:h18,DejavuSans:h18]])

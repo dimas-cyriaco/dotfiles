@@ -2,7 +2,6 @@
 # shellcheck shell=bash
 
 export NVM_DIR="$HOME/.nvm"
-export CODE_PATH="$HOME/code"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
@@ -11,7 +10,8 @@ export HISTFILE="$HOME/.zhistory"
 export HISTSIZE=5000               #How many lines of history to keep in memory
 export HISTFILE=~/.zsh_history     #Where to save history to disk
 export SAVEHIST=5000               #Number of history entries to save to disk
-export EDITOR=nvim
+export EDITOR=hx
+export RANGER_LOAD_DEFAULT_RC="FALSE".
 
 # NVM config
 # shellcheck disable=SC1091

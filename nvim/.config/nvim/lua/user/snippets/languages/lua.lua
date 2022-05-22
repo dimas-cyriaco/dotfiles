@@ -1,7 +1,7 @@
-local ls = require "luasnip"
+local ls = require("luasnip")
 
 ls.snippets = {
-  lua = {
-    ls.parser.parse_snippet("bla", [[teste!!!]]),
-  },
+	lua = {
+		ls.parser.parse_snippet("bla", [[teste!!!]]),
+	},
 }

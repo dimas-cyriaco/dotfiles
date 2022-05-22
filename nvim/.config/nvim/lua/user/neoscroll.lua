@@ -18,7 +18,7 @@ neoscroll.setup({
 
 local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}
-t["<D-j>"] = { "scroll", { "-1", "true", "100" } }
-t["<D-k>"] = { "scroll", { "1", "true", "100" } }
+t["<C-p>"] = { "scroll", { "-1", "true", "100" } }
+t["<C-n>"] = { "scroll", { "1", "true", "100" } }
 
 require("neoscroll.config").set_mappings(t)

@@ -1,0 +1,12 @@
+[[language]]
+name = "typescript"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "rust"
+
+[[language]]
+name = "markdown"
+auto-format = true
+language-server = { command = "remark-language-server", args = ["--stdio"] }

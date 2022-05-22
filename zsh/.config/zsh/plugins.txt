@@ -14,4 +14,3 @@ jeffreytse/zsh-vi-mode
 torifat/npms
 jedahan/ripz
 jscutlery/nx-completion
-Valiev/almostontop

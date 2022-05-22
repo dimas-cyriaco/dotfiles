@@ -46,29 +46,40 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
 	use("rcarriga/nvim-notify")
+	use("L3MON4D3/LuaSnip")
 	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
+	-- use("hrsh7th/cmp-path")
+	-- use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
-	use("saadparwaiz1/cmp_luasnip")
 	use("hrsh7th/nvim-cmp")
+	use("saadparwaiz1/cmp_luasnip")
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
-	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
 	use("moll/vim-bbye")
-	use("David-Kunz/jester")
+	-- use("David-Kunz/jester")
 	use("mrjones2014/legendary.nvim")
 	use("stevearc/dressing.nvim")
-	use("kosayoda/nvim-lightbulb")
+	-- use("kosayoda/nvim-lightbulb")
 	use("matbme/JABS.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("akinsho/toggleterm.nvim")
+	-- use("akinsho/toggleterm.nvim")
 	use("kevinhwang91/nvim-bqf")
 	use("karb94/neoscroll.nvim")
 	use("haringsrob/nvim_context_vt")
 	use("romgrk/nvim-treesitter-context")
+	use("ellisonleao/gruvbox.nvim")
+	use("anuvyklack/nvim-keymap-amend")
+
+	use({
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		module = "persistence",
+		config = function()
+			require("persistence").setup()
+		end,
+	})
 
 	use({
 		"renerocksai/telekasten.nvim",
@@ -79,7 +90,7 @@ return packer.startup(function(use)
 		},
 	})
 
-	use({ "iamcco/markdown-preview.nvim", ft = "markdown", run = "cd app && yarn install" })
+	-- use({ "iamcco/markdown-preview.nvim", ft = "markdown", run = "cd app && yarn install" })
 
 	use({
 		"jghauser/fold-cycle.nvim",
@@ -102,19 +113,19 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use({
-		"henriquehbr/nvim-startup.lua",
-		config = function()
-			require("nvim-startup").setup()
-		end,
-	})
+	-- use({
+	-- 	"henriquehbr/nvim-startup.lua",
+	-- 	config = function()
+	-- 		require("nvim-startup").setup()
+	-- 	end,
+	-- })
 
-	use({
-		"petertriho/nvim-scrollbar",
-		config = function()
-			require("scrollbar").setup()
-		end,
-	})
+	-- use({
+	-- 	"petertriho/nvim-scrollbar",
+	-- 	config = function()
+	-- 		require("scrollbar").setup()
+	-- 	end,
+	-- })
 
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -160,15 +171,15 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use({
-		"rebelot/kanagawa.nvim",
-		config = function()
-			require("kanagawa").setup({
-				dimInactive = true,
-				globalStatus = true,
-			})
-		end,
-	})
+	-- use({
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	config = function()
+	-- 		require("kanagawa").setup({
+	-- 			dimInactive = true,
+	-- 			globalStatus = true,
+	-- 		})
+	-- 	end,
+	-- })
 
 	use({
 		"nvim-treesitter/nvim-treesitter",

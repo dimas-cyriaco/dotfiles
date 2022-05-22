@@ -38,6 +38,8 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+require("luasnip/loaders/from_vscode").load()
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -76,9 +78,9 @@ cmp.setup({
 		end,
 	},
 	sources = {
+		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "cmdline" },
@@ -87,8 +89,8 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	documentation = {
-		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	window = {
+		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
 		ghost_text = false,
