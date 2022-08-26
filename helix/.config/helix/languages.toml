@@ -14,3 +14,7 @@ language-server = { command = "remark-language-server", args = ["--stdio"] }
 [[language]]
 name = "css"
 language-server = { command = "vscode-css-language-server", args = ["--stdio"] }
+
+[[language]]
+name = "toml"
+language-server = { command = "taplo" }

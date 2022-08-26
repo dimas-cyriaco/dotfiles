@@ -1,12 +1,3 @@
-[gcloud]
-disabled = true
-
-[kubernetes]
-disabled = false
-format = 'on [⛵$context](dimmed green) '
-[kubernetes.context_aliases]
-"gke_.*_(?P<cluster>[\\w-]+)" = "gke-$cluster"
-
 [hostname]
 disabled = true
 
@@ -14,7 +5,7 @@ disabled = true
 disabled = true
 
 [git_metrics]
-disabled = false
+disabled = true
 
 [status]
 disabled = false
@@ -25,3 +16,20 @@ disabled = true
 
 [aws]
 disabled = false
+format = '\[[ ($profile)]($style)\]'
+
+[git_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+disabled = true
+
+[nodejs]
+format = '\[[$symbol($version)]($style)\]'
+
+[pulumi]
+disabled = false
+format = '\[[$symbol$username - $stack]($style)\]'
+
+[rust]
+format = '\[[$symbol($version)]($style)\]'
