@@ -22,6 +22,7 @@ brew install stow
 brew install trash
 brew install zellij
 brew install --cask karabiner-elements
+brew install --cask amethyst
 
 ## Helix
 
