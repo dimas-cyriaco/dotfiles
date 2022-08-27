@@ -21,11 +21,24 @@ brew install starship
 brew install stow
 brew install trash
 brew install zellij
+brew install --cask karabiner-elements
+
+## Helix
+
+### Install Rust
+
+curl https://sh.rustup.rs -sSf | sh
+
+### Install Helix
+
+mkdir code
+cd code
+git clone git@github.com:helix-editor/helix.git
+cd helix
+cargo install --path helix-term
 
 # Install FZF extra functionality.
 /opt/homebrew/opt/fzf/install
-
-# karabiner
 
 stow alacritty
 stow bat
@@ -39,18 +52,7 @@ stow zsh
 
 echo "127.0.0.1 local.motrix.global" | sudo tee -a /etc/hosts
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | zsh
+## AstroVim
 
-zsh
-nvm install 16
-nvm install 17
-nvm alias default 16
-nvm use 16
-
-npm install -g awsp
-
-# npm install -g avn avn-nvm
-# avn setup
-
-npm install -g yarn
-
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+nvim +PackerSync
