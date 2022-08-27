@@ -5,17 +5,12 @@ brew install alacritty
 brew install antibody
 brew install asdf
 brew install aws-cli
-brew install awsu
 brew install bat
 brew install broot
 brew install font-fira-code-nerd-font
 brew install fzf
-brew install httpie
-brew install jq
-brew install key-codes
 brew install lazygit
 brew install lsd
-brew install lua
 brew install ripgrep
 brew install starship
 brew install stow
@@ -42,6 +37,7 @@ cargo install --path helix-term
 /opt/homebrew/opt/fzf/install
 
 stow alacritty
+stow amethyst
 stow bat
 stow broot
 stow git
@@ -51,7 +47,7 @@ stow starship
 stow zellij
 stow zsh
 
-echo "127.0.0.1 local.motrix.global" | sudo tee -a /etc/hosts
+# echo "127.0.0.1 local.motrix.global" | sudo tee -a /etc/hosts
 
 ## AstroVim
 
