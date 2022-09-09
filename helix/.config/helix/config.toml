@@ -1,8 +1,9 @@
-theme = "bogster"
+theme = "tokyonight"
 
 [editor]
 line-number = "relative"
 scrolloff = 999
+bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"

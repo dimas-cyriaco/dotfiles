@@ -7,10 +7,13 @@ brew install asdf
 brew install aws-cli
 brew install bat
 brew install broot
+brew install dynobase
+brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font
 brew install fzf
 brew install lazygit
 brew install lsd
+brew install pulumi
 brew install ripgrep
 brew install starship
 brew install stow
@@ -41,6 +44,7 @@ stow amethyst
 stow bat
 stow broot
 stow git
+stow helix
 stow karabiner
 stow nvim
 stow starship
@@ -53,3 +57,25 @@ stow zsh
 
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 nvim +PackerSync
+
+## Asdf
+
+### Node
+
+brew install gpg
+brew install gawk
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs latest
+asdf global nodejs latest
+
+### Yarn
+
+asdf plugin add yarn
+asdf install yarn 1.22.19
+asdf global yarn 1.22.19
+
+## Editor Stuff
+
+### Typescript language server
+
+npm install -g typescript typescript-language-server

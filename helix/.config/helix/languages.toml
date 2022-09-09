@@ -2,6 +2,13 @@
 name = "typescript"
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
+formatter = { command = 'npx', args = ["prettier", "--config", ".prettierrc", "--parser", "typescript"] }
+
+[[language]]
+name = "tsx"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = 'npx', args = ["prettier", "--config", ".prettierrc", "--parser", "typescript"] }
 
 [[language]]
 name = "rust"
@@ -10,6 +17,7 @@ name = "rust"
 name = "markdown"
 auto-format = true
 language-server = { command = "remark-language-server", args = ["--stdio"] }
+formatter = { command = 'npx', args = ["prettier", "-c", ".prettierrc", "--parser", "markdown"] }
 
 [[language]]
 name = "css"
