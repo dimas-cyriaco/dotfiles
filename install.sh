@@ -64,8 +64,9 @@ nvim +PackerSync
 brew install gpg
 brew install gawk
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs latest
-asdf global nodejs latest
+asdf list all nodejs
+asdf install nodejs x.x.x
+asdf global nodejs x.x.x
 
 ### Yarn
 
