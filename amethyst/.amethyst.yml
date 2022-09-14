@@ -20,7 +20,7 @@ relaunch-amethyst:
     key: x
 
 # Enable focus-follows-mouse
-mouse-follows-focus: true
+mouse-follows-focus: false
 focus-follows-mouse: false
 
 # Add 10px margin between windows
