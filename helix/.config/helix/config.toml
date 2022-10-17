@@ -26,6 +26,8 @@ mode.select = "SELECT"
 "space" = { w = ":w", c = ":buffer-close" }
 X = "extend_line_above"
 C-x = [ "extend_to_line_bounds", "trim_selections" ]
+C-h = [ ":buffer-previous" ]
+C-l = [ ":buffer-next" ]
 
 [keys.insert]
 j = { k = "normal_mode" } # Maps `jk` to exit insert mode
