@@ -5,7 +5,7 @@ brew install kitty
 brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font
 brew install lsd
-brew install antibody
+brew install antidote
 brew install starship
 brew install stow
 brew install --head neovim
@@ -21,6 +21,7 @@ brew install ripgrep
 brew install trash
 brew install --cask karabiner-elements
 brew install --cask amethyst
+brew install google-chrome
 
 ## Helix
 

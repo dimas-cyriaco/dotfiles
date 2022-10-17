@@ -20,3 +20,7 @@ todo.md
 
 
 nvim/.config/nvim/sessions
+zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/.zsh_history
+zsh/.config/zsh/plugins.zsh
+zsh/.zsh_plugins.txt

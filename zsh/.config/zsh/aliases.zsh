@@ -1,6 +1,7 @@
 # shellcheck shell=bash
 
 alias awsp="source _awsp"
+alias b="br -c :sort_by_type"
 alias dot='source $HOME/.zshrc'
 alias en='lvim $HOME/dotfiles/lvim/.config/lvim/config.lua'
 alias hg="history 1 | grep "

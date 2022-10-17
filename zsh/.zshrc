@@ -23,9 +23,8 @@ for f in "${my_configs[@]}"; do
   [[ -f $my_shdir/$f ]] && . "$my_shdir"/"$f"
 done
 
-source <(antibody init)
-antibody bundle < ~/dotfiles/zsh/.config/zsh/plugins.txt
-# source ${HOME}/.zsh_plugins.sh
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+antidote load ~/dotfiles/zsh/.config/zsh/plugins.txt
 
 eval "$(starship init zsh)"
 
@@ -41,10 +40,5 @@ source $(brew --prefix asdf)/libexec/asdf.sh
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
-
 export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="$HOME/.sdkman"
-# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -12,6 +12,7 @@ formatter = { command = 'npx', args = ["prettier", "--config", ".prettierrc", "-
 
 [[language]]
 name = "rust"
+auto-format = true
 
 [[language]]
 name = "markdown"
@@ -25,4 +26,4 @@ language-server = { command = "vscode-css-language-server", args = ["--stdio"] }
 
 [[language]]
 name = "toml"
-language-server = { command = "taplo" }
+language-server = { command = "taplo", args = ["lsp", "stdio"] }

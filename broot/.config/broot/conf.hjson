@@ -92,6 +92,12 @@
 	# 	"/home/dys/useless"			: hide
 	# 	"/home/dys/my-link-I-want-to-explore"	: enter
 	# }
+	special_paths: {
+	    "**/.git": hide
+	    "**/.vscode": no-enter
+	    "**/.github": no-enter
+	    "**/.husky": no-enter
+	}
 
 	###############################################################
 	# Quit on last cancel
@@ -262,6 +268,14 @@
 		{
 			key: ctrl-h
 			execution: ":panel_left"
+		}
+
+		{
+	    invocation: openeditleave
+	    key: enter
+			execution: "$EDITOR {file}:{line}"
+	    leave_broot: false
+	    apply_to: file
 		}
 	]
 
