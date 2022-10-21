@@ -27,3 +27,4 @@ language-server = { command = "vscode-css-language-server", args = ["--stdio"] }
 [[language]]
 name = "toml"
 language-server = { command = "taplo", args = ["lsp", "stdio"] }
+auto-format = true
