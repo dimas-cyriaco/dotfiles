@@ -1,28 +1,41 @@
-# Use tall and fullscreen layouts
 layouts:
     - tall
     - fullscreen
 
-# Add "command" to the default mods
 mod1:
-    - option
-    - shift
+    - control
     - command
 mod2:
-    - option
     - shift
     - control
     - command
 
-# Modify the amethyst relaunch to use x and not z
 relaunch-amethyst:
     mod: mod2
     key: x
+    
+focus-cw:
+    mod: mod1
+    key: k
+    
+focus-ccw:
+    mod: mod1
+    key: j
+    
+swap-main:
+    mod: mod2
+    key: i
 
-# Enable focus-follows-mouse
+shrink-main:
+  mod: mod2
+  key: h
+
+expand-main:
+  mod: mod2
+  key: l
+
 mouse-follows-focus: false
 focus-follows-mouse: false
 
-# Add 10px margin between windows
 window-margins: true
 window-margin-size: 10

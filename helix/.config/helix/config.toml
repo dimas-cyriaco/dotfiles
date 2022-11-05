@@ -2,7 +2,7 @@ theme = "autumn_night" # "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
-scrolloff = 999
+scrolloff = 22
 bufferline = "multiple"
 color-modes = true
 
@@ -25,9 +25,11 @@ mode.select = "SELECT"
 [keys.normal]
 "space" = { w = ":w", c = ":buffer-close" }
 X = "extend_line_above"
-C-x = [ "extend_to_line_bounds", "trim_selections" ]
-C-h = [ ":buffer-previous" ]
-C-l = [ ":buffer-next" ]
+C-x = ["extend_to_line_bounds", "trim_selections"]
+C-h = [":buffer-previous"]
+C-l = [":buffer-next"]
+D = ["extend_to_line_end", "delete_selection"]
+V = ["extend_to_line_end"]
 
 [keys.insert]
 j = { k = "normal_mode" } # Maps `jk` to exit insert mode
