@@ -1,4 +1,5 @@
-theme = "autumn_night" # "catppuccin_mocha"
+theme = "dark_plus"
+# theme = "ayu_dark"
 
 [editor]
 line-number = "relative"

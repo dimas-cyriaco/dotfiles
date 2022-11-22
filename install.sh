@@ -80,3 +80,9 @@ asdf global yarn 1.22.19
 ### Typescript language server
 
 npm install -g typescript typescript-language-server
+
+## Nushell + Starship
+
+# brew install nushell
+# mkdir ~/.cache/starship
+# starship init nu | save ~/.cache/starship/init.nu

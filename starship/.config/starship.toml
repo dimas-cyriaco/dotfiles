@@ -1,3 +1,9 @@
+[character]
+disabled = true
+
+[package]
+disabled = true
+
 [hostname]
 disabled = true
 
@@ -9,10 +15,7 @@ disabled = true
 
 [status]
 disabled = false
-symbol = "✖ "
-
-[package]
-disabled = true
+symbol = "✖->"
 
 [aws]
 disabled = false

@@ -242,10 +242,10 @@
 
 		# If you develop using git, you might like to often switch
 		# to the git status filter:
-		{
-			key: ctrl-g
-			execution: ":toggle_git_status"
-		 }
+		# {
+		# 	key: ctrl-g
+		# 	execution: ":toggle_git_status"
+		#  }
 
 		# You can reproduce the bindings of Norton Commander
 		# on copying or moving to the other panel:
@@ -276,6 +276,16 @@
 			execution: "$EDITOR {file}:{line}"
 	    leave_broot: false
 	    apply_to: file
+		}
+
+		{
+			key: ctrl-shift-j
+			execution: ":unstage"
+		}
+
+		{
+			key: ctrl-shift-k
+			execution: ":stage"
 		}
 	]
 

@@ -8,8 +8,7 @@
   ec = config --global -e
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   mb = "!f() { cb=$(current_branch); git checkout ${1-master} && git co $cb && git merge ${1-master} }; f"
-  save = !git add -A && git commit -m 'SAVEPOINT'
-  save = !git add -A && git commit -m 'SAVEPOINT'
+  save = !git add -A && git commit -m 'save'
   undo = reset HEAD~1 --mixed
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
   wip = !git add -u && git commit -m "WIP"
@@ -35,4 +34,4 @@
   file-style = bold yellow ul
   file-decoration-style = none
 [init]
-  defaultBranch = master
+  defaultBranch = main
