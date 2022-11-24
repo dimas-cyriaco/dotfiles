@@ -1,5 +1,5 @@
-theme = "dark_plus"
-# theme = "ayu_dark"
+# theme = "dark_plus"
+theme = "ayu_dark"
 
 [editor]
 line-number = "relative"
