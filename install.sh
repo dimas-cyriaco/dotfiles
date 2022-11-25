@@ -86,3 +86,8 @@ npm install -g typescript typescript-language-server
 # brew install nushell
 # mkdir ~/.cache/starship
 # starship init nu | save ~/.cache/starship/init.nu
+
+## Alacricy - use_thin_strokes
+
+# defaults write -g AppleFontSmoothing -int 0
+
