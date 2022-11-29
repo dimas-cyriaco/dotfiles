@@ -60,6 +60,11 @@ let-env NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+# let-env PATH = '/opt/homebrew/bin:/Applications/kitty.app/Contents/MacOS:/usr/bin:/bin:/usr/sbin:/sbin'
+let-env PATH = ($env.PATH | prepend '/opt/homebrew/bin' | append '~/.cargo/bin' | append '~/.asdf/bin' | append '~/.asdf/shims')
+let-env PATH = ($env.PATH | append '~/.emacs.d/bin')
+
+let-env XDG_CONFIG_HOME = '~/.config'
 
 let-env AWS_PROFILE = 'motrix'
 let-env EDITOR = 'hx'

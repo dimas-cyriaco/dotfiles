@@ -1,0 +1,44 @@
+@document.meta
+title: test
+description: 
+authors: dimascyriaco
+categories: 
+created: 2022-11-27
+updated: 2022-11-27
+version: 0.0.18
+@end
+
+= TOC
+
+* The `.org` file-format
+  If you need {https://github.com/nvim-neorg/neorg#-showcase}[docs].
+
+  - [x] bla
+  - [ ] Outra
+
+** Basic Markup
+   - *bold*
+   - /italic/
+   - _underline_
+   - ~strikethrought~
+   - |spoiler|
+   - `inline code`
+   - link {# Target}
+     {** Outro header}[Outro Header]
+
+   Mais texto aqui.
+
+   - [ ] bla
+
+** Outro header
+   Blo.
+   Ble.
+
+*** Mais umhttps://github.com/nvim-neorg/neorg#-showcase header
+    @code rust
+      let a = "something";
+    @end
+    - Item 1
+    -- Item 2
+    - [ ] Bla
+    - [ ] Bloft
