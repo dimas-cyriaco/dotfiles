@@ -86,8 +86,18 @@
 (setq shell-file-name "/bin/bash")
 
 ;; Configura os bullets para o Org Mode.
-(setq
-    org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿")
-)
+(setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
 
 (setq global-centered-cursor-mode 1)
+
+(setq doom-themes-treemacs-theme `doom-colors)
+(setq +treemacs-git-mode 'deferred)
+(setq treemacs-filewatch-mode t)
+(setq treemacs-follow-mode t)
+
+(require 'treemacs-all-the-icons)
+(treemacs-load-theme "all-the-icons")
+
+(setq  doom-themes-treemacs-theme "doom-colors")
+
+(setq org-hide-emphasis-markers t)

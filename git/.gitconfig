@@ -22,16 +22,6 @@
   name = Dimas Cyriaco
   email = dimascyriaco@pm.me
 [core]
-  pager = delta
   editor = hx
-[interactive]
-  diffFilter = delta --color-only
-[delta]
-  features = side-by-side line-numbers decorations
-  whitespace-error-style = 22 reverse
-[delta "decorations"]
-  commit-decoration-style = bold yellow box ul
-  file-style = bold yellow ul
-  file-decoration-style = none
 [init]
   defaultBranch = main
