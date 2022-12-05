@@ -51,3 +51,8 @@
 
 (package! centered-cursor-mode)
 (package! treemacs-all-the-icons)
+
+(package! mixed-pitch)
+  ;; :hook
+  ;; ;; If you want it in all text modes:
+  ;; (text-mode . mixed-pitch-mode))

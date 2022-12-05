@@ -3,23 +3,13 @@
 
 ;; Mostra número das linhas.
 (global-display-line-numbers-mode 1)
+(setq menu-bar--display-line-numbers-mode-relative t)
+(column-number-mode)
 
-(setq modus-themes-italic-constructs t
-      modus-themes-bold-constructs t
-      modus-themes-region '(bg-only)
-      modus-themes-mode-line '(accented borderless padded)
-      modus-themes-subtle-line-numbers t
-      modus-themes-mixed-fonts t
-      modus-themes-intense-mouseovers t
-      modus-themes-syntax t
-      modus-themes-hl-line '(accented))
+(dolist (mode '(eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;;(set-fringe-mode -1)
 ;;(setq menu-bar--display-line-numbers-mode-relative t)
-
-;; Configura o tema.
-;;(load-theme 'modus-vivendi t)
-(load-theme 'tango-dark t)
 
 ;; Configuração de tamanho de fonte.
 (set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 240)
@@ -46,6 +36,7 @@
 ;; Recarega arquivo caso tenha sido mudado por outro processo.
 (global-auto-revert-mode 1)
 
+;; Configura use-package
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -61,8 +52,10 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;; Mostra os comandos conforme você digita
 (use-package command-log-mode)
 
+;; Auto complete do minibuffer
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
@@ -81,11 +74,9 @@
   :config
   (ivy-mode 1))
 
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
+;; (global-set-key (kbd "<space>fs") 'write-file)
 
+;; Extensão das funcionalidades do Ivy
 (use-package counsel
   :bind (("C-M-j" . 'counsel-switch-buffer)
          :map minibuffer-local-map
@@ -94,3 +85,55 @@
   (counsel-linux-app-format-function #'counsel-linux-app-format-function-name-only)
   :config
   (counsel-mode 1))
+
+;; Modeline do Doom Emacs
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+;;(use-package rainbow-delimiters
+;;  :hook (prog-mode . rainbow-delimiters-mode)) 
+
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 0.3))
+
+(use-package ivy-rich
+  :after ivy
+  :init
+  (ivy-rich-mode 1))
+
+;;(use-package helpful
+;;  :custom
+;;  (counsel-describe-function-function #'helpful-callable)
+;;  (counsel-describe-variable-function #'helpful-variable)
+;;  :bind
+;;  ([remap describe-function] . counsel-describe-function)
+;;  ([remap describe-command] . helpful-command)
+;;  ([remap describe-variable] . counsel-describe-variable)
+;;  ([remap describe-key] . helpful-key))
+
+(use-package doom-themes
+  :init (load-theme 'doom-monokai-ristretto t))
+
+(use-package all-the-icons)
+
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+  :config
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+
+  ;; Use visual line motions even outside of visual-line-mode buffers
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+
+  (evil-set-initial-state 'messages-buffer-mode 'normal)
+  (evil-set-initial-state 'dashboard-mode 'normal))

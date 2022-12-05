@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;; (setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;     doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 18)
+   doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 20))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -32,17 +32,17 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-city-lights)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 (setq menu-bar--display-line-numbers-mode-relative t)
+(centered-cursor-mode t)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
+(setq org-directory "~/Documents/org/")
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -98,6 +98,33 @@
 (require 'treemacs-all-the-icons)
 (treemacs-load-theme "all-the-icons")
 
-(setq  doom-themes-treemacs-theme "doom-colors")
+(setq doom-themes-treemacs-theme "doom-colors")
 
 (setq org-hide-emphasis-markers t)
+
+;; (map! :leader :desc "Safe file" :n "C-c" #'dosomething)
+
+(setq org-journal-date-format "%a, %d/%m/%y"
+  org-journal-file-format "%Y-%m-%d.org")
+
+;; (use-package! eshell
+;;   :config
+;;   (setq eshell-history-size 10000
+;;     eshell-buffer-maximum-lines 10000
+;;     eshell-hist-ignoredups t
+;;     eshell-scroll-to-bottom-on-input t))
+
+;; (after! org
+;;   (add-to-list 'org-capture-templates
+;;              '(("d" "Dream" entry
+;;                (file+headline +org-capture-todo-file "Dream")
+;;                "* TODO %?\n :PROPERTIES:\n :CATEGORY: dream\n :END:\n %i\n"
+;;                :prepend t :kill-buffer t))
+
+(setq delete-by-moving-to-trash t)
+
+(defun system-move-file-to-trash (file)
+  "Use \"trash\" to move FILE to the system trash."
+  (call-process (executable-find "trash")
+    nil 0 nil
+    file))
