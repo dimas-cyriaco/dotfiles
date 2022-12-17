@@ -1,0 +1,38 @@
+* Dotfiles
+Primeiro é necessário configurar como o Emacs vai fazer o /tangle/ dos arquivos de configuração:
+
+#+begin_src elisp
+(setq dotfiles-folder "~/dotfiles")
+(setq dotfiles-org-files '("README.org"))
+
+(defun dotfiles-tangle-org-file (&optional org-file)
+  (interactive "f")
+  (org-babel-tangle-file (expand-file-name org-file dotfiles-folder)))
+
+(defun dotfiles-tangle-org-files ()
+  (interactive)
+  (dolist (org-file dotfiles-org-files)
+    (dotfiles-tangle-org-file org-file))
+  (message "Dotfiles atualizados!"))
+#+end_src
+
+** Installation
+CLOSED: [2022-12-17 Sat 17:16]
+#+begin_src shell
+git clone https://github.com/nicksp/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+chmod +x install.sh
+./install.sh
+#+end_src
+** Remotely install using curl
+Alternatively, you can install this into `~/dotfiles` remotely without Git using curl:
+
+#+begin_src shell
+  sh -c "`curl -fsSL https://raw.github.com/nicksp/dotfiles/master/remote-install.sh`"
+ #+end_src
+
+Or, using wget:
+
+#+begin_src shell
+sh -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/nicksp/dotfiles/master/remote-install.sh`"
+#+end_src
