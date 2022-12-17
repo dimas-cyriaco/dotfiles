@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
+# Overpass Fonts
+# http://overpassfont.org
+
 brew install kitty
-brew tap homebrew/cask-fonts
-brew install font-fira-code-nerd-font
+# brew tap homebrew/cask-fonts
+# brew install font-fira-code-nerd-font
 brew install lsd
 brew install antidote
 brew install starship

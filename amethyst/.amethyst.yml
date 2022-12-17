@@ -1,6 +1,7 @@
 layouts:
     - tall
     - fullscreen
+    - column
 
 mod1:
     - control

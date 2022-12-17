@@ -49,10 +49,10 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! centered-cursor-mode)
 (package! treemacs-all-the-icons)
 
 (package! mixed-pitch)
+
   ;; :hook
   ;; ;; If you want it in all text modes:
-  ;; (text-mode . mixed-pitch-mode))
+  ;; (org-mode . mixed-pitch-mode))

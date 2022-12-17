@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 18)
-   doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 20))
+(setq doom-font (font-spec :family "Overpass Mono" :size 20)
+   doom-variable-pitch-font (font-spec :family "Overpass" :size 20))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -32,13 +32,12 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-city-lights)
+(setq doom-theme 'doom-oceanic-next)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 (setq menu-bar--display-line-numbers-mode-relative t)
-(centered-cursor-mode t)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -83,14 +82,11 @@
 (setq efs/default-font-size 200)
 
 ;; Emacs doesn't play well with fish
-(setq shell-file-name "/bin/bash")
+;; (setq shell-file-name "/bin/bash")
 
 ;; Configura os bullets para o Org Mode.
 (setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
 
-(setq global-centered-cursor-mode 1)
-
-(setq doom-themes-treemacs-theme `doom-colors)
 (setq +treemacs-git-mode 'deferred)
 (setq treemacs-filewatch-mode t)
 (setq treemacs-follow-mode t)
@@ -98,6 +94,7 @@
 (require 'treemacs-all-the-icons)
 (treemacs-load-theme "all-the-icons")
 
+;; (setq doom-themes-treemacs-theme `doom-colors)
 (setq doom-themes-treemacs-theme "doom-colors")
 
 (setq org-hide-emphasis-markers t)
@@ -107,6 +104,12 @@
 (setq org-journal-date-format "%a, %d/%m/%y"
   org-journal-file-format "%Y-%m-%d.org")
 
+(setq explicit-shell-file-name "/bin/zsh")
+(setq shell-file-name "zsh")
+(setq explicit-zsh-args '("--login" "--interactive"))
+(defun zsh-shell-mode-setup ()
+  (setq-local comint-process-echoes t))
+(add-hook 'shell-mode-hook #'zsh-shell-mode-setup)
 ;; (use-package! eshell
 ;;   :config
 ;;   (setq eshell-history-size 10000
@@ -128,3 +131,20 @@
   (call-process (executable-find "trash")
     nil 0 nil
     file))
+
+(add-hook! 'org-mode-hook 'mixed-pitch-mode)
+
+(setq scroll-preserve-screen-position t
+      scroll-conservatively 0
+      maximum-scroll-margin 0.5
+      scroll-margin 99999)
+
+(setq org-mobile-directory "/Users/dimascyriaco/Library/Mobile Documents/iCloud~com~mobileorg~mobileorg/Documents")
+(setq org-mobile-inbox-for-pull "~/Documents/org/sync.org")
+
+(setq org-log-done 'time)
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WIP(w)" "NEXT(n)" "PROJ(p)" "LOOP(r)" "STRT(s)" "WAIT(a)" "HOLD(h)" "IDEA(i)" "|" "DONE(d) CANCELED(e)" "KILL(k)")
+        (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)")
+        (sequence "|" "OKAY(o)" "YES(y)" "NO(n)")))
