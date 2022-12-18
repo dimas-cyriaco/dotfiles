@@ -4,15 +4,15 @@
 ;; Mostra número das linhas.
 (global-display-line-numbers-mode 1)
 (setq menu-bar--display-line-numbers-mode-relative t)
+
 (column-number-mode)
 
 (dolist (mode '(eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;;(setq menu-bar--display-line-numbers-mode-relative t)
 
 ;; Configuração de tamanho de fonte.
-(set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 240)
+(set-face-attribute 'default nil :font "Overpass Mono" :height 240)
 
 ;; Faz highlight na linha atual.
 (hl-line-mode 1)
@@ -20,8 +20,10 @@
 ;; Pisca o cursor.
 (blink-cursor-mode 1)
 
+
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(global-set-key (kbd "<leader>fs") 'save-buffer)
 
 ;; Salva uma lista de arquivos editados recentemente.
 (recentf-mode 1)
@@ -55,44 +57,10 @@
 ;; Mostra os comandos conforme você digita
 (use-package command-log-mode)
 
-;; Auto complete do minibuffer
-(use-package ivy
-  :diminish
-  :bind (("C-s" . swiper)
-	 :map ivy-minibuffer-map
-         ("TAB" . ivy-alt-done)	
-         ("C-l" . ivy-alt-done)
-         ("C-j" . ivy-next-line)
-         ("C-k" . ivy-previous-line)
-         :map ivy-switch-buffer-map
-         ("C-k" . ivy-previous-line)
-         ("C-l" . ivy-done)
-         ("C-d" . ivy-switch-buffer-kill)
-         :map ivy-reverse-i-search-map
-         ("C-k" . ivy-previous-line)
-         ("C-d" . ivy-reverse-i-search-kill))
-  :config
-  (ivy-mode 1))
-
-;; (global-set-key (kbd "<space>fs") 'write-file)
-
-;; Extensão das funcionalidades do Ivy
-(use-package counsel
-  :bind (("C-M-j" . 'counsel-switch-buffer)
-         :map minibuffer-local-map
-         ("C-r" . 'counsel-minibuffer-history))
-  :custom
-  (counsel-linux-app-format-function #'counsel-linux-app-format-function-name-only)
-  :config
-  (counsel-mode 1))
-
 ;; Modeline do Doom Emacs
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
-
-;;(use-package rainbow-delimiters
-;;  :hook (prog-mode . rainbow-delimiters-mode)) 
 
 (use-package which-key
   :init (which-key-mode)
@@ -100,10 +68,7 @@
   :config
   (setq which-key-idle-delay 0.3))
 
-(use-package ivy-rich
-  :after ivy
-  :init
-  (ivy-rich-mode 1))
+(which-key-setup-side-window-right)
 
 ;;(use-package helpful
 ;;  :custom
@@ -116,7 +81,7 @@
 ;;  ([remap describe-key] . helpful-key))
 
 (use-package doom-themes
-  :init (load-theme 'doom-monokai-ristretto t))
+  :init (load-theme 'doom-oceanic-next t))
 
 (use-package all-the-icons)
 
@@ -137,3 +102,19 @@
 
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal))
+
+(use-package evil-leader
+  :config
+  (global-evil-leader-mode)
+  (evil-leader/set-leader "<SPC>"))
+
+(evil-leader/set-key "fs" 'save-buffer)
+
+;; Org config
+
+(setq org-directory "~/Documents/org/")
+
+(setq scroll-preserve-screen-position t
+      scroll-conservatively 0
+      maximum-scroll-margin 0.5
+      scroll-margin 99999)

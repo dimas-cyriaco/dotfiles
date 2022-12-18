@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-oceanic-next)
+(setq doom-theme 'almost-mono-gray)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -145,6 +145,45 @@
 (setq org-log-done 'time)
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "WIP(w)" "NEXT(n)" "PROJ(p)" "LOOP(r)" "STRT(s)" "WAIT(a)" "HOLD(h)" "IDEA(i)" "|" "DONE(d) CANCELED(e)" "KILL(k)")
+      '((sequence "TODO(t!)" "WIP(w!)" "NEXT(n!)" "PROJ(p!)" "LOOP(r!)" "WAIT(a@/!)" "HOLD(h@/!)" "IDEA(i@/!)" "|" "DONE(d@) CANCELED(e@)" "KILL(k@/!)")
         (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)")
         (sequence "|" "OKAY(o)" "YES(y)" "NO(n)")))
+
+(setq org-agenda-files
+   '("/Users/dimascyriaco/Documents/org/todo.org" "/Users/dimascyriaco/Documents/org/todo-work.org"))
+
+(setq org-pomodoro-play-sounds nil)
+
+(add-hook
+ 'org-pomodoro-started-hook
+ (lambda ()
+   (load-theme 'doom-oceanic-next t)))
+
+(add-hook
+  'org-pomodoro-killed-hook
+  (lambda ()
+    (load-theme 'almost-mono-gray t)))
+
+(add-hook
+  'org-pomodoro-finished-hook
+  (lambda ()
+    (load-theme 'almost-mono-gray t)))
+
+(defun org-focus-personal ()
+  "Set agenda focus on personal tasks."
+  (interactive)
+  (setq org-agenda-files '("~/Documents/org/todo.org")))
+
+(defun org-focus-work ()
+  "Set agenda focus on work tasks."
+  (interactive)
+  (setq org-agenda-files '("~/Documents/org/todo-work.org")))
+
+(defun org-focus-all ()
+  "Remove agenda focus and show all tasks."
+  (interactive)
+  (setq org-agenda-files '("~/Documents/org/todo.org" "~/Documents/org/todo-work.org")))
+
+(map! :leader :desc "Set agenda focus to work tasks" :n "o a f w" #'org-focus-work)
+(map! :leader :desc "Set agenda focus to personal tasks" :n "o a f p" #'org-focus-personal)
+(map! :leader :desc "Remove agenda focus and show all tasks" :n "o a f a" #'org-focus-all)

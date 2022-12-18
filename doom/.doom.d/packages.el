@@ -53,6 +53,8 @@
 
 (package! mixed-pitch)
 
+(package! almost-mono-themes)
+
   ;; :hook
   ;; ;; If you want it in all text modes:
   ;; (org-mode . mixed-pitch-mode))
