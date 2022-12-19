@@ -3,6 +3,8 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+(add-to-list 'org-modules 'org-habit t)
+(setq org-habit-show-habits t)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
@@ -187,3 +189,24 @@
 (map! :leader :desc "Set agenda focus to work tasks" :n "o a f w" #'org-focus-work)
 (map! :leader :desc "Set agenda focus to personal tasks" :n "o a f p" #'org-focus-personal)
 (map! :leader :desc "Remove agenda focus and show all tasks" :n "o a f a" #'org-focus-all)
+
+(setq org-track-ordered-property-with-tag t)
+(setq org-enforce-todo-dependencies t)
+(setq org-agenda-dim-blocked-tasks t)
+(setq org-enforce-todo-checkbox-dependencies t)
+
+(setq org-capture-templates
+ (quote
+   (("p" "Private templates")
+    ("pt" "TODO entry" entry
+      (file+headline "~/Documents/org/todo.org" "Capture")
+      (file "~/Documents/templates/todo.txt"))
+    ("b" "Adicionar livro na lista de leitura" entry
+      (file+headline "~/Documents/org/todo.org" "Reading List")
+      (file "~/Documents/org/templates/book-to-read.org"))
+    ("t" "Personal todo" entry
+      (file+headline +org-capture-todo-file "Inbox")
+      "* TODO %?\n%i\n%a" :prepend t)
+    ("n" "Personal notes" entry
+      (file+headline +org-capture-notes-file "Inbox")
+      "* %u %?\n%i\n%a" :prepend t))))
