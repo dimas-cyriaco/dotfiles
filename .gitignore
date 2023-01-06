@@ -26,3 +26,9 @@ zsh/.config/zsh/plugins.zsh
 zsh/.zsh_plugins.txt
 
 helix/.config/helix/runtime
+/emacs/.emacs.d/custom.el
+/emacs/.emacs.d/history
+/emacs/.emacs.d/projectile-bookmarks.eld
+/emacs/.emacs.d/projectile.cache
+/emacs/.emacs.d/recentf
+/emacs/.emacs.d/transient/
