@@ -19,6 +19,14 @@
 (setq tab-width 2)
 (setq-default indent-tabs-mode nil)
 
+(require 'ls-lisp)
+(setq ls-lisp-dirs-first t)
+(setq ls-lisp-use-insert-directory-program nil)
+
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (dired-hide-details-mode)))
+
 ;; This disables bidirectional text to prevent "trojan source"
 ;; exploits, see https://www.trojansource.codes/
 (setf (default-value 'bidi-display-reordering) nil)
@@ -84,6 +92,20 @@
 ;; Hide buffers starting with * on ibuffer
 (require 'ibuf-ext)
 (add-to-list 'ibuffer-never-show-predicates "^\\*")
+
+(defadvice ibuffer-update-title-and-summary (after remove-column-titles)
+   (with-current-buffer
+      (set-buffer "*Ibuffer*")
+      (read-only-mode 0)
+      (goto-char 1)
+      (search-forward "-\n" nil t)
+      (delete-region 1 (point))
+      (let ((window-min-height 1))
+        ;; save a little screen estate
+        (shrink-window-if-larger-than-buffer))
+      (read-only-mode)))
+
+(ad-activate 'ibuffer-update-title-and-summary)
 
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
@@ -155,6 +177,7 @@
          ("<leader>bk" . kill-current-buffer)
          ("<leader>bpk" . kill-buffer)
          ("<leader>br" . revert-buffer)
+         ("<leader>bb" . evil-swich-to-windows-last-buffer)
          ("C-u" . evil-scroll-up)))
 
 ;; Parens Settings
