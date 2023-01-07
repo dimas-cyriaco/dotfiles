@@ -7,7 +7,7 @@
          ("<leader>pp" . projectile-switch-open-project)
          ("<leader>pa" . projectile-command-map)
          ("<leader>ff" . projectile--find-file)
-         ("<leader>bl" . projectile-ibuffer)
+         ("<leader>bl" . projectile-switch-to-buffer)
          ("<leader>bn" . projectile-next-project-buffer)
          ("<leader>bp" . projectile-previous-project-buffer)
          ("<leader>fS" . projectile-save-project-buffers)

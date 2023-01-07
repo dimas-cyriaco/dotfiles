@@ -164,6 +164,12 @@
   (setq evil-want-integration t)
   (evil-collection-init))
 
+(use-package evil-commentary
+  :after evil
+  :ensure t
+  :config
+  (evil-commentary-mode))
+
 (use-package general
   :config
   (general-evil-setup t)
@@ -173,12 +179,29 @@
 
 (use-package emacs
   :after evil
-  :bind (("<leader>fs" . save-buffer)
+  :bind (
+         ("<leader>bb" . evil-switch-to-windows-last-buffer)
          ("<leader>bk" . kill-current-buffer)
-         ("<leader>bpk" . kill-buffer)
          ("<leader>br" . revert-buffer)
-         ("<leader>bb" . evil-swich-to-windows-last-buffer)
-         ("C-u" . evil-scroll-up)))
+         ("<leader>be" . eval-buffer)
+         ("<leader>fs" . save-buffer)
+         ("<leader>wh" . evil-window-left)
+         ("<leader>wj" . evil-window-down)
+         ("<leader>wk" . evil-window-up)
+         ("<leader>wl" . evil-window-right)
+         ("<leader>wq" . evil-quit)
+         ("<leader>ss" . persp-switch)
+         ("<leader>sr" . persp-rename)
+         ("C-u" . evil-scroll-up)
+         ))
+
+(use-package perspective
+  :bind
+  ("C-x C-b" . persp-list-buffers)         ; or use a nicer switcher, see below
+  :custom
+  (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
+  :init
+  (persp-mode))
 
 ;; Parens Settings
 (show-paren-mode t)
