@@ -32,3 +32,8 @@ helix/.config/helix/runtime
 /emacs/.emacs.d/projectile.cache
 /emacs/.emacs.d/recentf
 /emacs/.emacs.d/transient/
+/emacs/.emacs.d/auto-save-list/
+/emacs/.emacs.d/custom.el~
+/emacs/.emacs.d/eln-cache/
+/emacs/.emacs.d/elpa/
+/emacs/.emacs.d/startup/typescript.el~

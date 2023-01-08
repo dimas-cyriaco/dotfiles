@@ -4,7 +4,9 @@
   :config
   (add-hook 'text-mode 'blink-cursor-mode)
   (menu-bar--display-line-numbers-mode-relative)
-  (column-number-mode))
+  (column-number-mode)
+  (electric-pair-mode)
+  (setq display-line-numbers-width 3))
 
 (use-package emacs
   :config
@@ -19,6 +21,16 @@
 (setq tab-width 2)
 (setq-default indent-tabs-mode nil)
 
+;; Scrolling
+(setq scroll-step 1
+      scroll-margin 10)
+;; Centered Cursor Mode
+;; (setq scroll-preserve-screen-position t
+;;   scroll-conservatively 0
+;;   maximum-scroll-margin 0.5
+;;   scroll-margin 99999)
+
+;; Show directories first on dired
 (require 'ls-lisp)
 (setq ls-lisp-dirs-first t)
 (setq ls-lisp-use-insert-directory-program nil)
@@ -30,6 +42,9 @@
 ;; This disables bidirectional text to prevent "trojan source"
 ;; exploits, see https://www.trojansource.codes/
 (setf (default-value 'bidi-display-reordering) nil)
+
+(use-package magit
+  :ensure t)
 
 ;; ws-butler cleans up whitespace only on the lines you've edited,
 ;; keeping messy colleagues happy ;-) Important that it doesn't clean
@@ -184,6 +199,7 @@
          ("<leader>bk" . kill-current-buffer)
          ("<leader>br" . revert-buffer)
          ("<leader>be" . eval-buffer)
+         ("<leader>fd" . dired-jump)
          ("<leader>fs" . save-buffer)
          ("<leader>wh" . evil-window-left)
          ("<leader>wj" . evil-window-down)
@@ -197,7 +213,6 @@
 
 (use-package perspective
   :bind
-  ("C-x C-b" . persp-list-buffers)         ; or use a nicer switcher, see below
   :custom
   (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
   :init
