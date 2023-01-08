@@ -5,7 +5,8 @@
   (add-hook 'text-mode 'blink-cursor-mode)
   (menu-bar--display-line-numbers-mode-relative)
   (column-number-mode)
-  (electric-pair-mode)
+  (electric-pair-mode) ;; auto pairs mode
+  (hs-minor-mode) ;; show-hide minor mode
   (setq display-line-numbers-width 3))
 
 (use-package emacs
@@ -43,8 +44,16 @@
 ;; exploits, see https://www.trojansource.codes/
 (setf (default-value 'bidi-display-reordering) nil)
 
-(use-package magit
+(use-package origami
+  :ensure t
+  :hook prog-mode)
+
+(use-package ripgrep
   :ensure t)
+
+(use-package magit
+  :ensure t
+  :bind (("<leader>gg" . magit)))
 
 ;; ws-butler cleans up whitespace only on the lines you've edited,
 ;; keeping messy colleagues happy ;-) Important that it doesn't clean
