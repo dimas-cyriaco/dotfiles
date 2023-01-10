@@ -3,33 +3,25 @@
   (global-display-line-numbers-mode 1)
   :config
   (add-hook 'text-mode 'blink-cursor-mode)
+  (add-hook 'prog-mode 'hs-minor-mode)
   (menu-bar--display-line-numbers-mode-relative)
   (column-number-mode)
   (electric-pair-mode) ;; auto pairs mode
-  (hs-minor-mode) ;; show-hide minor mode
-  (setq display-line-numbers-width 3))
+  (setq display-line-numbers-width 3)
+  ;; White Space
+  (setq tab-width 2)
+  (setq-default indent-tabs-mode nil))
 
 (use-package emacs
   :config
   (set-face-attribute 'default nil :font "Overpass Mono" :height 240))
 
-;; ("<leader>fi" . (indent-region (point-min) (point-max)))
-
 (fset 'yes-or-no-p 'y-or-n-p)
 (prefer-coding-system 'utf-8-unix)
-
-;; White Space
-(setq tab-width 2)
-(setq-default indent-tabs-mode nil)
 
 ;; Scrolling
 (setq scroll-step 1
       scroll-margin 10)
-;; Centered Cursor Mode
-;; (setq scroll-preserve-screen-position t
-;;   scroll-conservatively 0
-;;   maximum-scroll-margin 0.5
-;;   scroll-margin 99999)
 
 ;; Show directories first on dired
 (require 'ls-lisp)
@@ -44,12 +36,9 @@
 ;; exploits, see https://www.trojansource.codes/
 (setf (default-value 'bidi-display-reordering) nil)
 
-(use-package origami
-  :ensure t
-  :hook prog-mode)
+;; (use-package origami :ensure t :hook prog-mode)
 
-(use-package ripgrep
-  :ensure t)
+(use-package ripgrep :ensure t)
 
 (use-package magit
   :ensure t
@@ -73,12 +62,17 @@
   (setq ispell-program-name "aspell"
         ispell-list-command "list"
         ;; ispell-dictionary "british"
-        flyspell-auto-correct-binding (kbd "<S-f12>")))
+        flyspell-auto-correct-binding (kbd "<S-f12>"))
+  :hook flycheck)
+
+;; (use-package wucuo
+;;   :config
+;;   (add-hook 'prog-mode-hook #'wucuo-start))
 
 ;; (use-package flycheck)
 ;; (add-hook 'text-mode-hook
-          ;; '(lambda ()
-          ;;    (flyspell-mode)))
+;;           '(lambda ()
+;;              (flyspell-mode)))
 
 (global-visual-line-mode 1)
 
@@ -146,15 +140,15 @@
   (marginalia-mode))
 
 ;; Optionally use the `orderless' completion style.
-;; (use-package orderless
-;;   :ensure t
-;;   :init
-;;   ;; Configure a custom style dispatcher (see the Consult wiki)
-;;   ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
-;;   ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-;;   (setq completion-styles '(orderless basic)
-;;         completion-category-defaults nil
-;;         completion-category-overrides '((file (styles partial-completion)))))
+(use-package orderless
+  :ensure t
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
+  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
 
 ;; Modeline do Doom Emacs
 (use-package doom-modeline
@@ -168,6 +162,10 @@
   :config
   (hl-line-mode)
   (blink-cursor-mode))
+
+(use-package almost-mono-themes
+  :config
+  (load-theme 'almost-mono-gray t))
 
 (use-package all-the-icons)
 
@@ -217,6 +215,9 @@
          ("<leader>wq" . evil-quit)
          ("<leader>ss" . persp-switch)
          ("<leader>sr" . persp-rename)
+         ("<leader>hv" . describe-variable)
+         ("<leader>hf" . describe-funcion)
+         ("<leader>hk" . describe-key)
          ("C-u" . evil-scroll-up)
          ))
 
@@ -292,14 +293,5 @@
 ;; ;;  ([remap describe-command] . helpful-command)
 ;; ;;  ([remap describe-variable] . counsel-describe-variable)
 ;; ;;  ([remap describe-key] . helpful-key))
-
-;; ;; Org config
-
-;; (setq org-directory "~/Documents/org/")
-
-;; (setq scroll-preserve-screen-position t
-;;       scroll-conservatively 0
-;;       maximum-scroll-margin 0.5
-;;       scroll-margin 99999)
 
 (provide 'core)

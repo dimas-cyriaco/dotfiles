@@ -4,7 +4,7 @@
 (eval-when-compile
   (customize-set-variable
    'package-archives '(("melpa" . "https://melpa.org/packages/")
-      ("melpa-stable" . "https://stable.melpa.org/packages/")
+	  ("melpa-stable" . "https://stable.melpa.org/packages/")
       ("org" . "https://orgmode.org/elpa/")
       ("elpa" . "https://elpa.gnu.org/packages/")))
   (package-initialize)
@@ -17,6 +17,7 @@
 
 (require 'core)
 (require 'projectile-config)
+(require 'org-config)
 
 (use-package server
   :demand t

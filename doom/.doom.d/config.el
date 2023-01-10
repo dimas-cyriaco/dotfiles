@@ -44,6 +44,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/org/")
+;; (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -146,13 +147,50 @@
 
 (setq org-log-done 'time)
 
-(setq org-todo-keywords
-      '((sequence "TODO(t!)" "WIP(w!)" "NEXT(n!)" "PROJ(p!)" "LOOP(r!)" "WAIT(a@/!)" "HOLD(h@/!)" "IDEA(i@/!)" "|" "DONE(d@) CANCELED(e@)" "KILL(k@/!)")
-        (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)")
-        (sequence "|" "OKAY(o)" "YES(y)" "NO(n)")))
+(defun get-weekly-filename ()
+  (concat org-directory (format-time-string "weekly/%Y-%W.org")))
 
-(setq org-agenda-files
-   '("/Users/dimascyriaco/Documents/org/todo.org" "/Users/dimascyriaco/Documents/org/todo-work.org"))
+(after! org
+  (setq org-agenda-files
+    '("/Users/dimascyriaco/Documents/org/todo.org" "/Users/dimascyriaco/Documents/org/todo-work.org"))
+
+  (setq org-todo-keywords
+    '((sequence "TODO(t!)" "WIP(w!)" "NEXT(n!)" "PROJ(p!)" "LOOP(r!)" "WAIT(a@/!)" "HOLD(h@/!)" "IDEA(i@/!)" "|" "DONE(d@) CANCELED(e@)" "KILL(k@/!)")))
+
+  (setq org-track-ordered-property-with-tag t)
+  (setq org-enforce-todo-dependencies t)
+  (setq org-agenda-dim-blocked-tasks t)
+  (setq org-enforce-todo-checkbox-dependencies t)
+
+  (setq org-capture-templates
+    (quote
+      (("p" "Private templates")
+        ("r" "Reviews")
+        ("b" "Adicionar Bookmark" entry
+          (file+headline "~/Documents/org/bookmarks.org" "Inbox")
+          (file "~/Documents/org/templates/bookmark.org"))
+        ("pt" "TODO entry" entry
+          (file+headline "~/Documents/org/todo.org" "Inbox")
+          (file "~/Documents/org/templates/todo.txt"))
+        ("rs" "Review Semanal" entry
+          (file get-weekly-filename)
+          (file "~/Documents/org/templates/weekly-review.org"))
+        ("l" "Adicionar livro na lista de leitura" entry
+          (file+headline "~/Documents/org/todo.org" "Reading List")
+          (file "~/Documents/org/templates/book-to-read.org"))
+        ("t" "Personal todo" entry
+          (file+headline +org-capture-todo-file "Inbox")
+          "* TODO %?\n%i\n%a" :prepend t)
+        ("n" "Personal notes" entry
+          (file+headline +org-capture-notes-file "Inbox")
+          "* %u %?\n%i\n%a" :prepend t))))
+  )
+
+(with-eval-after-load "doom-zenburn"
+  (zenburn-with-color-variables
+    (custom-theme-set-faces
+     'doom-zenburn
+     `(default ((t (:foreground ,zenburn-fg :background ,zenburn-bg-05)))))))
 
 (setq org-pomodoro-play-sounds nil)
 
@@ -181,7 +219,7 @@
   (interactive)
   (setq org-agenda-files '("~/Documents/org/todo-work.org")))
 
-(defun org-focus-all ()
+(defun orgrly-focus-all ()
   "Remove agenda focus and show all tasks."
   (interactive)
   (setq org-agenda-files '("~/Documents/org/todo.org" "~/Documents/org/todo-work.org")))
@@ -189,24 +227,3 @@
 (map! :leader :desc "Set agenda focus to work tasks" :n "o a f w" #'org-focus-work)
 (map! :leader :desc "Set agenda focus to personal tasks" :n "o a f p" #'org-focus-personal)
 (map! :leader :desc "Remove agenda focus and show all tasks" :n "o a f a" #'org-focus-all)
-
-(setq org-track-ordered-property-with-tag t)
-(setq org-enforce-todo-dependencies t)
-(setq org-agenda-dim-blocked-tasks t)
-(setq org-enforce-todo-checkbox-dependencies t)
-
-(setq org-capture-templates
- (quote
-   (("p" "Private templates")
-    ("pt" "TODO entry" entry
-      (file+headline "~/Documents/org/todo.org" "Capture")
-      (file "~/Documents/templates/todo.txt"))
-    ("b" "Adicionar livro na lista de leitura" entry
-      (file+headline "~/Documents/org/todo.org" "Reading List")
-      (file "~/Documents/org/templates/book-to-read.org"))
-    ("t" "Personal todo" entry
-      (file+headline +org-capture-todo-file "Inbox")
-      "* TODO %?\n%i\n%a" :prepend t)
-    ("n" "Personal notes" entry
-      (file+headline +org-capture-notes-file "Inbox")
-      "* %u %?\n%i\n%a" :prepend t))))

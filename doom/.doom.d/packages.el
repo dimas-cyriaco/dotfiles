@@ -55,6 +55,10 @@
 
 (package! almost-mono-themes)
 
+(package! org-cliplink)
+
+(package! darktooth-theme)
+
   ;; :hook
   ;; ;; If you want it in all text modes:
   ;; (org-mode . mixed-pitch-mode))

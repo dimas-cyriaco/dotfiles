@@ -40,5 +40,5 @@ source $(brew --prefix asdf)/libexec/asdf.sh
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
-export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
+# export PATH="$PNPM_HOME:$PATH"

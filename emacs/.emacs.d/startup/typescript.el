@@ -2,16 +2,46 @@
 
 ;; Formatação com o Prettier
 ;; Requer que o Prettier esteja instalado globalmente
+;; TODO Não está ativando automaticamente
 (use-package apheleia
   :ensure t
   :hook prog-mode)
 
 ;; LSP Client
 ;; Requer que o `typescript-language-server` esteja installdo globalmente.
-(use-package eglot
-  :ensure t
+;; (use-package eglot
+;;   :ensure t
+;;   :config
+;;   (add-hook 'prog-mode 'eglot))
+
+;; TODO Não está ativando automaticamente
+(use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :hook (prog-mode . lsp)
+  :commands lsp)
+
+;; flycheck-select-checker
+(use-package flycheck)
+
+;; (use-package lsp-ui
+;;   :custom
+;;   (lsp-ui-sideline-show-diagnostics t)
+;;   (lsp-ui-doc-enable t)
+;;   :hook (lsp-mode . lsp-ui-mode)
+;;   :commands lsp-ui-mode)
+
+(setq lsp-ui-doc-enable t
+      lsp-ui-peek-enable t
+      lsp-ui-sideline-enable t
+      lsp-ui-imenu-enable t
+      lsp-ui-flycheck-enable t)
+
+(use-package typescript-mode
+  :mode "\\.ts\\'"
+  :hook (typescript-mode . lsp-deferred)
   :config
-  (add-hook 'prog-mode 'eglot))
+  (setq typescript-indent-level 2))
 
 ;; Code Completion
 (use-package company
