@@ -1,16 +1,23 @@
 (use-package emacs
   :custom
+  (display-line-numbers-width 4)
   (global-display-line-numbers-mode 1)
+  (indent-tabs-mode nil)
+  (scroll-margin 10)
+  (scroll-step 1)
+  (tab-width 2)
+  (visible-bell 1)
+  :hook (
+  (text-mode . turn-on-auto-fill)
+  (text-mode . blink-cursor-mode)
+  (prog-mode . hs-minor-mode))
   :config
-  (add-hook 'text-mode 'blink-cursor-mode)
-  (add-hook 'prog-mode 'hs-minor-mode)
   (menu-bar--display-line-numbers-mode-relative)
-  (column-number-mode)
-  (electric-pair-mode) ;; auto pairs mode
-  (setq display-line-numbers-width 3)
-  ;; White Space
-  (setq tab-width 2)
-  (setq-default indent-tabs-mode nil))
+  (if window-system (tool-bar-mode -1))
+  (save-place-mode +1)
+  (column-number-mode +1)
+  (global-auto-revert-mode +1)
+  (electric-pair-mode +1)) ;; auto pairs mode
 
 (use-package emacs
   :config
@@ -18,10 +25,6 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (prefer-coding-system 'utf-8-unix)
-
-;; Scrolling
-(setq scroll-step 1
-      scroll-margin 10)
 
 ;; Show directories first on dired
 (require 'ls-lisp)
@@ -38,10 +41,11 @@
 
 ;; (use-package origami :ensure t :hook prog-mode)
 
-(use-package ripgrep :ensure t)
+(use-package helpful)
+(use-package ripgrep)
 
 (use-package magit
-  :ensure t
+  ;; :ensure t
   :bind (("<leader>gg" . magit)))
 
 ;; ws-butler cleans up whitespace only on the lines you've edited,
@@ -77,7 +81,6 @@
 (global-visual-line-mode 1)
 
 ;; Automatically reload files was modified by external program
-(global-auto-revert-mode 1)
 (setq revert-without-query (list "\\.png$" "\\.svg$")
       auto-revert-verbose nil)
 
@@ -141,7 +144,7 @@
 
 ;; Optionally use the `orderless' completion style.
 (use-package orderless
-  :ensure t
+  ;; :ensure t
   :init
   ;; Configure a custom style dispatcher (see the Consult wiki)
   ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
@@ -152,13 +155,11 @@
 
 ;; Modeline do Doom Emacs
 (use-package doom-modeline
-  :ensure t
+  ;; :ensure t
   :init (doom-modeline-mode 1))
 
 ;; Setup Theme
 (use-package doom-themes
-  :init
-  (load-theme 'doom-oceanic-next t)
   :config
   (hl-line-mode)
   (blink-cursor-mode))
@@ -170,7 +171,8 @@
 (use-package all-the-icons)
 
 (use-package evil
-  :demand t
+  :custom
+  (evil-shift-width 2)
   :init
   (setq evil-want-keybinding nil)
   :config
@@ -181,14 +183,14 @@
 
 (use-package evil-collection
   :after evil
-  :ensure t
+  ;; :ensure t
   :config
   (setq evil-want-integration t)
   (evil-collection-init))
 
 (use-package evil-commentary
   :after evil
-  :ensure t
+  ;; :ensure t
   :config
   (evil-commentary-mode))
 

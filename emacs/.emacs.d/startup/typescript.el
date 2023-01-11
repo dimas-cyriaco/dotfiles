@@ -5,7 +5,9 @@
 ;; TODO Não está ativando automaticamente
 (use-package apheleia
   :ensure t
-  :hook prog-mode)
+  ;; :hook (prog-mode . apheleia-mode)
+  :config
+  (add-hook 'prog-mode-hook 'apheleia-global-mode))
 
 ;; LSP Client
 ;; Requer que o `typescript-language-server` esteja installdo globalmente.
@@ -18,11 +20,29 @@
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :hook (prog-mode . lsp)
-  :commands lsp)
+  :hook (;;(prog-mode . lsp-mode)
+         (prog-mode . lsp-dired-mode))
+  :commands lsp
+  ;; :hook
+  ;; (lsp-mode . lsp-headerline-breadcrumb-mode)
+  ;; :config
+  ;; (add-hook 'lsp-mode-hook #'lsp-headerline-breadcrumb-mode))
+  :config
+  (setq lsp-headerline-breadcrumb-enable nil)
+  (lsp-enable-which-key-integration t)
+  :bind (
+         ("<leader>ca" . lsp-execute-code-action)
+         )
+  )
+  ;; (lsp-headerline-breadcrumb-mode nil))
 
 ;; flycheck-select-checker
-(use-package flycheck)
+(use-package flycheck
+  :bind (
+         ("<leader>cdn" . flycheck-next-error)
+         ("<leader>cdp" . flycheck-previous-error)
+         )
+  )
 
 ;; (use-package lsp-ui
 ;;   :custom
@@ -39,7 +59,7 @@
 
 (use-package typescript-mode
   :mode "\\.ts\\'"
-  :hook (typescript-mode . lsp-deferred)
+  :hook (typescript-mode . lsp)
   :config
   (setq typescript-indent-level 2))
 
@@ -56,3 +76,5 @@
   :config
   (add-to-list 'yas-snippet-dirs "~/dotfiles/emacs/.emacs.d/snippets")
   (yas-global-mode 1))
+
+(provide 'typescript)

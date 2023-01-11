@@ -1,5 +1,8 @@
 (use-package projectile
-  :ensure t
+  ;; :after rg
+  :custom
+  (projectile-buffers-filter-function 'projectile-buffers-with-file-or-process)
+  ;; (projectile-ignored-project-function #'my/projectile-ignored-project-function)
   :init
   (setq projectile-indexing-method 'alien)
   (setq projectile-sort-order 'recentf)
@@ -22,5 +25,18 @@
          ("<leader>ps" . projectile-switch-project)
          ("<leader>to" . projectile-run-term)
          ))
+
+(defun my/projectile-ignored-project-function(project-root)
+  (member t (mapcar
+             #'(lambda (dir)
+                 (string-prefix-p dir project-root)
+                 )
+             find-project-ignore-dir
+             )))
+
+(defcustom find-project-ignore-dir
+  '("/usr")
+  ""
+  :type 'list)
 
 (provide 'projectile-config)
