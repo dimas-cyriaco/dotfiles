@@ -41,7 +41,13 @@
 
 ;; (use-package origami :ensure t :hook prog-mode)
 
-(use-package helpful)
+(use-package helpful
+  :bind
+  ([remap describe-function] . helpful-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . helpful-variable)
+  ([remap describe-key] . helpful-key))
+
 (use-package ripgrep)
 
 (use-package magit
@@ -108,7 +114,9 @@
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
   :init
-  (savehist-mode))
+  (savehist-mode)
+  :custom
+  history-length 25)
 
 ;; Hide buffers starting with * on ibuffer
 (require 'ibuf-ext)
@@ -158,15 +166,12 @@
   ;; :ensure t
   :init (doom-modeline-mode 1))
 
-;; Setup Theme
-(use-package doom-themes
-  :config
-  (hl-line-mode)
-  (blink-cursor-mode))
-
-(use-package almost-mono-themes
-  :config
-  (load-theme 'almost-mono-gray t))
+(use-package color-theme-sanityinc-tomorrow)
+  ;; :config
+  ;; (load-theme 'sanityinc-tomorrow-night t))
+;; (load-theme 'darktooth t)
+;; (load-theme 'doom-one t)
+(load-theme 'sanityinc-tomorrow-night t)
 
 (use-package all-the-icons)
 
@@ -183,14 +188,12 @@
 
 (use-package evil-collection
   :after evil
-  ;; :ensure t
   :config
-  (setq evil-want-integration t)
+  (setq evil-Want-integration t)
   (evil-collection-init))
 
 (use-package evil-commentary
   :after evil
-  ;; :ensure t
   :config
   (evil-commentary-mode))
 
@@ -268,23 +271,6 @@
 
 ;; ;; Make ESC quit prompts
 ;; (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-;; (global-set-key (kbd "<leader>fs") 'save-buffer)
-
-;; ;; Salva uma lista de arquivos editados recentemente.
-;; (recentf-mode 1)
-
-;; ;; Configurações do histórico do Minibuffer.
-;; (setq history-length 25)
-;; (savehist-mode 1)
-
-;; ;; Abre arquivos no ultimo lugar visitado.
-;; (save-place-mode 1)
-
-;; ;; Recarega arquivo caso tenha sido mudado por outro processo.
-;; (global-auto-revert-mode 1)
-
-;; ;; Mostra os comandos conforme você digita
-;; (use-package command-log-mode)
 
 ;; ;;(use-package helpful
 ;; ;;  :custom

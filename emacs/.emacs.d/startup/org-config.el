@@ -1,4 +1,4 @@
-(use-package mixed-pitch)
+;; (use-package mixed-pitch)
 (use-package org-pomodoro)
 
 (use-package evil-org
@@ -20,7 +20,11 @@
 (defvar +org-capture-todo-file "todo.org"
   "Default target for todo entries.")
 
-(defvar +org-agenda-files '("/Users/dimascyriaco/Documents/org/todo.org" "/Users/dimascyriaco/Documents/org/todo-work.org"))
+(defvar +org-agenda-files '("~/Documents/org/todo.org" "~/Documents/org/todo-work.org"))
+
+(setq org-refile-targets
+      '(("~/Documents/org/todo.org" :maxlevel . 1)
+        ("~/Documents/org/todo-work.org" :maxlevel . 1)))
 
 (use-package org
   :custom
@@ -41,8 +45,8 @@
   (org-level-3 ((t (:inherit outline-3 :height 1.0))))
   (org-level-4 ((t (:inherit outline-4 :height 1.0))))
   (org-level-5 ((t (:inherit outline-5 :height 1.0))))
-  :after
-  mixed-pitch
+  ;; :after
+  ;; mixed-pitch
   :init
   (setq org-directory "~/Documents/org/")
   (setq org-hide-emphasis-markers t)
@@ -63,7 +67,8 @@
          ("<leader>ofw" . org-focus-work)
          ("<leader>ofp" . org-focus-personal)
          ("<leader>off" . org-focus-all)
-         ("<leader>op" . org-pomodoro))
+         ("<leader>op" . org-pomodoro)
+         ("<leader>ot" . org-todo))
 
   :config
   (require 'org-clock)
@@ -106,20 +111,20 @@
   (add-hook 'org-mode-hook 'org-indent-mode)
   (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.1)))
 
-  (add-hook
-   'org-pomodoro-started-hook
-   (lambda ()
-     (load-theme 'doom-oceanic-next t)))
+  ;; (add-hook
+  ;;  'org-pomodoro-started-hook
+  ;;  (lambda ()
+  ;;    (load-theme 'sanityinc-tomorrow-night t)))
 
-  (add-hook
-   'org-pomodoro-killed-hook
-   (lambda ()
-     (load-theme 'almost-mono-gray t)))
+  ;; (add-hook
+  ;;  'org-pomodoro-killed-hook
+  ;;  (lambda ()
+  ;;    (load-theme 'sanityinc-tomorrow-day t)))
 
-  (add-hook
-   'org-pomodoro-finished-hook
-   (lambda ()
-     (load-theme 'almost-mono-gray t)))
+  ;; (add-hook
+  ;;  'org-pomodoro-finished-hook
+  ;;  (lambda ()
+  ;;    (load-theme 'sanityinc-tomorrow-day t)))
 
   (setq org-pomodoro-play-sounds nil))
 

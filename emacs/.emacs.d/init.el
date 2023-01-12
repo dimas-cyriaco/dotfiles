@@ -17,7 +17,9 @@
 
 (require 'core)
 (require 'projectile-config)
+(require 'typescript)
 (require 'org-config)
+(require 'org-variable-pitch)
 
 (use-package server
   :demand t

@@ -43,3 +43,4 @@ helix/.config/helix/runtime
 /emacs/.emacs.d/projects
 /emacs/.emacs.d/timelog
 /emacs/.emacs.d/tree-sitter/
+/emacs/.emacs.d/.local/
