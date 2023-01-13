@@ -8,20 +8,23 @@
   (tab-width 2)
   (visible-bell 1)
   :hook (
-  (text-mode . turn-on-auto-fill)
-  (text-mode . blink-cursor-mode)
   (prog-mode . hs-minor-mode))
+  (text-mode . blink-cursor-mode)
+  (text-mode . turn-on-auto-fill)
   :config
-  (menu-bar--display-line-numbers-mode-relative)
-  (if window-system (tool-bar-mode -1))
-  (save-place-mode +1)
   (column-number-mode +1)
+  (electric-pair-mode +1)
   (global-auto-revert-mode +1)
-  (electric-pair-mode +1)) ;; auto pairs mode
+  (if window-system (tool-bar-mode -1))
+  (menu-bar--display-line-numbers-mode-relative)
+  (save-place-mode +1)) ;; auto pairs mode
 
 (use-package emacs
   :config
   (set-face-attribute 'default nil :font "Overpass Mono" :height 240))
+
+(use-package aweshell
+  :quelpa (abc-mode :fetcher github :repo "manateelazycat/aweshell"))
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (prefer-coding-system 'utf-8-unix)
@@ -34,6 +37,20 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (dired-hide-details-mode)))
+
+;; NEXT
+;; (defun zsh-shell-mode-setup ()
+;;   (setq-local comint-process-echoes t))
+;; (add-hook 'shell-mode-hook #'zsh-shell-mode-setup)
+
+;; Next
+;; (setq delete-by-moving-to-trash t)
+
+;; (defun system-move-file-to-trash (file)
+;;   "Use \"trash\" to move FILE to the system trash."
+;;   (call-process (executable-find "trash")
+;;     nil 0 nil
+;;     file))
 
 ;; This disables bidirectional text to prevent "trojan source"
 ;; exploits, see https://www.trojansource.codes/
@@ -109,7 +126,9 @@
 
   ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
   (setq vertico-cycle t)
-  )
+  :bind (:map vertico-map
+            ("C-j" . vertico-next)
+            ("C-k" . vertico-previous)))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
@@ -166,12 +185,12 @@
   ;; :ensure t
   :init (doom-modeline-mode 1))
 
-(use-package color-theme-sanityinc-tomorrow)
-  ;; :config
-  ;; (load-theme 'sanityinc-tomorrow-night t))
+(use-package color-theme-sanityinc-tomorrow
+  :config
+  (load-theme 'sanityinc-tomorrow-day t))
 ;; (load-theme 'darktooth t)
 ;; (load-theme 'doom-one t)
-(load-theme 'sanityinc-tomorrow-night t)
+;; (load-theme 'sanityinc-tomorrow-eighties t)
 
 (use-package all-the-icons)
 
@@ -184,7 +203,7 @@
   (evil-mode 1)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
   (evil-set-leader 'normal (kbd "SPC"))
-  )
+  (evil-set-undo-system 'undo-redo))
 
 (use-package evil-collection
   :after evil
@@ -206,11 +225,12 @@
 
 (use-package emacs
   :after evil
-  :bind (
-         ("<leader>bb" . evil-switch-to-windows-last-buffer)
+  :bind (("C-;" . evil-switch-to-windows-last-buffer)
          ("<leader>bk" . kill-current-buffer)
          ("<leader>br" . revert-buffer)
          ("<leader>be" . eval-buffer)
+         ("<leader>blr" . menu-bar--display-line-numbers-mode-relative)
+         ("<leader>bla" . menu-bar--display-line-numbers-mode-absolute)
          ("<leader>fd" . dired-jump)
          ("<leader>fs" . save-buffer)
          ("<leader>wh" . evil-window-left)
@@ -221,10 +241,11 @@
          ("<leader>ss" . persp-switch)
          ("<leader>sr" . persp-rename)
          ("<leader>hv" . describe-variable)
-         ("<leader>hf" . describe-funcion)
+         ("<leader>hf" . describe-function)
          ("<leader>hk" . describe-key)
-         ("C-u" . evil-scroll-up)
-         ))
+         ("<leader>to" . aweshell-next)
+         ("<leader>tt" . aweshell-toggle)
+         ("C-u" . evil-scroll-up)))
 
 (use-package perspective
   :bind
@@ -235,11 +256,6 @@
 
 ;; Parens Settings
 (show-paren-mode t)
-;; (setq show-paren-style 'expression)
-
-;; (use-package paren :ensure t)
-;; (set-face-background 'show-paren-match (face-background 'default))
-;; (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
 
 ;; Highlight the current line
 (use-package hl-line

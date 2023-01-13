@@ -1,5 +1,18 @@
+;; Sun-setting
 ;; (use-package mixed-pitch)
 (use-package org-pomodoro)
+(use-package org-roam
+  init
+  (setq org-roam-v2-ack t)
+  (org-roam-completion-everywhere t)
+  :custom
+  (org-roam-directory "~/Documents/org/roam")
+  :config
+  (require 'org-roam-dailies)
+  (org-roam-db-autosync-mode)
+  :bind-keymap
+  ("C-c n d" . org-roam-dailies-map))
+(use-package org-roam-ui)
 
 (use-package evil-org
   :after org
@@ -28,37 +41,29 @@
 
 (use-package org
   :custom
-  (org-clock-persist t)
-  (org-clock-in-resume t)
-  (org-hide-emphasis-markers t)
-  (org-pretty-entities t)
-  (org-auto-align-tags nil)
-  (org-tags-column 0)
-  (org-catch-invisible-edits 'show-and-error)
-  (org-ellipsis "…")
-  (org-insert-heading-respect-content t)
-  (org-habit-show-habits t)
+  (org-todo-keywords-for-agenda '("CLOSED" "DONE" "CONT" "TEST" "CODE-REVIEW" "WIP" "TODO"))
+  (org-agenda-dim-blocked-tasks t)
   (org-agenda-files +org-agenda-files)
+  (org-clock-in-resume t)
+  (org-directory "~/Documents/org/")
+  (org-ellipsis "…")
+  (org-enforce-todo-checkbox-dependencies t)
+  (org-enforce-todo-dependencies t)
+  (org-fold-catch-invisible-edits 'show-and-error)
+  (org-habit-show-habits t)
+  (org-hide-emphasis-markers t)
+  (org-log-done 'time)
+  (org-log-into-drawer t)
+  (org-pretty-entities t)
+  (org-track-ordered-property-with-tag t)
   :custom-face
-  (org-level-1 ((t (:inherit outline-1 :height 1.0))))
-  (org-level-2 ((t (:inherit outline-2 :height 1.0))))
-  (org-level-3 ((t (:inherit outline-3 :height 1.0))))
-  (org-level-4 ((t (:inherit outline-4 :height 1.0))))
-  (org-level-5 ((t (:inherit outline-5 :height 1.0))))
-  ;; :after
-  ;; mixed-pitch
-  :init
-  (setq org-directory "~/Documents/org/")
-  (setq org-hide-emphasis-markers t)
-  ;; (setq org-hide-leading-stars t)
-  :config
-  (custom-set-faces
-    '(org-level-1 ((t (:inherit outline-1 :height 1.4))))
-    '(org-level-2 ((t (:inherit outline-2 :height 1.3))))
-    '(org-level-3 ((t (:inherit outline-3 :height 1.2))))
-    '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
-    '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
-  )
+  (org-level-1 ((t (:inherit outline-1 :height 1.4)))))
+
+;; Sun-setting org custom:
+;; (org-auto-align-tags nil)
+;; (org-clock-persist t)
+;; (org-insert-heading-respect-content t)
+;; (org-tags-column 0)
 
 ;; Org Agenda config
 (use-package org
@@ -68,16 +73,16 @@
          ("<leader>ofp" . org-focus-personal)
          ("<leader>off" . org-focus-all)
          ("<leader>op" . org-pomodoro)
+         ("<leader>os" . org-schedule)
          ("<leader>ot" . org-todo))
 
   :config
   (require 'org-clock)
-  ;; (setq org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
   (org-clock-persistence-insinuate)
   (add-to-list 'org-modules 'org-habit t)
 
   (setq org-todo-keywords
-        '((sequence "TODO(t!)" "WIP(w!)" "NEXT(n!)" "PROJ(p!)" "LOOP(r!)" "WAIT(a@/!)" "HOLD(h@/!)" "IDEA(i@/!)" "|" "DONE(d@) CANCELED(e@)" "KILL(k@/!)")))
+        '((sequence "TODO(t!)" "WIP(w!)" "NEXT(n!)" "PROJ(p!)" "LOOP(r!)" "WAIT(a@/!)" "HOLD(h@/!)" "IDEA(i@/!)" "|" "DONE(d@)" "CANCELED(e@)" "KILL(k@/!)")))
 
   (setq org-track-ordered-property-with-tag t)
   (setq org-enforce-todo-dependencies t)
@@ -107,24 +112,24 @@
            (file+headline "todo.org" "Inbox")
            "* %u %?\n%i\n%a" :prepend t))))
 
-  (add-hook 'org-mode-hook 'mixed-pitch-mode)
+  ;; (add-hook 'org-mode-hook 'mixed-pitch-mode)
   (add-hook 'org-mode-hook 'org-indent-mode)
   (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.1)))
 
-  ;; (add-hook
-  ;;  'org-pomodoro-started-hook
-  ;;  (lambda ()
-  ;;    (load-theme 'sanityinc-tomorrow-night t)))
+  (add-hook
+   'org-pomodoro-started-hook
+   (lambda ()
+     (load-theme 'sanityinc-tomorrow-night t)))
 
-  ;; (add-hook
-  ;;  'org-pomodoro-killed-hook
-  ;;  (lambda ()
-  ;;    (load-theme 'sanityinc-tomorrow-day t)))
+  (add-hook
+   'org-pomodoro-killed-hook
+   (lambda ()
+     (load-theme 'sanityinc-tomorrow-day t)))
 
-  ;; (add-hook
-  ;;  'org-pomodoro-finished-hook
-  ;;  (lambda ()
-  ;;    (load-theme 'sanityinc-tomorrow-day t)))
+  (add-hook
+   'org-pomodoro-finished-hook
+   (lambda ()
+     (load-theme 'sanityinc-tomorrow-day t)))
 
   (setq org-pomodoro-play-sounds nil))
 
@@ -149,14 +154,6 @@
 (use-package org-capture
   :ensure nil
   :after org
-  :preface
-  (defvar my/org-contacts-template "* %(org-contacts-template-name)
-:PROPERTIES:
-:ADDRESS: %^{289 Cleveland St. Brooklyn, 11206 NY, USA}
-:BIRTHDAY: %^{yyyy-mm-dd}
-:EMAIL: %(org-contacts-template-email)
-:NOTE: %^{NOTE}
-:END:" "Template for org-contacts.")
   :custom
   (org-capture-templates
         (quote
@@ -180,8 +177,8 @@
           ("n" "Personal notes" entry
            (file+headline "todo.org" "Inbox")
            "* %u %?\n%i\n%a" :prepend t)
-          ("c" "Contact" entry (file+headline "~/Documents/org/contacts.org" "Friends"),
-            my/org-contacts-template
-            :empty-lines 1)))))
+          ("c" "Contact" entry
+           (file+headline "~/Documents/org/contacts.org" "Friends")
+           (file "~/Documents/org/templates/contact.org"))))))
 
 (provide 'org-config)
