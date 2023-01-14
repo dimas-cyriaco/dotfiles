@@ -43,3 +43,7 @@ helix/.config/helix/runtime
 /emacs/.emacs.d/timelog
 /emacs/.emacs.d/tree-sitter/
 /emacs/.emacs.d/.local/
+/emacs/.emacs.d/.org-id-locations
+/emacs/.emacs.d/eshell/
+/emacs/.emacs.d/org-roam.db
+/emacs/.emacs.d/quelpa/

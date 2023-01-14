@@ -1,3 +1,7 @@
+(use-package esup
+  :ensure t
+  :pin melpa)
+
 (use-package emacs
   :custom
   (display-line-numbers-width 4)
@@ -21,10 +25,13 @@
 
 (use-package emacs
   :config
-  (set-face-attribute 'default nil :font "Overpass Mono" :height 240))
+  (set-face-attribute 'default nil :font "Overpass Mono" :height 220))
 
 (use-package aweshell
   :quelpa (abc-mode :fetcher github :repo "manateelazycat/aweshell"))
+
+(dolist (mode '(eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (prefer-coding-system 'utf-8-unix)
@@ -37,11 +44,6 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (dired-hide-details-mode)))
-
-;; NEXT
-;; (defun zsh-shell-mode-setup ()
-;;   (setq-local comint-process-echoes t))
-;; (add-hook 'shell-mode-hook #'zsh-shell-mode-setup)
 
 ;; Next
 ;; (setq delete-by-moving-to-trash t)
@@ -137,23 +139,24 @@
   :custom
   history-length 25)
 
+;; Sun-setting
 ;; Hide buffers starting with * on ibuffer
-(require 'ibuf-ext)
-(add-to-list 'ibuffer-never-show-predicates "^\\*")
+;; (require 'ibuf-ext)
+;; (add-to-list 'ibuffer-never-show-predicates "^\\*")
 
-(defadvice ibuffer-update-title-and-summary (after remove-column-titles)
-   (with-current-buffer
-      (set-buffer "*Ibuffer*")
-      (read-only-mode 0)
-      (goto-char 1)
-      (search-forward "-\n" nil t)
-      (delete-region 1 (point))
-      (let ((window-min-height 1))
-        ;; save a little screen estate
-        (shrink-window-if-larger-than-buffer))
-      (read-only-mode)))
+;; (defadvice ibuffer-update-title-and-summary (after remove-column-titles)
+;;    (with-current-buffer
+;;       (set-buffer "*Ibuffer*")
+;;       (read-only-mode 0)
+;;       (goto-char 1)
+;;       (search-forward "-\n" nil t)
+;;       (delete-region 1 (point))
+;;       (let ((window-min-height 1))
+;;         ;; save a little screen estate
+;;         (shrink-window-if-larger-than-buffer))
+;;       (read-only-mode)))
 
-(ad-activate 'ibuffer-update-title-and-summary)
+;; (ad-activate 'ibuffer-update-title-and-summary)
 
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
@@ -185,12 +188,15 @@
   ;; :ensure t
   :init (doom-modeline-mode 1))
 
-(use-package color-theme-sanityinc-tomorrow
+(use-package color-theme-sanityinc-tomorrow)
+  ;; :config
+  ;; (load-theme 'sanityinc-tomorrow-day t))
+
+(use-package lambda-themes
+  :quelpa
+  (lambda-themes :fetcher github :repo "lambda-emacs/lambda-themes")
   :config
-  (load-theme 'sanityinc-tomorrow-day t))
-;; (load-theme 'darktooth t)
-;; (load-theme 'doom-one t)
-;; (load-theme 'sanityinc-tomorrow-eighties t)
+  (load-theme 'lambda-dark t))
 
 (use-package all-the-icons)
 
@@ -265,37 +271,19 @@
           (add-hook 'nlinum-mode 'hl-line-mode))
   :config (progn
             ;; only show hl-line in sleected window
-            (setq hl-line-sticky-flag nil
-                  global-hl-line-sticky-flag nil)
-
+            (setq hl-line-sticky-flag nil global-hl-line-sticky-flag nil)
             ;; Initially enable hl-line
             (global-hl-line-mode 1)
-
             ;; Don't highlight the line in visual mode
-            (add-hook 'evil-visual-state-entry-hook (lambda ()
-                                                      (hl-line-mode -1)))
+            (add-hook 'evil-visual-state-entry-hook (lambda () (hl-line-mode -1)))
             (add-hook 'evil-visual-state-exit-hook 'hl-line-mode)))
 
 (use-package which-key
   :init (which-key-mode)
-  :diminish which-key-mode
-  :config
-  (setq which-key-idle-delay 0.3))
-
-;; (dolist (mode '(eshell-mode-hook))
-;;   (add-hook mode (lambda () (display-line-numbers-mode 0))))
-
-;; ;; Make ESC quit prompts
-;; (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
-;; ;;(use-package helpful
-;; ;;  :custom
-;; ;;  (counsel-describe-function-function #'helpful-callable)
-;; ;;  (counsel-describe-variable-function #'helpful-variable)
-;; ;;  :bind
-;; ;;  ([remap describe-function] . counsel-describe-function)
-;; ;;  ([remap describe-command] . helpful-command)
-;; ;;  ([remap describe-variable] . counsel-describe-variable)
-;; ;;  ([remap describe-key] . helpful-key))
+  :custom
+  (which-key-idle-delay 0.3))
+;; Sunsetting which-key config
+  ;; :config
+  ;; (setq which-key-idle-delay 0.3))
 
 (provide 'core)

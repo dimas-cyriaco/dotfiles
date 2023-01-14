@@ -2,48 +2,31 @@
 
 ;; Formatação com o Prettier
 ;; Requer que o Prettier esteja instalado globalmente
-;; TODO Não está ativando automaticamente
 (use-package apheleia
   :ensure t
-  ;; :hook (prog-mode . apheleia-mode)
-  :config
-  (add-hook 'prog-mode-hook 'apheleia-global-mode))
+  :hook (prog-mode . apheleia-global-mode))
+  ;; :config
+  ;; (add-hook 'prog-mode-hook 'apheleia-global-mode))
 
 ;; LSP Client
 ;; Requer que o `typescript-language-server` esteja installdo globalmente.
-;; (use-package eglot
-;;   :ensure t
-;;   :config
-;;   (add-hook 'prog-mode 'eglot))
-
-;; TODO Não está ativando automaticamente
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :hook (;;(prog-mode . lsp-mode)
+  :hook ((prog-mode . lsp-mode)
          (prog-mode . lsp-dired-mode))
   :commands lsp
-  ;; :hook
-  ;; (lsp-mode . lsp-headerline-breadcrumb-mode)
-  ;; :config
-  ;; (add-hook 'lsp-mode-hook #'lsp-headerline-breadcrumb-mode))
   :config
   (setq lsp-headerline-breadcrumb-enable nil)
   (lsp-enable-which-key-integration t)
-  :bind (
-         ("<leader>ca" . lsp-execute-code-action)
-         )
-  )
-  ;; (lsp-headerline-breadcrumb-mode nil))
+  :bind (("<leader>ca" . lsp-execute-code-action)))
 
 ;; flycheck-select-checker
 (use-package flycheck
-  :bind (
-         ("<leader>cdn" . flycheck-next-error)
-         ("<leader>cdp" . flycheck-previous-error)
-         )
-  )
+  :bind (("<leader>cdn" . flycheck-next-error)
+         ("<leader>cdp" . flycheck-previous-error)))
 
+;; Sun-setting lsp-ui
 ;; (use-package lsp-ui
 ;;   :custom
 ;;   (lsp-ui-sideline-show-diagnostics t)
@@ -51,11 +34,11 @@
 ;;   :hook (lsp-mode . lsp-ui-mode)
 ;;   :commands lsp-ui-mode)
 
-(setq lsp-ui-doc-enable t
-      lsp-ui-peek-enable t
-      lsp-ui-sideline-enable t
-      lsp-ui-imenu-enable t
-      lsp-ui-flycheck-enable t)
+;; (setq lsp-ui-doc-enable t
+;;       lsp-ui-peek-enable t
+;;       lsp-ui-sideline-enable t
+;;       lsp-ui-imenu-enable t
+;;       lsp-ui-flycheck-enable t)
 
 (use-package typescript-mode
   :mode "\\.ts\\'"
