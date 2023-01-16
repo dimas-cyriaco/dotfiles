@@ -5,7 +5,7 @@
 (use-package emacs
   :custom
   (display-line-numbers-width 4)
-  (global-display-line-numbers-mode 1)
+  ;; (global-display-line-numbers-mode 1)
   (indent-tabs-mode nil)
   (scroll-margin 10)
   (scroll-step 1)
@@ -21,14 +21,14 @@
   (global-auto-revert-mode +1)
   (if window-system (tool-bar-mode -1))
   (menu-bar--display-line-numbers-mode-relative)
-  (save-place-mode +1)) ;; auto pairs mode
+  (save-place-mode +1))
 
 (use-package emacs
   :config
-  (set-face-attribute 'default nil :font "Overpass Mono" :height 220))
+  (set-face-attribute 'default nil :font "Overpass Mono" :height 200))
 
 (use-package aweshell
-  :quelpa (abc-mode :fetcher github :repo "manateelazycat/aweshell"))
+  :quelpa (aweshell :fetcher github :repo "manateelazycat/aweshell"))
 
 (dolist (mode '(eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
@@ -83,9 +83,7 @@
   :config
   (ws-butler-global-mode))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Spell checking
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package ispell
   :init
   (setq ispell-program-name "aspell"
@@ -112,33 +110,6 @@
 (require 'recentf)
 (recentf-mode 1)
 
-;; Enable vertico
-(use-package vertico
-  :init
-  (vertico-mode)
-
-  ;; Different scroll margin
-  ;; (setq vertico-scroll-margin 0)
-
-  ;; Show more candidates
-  ;; (setq vertico-count 20)
-
-  ;; Grow and shrink the Vertico minibuffer
-  ;; (setq vertico-resize t)
-
-  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
-  (setq vertico-cycle t)
-  :bind (:map vertico-map
-            ("C-j" . vertico-next)
-            ("C-k" . vertico-previous)))
-
-;; Persist history over Emacs restarts. Vertico sorts by history position.
-(use-package savehist
-  :init
-  (savehist-mode)
-  :custom
-  history-length 25)
-
 ;; Sun-setting
 ;; Hide buffers starting with * on ibuffer
 ;; (require 'ibuf-ext)
@@ -158,45 +129,21 @@
 
 ;; (ad-activate 'ibuffer-update-title-and-summary)
 
-;; Enable rich annotations using the Marginalia package
-(use-package marginalia
-  ;; Either bind `marginalia-cycle' globally or only in the minibuffer
-  :bind (("M-A" . marginalia-cycle)
-         :map minibuffer-local-map
-         ("M-A" . marginalia-cycle))
-
-  ;; The :init configuration is always executed (Not lazy!)
-  :init
-
-  ;; Must be in the :init section of use-package such that the mode gets
-  ;; enabled right away. Note that this forces loading the package.
-  (marginalia-mode))
-
-;; Optionally use the `orderless' completion style.
-(use-package orderless
-  ;; :ensure t
-  :init
-  ;; Configure a custom style dispatcher (see the Consult wiki)
-  ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
-  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
-
 ;; Modeline do Doom Emacs
 (use-package doom-modeline
   ;; :ensure t
   :init (doom-modeline-mode 1))
 
 (use-package color-theme-sanityinc-tomorrow)
-  ;; :config
-  ;; (load-theme 'sanityinc-tomorrow-day t))
+(use-package doom-themes
+  :config
+  (load-theme 'doom-material t))
 
 (use-package lambda-themes
   :quelpa
-  (lambda-themes :fetcher github :repo "lambda-emacs/lambda-themes")
-  :config
-  (load-theme 'lambda-dark t))
+  (lambda-themes :fetcher github :repo "lambda-emacs/lambda-themes"))
+  ;; :config
+  ;; (load-theme 'lambda-dark t))
 
 (use-package all-the-icons)
 
@@ -214,7 +161,7 @@
 (use-package evil-collection
   :after evil
   :config
-  (setq evil-Want-integration t)
+  (setq evil-want-integration t)
   (evil-collection-init))
 
 (use-package evil-commentary
@@ -254,14 +201,17 @@
          ("C-u" . evil-scroll-up)))
 
 (use-package perspective
-  :bind
   :custom
   (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
   :init
   (persp-mode))
 
 ;; Parens Settings
-(show-paren-mode t)
+(use-package paren
+  :init
+  (show-paren-mode))
+;; Sun-setting substituido pelo código acima.
+;; (show-paren-mode t)
 
 ;; Highlight the current line
 (use-package hl-line
@@ -282,8 +232,12 @@
   :init (which-key-mode)
   :custom
   (which-key-idle-delay 0.3))
-;; Sunsetting which-key config
-  ;; :config
-  ;; (setq which-key-idle-delay 0.3))
+
+;; Bookmarks
+(use-package emacs
+  :bind (("<leader>mm" . consult-bookmark)
+         ("<leader>ma" . bookmark-set)
+         ("<leader>md" . bookmark-delete)
+         ("<leader>mr" . bookmark-rename)))
 
 (provide 'core)

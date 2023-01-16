@@ -16,7 +16,7 @@
          ("<leader>fr" . projectile-recentf)
          ("<leader>pa" . projectile-command-map)
          ("<leader>pd" . projectile-dired)
-         ("<leader>pf" . projectile-ripgrep)
+         ;; ("<leader>pf" . projectile-ripgrep)
          ("<leader>pp" . projectile-switch-open-project)
          ("<leader>ps" . projectile-switch-project)))
 

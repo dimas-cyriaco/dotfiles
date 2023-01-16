@@ -22,7 +22,7 @@ font:
     family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
     style: Bold Italic
 
-  size: 18
+  size: 20
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -32,105 +32,39 @@ font:
 # Should display the render timer
 render_timer: false
 
-# Use custom cursor colors. If true, display the cursor in the cursor.foreground
-# and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
-# Colors (Tomorrow Night)
+# Colors (Material Theme)
 colors:
   # Default colors
   primary:
-    background: '0x1d1f21'
-    foreground: '0xc5c8c6'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x1d1f21'
-    cursor: '0xffffff'
+    background: '0x1e282d'
+    foreground: '0xc4c7d1'
 
   # Normal colors
   normal:
-    black:   '0x1d1f21'
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xe6c547'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x70c0ba'
-    white:   '0x373b41'
+    black:   '0x666666'
+    red:     '0xeb606b'
+    green:   '0xc3e88d'
+    yellow:  '0xf7eb95'
+    blue:    '0x80cbc4'
+    magenta: '0xff2f90'
+    cyan:    '0xaeddff'
+    white:   '0xffffff'
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
-    white:   '0x282a2e'
+    black:   '0xff262b'
+    red:     '0xeb606b'
+    green:   '0xc3e88d'
+    yellow:  '0xf7eb95'
+    blue:    '0x7dc6bf'
+    magenta: '0x6c71c4'
+    cyan:    '0x35434d'
+    white:   '0xffffff'
 
-# Visual Bell
-#
-# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
-# rung, the terminal background will be set to white and transition back to the
-# default background color. You can control the rate of this transition by
-# setting the `duration` property (represented in milliseconds). You can also
-# configure the transition function by setting the `animation` property.
-#
-# Possible values for `animation`
-# `Ease`
-# `EaseOut`
-# `EaseOutSine`
-# `EaseOutQuad`
-# `EaseOutCubic`
-# `EaseOutQuart`
-# `EaseOutQuint`
-# `EaseOutExpo`
-# `EaseOutCirc`
-# `Linear`
-#
-# To completely disable the visual bell, set its duration to 0.
-#
 bell:
   animation: EaseOutExpo
   duration: 0
 
-# Key bindings
-#
-# Each binding is defined as an object with some properties. Most of the
-# properties are optional. All of the alphabetical keys should have a letter for
-# the `key` value such as `V`. Function keys are probably what you would expect
-# as well (F1, F2, ..). The number keys above the main keyboard are encoded as
-# `Key1`, `Key2`, etc. Keys on the number pad are encoded `Number1`, `Number2`,
-# etc.  These all match the glutin::VirtualKeyCode variants.
-#
-# Possible values for `mods`
-# `Command`, `Super` refer to the super/command/windows key
-# `Control` for the control key
-# `Shift` for the Shift key
-# `Alt` and `Option` refer to alt/option
-#
-# mods may be combined with a `|`. For example, requiring control and shift
-# looks like:
-#
-# mods: Control|Shift
-#
-# The parser is currently quite sensitive to whitespace and capitalization -
-# capitalization must match exactly, and piped items must not have whitespace
-# around them.
-#
-# Either an `action`, `chars`, or `command` field must be present.
-#   `action` must be one of `Paste`, `PasteSelection`, `Copy`, or `Quit`.
-#   `chars` writes the specified string every time that binding is activated.
-#     These should generally be escape sequences, but they can be configured to
-#     send arbitrary strings of bytes.
-#   `command` must be a map containing a `program` string, and `args` array of
-#     strings. For example:
-#     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
-#
-# Want to add a binding (e.g. "PageUp") but are unsure what the X sequence
-# (e.g. "\x1b[5~") is? Open another terminal (like xterm) without tmux,
-# then run `showkey -a` to get the sequence associated to a key combination.
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }
@@ -194,21 +128,6 @@ key_bindings:
   - { key: Semicolon, mods: Alt, chars: "" }
   - { key: Space, mods: Control, chars: "\x00" }
 
-# Mouse bindings
-#
-# Currently doesn't support modifiers. Both the `mouse` and `action` fields must
-# be specified.
-#
-# Values for `mouse`:
-# - Middle
-# - Left
-# - Right
-# - Numeric identifier such as `5`
-#
-# Values for `action`:
-# - Paste
-# - PasteSelection
-# - Copy (TODO)
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
@@ -219,11 +138,10 @@ mouse:
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
 
-hide_cursor_when_typing: false
+hide_cursor_when_typing: true
 
 cursor:
   style:
-    shape: Block
-  vi_mode_style: Block
+    shape: Beam
 
 live_config_reload: true

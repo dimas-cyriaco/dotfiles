@@ -111,7 +111,7 @@
   (add-hook
    'org-pomodoro-started-hook
    (lambda ()
-     (load-theme 'sanityinc-tomorrow-night t)))
+     (load-theme 'doom-material t)))
 
   (add-hook
    'org-pomodoro-killed-hook
