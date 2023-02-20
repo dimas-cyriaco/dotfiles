@@ -20,10 +20,11 @@
   required = true
 [user]
   name = Dimas Cyriaco
-  email = dimascyriaco@pm.me
+  email = dimascyriaco@icloud.com
 [core]
   editor = hx
+  autocrlf = input
 [init]
   defaultBranch = main
 [merge]
-	conflictStyle = diff3
+  conflictStyle = diff3

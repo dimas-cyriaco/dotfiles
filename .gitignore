@@ -26,6 +26,7 @@ zsh/.config/zsh/plugins.zsh
 zsh/.zsh_plugins.txt
 
 helix/.config/helix/runtime
+
 /emacs/.emacs.d/history
 /emacs/.emacs.d/projectile-bookmarks.eld
 /emacs/.emacs.d/projectile.cache
@@ -43,7 +44,10 @@ helix/.config/helix/runtime
 /emacs/.emacs.d/timelog
 /emacs/.emacs.d/tree-sitter/
 /emacs/.emacs.d/.local/
+/emacs/.emacs.d/.cache/
 /emacs/.emacs.d/.org-id-locations
 /emacs/.emacs.d/eshell/
 /emacs/.emacs.d/org-roam.db
 /emacs/.emacs.d/quelpa/
+/emacs/.emacs.d/elpa/
+/emacs/.emacs.d/eln-cache/

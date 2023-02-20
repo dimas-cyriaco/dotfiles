@@ -9,3 +9,5 @@ alias ll="lsd -A1 --group-dirs first"
 alias ln='lazynpm'
 alias p="pueue"
 alias nx="yarn nx"
+alias lg="lazygit"
+alias y="yarn"

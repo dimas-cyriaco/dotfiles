@@ -12,24 +12,47 @@ disabled = true
 
 [status]
 disabled = false
-symbol = "✖->"
+# symbol = "✖->"
+style = '202'
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+style = '123'
+
+[character]
+success_symbol = '[❯](bold 121)'
+error_symbol = "[❯](bold 202) "
+vimcmd_symbol = '[❮](bold 214)'
 
 [aws]
 disabled = false
-format = '\[[ ($profile)]($style)\]'
+format = '\[[ ($profile)](214)\]'
 
 [git_branch]
-format = '\[[$symbol$branch]($style)\]'
+format = '\[[$symbol$branch](221)\]'
 
 [git_status]
-disabled = true
+conflicted = "👿"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "✏️"
+staged = '[++\($count\)](121)'
+deleted = "🗑️"
+style = 'white'
 
 [nodejs]
-format = '\[[$symbol($version)]($style)\]'
+format = '\[[$symbol($version)](81)\]'
+
+[golang]
+style = '81'
 
 [pulumi]
 disabled = false
-format = '\[[$symbol$username - $stack]($style)\]'
+format = '\[[$symbol$username - $stack](121)\]'
 
 [rust]
 format = '\[[$symbol($version)]($style)\]'

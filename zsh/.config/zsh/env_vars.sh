@@ -5,6 +5,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 export HISTFILE="$HOME/.zhistory"
 export HISTSIZE=5000               #How many lines of history to keep in memory
@@ -24,3 +25,7 @@ function zvm_config() {
   export ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
   export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 }
+
+# LLVM
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
