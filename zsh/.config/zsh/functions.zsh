@@ -78,3 +78,8 @@ curl -w @- -o /dev/null -s "$@" <<'EOF'
          time_total:  %{time_total}\n
 EOF
 }
+
+function mk {
+  mkdir -p $1
+  cd $1
+}

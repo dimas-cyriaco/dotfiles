@@ -1,14 +1,27 @@
-[package]
-disabled = true
+# [package]
+# disabled = true
+#
+# [hostname]
+# disabled = true
+#
+# [username]
+# disabled = true
+#
+# [git_metrics]
+# disabled = true
 
-[hostname]
-disabled = true
-
-[username]
-disabled = true
-
-[git_metrics]
-disabled = true
+format = """
+$directory\
+$git_branch\
+$fill\
+$nodejs\
+$golang\
+$rust\
+$aws\
+$pulumi\
+$line_break\
+$character
+"""
 
 [status]
 disabled = false
@@ -16,9 +29,13 @@ disabled = false
 style = '202'
 
 [directory]
-truncation_length = 8
+truncation_length = 3
+truncate_to_repo = false
 truncation_symbol = '…/'
 style = '123'
+
+[fill]
+symbol = " "
 
 [character]
 success_symbol = '[❯](bold 121)'
@@ -26,7 +43,6 @@ error_symbol = "[❯](bold 202) "
 vimcmd_symbol = '[❮](bold 214)'
 
 [aws]
-disabled = false
 format = '\[[ ($profile)](214)\]'
 
 [git_branch]
@@ -52,7 +68,7 @@ style = '81'
 
 [pulumi]
 disabled = false
-format = '\[[$symbol$username - $stack](121)\]'
+format = '\[[$symbol$stack](121)\]'
 
 [rust]
 format = '\[[$symbol($version)]($style)\]'
