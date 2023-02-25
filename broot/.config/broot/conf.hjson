@@ -40,7 +40,7 @@
 	# (you really should read https://dystroy.org/broot/vim_mode/
 	# before as it may not suit anybody even among vim users)
 	#
-	# modal: true
+	modal: true
 
 	###############################################################
 	# Whether to mark the selected line with a triangle
@@ -105,7 +105,7 @@
 	# If you want the escape key to quit broot when there's nothing
 	# to cancel (for example when you just opened broot), uncomment
 	# this parameter
-	# 
+	#
 	# quit_on_last_cancel: true
 
 	###############################################################

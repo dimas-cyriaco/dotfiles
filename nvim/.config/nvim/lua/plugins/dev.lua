@@ -10,3 +10,5 @@ function R(name)
   reload_package(name)
   return require(name)
 end
+
+return {}

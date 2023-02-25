@@ -1,15 +1,3 @@
-# [package]
-# disabled = true
-#
-# [hostname]
-# disabled = true
-#
-# [username]
-# disabled = true
-#
-# [git_metrics]
-# disabled = true
-
 format = """
 $directory\
 $git_branch\

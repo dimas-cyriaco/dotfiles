@@ -1,4 +1,5 @@
 return {
+  { "AlexvZyl/nordic.nvim" },
   {
     "marko-cerovac/material.nvim",
     lazy = true,
@@ -6,7 +7,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "material",
+      colorscheme = "nordic",
     },
     init = function()
       vim.g.material_style = "darker"

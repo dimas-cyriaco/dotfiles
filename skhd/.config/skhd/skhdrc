@@ -1,0 +1,25 @@
+ctrl + cmd - j : yabai -m window --focus prev
+ctrl + cmd - k : yabai -m window --focus next
+# ctrl + cmd - h : yabai -m window --focus west
+# ctrl + cmd - l : yabai -m window --focus east
+
+# maximize a window
+ctrl + cmd - m : yabai -m window --toggle zoom-fullscreen
+
+# increase window size
+ctrl + cmd - u : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
+
+# decrease window size
+ctrl + cmd - i : yabai -m window --resize right:20:0 ; yabai -m window --resize left:20:0
+
+# balance out tree of windows (resize to occupy same area)
+ctrl + cmd - e : yabai -m space --balance
+
+# toggle window float
+ctrl + cmd - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+ctrl + cmd - q : brew services stop yabai
+ctrl + cmd - s : brew services start yabai
+ctrl + cmd - r : brew services restart yabai
+
+
