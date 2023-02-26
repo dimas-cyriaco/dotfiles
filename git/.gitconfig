@@ -22,9 +22,20 @@
   name = Dimas Cyriaco
   email = dimascyriaco@icloud.com
 [core]
-  editor = hx
+  editor = nvim
   autocrlf = input
+  pager = delta
 [init]
   defaultBranch = main
 [merge]
   conflictStyle = diff3
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  theme = zenburn
+  line-numbers = true
+  side-by-side = true
+[diff]
+  colorMoved = default
