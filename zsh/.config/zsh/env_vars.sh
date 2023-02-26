@@ -6,7 +6,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="/Users/dimascyriaco/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/.local/share/rtx/installs/nodejs/16.19.1/bin:$PATH"
 
 export HISTFILE="$HOME/.zhistory"
 export HISTSIZE=5000               #How many lines of history to keep in memory

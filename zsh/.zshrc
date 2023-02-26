@@ -23,7 +23,7 @@ for f in "${my_configs[@]}"; do
   [[ -f $my_shdir/$f ]] && . "$my_shdir"/"$f"
 done
 
-source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+source /usr/share/zsh-antidote/antidote.zsh
 antidote load ~/dotfiles/zsh/.config/zsh/plugins.txt
 
 eval "$(starship init zsh)"
@@ -32,7 +32,7 @@ eval "$(starship init zsh)"
 
 # Config asfd
 # . /opt/homebrew/opt/asdf/libexec/asdf.s
-source $(brew --prefix asdf)/libexec/asdf.sh
+# source $(brew --prefix asdf)/libexec/asdf.sh
 # source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
 # export NVM_DIR="$HOME/.nvm"
@@ -42,3 +42,7 @@ source $(brew --prefix asdf)/libexec/asdf.sh
 
 # export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
 # export PATH="$PNPM_HOME:$PATH"
+
+setxkbmap -option caps:ctrl_modifier
+
+source /home/dimas/.config/broot/launcher/bash/br
