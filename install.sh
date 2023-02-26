@@ -26,6 +26,11 @@ brew install --cask amethyst
 brew install google-chrome
 brew install --cask emacs
 
+# Arch
+yay wl-clipboard
+yay jq
+yay tidy
+
 ## Helix
 
 ### Install Rust

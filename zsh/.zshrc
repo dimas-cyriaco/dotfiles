@@ -43,6 +43,4 @@ eval "$(starship init zsh)"
 # export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
 # export PATH="$PNPM_HOME:$PATH"
 
-setxkbmap -option caps:ctrl_modifier
-
 source /home/dimas/.config/broot/launcher/bash/br
