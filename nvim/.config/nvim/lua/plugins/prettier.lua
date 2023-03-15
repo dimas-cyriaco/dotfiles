@@ -4,7 +4,7 @@ return {
     opts = {
       setup = {
         tsserver = function(_, opts)
-          require("lazyvim.util").on_attach(function(client, buffer)
+          require("lazyvim.util").on_attach(function(client)
             if client.name == "tsserver" then
               client.server_capabilities.documentFormattingProvider = false
             end

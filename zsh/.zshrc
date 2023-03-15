@@ -44,3 +44,6 @@ eval "$(starship init zsh)"
 # export PATH="$PNPM_HOME:$PATH"
 
 source /home/dimas/.config/broot/launcher/bash/br
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin

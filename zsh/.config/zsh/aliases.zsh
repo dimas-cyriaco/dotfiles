@@ -13,3 +13,6 @@ alias y=yarn
 alias c=clear
 alias rm=trash
 alias v=nvim
+alias pp="pulumi preview"
+alias pu="pulumi up"
+alias pss="pulumi stack select"
