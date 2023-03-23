@@ -5,13 +5,14 @@ return {
       "marko-cerovac/material.nvim",
       "AlexvZyl/nordic.nvim",
       "ellisonleao/gruvbox.nvim",
+      "RRethy/nvim-base16",
     },
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "base16-apprentice",
     },
     init = function()
       -- vim.g.material_style = "darker"
-      vim.g.background="dark"
+      vim.g.background = "dark"
     end,
   },
 }
