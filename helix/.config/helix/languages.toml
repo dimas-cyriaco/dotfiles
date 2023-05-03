@@ -22,9 +22,26 @@ formatter = { command = 'npx', args = [
   "typescript",
 ] }
 
-[[language]]
-name = "rust"
-auto-format = true
+# [[language]]
+# name = "rust"
+# auto-format = true
+#
+# [language.debugger]
+# command = "codelldb"
+# name = "codelldb"
+# port-arg = "--port {}"
+# transport = "tcp"
+#
+# [[language.debugger.templates]]
+# name = "binary"
+# request = "launch"
+# [[language.debugger.templates.completion]]
+# completion = "target/debug/blue_marble"
+# name = "binary"
+#
+# [language.debugger.templates.args]
+# program = "{0}"
+# runInTerminal = true
 
 [[language]]
 name = "markdown"

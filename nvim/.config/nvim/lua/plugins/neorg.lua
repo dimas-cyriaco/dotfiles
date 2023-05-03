@@ -1,3 +1,5 @@
+if true then return {} end
+
 return {
   "nvim-neorg/neorg",
   build = ":Neorg sync-parsers",

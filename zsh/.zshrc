@@ -47,3 +47,11 @@ source /home/dimas/.config/broot/launcher/bash/br
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+# pnpm
+export PNPM_HOME="/home/dimas/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
