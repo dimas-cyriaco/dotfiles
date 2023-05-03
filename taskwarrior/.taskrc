@@ -15,7 +15,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=/home/dimas/.task
+; data.location=/home/dimas-cyriaco/.config/task/tasks
 
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
@@ -23,7 +23,7 @@ data.location=/home/dimas/.task
 #data.location=~/.local/share/task
 #hooks.location=~/.config/task/hooks
 
-urgency.annotations.coefficient = 0
+urgency.annotations.coefficient =  0
 urgency.tags.coefficient = 0
 # urgency.user.project.SomeProject.coefficient = 0
 urgency.user.tag.review.coefficiente = 10
