@@ -20,7 +20,8 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export SAVEHIST=5000               #Number of history entries to save to disk
-export TASKDATA="$HOME/.config/task/data"
+export TASKDATA="$HOME/.config/task/tasks"
+export TERM=xterm-256color
 
 function zvm_config() {
   export ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL

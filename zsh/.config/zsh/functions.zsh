@@ -86,7 +86,7 @@ function mk {
 
 _rtx_hook() {
   trap -- '' SIGINT;
-  eval "$("/usr/bin/rtx" hook-env -s zsh)";
+  eval "$("/opt/homebrew/bin/rtx" hook-env -s zsh)";
   trap - SIGINT;
 }
 typeset -ag precmd_functions;

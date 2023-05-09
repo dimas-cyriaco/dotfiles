@@ -23,7 +23,8 @@ for f in "${my_configs[@]}"; do
   [[ -f $my_shdir/$f ]] && . "$my_shdir"/"$f"
 done
 
-source /usr/share/zsh-antidote/antidote.zsh
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+# source /usr/share/zsh-antidote/antidote.zsh
 antidote load ~/dotfiles/zsh/.config/zsh/plugins.txt
 
 eval "$(starship init zsh)"
@@ -43,7 +44,7 @@ eval "$(starship init zsh)"
 # export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
 # export PATH="$PNPM_HOME:$PATH"
 
-source /home/dimas/.config/broot/launcher/bash/br
+# source /home/dimas/.config/broot/launcher/bash/br
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
