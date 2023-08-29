@@ -51,3 +51,5 @@ helix/.config/helix/runtime
 /emacs/.emacs.d/quelpa/
 /emacs/.emacs.d/elpa/
 /emacs/.emacs.d/eln-cache/
+
+.idea
