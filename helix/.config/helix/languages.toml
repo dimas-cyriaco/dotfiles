@@ -46,7 +46,7 @@ formatter = { command = 'npx', args = [
 [[language]]
 name = "markdown"
 auto-format = true
-language-server = { command = "remark-language-server", args = ["--stdio"] }
+# language-servers = [{ command = "remark-language-server", args = ["--stdio"] }]
 formatter = { command = 'npx', args = [
   "prettier",
   "-c",
@@ -57,9 +57,9 @@ formatter = { command = 'npx', args = [
 
 [[language]]
 name = "css"
-language-server = { command = "vscode-css-language-server", args = ["--stdio"] }
+# language-servers = [{ command = "vscode-css-language-server", args = ["--stdio"] }]
 
 [[language]]
 name = "toml"
-language-server = { command = "taplo", args = ["lsp", "stdio"] }
+# language-servers = [{ command = "taplo", args = ["lsp", "stdio"] }]
 auto-format = true

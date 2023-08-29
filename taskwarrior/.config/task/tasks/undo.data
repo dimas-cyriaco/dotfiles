@@ -2127,3 +2127,337 @@ time 1683639154
 old [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683585229" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
 new [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683639154" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
 ---
+time 1683665825
+old [description:"Pagar conta de Gás" due:"1678417200" entry:"1678713021" mask:"++W" modified:"1681301657" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"292c9c69-35b8-4499-8789-869d3342e0cd" wait:"1678244400"]
+new [description:"Pagar conta de Gás" due:"1678417200" entry:"1678713021" mask:"+++" modified:"1683665825" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"292c9c69-35b8-4499-8789-869d3342e0cd" wait:"1678244400"]
+---
+time 1683665825
+old [description:"Pagar conta de Gás" due:"1683687600" entry:"1681155842" imask:"2" modified:"1678713041" parent:"292c9c69-35b8-4499-8789-869d3342e0cd" priority:"H" recur:"monthly" rtype:"periodic" status:"pending" tags:"contas" tags_contas:"x" uuid:"bd2a4d80-1ca3-4931-bdf7-5d1a1524f63d" wait:"1683514800"]
+new [description:"Pagar conta de Gás" due:"1683687600" end:"1683665825" entry:"1681155842" imask:"2.000000" modified:"1683665825" parent:"292c9c69-35b8-4499-8789-869d3342e0cd" priority:"H" recur:"monthly" rtype:"periodic" status:"completed" tags:"contas" tags_contas:"x" uuid:"bd2a4d80-1ca3-4931-bdf7-5d1a1524f63d" wait:"1683514800"]
+---
+time 1683755676
+new [description:"Organizar uma coisa por dia" due:"1683774000" entry:"1683755676" imask:"70" modified:"1683639154" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"f5fafe55-017d-4ac0-9747-9035ab4b80bb" wait:"1683774000"]
+---
+time 1683755676
+old [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683639154" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+new [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683755676" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+---
+time 1683755676
+new [description:"Atualizar Mobills" due:"1683774000" entry:"1683755676" imask:"70" modified:"1683639154" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"01cef683-cf51-443f-b245-e2496e3d696b" wait:"1683774000"]
+---
+time 1683755676
+old [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683639154" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+new [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683755676" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+---
+time 1683755676
+new [description:"Pagar conta de Gás" due:"1686366000" entry:"1683755676" imask:"3" modified:"1683665825" parent:"292c9c69-35b8-4499-8789-869d3342e0cd" priority:"H" recur:"monthly" rtype:"periodic" status:"pending" tags:"contas" tags_contas:"x" uuid:"ebcca7ab-c194-47ee-bc62-fcc0d84f2882" wait:"1686193200"]
+---
+time 1683755676
+old [description:"Pagar conta de Gás" due:"1678417200" entry:"1678713021" mask:"+++" modified:"1683665825" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"292c9c69-35b8-4499-8789-869d3342e0cd" wait:"1678244400"]
+new [description:"Pagar conta de Gás" due:"1678417200" entry:"1678713021" mask:"+++W" modified:"1683755676" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"292c9c69-35b8-4499-8789-869d3342e0cd" wait:"1678244400"]
+---
+time 1683935143
+new [description:"Organizar uma coisa por dia" due:"1683860400" entry:"1683935143" imask:"71" modified:"1683755676" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"e80b659c-9489-4f6a-9049-6c43d2cb0748" wait:"1683860400"]
+---
+time 1683935143
+new [description:"Organizar uma coisa por dia" due:"1683946800" entry:"1683935143" imask:"72" modified:"1683755676" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"61b5459e-7eb6-45c2-bc59-1dc77987bcc8" wait:"1683946800"]
+---
+time 1683935143
+old [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683755676" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+new [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683935143" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+---
+time 1683935143
+new [description:"Atualizar Mobills" due:"1683860400" entry:"1683935143" imask:"71" modified:"1683755676" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"53cfee5e-2214-4c12-8d02-b45fd1ba6906" wait:"1683860400"]
+---
+time 1683935143
+new [description:"Atualizar Mobills" due:"1683946800" entry:"1683935143" imask:"72" modified:"1683755676" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"4c4cb923-17c9-443f-97e3-121f0a5b96d8" wait:"1683946800"]
+---
+time 1683935143
+old [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683755676" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+new [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683935143" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+---
+time 1683935404
+old [description:"Pagar Financiamento do Carro" due:"1678676400" entry:"1678713492" mask:"++W" modified:"1681480806" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"e665a323-a72b-4bc4-b5c4-7da7dc5ebb1b" wait:"1678503600"]
+new [description:"Pagar Financiamento do Carro" due:"1678676400" entry:"1678713492" mask:"+++" modified:"1683935404" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"e665a323-a72b-4bc4-b5c4-7da7dc5ebb1b" wait:"1678503600"]
+---
+time 1683935404
+old [description:"Pagar Financiamento do Carro" due:"1683946800" entry:"1681480806" imask:"2" modified:"1681301661" parent:"e665a323-a72b-4bc4-b5c4-7da7dc5ebb1b" priority:"H" recur:"monthly" rtype:"periodic" status:"pending" tags:"contas" tags_contas:"x" uuid:"64dbef0f-4720-4892-bf46-50642ac10060" wait:"1683774000"]
+new [description:"Pagar Financiamento do Carro" due:"1683946800" end:"1683935404" entry:"1681480806" imask:"2.000000" modified:"1683935404" parent:"e665a323-a72b-4bc4-b5c4-7da7dc5ebb1b" priority:"H" recur:"monthly" rtype:"periodic" status:"completed" tags:"contas" tags_contas:"x" uuid:"64dbef0f-4720-4892-bf46-50642ac10060" wait:"1683774000"]
+---
+time 1683935413
+old [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++WW" modified:"1683585229" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+new [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XW" modified:"1683935413" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+---
+time 1683935413
+old [description:"Review semanal" due:"1683342000" entry:"1683123588" imask:"9" modified:"1682171348" parent:"59d2dcb1-ec85-409f-814c-2a83efa73019" recur:"weekly" rtype:"periodic" status:"pending" uuid:"42b15a8d-09cf-449f-ba79-3768498c574b" wait:"1683255600"]
+new [description:"Review semanal" due:"1683342000" end:"1683935413" entry:"1683123588" imask:"9.000000" modified:"1683935413" parent:"59d2dcb1-ec85-409f-814c-2a83efa73019" recur:"weekly" rtype:"periodic" status:"deleted" uuid:"42b15a8d-09cf-449f-ba79-3768498c574b" wait:"1683255600"]
+---
+time 1683935416
+old [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XW" modified:"1683935413" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+new [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XX" modified:"1683935416" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+---
+time 1683935417
+old [description:"Review semanal" due:"1683946800" entry:"1683585229" imask:"10" modified:"1683123716" parent:"59d2dcb1-ec85-409f-814c-2a83efa73019" recur:"weekly" rtype:"periodic" status:"pending" uuid:"088a8b7d-f03d-4369-98f0-e853734028af" wait:"1683860400"]
+new [description:"Review semanal" due:"1683946800" end:"1683935416" entry:"1683585229" imask:"10.000000" modified:"1683935417" parent:"59d2dcb1-ec85-409f-814c-2a83efa73019" recur:"weekly" rtype:"periodic" status:"deleted" uuid:"088a8b7d-f03d-4369-98f0-e853734028af" wait:"1683860400"]
+---
+time 1683935421
+old [description:"Importar extratos para Contabilizei" due:"1677294000" entry:"1677794038" mask:"+WWW" modified:"1682429677" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"406c9aa8-b7e3-46d4-ad6a-c0c0f1aa1576" wait:"1677207600"]
+new [description:"Importar extratos para Contabilizei" due:"1677294000" entry:"1677794038" mask:"+XWW" modified:"1683935421" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"406c9aa8-b7e3-46d4-ad6a-c0c0f1aa1576" wait:"1677207600"]
+---
+time 1683935421
+old [description:"Importar extratos para Contabilizei" due:"1679713200" entry:"1677794040" imask:"1" modified:"1677794160" parent:"406c9aa8-b7e3-46d4-ad6a-c0c0f1aa1576" recur:"monthly" rtype:"periodic" status:"pending" tags:"chore" tags_chore:"x" uuid:"518bc408-e33f-45b5-87ea-13672cbfeb8f" wait:"1679626800"]
+new [description:"Importar extratos para Contabilizei" due:"1679713200" end:"1683935421" entry:"1677794040" imask:"1.000000" modified:"1683935421" parent:"406c9aa8-b7e3-46d4-ad6a-c0c0f1aa1576" recur:"monthly" rtype:"periodic" status:"deleted" tags:"chore" tags_chore:"x" uuid:"518bc408-e33f-45b5-87ea-13672cbfeb8f" wait:"1679626800"]
+---
+time 1684243674
+new [description:"Review semanal" due:"1684551600" entry:"1684243674" imask:"11" modified:"1683935416" parent:"59d2dcb1-ec85-409f-814c-2a83efa73019" recur:"weekly" rtype:"periodic" status:"pending" uuid:"e4f1cab1-ca2e-4e70-92e8-717543d38874" wait:"1684465200"]
+---
+time 1684243674
+old [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XX" modified:"1683935416" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+new [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XXW" modified:"1684243674" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+---
+time 1684243674
+new [description:"Organizar uma coisa por dia" due:"1684033200" entry:"1684243674" imask:"73" modified:"1683935143" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"d27aba08-3bc9-4303-8666-097df1467636" wait:"1684033200"]
+---
+time 1684243674
+new [description:"Organizar uma coisa por dia" due:"1684119600" entry:"1684243674" imask:"74" modified:"1683935143" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"88bb0b15-5b2a-49b9-a7ef-4605de26bc9a" wait:"1684119600"]
+---
+time 1684243674
+new [description:"Organizar uma coisa por dia" due:"1684206000" entry:"1684243674" imask:"75" modified:"1683935143" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"b7a45aec-1dee-4e7a-95ac-1720bfa234f0" wait:"1684206000"]
+---
+time 1684243674
+new [description:"Organizar uma coisa por dia" due:"1684292400" entry:"1684243674" imask:"76" modified:"1683935143" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"bf1fe493-e796-4c3e-886f-66b2639b64a2" wait:"1684292400"]
+---
+time 1684243674
+old [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683935143" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+new [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1684243674" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+---
+time 1684243674
+new [description:"Atualizar Mobills" due:"1684033200" entry:"1684243674" imask:"73" modified:"1683935143" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"964cc7db-34fa-4172-a1be-c8111bc3199b" wait:"1684033200"]
+---
+time 1684243674
+new [description:"Atualizar Mobills" due:"1684119600" entry:"1684243674" imask:"74" modified:"1683935143" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"205bd2e1-fbe6-44a8-8da2-8b250adcdd39" wait:"1684119600"]
+---
+time 1684243674
+new [description:"Atualizar Mobills" due:"1684206000" entry:"1684243674" imask:"75" modified:"1683935143" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"ff72c055-0b75-47f1-b328-38b90f610f7e" wait:"1684206000"]
+---
+time 1684243674
+new [description:"Atualizar Mobills" due:"1684292400" entry:"1684243674" imask:"76" modified:"1683935143" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"d108a208-5d79-4d0b-9a11-96577ab3afb4" wait:"1684292400"]
+---
+time 1684243674
+old [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1683935143" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+new [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1684243674" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+---
+time 1684243674
+new [description:"Pagar Financiamento do Carro" due:"1686625200" entry:"1684243674" imask:"3" modified:"1683935404" parent:"e665a323-a72b-4bc4-b5c4-7da7dc5ebb1b" priority:"H" recur:"monthly" rtype:"periodic" status:"pending" tags:"contas" tags_contas:"x" uuid:"e74ea773-fa38-4f3e-aee5-a0807d28d597" wait:"1686452400"]
+---
+time 1684243674
+old [description:"Pagar Financiamento do Carro" due:"1678676400" entry:"1678713492" mask:"+++" modified:"1683935404" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"e665a323-a72b-4bc4-b5c4-7da7dc5ebb1b" wait:"1678503600"]
+new [description:"Pagar Financiamento do Carro" due:"1678676400" entry:"1678713492" mask:"+++W" modified:"1684243674" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"e665a323-a72b-4bc4-b5c4-7da7dc5ebb1b" wait:"1678503600"]
+---
+time 1684243674
+new [description:"Pagar Importos CNPJ" due:"1686798000" entry:"1684243674" imask:"3" modified:"1681944146" parent:"75f2c6eb-391f-4493-b02f-14ec814702d3" priority:"H" recur:"monthly" rtype:"periodic" status:"pending" tags:"contas" tags_contas:"x" uuid:"f8c2fcc5-7dbc-4981-8608-85ba9c41520c" wait:"1686625200"]
+---
+time 1684243674
+old [description:"Pagar Importos CNPJ" due:"1678849200" entry:"1678713746" mask:"++W" modified:"1681944146" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"75f2c6eb-391f-4493-b02f-14ec814702d3" wait:"1678676400"]
+new [description:"Pagar Importos CNPJ" due:"1678849200" entry:"1678713746" mask:"++WW" modified:"1684243674" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"75f2c6eb-391f-4493-b02f-14ec814702d3" wait:"1678676400"]
+---
+time 1684753715
+new [description:"Review semanal" due:"1685156400" entry:"1684753715" imask:"12" modified:"1684243674" parent:"59d2dcb1-ec85-409f-814c-2a83efa73019" recur:"weekly" rtype:"periodic" status:"pending" uuid:"300d2475-8a63-426e-8cec-0697c5912105" wait:"1685070000"]
+---
+time 1684753715
+old [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XXW" modified:"1684243674" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+new [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XXWW" modified:"1684753715" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+---
+time 1684753715
+new [description:"Organizar uma coisa por dia" due:"1684378800" entry:"1684753715" imask:"77" modified:"1684243674" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"9b0d96c1-d420-495e-a4f0-1f7ba6cda83a" wait:"1684378800"]
+---
+time 1684753715
+new [description:"Organizar uma coisa por dia" due:"1684465200" entry:"1684753715" imask:"78" modified:"1684243674" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"71299416-a646-4e35-9d18-4e48a62f5703" wait:"1684465200"]
+---
+time 1684753715
+new [description:"Organizar uma coisa por dia" due:"1684551600" entry:"1684753715" imask:"79" modified:"1684243674" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"ceeb5570-ba43-443e-a2de-3d3c74e3d2de" wait:"1684551600"]
+---
+time 1684753715
+new [description:"Organizar uma coisa por dia" due:"1684638000" entry:"1684753715" imask:"80" modified:"1684243674" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"5a1f3fa2-0281-4c4e-b419-b4320db7817f" wait:"1684638000"]
+---
+time 1684753715
+new [description:"Organizar uma coisa por dia" due:"1684724400" entry:"1684753715" imask:"81" modified:"1684243674" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"69cafb21-0fee-4282-b96d-77d7a914f030" wait:"1684724400"]
+---
+time 1684753715
+new [description:"Organizar uma coisa por dia" due:"1684810800" entry:"1684753715" imask:"82" modified:"1684243674" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"ab41cb11-286e-4daa-8661-6a9b7d6b4f5a" wait:"1684810800"]
+---
+time 1684753715
+old [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1684243674" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+new [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1684753715" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+---
+time 1684753715
+new [description:"Atualizar Mobills" due:"1684378800" entry:"1684753715" imask:"77" modified:"1684243674" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"5b39d98c-096b-4b8a-adb7-df57fb9e8dc9" wait:"1684378800"]
+---
+time 1684753715
+new [description:"Atualizar Mobills" due:"1684465200" entry:"1684753715" imask:"78" modified:"1684243674" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"6b393452-1806-4c18-a926-cbabcc4390f3" wait:"1684465200"]
+---
+time 1684753715
+new [description:"Atualizar Mobills" due:"1684551600" entry:"1684753715" imask:"79" modified:"1684243674" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"af3393a1-a96e-47ce-ac9f-20bfa01ba544" wait:"1684551600"]
+---
+time 1684753715
+new [description:"Atualizar Mobills" due:"1684638000" entry:"1684753715" imask:"80" modified:"1684243674" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"8ec76f06-74c8-4ec1-bb06-bea4566a31a0" wait:"1684638000"]
+---
+time 1684753715
+new [description:"Atualizar Mobills" due:"1684724400" entry:"1684753715" imask:"81" modified:"1684243674" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"dea803b4-c178-489b-aa89-be4d8b7dfc99" wait:"1684724400"]
+---
+time 1684753715
+new [description:"Atualizar Mobills" due:"1684810800" entry:"1684753715" imask:"82" modified:"1684243674" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"d29b6eb1-d06b-450e-a63a-b3a0e074000f" wait:"1684810800"]
+---
+time 1684753715
+old [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1684243674" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+new [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1684753715" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+---
+time 1684753971
+old [description:"Pagar Importos CNPJ" due:"1678849200" entry:"1678713746" mask:"++WW" modified:"1684243674" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"75f2c6eb-391f-4493-b02f-14ec814702d3" wait:"1678676400"]
+new [description:"Pagar Importos CNPJ" due:"1678849200" entry:"1678713746" mask:"+++W" modified:"1684753971" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"contas" tags_contas:"x" uuid:"75f2c6eb-391f-4493-b02f-14ec814702d3" wait:"1678676400"]
+---
+time 1684753971
+old [description:"Pagar Importos CNPJ" due:"1684119600" entry:"1681649802" imask:"2" modified:"1678883230" parent:"75f2c6eb-391f-4493-b02f-14ec814702d3" priority:"H" recur:"monthly" rtype:"periodic" status:"pending" tags:"contas" tags_contas:"x" uuid:"85a159c7-2036-43a5-9579-6a6e4927e36c" wait:"1683946800"]
+new [description:"Pagar Importos CNPJ" due:"1684119600" end:"1684753971" entry:"1681649802" imask:"2.000000" modified:"1684753971" parent:"75f2c6eb-391f-4493-b02f-14ec814702d3" priority:"H" recur:"monthly" rtype:"periodic" status:"completed" tags:"contas" tags_contas:"x" uuid:"85a159c7-2036-43a5-9579-6a6e4927e36c" wait:"1683946800"]
+---
+time 1684754028
+old [description:"Emitir Nota Fiscal" due:"1677294000" entry:"1677446326" mask:"+++W" modified:"1683123603" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"0bbc66d0-b146-4833-97e2-4401fad25976" wait:"1676689200"]
+new [description:"Emitir Nota Fiscal" due:"1677294000" entry:"1677446326" mask:"++++" modified:"1684754028" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"0bbc66d0-b146-4833-97e2-4401fad25976" wait:"1676689200"]
+---
+time 1684754028
+old [description:"Emitir Nota Fiscal" due:"1684983600" entry:"1682429677" imask:"3" modified:"1679778455" parent:"0bbc66d0-b146-4833-97e2-4401fad25976" priority:"H" recur:"monthly" rtype:"periodic" status:"pending" tags:"chore" tags_chore:"x" uuid:"9482bbd9-f67c-4204-8e13-9da32236c95e" wait:"1684378800"]
+new [description:"Emitir Nota Fiscal" due:"1684983600" end:"1684754027" entry:"1682429677" imask:"3.000000" modified:"1684754028" parent:"0bbc66d0-b146-4833-97e2-4401fad25976" priority:"H" recur:"monthly" rtype:"periodic" status:"completed" tags:"chore" tags_chore:"x" uuid:"9482bbd9-f67c-4204-8e13-9da32236c95e" wait:"1684378800"]
+---
+time 1684754036
+old [description:"Montar o cockpit" entry:"1677793848" modified:"1677793848" status:"pending" tags:"home" tags_home:"x" uuid:"a40b609f-8286-44fd-be31-711a94a15fd3"]
+new [description:"Montar o cockpit" end:"1684754036" entry:"1677793848" modified:"1684754036" status:"completed" tags:"home" tags_home:"x" uuid:"a40b609f-8286-44fd-be31-711a94a15fd3"]
+---
+time 1686054859
+new [description:"Emitir Nota Fiscal" due:"1687662000" entry:"1686054859" imask:"4" modified:"1684754028" parent:"0bbc66d0-b146-4833-97e2-4401fad25976" priority:"H" recur:"monthly" rtype:"periodic" status:"pending" tags:"chore" tags_chore:"x" uuid:"ac4ed099-59bb-49e3-bf17-800c7d1f4a6f" wait:"1687057200"]
+---
+time 1686054859
+old [description:"Emitir Nota Fiscal" due:"1677294000" entry:"1677446326" mask:"++++" modified:"1684754028" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"0bbc66d0-b146-4833-97e2-4401fad25976" wait:"1676689200"]
+new [description:"Emitir Nota Fiscal" due:"1677294000" entry:"1677446326" mask:"++++W" modified:"1686054859" priority:"H" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"0bbc66d0-b146-4833-97e2-4401fad25976" wait:"1676689200"]
+---
+time 1686054859
+new [description:"Pagar conta de Luz" due:"1688180400" entry:"1686054859" imask:"4" modified:"1683123837" parent:"f934cffb-634c-4a59-8b16-59fabc763ea5" recur:"monthly" rtype:"periodic" status:"pending" tags:"chore" tags_chore:"x" uuid:"5a5467e3-fefe-4b5b-b0b3-0123bcda4570" wait:"1688180400"]
+---
+time 1686054859
+old [description:"Pagar conta de Luz" due:"1677639600" entry:"1677446480" mask:"+++W" modified:"1683123837" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"f934cffb-634c-4a59-8b16-59fabc763ea5" wait:"1677639600"]
+new [description:"Pagar conta de Luz" due:"1677639600" entry:"1677446480" mask:"+++WW" modified:"1686054859" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"f934cffb-634c-4a59-8b16-59fabc763ea5" wait:"1677639600"]
+---
+time 1686054859
+new [description:"Review semanal" due:"1685761200" entry:"1686054859" imask:"13" modified:"1684753715" parent:"59d2dcb1-ec85-409f-814c-2a83efa73019" recur:"weekly" rtype:"periodic" status:"pending" uuid:"ca9cdae0-ca02-4379-a19a-5af09679b5f1" wait:"1685674800"]
+---
+time 1686054859
+new [description:"Review semanal" due:"1686366000" entry:"1686054859" imask:"14" modified:"1684753715" parent:"59d2dcb1-ec85-409f-814c-2a83efa73019" recur:"weekly" rtype:"periodic" status:"pending" uuid:"39a71c5f-875d-416b-89eb-10dc97c0eb8f" wait:"1686279600"]
+---
+time 1686054859
+old [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XXWW" modified:"1684753715" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+new [description:"Review semanal" due:"1677898800" entry:"1677793892" mask:"+++++++++XXWWWW" modified:"1686054859" recur:"weekly" rtype:"periodic" status:"recurring" uuid:"59d2dcb1-ec85-409f-814c-2a83efa73019" wait:"1677812400"]
+---
+time 1686054859
+new [description:"Importar extratos para Contabilizei" due:"1687662000" entry:"1686054859" imask:"4" modified:"1683935421" parent:"406c9aa8-b7e3-46d4-ad6a-c0c0f1aa1576" recur:"monthly" rtype:"periodic" status:"pending" tags:"chore" tags_chore:"x" uuid:"d827ddc0-9792-41c6-94f7-39545168f272" wait:"1687575600"]
+---
+time 1686054859
+old [description:"Importar extratos para Contabilizei" due:"1677294000" entry:"1677794038" mask:"+XWW" modified:"1683935421" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"406c9aa8-b7e3-46d4-ad6a-c0c0f1aa1576" wait:"1677207600"]
+new [description:"Importar extratos para Contabilizei" due:"1677294000" entry:"1677794038" mask:"+XWWW" modified:"1686054859" recur:"monthly" rtype:"periodic" status:"recurring" tags:"chore" tags_chore:"x" uuid:"406c9aa8-b7e3-46d4-ad6a-c0c0f1aa1576" wait:"1677207600"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1684897200" entry:"1686054859" imask:"83" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"e9b99121-3e02-42cb-a5b9-1ef0af35ba26" wait:"1684897200"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1684983600" entry:"1686054859" imask:"84" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"f23b5846-59bf-42ea-8c05-5903a70e4e4b" wait:"1684983600"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685070000" entry:"1686054859" imask:"85" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"bc0291a6-928e-49f6-9f54-93fe1e261776" wait:"1685070000"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685156400" entry:"1686054859" imask:"86" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"5c908766-89a1-433d-bbba-69144fc12d30" wait:"1685156400"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685242800" entry:"1686054859" imask:"87" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"863b8e7e-8c86-4f3f-8b74-eb1e69ce43f2" wait:"1685242800"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685329200" entry:"1686054859" imask:"88" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"6be9906a-f3b6-469f-894e-ab540b5ce6c1" wait:"1685329200"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685415600" entry:"1686054859" imask:"89" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"e4dda26c-21a5-42e0-8cfa-c7f852bfcd46" wait:"1685415600"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685502000" entry:"1686054859" imask:"90" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"11a39a7d-bdfc-4a47-813a-e80093651a92" wait:"1685502000"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685588400" entry:"1686054859" imask:"91" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"a935c26a-19d0-491f-bd45-3bfacf75dfcc" wait:"1685588400"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685674800" entry:"1686054859" imask:"92" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"38db11a3-7e4d-481b-aa93-4ad94a2a9f9f" wait:"1685674800"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685761200" entry:"1686054859" imask:"93" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"8a7e1b06-0a46-4cfc-a4e9-ea4aa2bf7b0c" wait:"1685761200"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685847600" entry:"1686054859" imask:"94" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"48041577-d323-4759-969b-661ec414f433" wait:"1685847600"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1685934000" entry:"1686054859" imask:"95" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"ddb9f061-eeea-491e-8064-764bc1a7547b" wait:"1685934000"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1686020400" entry:"1686054859" imask:"96" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"92239bfa-9b9b-4b77-a253-df601810a546" wait:"1686020400"]
+---
+time 1686054859
+new [description:"Organizar uma coisa por dia" due:"1686106800" entry:"1686054859" imask:"97" modified:"1684753715" parent:"794477c7-1c95-4696-9992-975ce7a646a4" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"fb49cee2-26a2-4a9c-b4f9-efe08a877763" wait:"1686106800"]
+---
+time 1686054859
+old [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1684753715" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+new [description:"Organizar uma coisa por dia" due:"1677726000" entry:"1677794230" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1686054859" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"794477c7-1c95-4696-9992-975ce7a646a4" wait:"1677726000"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1684897200" entry:"1686054859" imask:"83" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"63070a9d-4d39-49d9-8682-df654bacd0de" wait:"1684897200"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1684983600" entry:"1686054859" imask:"84" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"fac45b48-db18-4db3-a8dd-5ce9d10e00af" wait:"1684983600"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685070000" entry:"1686054859" imask:"85" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"b1edd7d2-8f43-46e8-8d92-da658ed8b604" wait:"1685070000"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685156400" entry:"1686054859" imask:"86" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"71fd0bb2-8df9-4851-98ef-f4379826dbed" wait:"1685156400"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685242800" entry:"1686054859" imask:"87" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"a6756ee7-17ea-4b27-b3f8-a7422dedda55" wait:"1685242800"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685329200" entry:"1686054859" imask:"88" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"723af1cb-1a8d-44fd-aad2-367427ca2925" wait:"1685329200"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685415600" entry:"1686054859" imask:"89" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"ac517a6f-7b71-4f66-940f-c00eb9027536" wait:"1685415600"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685502000" entry:"1686054859" imask:"90" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"a6b16544-92ab-447a-9cb6-526421ae4f16" wait:"1685502000"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685588400" entry:"1686054859" imask:"91" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"6b3e5d41-b831-472e-b2d3-035fd2bb06f0" wait:"1685588400"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685674800" entry:"1686054859" imask:"92" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"0fa86a78-8c31-4012-a2d5-9d9051f4d7f3" wait:"1685674800"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685761200" entry:"1686054859" imask:"93" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"017484e9-c764-489e-9569-6f75fe4aaadf" wait:"1685761200"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685847600" entry:"1686054859" imask:"94" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"f18267c9-e960-41a1-b503-5c7171a92c46" wait:"1685847600"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1685934000" entry:"1686054859" imask:"95" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"92f96fcd-e3f1-483a-980d-e226a64b6a52" wait:"1685934000"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1686020400" entry:"1686054859" imask:"96" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"9f2cb411-95a2-41e5-8cbd-c8cecf6e59e9" wait:"1686020400"]
+---
+time 1686054859
+new [description:"Atualizar Mobills" due:"1686106800" entry:"1686054859" imask:"97" modified:"1684753715" parent:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" recur:"daily" rtype:"periodic" status:"pending" tags:"habit" tags_habit:"x" uuid:"39e0133c-db64-41d5-8b86-e3b865b5ceab" wait:"1686106800"]
+---
+time 1686054859
+old [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1684753715" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+new [description:"Atualizar Mobills" due:"1677726000" entry:"1677794271" mask:"+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" modified:"1686054859" recur:"daily" rtype:"periodic" status:"recurring" tags:"habit" tags_habit:"x" uuid:"7d5c4d82-fd88-424e-b3d3-70a60ba62b30" wait:"1677726000"]
+---
