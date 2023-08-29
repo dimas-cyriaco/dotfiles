@@ -24,27 +24,12 @@ for f in "${my_configs[@]}"; do
 done
 
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-# source /usr/share/zsh-antidote/antidote.zsh
 antidote load ~/dotfiles/zsh/.config/zsh/plugins.txt
 
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Config asfd
-# . /opt/homebrew/opt/asdf/libexec/asdf.s
-# source $(brew --prefix asdf)/libexec/asdf.sh
-# source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
-# export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
-# export PATH="$PNPM_HOME:$PATH"
-
-# source /home/dimas/.config/broot/launcher/bash/br
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
