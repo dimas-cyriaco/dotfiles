@@ -4,14 +4,11 @@ return {
     dependencies = {
       "rebelot/kanagawa.nvim",
       "Shatur/neovim-ayu",
+      "sainnhe/gruvbox-material",
+      "folke/tokyonight.nvim",
     },
     opts = {
-      colorscheme = "ayu-mirage",
+      colorscheme = "tokyonight-night",
     },
-    init = function()
-      -- vim.g.material_style = "darker"
-      vim.g.background = "dark"
-      require("kanagawa").load("wave")
-    end,
   },
 }

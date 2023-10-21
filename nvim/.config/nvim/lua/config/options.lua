@@ -4,8 +4,8 @@
 
 local opt = vim.opt
 
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevel = 999
+opt.linebreak = true
 opt.relativenumber = false
 opt.swapfile = false
+opt.wrap = true
+opt.scrolloff = 999
