@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# devbox global pull git@github.com:dimas-cyriaco/devbox
+
 # Overpass Fonts
 # http://overpassfont.org
 
@@ -40,14 +42,14 @@ curl https://sh.rustup.rs -sSf | sh
 ### Install Helix
 
 mkdir code
-cd code
+cd code || return
 git clone git@github.com:helix-editor/helix.git
-cd helix
+cd helix || return
 cargo install --path helix-term
-ln -s $PWD/runtime ~/.config/helix/runtime
+ln -s "$PWD/runtime" ~/.config/helix/runtime
 
 # Install FZF extra functionality.
-/opt/homebrew/opt/fzf/install
+"$(brew --prefix)/opt/fzf/install"
 
 stow kitty
 stow amethyst
@@ -77,12 +79,6 @@ asdf list all nodejs
 asdf install nodejs x.x.x
 asdf global nodejs x.x.x
 
-### Yarn
-
-asdf plugin add yarn
-asdf install yarn 1.22.19
-asdf global yarn 1.22.19
-
 ## Editor Stuff
 
 ### Typescript language server
@@ -101,4 +97,3 @@ npm install -g typescript typescript-language-server
 
 # TreeSitter cli é usado pelo AstroVim para auto instalar gramáticas do TreeSitter.
 cargo install tree-sitter-cli
-

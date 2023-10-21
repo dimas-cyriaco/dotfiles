@@ -19,12 +19,34 @@ export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="$HOME/.local/share/rtx/installs/nodejs/16.19.1/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$PATH:$HOME/.pulumi/bin"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH=$PATH:$HOME/.dotnet/tools
-export PATH=$PATH:$DOTNET_ROOT
+export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:$DOTNET_ROOT"
 export SAVEHIST=5000 #Number of history entries to save to disk
-export TASKDATA=$HOME/.config/task/tasks
+export TASKDATA="$HOME/.config/task/tasks"
 export TERM=xterm-256color
+export NEOVIDE_MULTIGRID=true
+
+# Fzf Theme
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+	--color=fg:#c0caf5,bg:#24283b,hl:#bb9af7
+	--color=fg+:#FFFFFF,bg+:#1a1b26,hl+:#7dcfff
+	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff
+	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+
+# pnpm
+export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 function zvm_config() {
   export ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL

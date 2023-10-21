@@ -10,7 +10,6 @@ export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#e6e6e6,bg:#303030,hl:#5f87af --color=fg+:#e6e6e6,bg+:#303030,hl+:#5fd7ff --color=info:#afaf87,prompt:#56ade8,pointer:#a6f5ad --color=marker:#87ff00,spinner:#af5fff,header:#87afaf'
 
 # for more info see fzf/shell/completion.zsh
 _fzf_compgen_path() {

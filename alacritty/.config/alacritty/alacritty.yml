@@ -7,19 +7,19 @@ draw_bold_text_with_bright_colors: true
 
 font:
   normal:
-    family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
+    family: MesloLGM Nerd Font # should be "Menlo" or something on macOS.
     style: Regular
 
   bold:
-    family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
+    family: MesloLGM Nerd Font # should be "Menlo" or something on macOS.
     style: Bold
 
   italic:
-    family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
+    family: MesloLGM Nerd Font # should be "Menlo" or something on macOS.
     style: Italic
 
   bold_italic:
-    family: FiraCode Nerd Font # should be "Menlo" or something on macOS.
+    family: MesloLGM Nerd Font # should be "Menlo" or something on macOS.
     style: Bold Italic
 
   size: 20
@@ -32,34 +32,38 @@ font:
 # Should display the render timer
 render_timer: false
 
-# Colors (Material Theme)
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '0x1e282d'
-    foreground: '0xc4c7d1'
+    background: "0x1a1b26"
+    foreground: "0xc0caf5"
 
   # Normal colors
   normal:
-    black:   '0x666666'
-    red:     '0xeb606b'
-    green:   '0xc3e88d'
-    yellow:  '0xf7eb95'
-    blue:    '0x80cbc4'
-    magenta: '0xff2f90'
-    cyan:    '0xaeddff'
-    white:   '0xffffff'
+    black: "0x15161e"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xa9b1d6"
 
   # Bright colors
   bright:
-    black:   '0xff262b'
-    red:     '0xeb606b'
-    green:   '0xc3e88d'
-    yellow:  '0xf7eb95'
-    blue:    '0x7dc6bf'
-    magenta: '0x6c71c4'
-    cyan:    '0x35434d'
-    white:   '0xffffff'
+    black: "0x414868"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xc0caf5"
+
+  indexed_colors:
+    - { index: 16, color: "0xff9e64" }
+    - { index: 17, color: "0xdb4b4b" }
 
 bell:
   animation: EaseOutExpo
