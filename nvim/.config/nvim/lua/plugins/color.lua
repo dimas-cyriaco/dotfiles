@@ -2,10 +2,6 @@ return {
   {
     "LazyVim/LazyVim",
     dependencies = {
-      "marko-cerovac/material.nvim",
-      "AlexvZyl/nordic.nvim",
-      "ellisonleao/gruvbox.nvim",
-      "RRethy/nvim-base16",
       "rebelot/kanagawa.nvim",
       "Shatur/neovim-ayu",
     },

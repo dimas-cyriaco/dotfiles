@@ -18,8 +18,8 @@ EOF
 }
 
 function mk {
-  mkdir -p $1
-  cd $1 || exit
+  mkdir -p "$1"
+  cd "$1" || exit
 }
 
 _rtx_hook() {
@@ -70,4 +70,15 @@ function destroy_stack() {
     pulumi config set coreReference dev --cwd infra/projects/env
     pulumi config set coreReference dev --cwd infra/projects/env
     pulumi destroy --yes --cwd infra/projects/env
+}
+
+function set_env() {
+  local new_env="$1"
+
+  rm .env
+  cp ".env.$new_env" .env
+}
+
+function test_migration() {
+  pnpm db:migration:generate src/shared/db/migrations/test --dr
 }
