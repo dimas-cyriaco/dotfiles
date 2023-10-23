@@ -1,5 +1,6 @@
 -- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Default options that are always set:
+-- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
 local opt = vim.opt
@@ -9,3 +10,7 @@ opt.relativenumber = false
 opt.swapfile = false
 opt.wrap = true
 opt.scrolloff = 999
+opt.spell = true
+opt.spelllang = "en,pt_br"
+opt.colorcolumn = "120"
+opt.textwidth = 120

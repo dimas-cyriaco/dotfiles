@@ -525,3 +525,5 @@ alias gss = git status
 alias b = broot -c :sort_by_type
 
 source ~/dotfiles/nushell/.zoxide.nu
+
+source /Users/dimascyriaco/.config/broot/launcher/nushell/br

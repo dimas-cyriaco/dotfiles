@@ -35,3 +35,5 @@ eval "$(starship init zsh)"
 
 # eval "$(devbox global shellenv --init-hook)
 eval "$(devbox global shellenv)"
+
+source /Users/dimascyriaco/.config/broot/launcher/bash/br
