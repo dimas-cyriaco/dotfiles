@@ -11,10 +11,16 @@ return {
     {
       "<leader>or",
       function()
-        require("overseer").run_template()
+        require("overseer").run_template(nil, function(task)
+          if task then
+            require("overseer").open({ enter = true })
+          end
+        end)
       end,
-      desc = "Run Tas",
+      desc = "Run Task",
     },
   },
-  opts = {},
+  opts = {
+    open_on_start = true,
+  },
 }
