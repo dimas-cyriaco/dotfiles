@@ -4,16 +4,19 @@ return {
     {
       "<leader>oo",
       function()
-        require("overseer").open()
+        overseer.open()
       end,
       desc = "Open Panel",
     },
     {
       "<leader>or",
       function()
-        require("overseer").run_template(nil, function(task)
+        local overseer = require("overseer")
+
+        overseer.run_template(nil, function(task)
           if task then
-            require("overseer").open({ enter = true })
+            -- overseer.open({ enter = true })
+            overseer.run_action(task, "open float")
           end
         end)
       end,
