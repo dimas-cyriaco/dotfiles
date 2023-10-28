@@ -10,7 +10,7 @@ if vim.g.neovide then
   vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 
   vim.g.neovide_cursor_trail_size = 0.5
-  vim.g.neovide_cursor_animation_length = 0
+  -- vim.g.neovide_cursor_animation_length = 0
 
   local change_scale_factor = function(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
