@@ -6,6 +6,7 @@ return {
       "Shatur/neovim-ayu",
       "sainnhe/gruvbox-material",
       "folke/tokyonight.nvim",
+      "kdheepak/monochrome.nvim",
     },
     opts = {
       colorscheme = "tokyonight-night",

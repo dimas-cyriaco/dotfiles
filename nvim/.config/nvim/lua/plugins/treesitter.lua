@@ -10,7 +10,7 @@ return {
       "lua",
       "markdown",
       "typescript",
-      "yaml",
+      "http",
     },
   },
 }

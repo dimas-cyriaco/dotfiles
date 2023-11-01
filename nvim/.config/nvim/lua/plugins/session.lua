@@ -2,7 +2,16 @@ return {
   "jedrzejboczar/possession.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require("possession").setup({})
+    require("possession").setup({
+      autosave = {
+        current = true,
+        on_load = true,
+        on_quit = true,
+      },
+      plugins = {
+        delete_buffers = true,
+      },
+    })
     require("telescope").load_extension("possession")
   end,
   keys = {

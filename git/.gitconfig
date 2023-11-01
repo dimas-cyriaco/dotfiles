@@ -38,3 +38,5 @@
   line-numbers = true
 [diff]
   colorMoved = default
+[pull]
+	rebase = false

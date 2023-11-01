@@ -1,27 +1,38 @@
-return {
-  "nvim-neotest/neotest",
-  dependencies = {
-    "haydenmeade/neotest-jest",
-  },
-  keys = {
-    {
-      "<leader>tl",
-      function()
-        require("neotest").run.run_last()
-      end,
-      desc = "Run Last Test",
-    },
-  },
-  config = function()
-    require("neotest").setup({
-      adapters = {
-        require("neotest-jest")({
-          jestCommand = "pnpm jest",
-          cwd = function()
-            return vim.fn.getcwd()
-          end,
-        }),
-      },
-    })
-  end,
-}
+return {}
+-- return {
+--   "nvim-neotest/neotest",
+--   dependencies = {
+--     "haydenmeade/neotest-jest",
+--     "antoinemadec/FixCursorHold.nvim",
+--   },
+--   keys = {
+--     {
+--       "<leader>tl",
+--       function()
+--         require("neotest").run.run_last()
+--       end,
+--       desc = "Run Last Test",
+--     },
+--     {
+--       "<leader>tw",
+--       function()
+--         require("neotest").run.run(vim.fn.expand("%"), { jestCommand = "pnpm jest --watch " })
+--         -- require("neotest").run.run(vim.fn.expand("%"), { jestCommand = "pnpm jest --watch src/framework" })
+--       end,
+--       -- "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch src/framework' })<cr>",
+--       desc = "Watch File",
+--     },
+--   },
+--   config = function()
+--     require("neotest").setup({
+--       adapters = {
+--         require("neotest-jest")({
+--           jestCommand = "pnpm jest",
+--           cwd = function()
+--             return vim.fn.getcwd()
+--           end,
+--         }),
+--       },
+--     })
+--   end,
+-- }

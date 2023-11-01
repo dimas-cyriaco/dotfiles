@@ -1,6 +1,7 @@
 return {
   "nvim-neorg/neorg",
   build = ":Neorg sync-parsers",
+  lazy = false,
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     require("neorg").setup({
@@ -23,4 +24,7 @@ return {
       },
     })
   end,
+  keys = {
+    { "<leader>no", "<cmd>Neorg index<cr>", desc = "Open Notes" },
+  },
 }
