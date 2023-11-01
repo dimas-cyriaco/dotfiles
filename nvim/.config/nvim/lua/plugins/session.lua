@@ -8,9 +8,9 @@ return {
         on_load = true,
         on_quit = true,
       },
-      plugins = {
-        delete_buffers = true,
-      },
+      -- plugins = {
+      --   delete_buffers = true,
+      -- },
     })
     require("telescope").load_extension("possession")
   end,
