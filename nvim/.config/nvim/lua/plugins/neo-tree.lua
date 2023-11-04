@@ -24,6 +24,12 @@ return {
         never_show = {
           ".DS_Store",
           ".git",
+          ".idea",
+          ".vscode",
+          "node_modules",
+          "dist",
+          "coverage",
+          "tmp",
         },
       },
       follow_current_file = {
