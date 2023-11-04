@@ -5,12 +5,13 @@ return {
     require("possession").setup({
       autosave = {
         current = true,
-        on_load = true,
+        -- on_load = true,
         on_quit = true,
       },
-      -- plugins = {
-      --   delete_buffers = true,
-      -- },
+      plugins = {
+        delete_hidden_buffers = false, -- Remove the deletion of hidden buffers without windows
+        delete_buffers = true, -- Delete all buffers before loading another session
+      },
     })
     require("telescope").load_extension("possession")
   end,
