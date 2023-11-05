@@ -5,12 +5,13 @@
 
 local opt = vim.opt
 
+opt.colorcolumn = "120"
 opt.linebreak = true
+opt.number = false
 opt.relativenumber = false
-opt.swapfile = false
-opt.wrap = true
 opt.scrolloff = 999
 opt.spell = true
 opt.spelllang = "en,pt_br"
-opt.colorcolumn = "120"
+opt.swapfile = false
 opt.textwidth = 120
+opt.wrap = true

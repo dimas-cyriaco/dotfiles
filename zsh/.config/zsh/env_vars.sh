@@ -23,7 +23,8 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:$DOTNET_ROOT"
 export SAVEHIST=5000 #Number of history entries to save to disk
-export TERM=xterm-256color
+# export TERM=xterm-256color
+export TERM=xterm-kitty
 export NEOVIDE_MULTIGRID=true
 
 # Fzf Theme
