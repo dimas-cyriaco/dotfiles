@@ -1,15 +1,23 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 $directory\
 $git_branch\
-$fill\
-$nodejs\
-$golang\
-$rust\
-$aws\
-$pulumi\
-$line_break\
 $character
 """
+
+right_format = """
+$git_state\
+$git_metrics\
+$nodejs\
+$aws\
+$pulumi
+"""
+
+add_newline = false
+
+[git_metrics]
+disabled = false
 
 [status]
 disabled = false
@@ -17,46 +25,35 @@ disabled = false
 style = '202'
 
 [directory]
-truncation_length = 3
-truncate_to_repo = false
-truncation_symbol = '…/'
-style = '123'
+truncation_length = 4
+truncate_to_repo = true
 
-[fill]
-symbol = " "
+[directory.substitutions]
+'dotfiles' = '  '
+'org' = 'notes'
+'~' = '󰋜'
 
 [character]
 success_symbol = '[❯](bold 121)'
-error_symbol = "[❯](bold 202) "
+error_symbol = "[❯](bold 202)"
 vimcmd_symbol = '[❮](bold 214)'
 
 [aws]
-format = '\[[ ($profile)](214)\]'
+symbol = "  "
+# format = '\[[ ($profile)](214)\]'
 
 [git_branch]
-format = '\[[$symbol$branch](221)\]'
-
-[git_status]
-conflicted = "👿"
-ahead = "🏎💨"
-behind = "😰"
-diverged = "😵"
-untracked = "🤷‍"
-stashed = "📦"
-modified = "✏️"
-staged = '[++\($count\)](121)'
-deleted = "🗑️"
-style = 'white'
+symbol = " "
+ignore_branches = ['dev']
 
 [nodejs]
-format = '\[[$symbol($version)](81)\]'
 
 [golang]
 style = '81'
 
 [pulumi]
 disabled = false
-format = '\[[$symbol$stack](121)\]'
+format = '[$symbol $username $stack](121)'
 
 [rust]
 format = '\[[$symbol($version)]($style)\]'

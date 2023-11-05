@@ -1,4 +1,2 @@
-Como/!
-Como
 Motrix
 NestJS
