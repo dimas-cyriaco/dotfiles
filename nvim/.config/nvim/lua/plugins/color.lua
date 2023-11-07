@@ -6,6 +6,7 @@ return {
   },
   {
     "kdheepak/monochrome.nvim",
+    lazy = true,
   },
   {
     "catppuccin/nvim",

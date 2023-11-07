@@ -1,5 +1,6 @@
 return {
   "chrisgrieser/nvim-recorder",
+  event = "LazyFile",
   dependencies = "rcarriga/nvim-notify",
   opts = {
     mapping = {
