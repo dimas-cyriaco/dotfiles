@@ -1,12 +1,12 @@
 return {
   {
     "folke/tokyonight.nvim",
-    lazy = true,
+    event = { "VeryLazy" },
     opts = { style = "storm" },
   },
   {
     "kdheepak/monochrome.nvim",
-    lazy = true,
+    event = { "VeryLazy" },
   },
   {
     "catppuccin/nvim",

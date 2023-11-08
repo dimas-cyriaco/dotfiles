@@ -1,33 +1,34 @@
-return {
-  "jedrzejboczar/possession.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
-  config = function()
-    require("possession").setup({
-      autosave = {
-        current = true,
-        -- on_load = true,
-        on_quit = true,
-      },
-      plugins = {
-        delete_hidden_buffers = false, -- Remove the deletion of hidden buffers without windows
-        delete_buffers = true, -- Delete all buffers before loading another session
-      },
-    })
-    require("telescope").load_extension("possession")
-  end,
-  keys = {
-    {
-      "<leader>qo",
-      ":Telescope possession list<cr>",
-      desc = "Load Session",
-    },
-    {
-      "<leader>qx",
-      ":PossessionClose<cr>",
-      desc = "Close Session",
-    },
-  },
-}
+return {}
+-- return {
+--   "jedrzejboczar/possession.nvim",
+--   dependencies = { "nvim-lua/plenary.nvim" },
+--   config = function()
+--     require("possession").setup({
+--       autosave = {
+--         current = true,
+--         -- on_load = true,
+--         on_quit = true,
+--       },
+--       plugins = {
+--         delete_hidden_buffers = false, -- Remove the deletion of hidden buffers without windows
+--         delete_buffers = true, -- Delete all buffers before loading another session
+--       },
+--     })
+--     require("telescope").load_extension("possession")
+--   end,
+--   keys = {
+--     {
+--       "<leader>qo",
+--       ":Telescope possession list<cr>",
+--       desc = "Load Session",
+--     },
+--     {
+--       "<leader>qx",
+--       ":PossessionClose<cr>",
+--       desc = "Close Session",
+--     },
+--   },
+-- }
 -- return {
 --   "Shatur/neovim-session-manager",
 --   dependencies = { "nvim-lua/plenary.nvim" },

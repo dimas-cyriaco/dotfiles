@@ -13,4 +13,4 @@ opt.wrap = true
 opt.scrolloff = 999
 opt.spell = true
 opt.spelllang = "en,pt_br"
-opt.textwidth = 120
+opt.textwidth = 100

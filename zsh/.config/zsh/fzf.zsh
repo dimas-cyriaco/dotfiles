@@ -40,15 +40,15 @@ _gf() {
     | sed 's/.* -> //'
 }
 
-yf() {
+pf() {
   if cat package.json > /dev/null 2>&1; then
     scripts=$(jq .scripts < package.json | sed '1d;$d' | fzf --height 40%)
 
     if [[ -n $scripts ]]; then
         script_name=$(echo "$scripts" | awk -F ': ' '{gsub(/"/, "", $1); print $1}' | xargs)
-        script="yarn run $script_name"
+        script="pnpm run $script_name"
         fc -R =(print "$script")
-        yarn run "$script_name"
+        pnpm run "$script_name"
     else
         echo "Exit: You haven't selected any script"
     fi

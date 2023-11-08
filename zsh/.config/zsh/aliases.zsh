@@ -18,3 +18,5 @@ alias pu="clear && pulumi up"
 alias pur="clear && pulumi refresh"
 alias rm=trash
 alias v=nvim
+alias dcu="docker compose up -d"
+alias dcd="docker compose down -v"
