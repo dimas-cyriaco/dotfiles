@@ -30,3 +30,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.signcolumn = "no"
   end,
 })
+
+vim.filetype.add({
+  filename = {
+    [".env"] = "dotenv",
+  },
+})

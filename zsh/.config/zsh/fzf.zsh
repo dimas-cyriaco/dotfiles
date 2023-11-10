@@ -46,9 +46,9 @@ pf() {
 
     if [[ -n $scripts ]]; then
         script_name=$(echo "$scripts" | awk -F ': ' '{gsub(/"/, "", $1); print $1}' | xargs)
-        script="pnpm run $script_name"
+        script="pnpm $script_name"
         fc -R =(print "$script")
-        pnpm run "$script_name"
+        pnpm "$script_name"
     else
         echo "Exit: You haven't selected any script"
     fi
