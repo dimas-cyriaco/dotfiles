@@ -12,7 +12,7 @@ return {
   },
   config = function()
     require("hardtime").setup({
-      disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "dbui" },
+      disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "dbui", "neo-tree", "NeogitStatus" },
     })
   end,
 }
