@@ -1,4 +1,5 @@
 local paths = {
+  ---@diagnostic disable-next-line: undefined-global
   vim.fn.stdpath("config") .. "/spell/ltex.dictionary.pt-BR.txt",
 }
 
@@ -49,11 +50,6 @@ return {
               dictionary = {
                 ["pt-BR"] = words,
               },
-              -- https://community.languagetool.org/rule/list?lang=en
-              -- disabledRules = {
-              --   ["en-GB"] = { "TOO_LONG_SENTENCE", "OXFORD_SPELLING_Z_NOT_S", "DASH_RULE" },
-              --   fr = { "APOS_TYP", "FRENCH_WHITESPACE", "FR_SPELLING_RULE", "COMMA_PARENTHESIS_WHITESPACE" },
-              -- },
             },
           },
         },
