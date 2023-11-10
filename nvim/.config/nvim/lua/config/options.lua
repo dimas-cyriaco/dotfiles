@@ -11,6 +11,6 @@ opt.number = false
 opt.swapfile = false
 opt.wrap = true
 opt.scrolloff = 999
-opt.spell = true
+opt.spell = false
 opt.spelllang = "en,pt_br"
 opt.textwidth = 100

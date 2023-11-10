@@ -14,7 +14,6 @@ return {
       linters_by_ft = {
         javascript = { "cspell" },
         typescript = { "cspell" },
-        lua = { "cspell" },
         sh = { "shellcheck" },
         zsh = { "shellcheck" },
       },

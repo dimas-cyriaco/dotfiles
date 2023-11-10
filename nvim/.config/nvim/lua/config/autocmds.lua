@@ -14,6 +14,14 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = vim.api.nvim_create_augroup("dimas_spell", { clear = true }),
+  pattern = { "norg", "typescript" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
   group = vim.api.nvim_create_augroup("dimas_norg", { clear = true }),
   pattern = { "norg" },
   callback = function()
