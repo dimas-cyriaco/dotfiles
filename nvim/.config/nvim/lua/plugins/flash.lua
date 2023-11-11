@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-doc-name, assign-type-mismatch, undefined-field
+
 return {
   "folke/flash.nvim",
   keys = {
