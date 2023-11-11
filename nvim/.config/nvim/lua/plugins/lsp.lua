@@ -31,6 +31,13 @@ return {
     end,
   },
   {
+    "j-hui/fidget.nvim",
+    event = "LazyFile", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
+    opts = {
+      -- options
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {

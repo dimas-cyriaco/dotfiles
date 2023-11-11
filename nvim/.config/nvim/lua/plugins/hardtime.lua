@@ -24,6 +24,8 @@ return {
         "neo-tree-popup",
         "netrw",
         "noice",
+        "help",
+        "neotest-summary",
         "octo",
         "qf",
       },
