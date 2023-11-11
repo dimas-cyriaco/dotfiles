@@ -5,22 +5,27 @@
 local Util = require("lazyvim.util")
 
 vim.keymap.set("i", "jk", "<c-\\><c-n>", { desc = "Exit Insert Mode" })
-vim.keymap.set("n", "<leader>fs", ":w <CR>", { desc = "Save File" })
-vim.keymap.set("n", "<leader>qt", "<cmd>tabclose<cr>", { desc = "Close Tab" })
-vim.keymap.set("n", "<leader>wh", "<C-w>t<C-w>H", { desc = "Change Split to Horizontal" })
-vim.keymap.set("n", "<leader>wk", "<C-w>t<C-w>K", { desc = "Change Split to Vertical" })
-vim.keymap.set("n", "<leader>cs", ":Neotree document_symbols position=right<cr>", { desc = "Document Symbols" })
+vim.keymap.set("n", "<leader>fs", ":w <CR>", { silent = true, desc = "Save File" })
+vim.keymap.set("n", "<leader>qt", "<cmd>tabclose<cr>", { silent = true, desc = "Close Tab" })
+vim.keymap.set("n", "<leader>wh", "<C-w>t<C-w>H", { silent = true, desc = "Change Split to Horizontal" })
+vim.keymap.set("n", "<leader>wk", "<C-w>t<C-w>K", { silent = true, desc = "Change Split to Vertical" })
+vim.keymap.set(
+  "n",
+  "<leader>cs",
+  ":Neotree document_symbols position=right<cr>",
+  { silent = true, desc = "Document Symbols" }
+)
 vim.keymap.set(
   "n",
   "<leader>sg",
   ":lua require('telescope.builtin').live_grep({ additional_args = function() return { '--hidden' } end })<cr>",
-  { desc = "Find in Files" }
+  { silent = true, desc = "Find in Files" }
 )
 
 vim.keymap.set("n", "<C-/>", function()
   Util.terminal(nil, { border = "rounded" })
-end, { desc = "Term with border" })
+end, { silent = true, desc = "Term with border" })
 
 vim.keymap.set("n", "<C-_>", function()
   Util.terminal(nil, { border = "rounded" })
-end, { desc = "Term with border" })
+end, { silent = true, desc = "Term with border" })
