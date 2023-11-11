@@ -13,6 +13,7 @@ return {
   config = function()
     require("hardtime").setup({
       max_count = 10,
+      disable_mouse = false,
       disabled_filetypes = {
         "dbout",
         "dbui",

@@ -10,7 +10,7 @@ return {
           ["core.defaults"] = {}, -- Loads default behaviour
           ["core.concealer"] = {
             config = {
-              icon_preset = "diamond",
+              icon_preset = "varied",
             },
           }, -- Adds pretty icons to your documents
           ["core.dirman"] = { -- Manages Neorg workspaces
