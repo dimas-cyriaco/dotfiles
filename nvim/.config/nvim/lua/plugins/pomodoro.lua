@@ -1,7 +1,24 @@
 return {
   "dbinagi/nomodoro",
-  cmd = { "NomoWork" },
+  cmd = { "NomoWork", "NomoStatus", "NomoMenu" },
   dependencies = { "MunifTanjim/nui.nvim" },
+  keys = {
+    {
+      "<leader>ps",
+      "<cmd>NomoWork<cr>",
+      desc = "Start pomodoro",
+    },
+    {
+      "<leader>pt",
+      "<cmd>NomoStatus<cr>",
+      desc = "Pomodoro status",
+    },
+    {
+      "<leader>pm",
+      "<cmd>NomoMenu<cr>",
+      desc = "Pomodoro menu",
+    },
+  },
   config = function()
     require("nomodoro").setup({
       work_time = 25,

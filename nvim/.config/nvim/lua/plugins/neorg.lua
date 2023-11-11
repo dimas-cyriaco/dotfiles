@@ -27,6 +27,7 @@ return {
     end,
     keys = {
       { "<leader>no", "<cmd>Neorg index<cr>", desc = "Open Notes" },
+      { "<leader>nw", "<cmd>Neorg workspace", desc = "Change Workspace" },
     },
   },
 }

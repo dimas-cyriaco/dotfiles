@@ -11,6 +11,11 @@ return {
       "markdown",
       "typescript",
       "http",
+      "yaml",
+      "sql",
+      "norg",
+      "gitignore",
+      "dockerfile",
     },
   },
 }

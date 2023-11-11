@@ -11,8 +11,8 @@ return {
       { "gm", "<cmd>lua require('harpoon.term').gotoTerminal(1)<cr>", desc = "Go to Harpoon terminal 1" },
       { "g,", "<cmd>lua require('harpoon.term').gotoTerminal(2)<cr>", desc = "Go to Harpoon terminal 2" },
     },
-    config = function()
-      require("telescope").load_extension("harpoon")
-    end,
+    -- config = function()
+    --   require("telescope").load_extension("harpoon")
+    -- end,
   },
 }

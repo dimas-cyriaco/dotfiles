@@ -1,12 +1,11 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
-    sources = { "filesystem", "buffers", "git_status", "document_symbols" },
+    sources = { "filesystem", "buffers", "document_symbols" },
     enable_normal_mode_for_inputs = false,
     source_selector = {
       sources = {
         { source = "filesystem" },
-        { source = "git_status" },
         { source = "buffers" },
         { source = "document_symbols" },
       },
@@ -59,6 +58,7 @@ return {
         enabled = true,
         leave_dirs_open = false,
       },
+      group_empty_dirs = true,
     },
     document_symbols = {
       follow_cursor = true,
