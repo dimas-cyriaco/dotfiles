@@ -7,13 +7,13 @@ return {
     config = function()
       require("neorg").setup({
         load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.defaults"] = {},
           ["core.concealer"] = {
             config = {
               icon_preset = "varied",
             },
-          }, -- Adds pretty icons to your documents
-          ["core.dirman"] = { -- Manages Neorg workspaces
+          },
+          ["core.dirman"] = {
             config = {
               workspaces = {
                 notes = "~/Documents/org",
@@ -27,7 +27,7 @@ return {
     end,
     keys = {
       { "<leader>no", "<cmd>Neorg index<cr>", desc = "Open Notes" },
-      { "<leader>nw", "<cmd>Neorg workspace", desc = "Change Workspace" },
+      { "<leader>nw", "<cmd>Neorg workspace<cr>", desc = "Current Workspace" },
     },
   },
 }

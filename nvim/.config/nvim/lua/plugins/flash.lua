@@ -1,4 +1,4 @@
----@diagnostic disable: undefined-doc-name, assign-type-mismatch, undefined-field
+---@diagnostic disable: undefined-doc-name, assign-type-mismatch, undefined-field, duplicate-doc-field, inject-field, duplicate-doc-alias
 
 return {
   "folke/flash.nvim",
@@ -9,24 +9,11 @@ return {
         require("flash").jump({
           search = { mode = "search", max_length = 0 },
           label = { after = { 0, 0 } },
-          -- pattern = "^",
-          pattern = "^\\s*\\S", -- match non-whitespace at start plus any character (ignores empty lines)
+          pattern = "^\\s*\\S",
         })
       end,
       desc = "Go to line",
     },
-    -- {
-    --   "<leader>gl",
-    --   mode = { "n", "x", "o" },
-    --   function()
-    --     require("flash").jump({
-    --       search = { mode = "search" },
-    --       -- highlight = { label = { after = { 0, 0 } } },
-    --       pattern = "^\\s*\\S", -- match non-whitespace at start plus any character (ignores empty lines)
-    --     })
-    --     vim.cmd([[normal! ^]])
-    --   end,
-    -- },
   },
   ---@diagnostic disable-next-line: undefined-doc-name
   ---@type Flash.Config
@@ -141,7 +128,7 @@ return {
       -- show a backdrop with hl FlashBackdrop
       backdrop = false,
       -- Highlight the search matches
-      matches = false,
+      matches = true,
       -- extmark priority
       priority = 5000,
       groups = {
