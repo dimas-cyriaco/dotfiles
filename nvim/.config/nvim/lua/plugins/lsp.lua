@@ -1,5 +1,6 @@
+---@diagnostic disable: missing-fields, undefined-global
+
 local paths = {
-  ---@diagnostic disable-next-line: undefined-global
   vim.fn.stdpath("config") .. "/spell/ltex.dictionary.pt-BR.txt",
 }
 

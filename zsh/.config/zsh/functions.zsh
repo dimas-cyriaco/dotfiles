@@ -74,3 +74,8 @@ function t() {
   local value="$1"
   trans "$value" -brief en:pt-BR
 }
+
+function tr() {
+  local value="$1"
+  trans "$value" en:pt-BR
+}

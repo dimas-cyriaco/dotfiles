@@ -21,14 +21,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  group = vim.api.nvim_create_augroup("dimas_norg", { clear = true }),
-  pattern = { "norg" },
-  callback = function()
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
-    vim.opt_local.signcolumn = "no"
-  end,
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = vim.api.nvim_create_augroup("norg_format", { clear = true }),
+  pattern = { "*.norg" },
+  command = 'exe \"normal gg=G\\<c-o>]\"',
 })
 
 vim.filetype.add({
