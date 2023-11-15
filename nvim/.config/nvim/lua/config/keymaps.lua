@@ -18,9 +18,11 @@ vim.keymap.set(
 vim.keymap.set(
   "n",
   "<leader>sg",
-  ":lua require('telescope.builtin').live_grep({ additional_args = function() return { '--hidden' } end })<cr>",
+  ":lua require('telescope.builtin').live_grep({ additional_args = { '--hidden' } })<cr>",
   { silent = true, desc = "Find in Files" }
 )
+
+vim.keymap.set("n", "<c-m>", "<cmd>e #<cr>", { desc = "Go to previous file" })
 
 vim.keymap.set("n", "<C-/>", function()
   Util.terminal(nil, { border = "rounded" })
