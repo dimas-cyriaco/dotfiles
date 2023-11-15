@@ -22,7 +22,12 @@ vim.keymap.set(
   { silent = true, desc = "Find in Files" }
 )
 
-vim.keymap.set("n", "<c-m>", "<cmd>e #<cr>", { desc = "Go to previous file" })
+vim.keymap.set("n", "<leader>fy", function()
+  local path = vim.fn.expand("%")
+  vim.fn.setreg("+", path)
+end, { silent = true, desc = "Copy file relative path" })
+
+vim.keymap.set("n", "<c-;>", "<cmd>e #<cr>", { desc = "Go to previous file" })
 
 vim.keymap.set("n", "<C-/>", function()
   Util.terminal(nil, { border = "rounded" })

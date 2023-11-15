@@ -1,4 +1,4 @@
-vim.cmd([[hi! link Folded CursorLine]])
+-- vim.cmd([[hi! link Folded CursorLine]])
 
 return {
   "kevinhwang91/nvim-ufo",

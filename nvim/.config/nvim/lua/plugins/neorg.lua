@@ -25,6 +25,8 @@ return {
           },
         },
       })
+
+      vim.api.nvim_set_hl(0, "@neorg.markup.verbatim", { fg = "#ff9e64", bold = true, italic = true })
     end,
     keys = {
       { "<leader>no", "<cmd>Neorg index<cr>", desc = "Open Notes" },

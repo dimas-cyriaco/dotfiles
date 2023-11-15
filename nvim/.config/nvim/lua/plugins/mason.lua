@@ -12,6 +12,7 @@ return {
       "typescript-language-server",
       "sqlls",
       "sql-formatter",
+      "js-debug-adapter",
     },
   },
 }

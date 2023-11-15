@@ -24,7 +24,21 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = vim.api.nvim_create_augroup("norg_format", { clear = true }),
   pattern = { "*.norg" },
-  command = 'exe \"normal gg=G\\<c-o>]\"',
+  command = 'exe "normal gg=G\\<c-o>]"',
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = vim.api.nvim_create_augroup("ts_imports", { clear = true }),
+  pattern = { "typescript" },
+  callback = function()
+    vim.lsp.buf.code_action({
+      apply = true,
+      context = {
+        only = { "source.removeUnused.ts" },
+        diagnostics = {},
+      },
+    })
+  end,
 })
 
 vim.filetype.add({

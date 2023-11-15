@@ -17,6 +17,7 @@ return {
       disabled_filetypes = {
         "dbout",
         "dbui",
+        "dapui_scopes",
         "help",
         "httpResult",
         "https",
