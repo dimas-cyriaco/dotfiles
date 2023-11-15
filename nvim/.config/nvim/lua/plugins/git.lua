@@ -23,6 +23,7 @@ return {
           neogit.open({ kind = "vsplit" })
         end,
         desc = "Open Neogit",
+        silent = true,
       },
     },
     config = function()
