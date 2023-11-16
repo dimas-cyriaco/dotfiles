@@ -2,7 +2,19 @@ return {
   {
     "folke/tokyonight.nvim",
     event = { "VeryLazy" },
-    opts = { style = "storm" },
+    opts = {
+      style = "storm",
+      on_highlights = function(hl, c)
+        hl.Folded = {
+          bg = c.bg_highlight,
+          fg = c.cyan,
+        }
+        hl.UfoCursorFoldedLine = {
+          bg = c.bg_highlight,
+          fg = c.cyan,
+        }
+      end,
+    },
   },
   {
     "kdheepak/monochrome.nvim",

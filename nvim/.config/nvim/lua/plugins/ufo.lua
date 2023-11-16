@@ -1,18 +1,9 @@
--- vim.cmd([[hi! link Folded CursorLine]])
-
 return {
   "kevinhwang91/nvim-ufo",
   dependencies = { "kevinhwang91/promise-async" },
-  ft = { "typescript" },
-  -- config = {
-  --   close_fold_kinds = { "imports" },
-  -- },
+  ft = { "typescript", "lua" },
   config = function()
-    require("ufo").setup({
-      close_fold_kinds = { "imports" },
-    })
-
-    vim.cmd([[hi! link Folded CursorLine]])
+    require("ufo").setup({ close_fold_kinds = { "imports" } })
 
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
       pattern = { "*.norg" },
