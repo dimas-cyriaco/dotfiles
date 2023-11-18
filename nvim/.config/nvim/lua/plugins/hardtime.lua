@@ -26,6 +26,7 @@ return {
         "neo-tree",
         "neo-tree-popup",
         "NeogitCommitView",
+        "NeogitLogView",
         "NeogitStatus",
         "neotest-summary",
         "netrw",

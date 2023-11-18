@@ -4,12 +4,9 @@ return {
     event = { "VeryLazy" },
     opts = {
       style = "storm",
+      dim_inactive = true,
       on_highlights = function(hl, c)
         hl.Folded = {
-          bg = c.bg_highlight,
-          fg = c.cyan,
-        }
-        hl.UfoCursorFoldedLine = {
           bg = c.bg_highlight,
           fg = c.cyan,
         }
@@ -19,16 +16,6 @@ return {
   {
     "kdheepak/monochrome.nvim",
     event = { "VeryLazy" },
-  },
-  {
-    "catppuccin/nvim",
-    lazy = true,
-    name = "catppuccin",
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-      })
-    end,
   },
   {
     "LazyVim/LazyVim",
