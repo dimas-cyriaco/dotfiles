@@ -34,6 +34,18 @@ return {
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
+    keys = {
+      {
+        "<leader>lr",
+        "<cmd>LspRestart<cr>",
+        desc = "Restart LSP",
+      },
+      {
+        "<leader>ls",
+        "<cmd>LspStop<cr>",
+        desc = "Stop LSP",
+      },
+    },
     opts = {
       inlay_hints = {
         enabled = true,
@@ -50,6 +62,17 @@ return {
               },
               dictionary = {
                 ["pt-BR"] = words,
+              },
+            },
+          },
+        },
+        gopls = {
+          settings = {
+            gopls = {
+              completeUnimported = true,
+              usePlaceholders = true,
+              analyses = {
+                unusedparams = true,
               },
             },
           },

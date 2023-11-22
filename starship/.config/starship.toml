@@ -29,9 +29,9 @@ truncation_length = 4
 truncate_to_repo = true
 
 [directory.substitutions]
-'dotfiles' = '  '
+'dotfiles' = ''
 'org' = 'notes'
-'~' = '󰋜'
+'~' = '󰋜 '
 
 [character]
 success_symbol = '[❯](bold 121)'

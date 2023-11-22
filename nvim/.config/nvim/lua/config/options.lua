@@ -14,3 +14,4 @@ opt.scrolloff = 999
 opt.spell = false
 opt.spelllang = "en,pt_br"
 opt.textwidth = 100
+opt.list = false

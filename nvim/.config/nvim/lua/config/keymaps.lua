@@ -36,3 +36,11 @@ end, { silent = true, desc = "Term with border" })
 vim.keymap.set("n", "<C-_>", function()
   Util.terminal(nil, { border = "rounded" })
 end, { silent = true, desc = "Term with border" })
+
+vim.keymap.set("n", "<leader>uk", function()
+  if vim.opt.scrolloff:get() == 999 then
+    vim.opt.scrolloff = 0
+  else
+    vim.opt.scrolloff = 999
+  end
+end, { silent = true, desc = "Toggle scrolloff" })

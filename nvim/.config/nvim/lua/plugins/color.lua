@@ -13,6 +13,11 @@ return {
       end,
     },
   },
+  "rebelot/kanagawa.nvim",
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
   {
     "kdheepak/monochrome.nvim",
     event = { "VeryLazy" },
@@ -24,3 +29,6 @@ return {
     },
   },
 }
+
+-- somewhere in your config:
+-- vim.cmd("colorscheme onedark")
