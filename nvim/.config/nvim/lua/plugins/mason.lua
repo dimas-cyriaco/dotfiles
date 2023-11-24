@@ -9,6 +9,8 @@ return {
       "gopls",
       "hadolint",
       "sql-formatter",
+      "sqlls",
+      "djlint",
     },
   },
 }

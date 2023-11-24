@@ -13,15 +13,9 @@ return {
       end,
     },
   },
-  "rebelot/kanagawa.nvim",
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
-  },
-  {
-    "kdheepak/monochrome.nvim",
-    event = { "VeryLazy" },
-  },
+  { "rebelot/kanagawa.nvim", event = { "VeryLazy" } },
+  { "olimorris/onedarkpro.nvim", event = { "VeryLazy" } },
+  { "kdheepak/monochrome.nvim", event = { "VeryLazy" } },
   {
     "LazyVim/LazyVim",
     opts = {

@@ -40,7 +40,7 @@ _gf() {
     | sed 's/.* -> //'
 }
 
-pf() {
+nf() {
   if cat package.json > /dev/null 2>&1; then
     scripts=$(jq .scripts < package.json | sed '1d;$d' | fzf --height 40%)
 

@@ -1,4 +1,5 @@
-return {
-  "mateusbraga/vim-spell-pt-br",
-  event = "LazyFile",
-}
+return {}
+-- return {
+--   "mateusbraga/vim-spell-pt-br",
+--   event = "LazyFile",
+-- }

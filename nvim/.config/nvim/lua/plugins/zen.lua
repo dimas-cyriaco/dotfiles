@@ -1,13 +1,14 @@
-return {
-  "folke/zen-mode.nvim",
-  keys = {
-    {
-      "<leader>uz",
-      "<cmd> ZenMode <cr>",
-      desc = "Toggle Zen Mode",
-    },
-  },
-}
+return {}
+-- return {
+--   "folke/zen-mode.nvim",
+--   keys = {
+--     {
+--       "<leader>uz",
+--       "<cmd> ZenMode <cr>",
+--       desc = "Toggle Zen Mode",
+--     },
+--   },
+-- }
 -- return {
 --   "Pocco81/true-zen.nvim",
 --   cmd = { "TZAtaraxis", "TZFocus", "TZNarrow", "TZMinimalist" },
