@@ -11,6 +11,7 @@ return {
       "sql-formatter",
       "sqlls",
       "djlint",
+      "iferr",
     },
   },
 }

@@ -25,7 +25,7 @@ return {
         -- the same request via the terminal (can be verbose)
         show_curl_command = false,
         show_http_info = true,
-        show_headers = false,
+        show_headers = true,
         -- executables or functions for formatting response body [optional]
         -- set them to false if you want to disable them
         formatters = {

@@ -4,7 +4,10 @@
 
 local Util = require("lazyvim.util")
 
-vim.keymap.set("i", "jk", "<c-\\><c-n>", { desc = "Exit Insert Mode" })
+vim.keymap.set("n", "j", "<nop>", { silent = true })
+vim.keymap.set("n", "k", "<nop>", { silent = true })
+vim.keymap.set("n", "h", "<nop>", { silent = true })
+vim.keymap.set("n", "l", "<nop>", { silent = true })
 vim.keymap.set("n", "<leader>fs", ":w <CR>", { silent = true, desc = "Save File" })
 vim.keymap.set("n", "<leader>qt", "<cmd>tabclose<cr>", { silent = true, desc = "Close Tab" })
 vim.keymap.set("n", "<leader>wh", "<C-w>t<C-w>H", { silent = true, desc = "Change Split to Horizontal" })

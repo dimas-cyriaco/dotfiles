@@ -23,6 +23,3 @@ return {
     },
   },
 }
-
--- somewhere in your config:
--- vim.cmd("colorscheme onedark")

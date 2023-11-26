@@ -15,3 +15,5 @@ opt.spell = false
 opt.spelllang = "en,pt_br"
 opt.textwidth = 100
 opt.list = false
+
+vim.cmd([[let g:kitty_navigator_no_mappings = 1]])

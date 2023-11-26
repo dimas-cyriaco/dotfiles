@@ -16,11 +16,11 @@
 -- end
 
 return {
-  {
-    "hinell/lsp-timeout.nvim",
-    event = "LazyFile", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
-    dependencies = { "neovim/nvim-lspconfig" },
-  },
+  -- {
+  --   "hinell/lsp-timeout.nvim",
+  --   event = "LazyFile", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
+  --   dependencies = { "neovim/nvim-lspconfig" },
+  -- },
   {
     "Wansmer/symbol-usage.nvim",
     event = "LazyFile", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
@@ -46,39 +46,39 @@ return {
         desc = "Stop LSP",
       },
     },
-    -- opts = {
-    --   inlay_hints = {
-    --     enabled = true,
-    --   },
-    --   servers = {
-    --     sqlls = {},
-    --     ltex = {
-    --       settings = {
-    --         -- https://valentjn.github.io/ltex/settings.html
-    --         ltex = {
-    --           language = "pt-BR",
-    --           additionalRules = {
-    --             enablePickyRules = true,
-    --             motherTongue = "pt-BR",
-    --           },
-    --           dictionary = {
-    --             ["pt-BR"] = words,
-    --           },
-    --         },
-    --       },
-    --     },
-    --     gopls = {
-    --       settings = {
-    --         gopls = {
-    --           completeUnimported = true,
-    --           usePlaceholders = true,
-    --           analyses = {
-    --             unusedparams = true,
-    --           },
-    --         },
-    --       },
-    --     },
-    --   },
-    -- },
+    opts = {
+      inlay_hints = {
+        enabled = true,
+      },
+      servers = {
+        -- sqlls = {},
+        -- ltex = {
+        --   settings = {
+        --     -- https://valentjn.github.io/ltex/settings.html
+        --     ltex = {
+        --       language = "pt-BR",
+        --       additionalRules = {
+        --         enablePickyRules = true,
+        --         motherTongue = "pt-BR",
+        --       },
+        --       dictionary = {
+        --         ["pt-BR"] = words,
+        --       },
+        --     },
+        --   },
+        -- },
+        gopls = {
+          settings = {
+            gopls = {
+              completeUnimported = true,
+              usePlaceholders = true,
+              analyses = {
+                unusedparams = true,
+              },
+            },
+          },
+        },
+      },
+    },
   },
 }
