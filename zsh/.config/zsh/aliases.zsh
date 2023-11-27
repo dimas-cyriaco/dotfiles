@@ -20,3 +20,4 @@ alias rm=trash
 alias v=nvim
 alias dcu="docker compose up -d"
 alias dcd="docker compose down -v"
+alias kt="kitty --session ~/.config/kitty/startup.conf"

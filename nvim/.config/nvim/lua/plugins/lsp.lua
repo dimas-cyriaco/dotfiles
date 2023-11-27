@@ -36,12 +36,12 @@ return {
     ---@class PluginLspOpts
     keys = {
       {
-        "<leader>lr",
+        "<leader>cxr",
         "<cmd>LspRestart<cr>",
         desc = "Restart LSP",
       },
       {
-        "<leader>ls",
+        "<leader>cxs",
         "<cmd>LspStop<cr>",
         desc = "Stop LSP",
       },
