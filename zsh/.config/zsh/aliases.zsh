@@ -5,6 +5,7 @@ alias aeln="aws ec2 describe-instances --query \"Reservations[].Instances[].Tags
 alias b="br -c :sort_by_type"
 alias c=clear
 alias dot='source $HOME/.zshrc'
+alias h=hledger
 alias hg="history 1 | grep"
 alias lg=lazygit
 alias ll="exa -la --icons"

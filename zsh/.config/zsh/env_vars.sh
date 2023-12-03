@@ -24,8 +24,11 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:$DOTNET_ROOT"
 export SAVEHIST=5000 #Number of history entries to save to disk
 # export TERM=xterm-256color
+export TASKRC=~/.config/task/.taskrc
+export TASKDATA=~/.config/task/.task
 export TERM=xterm-kitty
 export NEOVIDE_MULTIGRID=true
+export LEDGER_FILE=~/ledger/all.journal
 
 # Fzf Theme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'

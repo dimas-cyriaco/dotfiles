@@ -56,6 +56,7 @@ nf() {
     echo "Error: There's no package.json"
   fi
 }
+zle -N nf
 
 # Select a docker container to start and attach to
 function da() {

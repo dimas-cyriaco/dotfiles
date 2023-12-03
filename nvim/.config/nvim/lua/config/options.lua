@@ -15,5 +15,6 @@ opt.spell = false
 opt.spelllang = "en,pt_br"
 opt.textwidth = 100
 opt.list = false
+opt.mousescroll = "ver:1,hor:0"
 
 vim.cmd([[let g:kitty_navigator_no_mappings = 1]])

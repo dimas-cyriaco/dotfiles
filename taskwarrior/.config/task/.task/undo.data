@@ -1,0 +1,86 @@
+time 1701271731
+new [description:"Comando de importação de Tagueamento" entry:"1701271731" modified:"1701271731" status:"pending" uuid:"75d99b45-bab5-4d9a-9f16-da7e5bdd7657"]
+---
+time 1701278103
+new [description:"Ler post de Tagueamento" entry:"1701278103" modified:"1701278103" status:"pending" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+---
+time 1701278139
+old [description:"Ler post de Tagueamento" entry:"1701278103" modified:"1701278103" status:"pending" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+new [annotation_1701278139:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701186833198689" description:"Ler post de Tagueamento" entry:"1701278103" modified:"1701278139" status:"pending" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+---
+time 1701289244
+old [description:"Comando de importação de Tagueamento" entry:"1701271731" modified:"1701271731" status:"pending" uuid:"75d99b45-bab5-4d9a-9f16-da7e5bdd7657"]
+new [description:"Comando de importação de Tagueamento" end:"1701289244" entry:"1701271731" modified:"1701289244" status:"completed" uuid:"75d99b45-bab5-4d9a-9f16-da7e5bdd7657"]
+---
+time 1701353228
+new [description:"Criar task de melhoria da importação do Tagueamento" entry:"1701353228" modified:"1701353228" status:"pending" uuid:"63db8ee1-1f10-4d53-ab26-195f51a87075"]
+---
+time 1701353257
+old [description:"Criar task de melhoria da importação do Tagueamento" entry:"1701353228" modified:"1701353228" status:"pending" uuid:"63db8ee1-1f10-4d53-ab26-195f51a87075"]
+new [annotation_1701353257:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701350770924769" description:"Criar task de melhoria da importação do Tagueamento" entry:"1701353228" modified:"1701353257" status:"pending" uuid:"63db8ee1-1f10-4d53-ab26-195f51a87075"]
+---
+time 1701354460
+old [annotation_1701353257:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701350770924769" description:"Criar task de melhoria da importação do Tagueamento" entry:"1701353228" modified:"1701353257" status:"pending" uuid:"63db8ee1-1f10-4d53-ab26-195f51a87075"]
+new [annotation_1701353257:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701350770924769" description:"Criar task de melhoria da importação do Tagueamento" end:"1701354460" entry:"1701353228" modified:"1701354460" status:"completed" uuid:"63db8ee1-1f10-4d53-ab26-195f51a87075"]
+---
+time 1701558160
+new [description:"Levar Sofia no Veterinário" entry:"1701558160" modified:"1701558160" status:"pending" uuid:"c935d2f7-ee19-4ffc-89aa-1a406207f4b6"]
+---
+time 1701558181
+new [description:"Levar carro para fazer avaliação" entry:"1701558181" modified:"1701558181" status:"pending" uuid:"fad2f812-5b70-4a6b-906e-aefdb671b4a6"]
+---
+time 1701558284
+new [description:"Pagar conta de Luz" due:"1701399600" entry:"1701558284" modified:"1701558284" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" wait:"1701399600"]
+---
+time 1701558288
+new [description:"Pagar conta de Luz" due:"1701399600" entry:"1701558288" imask:"0" modified:"1701558284" parent:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" recur:"monthly" rtype:"periodic" status:"pending" uuid:"a0ba7e16-197a-451c-b3a4-c8f61f2561f3" wait:"1701399600"]
+---
+time 1701558288
+new [description:"Pagar conta de Luz" due:"1704078000" entry:"1701558288" imask:"1" modified:"1701558284" parent:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" recur:"monthly" rtype:"periodic" status:"pending" uuid:"dbaed575-1d12-4172-a903-5430f0fc9b7f" wait:"1704078000"]
+---
+time 1701558288
+old [description:"Pagar conta de Luz" due:"1701399600" entry:"1701558284" modified:"1701558284" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" wait:"1701399600"]
+new [description:"Pagar conta de Luz" due:"1701399600" entry:"1701558284" mask:"WW" modified:"1701558288" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" wait:"1701399600"]
+---
+time 1701558486
+old [description:"Pagar conta de Luz" due:"1701399600" entry:"1701558284" mask:"WW" modified:"1701558288" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" wait:"1701399600"]
+new [description:"Pagar conta de Luz" due:"1701399600" entry:"1701558284" mask:"+W" modified:"1701558486" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" wait:"1701399600"]
+---
+time 1701558486
+old [description:"Pagar conta de Luz" due:"1701399600" entry:"1701558288" imask:"0" modified:"1701558284" parent:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" recur:"monthly" rtype:"periodic" status:"pending" uuid:"a0ba7e16-197a-451c-b3a4-c8f61f2561f3" wait:"1701399600"]
+new [description:"Pagar conta de Luz" due:"1701399600" end:"1701558486" entry:"1701558288" imask:"0" modified:"1701558486" parent:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" recur:"monthly" rtype:"periodic" status:"completed" uuid:"a0ba7e16-197a-451c-b3a4-c8f61f2561f3" wait:"1701399600"]
+---
+time 1701606642
+old [description:"Levar carro para fazer avaliação" entry:"1701558181" modified:"1701558181" status:"pending" uuid:"fad2f812-5b70-4a6b-906e-aefdb671b4a6"]
+new [description:"Levar carro para fazer avaliação" entry:"1701558181" modified:"1701606642" status:"pending" tags:"home" tags_home:"x" uuid:"fad2f812-5b70-4a6b-906e-aefdb671b4a6"]
+---
+time 1701606662
+old [description:"Levar Sofia no Veterinário" entry:"1701558160" modified:"1701558160" status:"pending" uuid:"c935d2f7-ee19-4ffc-89aa-1a406207f4b6"]
+new [description:"Levar Sofia no Veterinário" entry:"1701558160" modified:"1701606662" status:"pending" tags:"home" tags_home:"x" uuid:"c935d2f7-ee19-4ffc-89aa-1a406207f4b6"]
+---
+time 1701606678
+old [annotation_1701278139:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701186833198689" description:"Ler post de Tagueamento" entry:"1701278103" modified:"1701278139" status:"pending" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+new [annotation_1701278139:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701186833198689" description:"Ler post de Tagueamento" entry:"1701278103" modified:"1701606678" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+---
+time 1701617682
+new [description:"Descanso de panela" entry:"1701617682" modified:"1701617682" status:"pending" tags:"natal" tags_natal:"x" uuid:"fc38de53-c107-4039-a77a-8292909a488c"]
+---
+time 1701617687
+new [description:"Pratos" entry:"1701617687" modified:"1701617687" status:"pending" tags:"natal" tags_natal:"x" uuid:"b708667a-b0d0-4ed7-a84b-ba26ca157798"]
+---
+time 1701617694
+new [description:"Cadeiras" entry:"1701617694" modified:"1701617694" status:"pending" tags:"natal" tags_natal:"x" uuid:"226dcd39-bbdc-450d-9c85-cd514c464811"]
+---
+time 1701617704
+new [description:"Toalha de mesa" entry:"1701617704" modified:"1701617704" status:"pending" tags:"natal" tags_natal:"x" uuid:"488c304a-708f-4405-aeea-ec6fb9603c3b"]
+---
+time 1701617723
+new [description:"Jogos americanos" entry:"1701617723" modified:"1701617723" status:"pending" tags:"natal" tags_natal:"x" uuid:"dda0fe99-87ec-4890-a1c0-13be0dfd2207"]
+---
+time 1701618273
+old [description:"Pratos" entry:"1701617687" modified:"1701617687" status:"pending" tags:"natal" tags_natal:"x" uuid:"b708667a-b0d0-4ed7-a84b-ba26ca157798"]
+new [description:"Pratos" end:"1701618273" entry:"1701617687" modified:"1701618273" status:"completed" tags:"natal" tags_natal:"x" uuid:"b708667a-b0d0-4ed7-a84b-ba26ca157798"]
+---
+time 1701622359
+new [description:"Deskpad de couro" entry:"1701622359" modified:"1701622359" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---

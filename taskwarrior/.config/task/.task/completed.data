@@ -1,0 +1,4 @@
+[description:"Pratos" end:"1701618273" entry:"1701617687" modified:"1701618273" status:"completed" tags:"natal" tags_natal:"x" uuid:"b708667a-b0d0-4ed7-a84b-ba26ca157798"]
+[description:"Pagar conta de Luz" due:"1701399600" end:"1701558486" entry:"1701558288" imask:"0" modified:"1701558486" parent:"a65ba02a-e2d9-4c52-ab4b-cfb074d0d526" recur:"monthly" rtype:"periodic" status:"completed" uuid:"a0ba7e16-197a-451c-b3a4-c8f61f2561f3" wait:"1701399600"]
+[annotation_1701353257:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701350770924769" description:"Criar task de melhoria da importação do Tagueamento" end:"1701354460" entry:"1701353228" modified:"1701354460" status:"completed" uuid:"63db8ee1-1f10-4d53-ab26-195f51a87075"]
+[description:"Comando de importação de Tagueamento" end:"1701289244" entry:"1701271731" modified:"1701289244" status:"completed" uuid:"75d99b45-bab5-4d9a-9f16-da7e5bdd7657"]
