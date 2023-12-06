@@ -1,2 +1,7 @@
 context.natal.read=+natal
 context.natal.write=+natal
+context.work.read=+work or +motrix
+context.work.write=+work or +motrix
+context.chore.read=+chore
+context.chore.write=+chore
+news.version=2.6.0

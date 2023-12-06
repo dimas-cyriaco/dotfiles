@@ -23,10 +23,10 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:$DOTNET_ROOT"
 export SAVEHIST=5000 #Number of history entries to save to disk
-# export TERM=xterm-256color
+export TERM=xterm-256color
 export TASKRC=~/.config/task/.taskrc
 export TASKDATA=~/.config/task/.task
-export TERM=xterm-kitty
+# export TERM=xterm-kitty
 export NEOVIDE_MULTIGRID=true
 export LEDGER_FILE=~/ledger/all.journal
 
@@ -38,11 +38,11 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
 
 # pnpm
-export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
+# case ":$PATH:" in
+# *":$PNPM_HOME:"*) ;;
+# *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
 # pnpm end
 
 # Zsh Vim Mode plugin config

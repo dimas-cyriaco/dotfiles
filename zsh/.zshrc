@@ -23,17 +23,20 @@ for f in "${my_configs[@]}"; do
   [[ -f $my_shdir/$f ]] && . "$my_shdir"/"$f"
 done
 
-source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-antidote load ~/dotfiles/zsh/.config/zsh/plugins.txt
-
-eval "$(starship init zsh)"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # bun completions
 [ -s "/Users/dimascyriaco/.bun/_bun" ] && source "/Users/dimascyriaco/.bun/_bun"
 
-# eval "$(devbox global shellenv --init-hook)
-eval "$(devbox global shellenv)"
+eval "$(devbox global shellenv --init-hook)"
+# eval "$(devbox global shellenv)"
 
-source /Users/dimascyriaco/.config/broot/launcher/bash/br
+# source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+source /nix/store/7k2wpycd8qr99s0k6sjcmwxdsnrds4yl-antidote-1.9.2/share/antidote/antidote.zsh
+antidote load ~/dotfiles/zsh/.config/zsh/plugins.txt
+
+if [ -e /home/dimas/.nix-profile/etc/profile.d/nix.sh ]; then . /home/dimas/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+eval "$(starship init zsh)"
+
+source /home/dimas/.config/broot/launcher/bash/br

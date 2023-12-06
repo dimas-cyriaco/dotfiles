@@ -84,3 +84,79 @@ new [description:"Pratos" end:"1701618273" entry:"1701617687" modified:"17016182
 time 1701622359
 new [description:"Deskpad de couro" entry:"1701622359" modified:"1701622359" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
 ---
+time 1701645940
+new [description:"Presentes de Natal" entry:"1701645940" modified:"1701645940" status:"pending" tags:"natal" tags_natal:"x" uuid:"a8f00bb9-8aed-4dfb-b3ff-0a3157687a63"]
+---
+time 1701654719
+old [description:"Deskpad de couro" entry:"1701622359" modified:"1701622359" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+new [description:"Deskpad de couro" entry:"1701622359" modified:"1701654719" start:"1701654719" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---
+time 1701654723
+old [description:"Deskpad de couro" entry:"1701622359" modified:"1701654719" start:"1701654719" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+new [description:"Deskpad de couro" entry:"1701622359" modified:"1701654723" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---
+time 1701654762
+old [description:"Deskpad de couro" entry:"1701622359" modified:"1701654723" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+new [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701654762" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---
+time 1701655110
+old [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701654762" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+new [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655110" status:"pending" tags:"next" tags_next:"x" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---
+time 1701655114
+old [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655110" status:"pending" tags:"next" tags_next:"x" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+new [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655114" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---
+time 1701655115
+old [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655114" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+new [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655115" status:"pending" tags:"next" tags_next:"x" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---
+time 1701655117
+old [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655115" status:"pending" tags:"next" tags_next:"x" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+new [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655117" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---
+time 1701655351
+old [annotation_1701278139:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701186833198689" description:"Ler post de Tagueamento" entry:"1701278103" modified:"1701606678" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+new [annotation_1701278139:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701186833198689" description:"Ler post de Tagueamento" due:"1701658800" entry:"1701278103" modified:"1701655351" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+---
+time 1701657574
+new [description:"Curso de escrita técnica" entry:"1701657574" modified:"1701657574" status:"pending" tags:"learn" tags_learn:"x" uuid:"fa8dfb91-37b1-4869-9835-1dc93de6bcc4"]
+---
+time 1701731511
+new [description:"Acabei de montar o banco e importar o Framework. Falta rodar a migração" entry:"1701731511" modified:"1701731511" status:"pending" tags:"work" tags_work:"x" uuid:"8744266f-9687-4276-a1c4-dbb071d8447f"]
+---
+time 1701731554
+old [description:"Acabei de montar o banco e importar o Framework. Falta rodar a migração" entry:"1701731511" modified:"1701731511" status:"pending" tags:"work" tags_work:"x" uuid:"8744266f-9687-4276-a1c4-dbb071d8447f"]
+new [description:"Acabei de montar o banco e importar o Framework. Falta rodar a migração" entry:"1701731511" modified:"1701731554" status:"pending" tags:"next,work" tags_next:"x" tags_work:"x" uuid:"8744266f-9687-4276-a1c4-dbb071d8447f"]
+---
+time 1701737664
+new [description:"Mandar email para ZSA sobre site nao reconhecendo teclado" entry:"1701737664" modified:"1701737664" status:"pending" uuid:"422d093b-49ce-4565-b1ee-2e4e8d7081c0"]
+---
+time 1701737675
+old [description:"Mandar email para ZSA sobre site nao reconhecendo teclado" entry:"1701737664" modified:"1701737664" status:"pending" uuid:"422d093b-49ce-4565-b1ee-2e4e8d7081c0"]
+new [annotation_1701737675:"contact@ergodox-ez.com" description:"Mandar email para ZSA sobre site nao reconhecendo teclado" entry:"1701737664" modified:"1701737675" status:"pending" uuid:"422d093b-49ce-4565-b1ee-2e4e8d7081c0"]
+---
+time 1701737722
+old [annotation_1701737675:"contact@ergodox-ez.com" description:"Mandar email para ZSA sobre site nao reconhecendo teclado" entry:"1701737664" modified:"1701737675" status:"pending" uuid:"422d093b-49ce-4565-b1ee-2e4e8d7081c0"]
+new [annotation_1701737675:"contact@ergodox-ez.com" description:"Mandar email para ZSA sobre site nao reconhecendo teclado" entry:"1701737664" modified:"1701737722" status:"pending" tags:"setup" tags_setup:"x" uuid:"422d093b-49ce-4565-b1ee-2e4e8d7081c0"]
+---
+time 1701737763
+new [description:"Criar atalhos Desktop para Keymapp" entry:"1701737763" modified:"1701737763" status:"pending" tags:"setup" tags_setup:"x" uuid:"3bacc762-9d77-4d25-a5ca-952debe615ca"]
+---
+time 1701738491
+new [description:"Colocar o Syncthing para rodar no boot" entry:"1701738491" modified:"1701738491" status:"pending" tags:"setup" tags_setup:"x" uuid:"da561df4-e615-4771-a81c-c643bf543a37"]
+---
+time 1701738768
+old [annotation_1701737675:"contact@ergodox-ez.com" description:"Mandar email para ZSA sobre site nao reconhecendo teclado" entry:"1701737664" modified:"1701737722" status:"pending" tags:"setup" tags_setup:"x" uuid:"422d093b-49ce-4565-b1ee-2e4e8d7081c0"]
+new [annotation_1701737675:"contact@ergodox-ez.com" description:"Mandar email para ZSA sobre site nao reconhecendo teclado" end:"1701738768" entry:"1701737664" modified:"1701738768" status:"deleted" tags:"setup" tags_setup:"x" uuid:"422d093b-49ce-4565-b1ee-2e4e8d7081c0"]
+---
+time 1701776553
+new [description:"Configurar e aprender a usar o psql" entry:"1701776553" modified:"1701776553" status:"pending" tags:"motrix,setup" tags_motrix:"x" tags_setup:"x" uuid:"d72bfb3e-5721-49f3-9a10-64a7246af600"]
+---
+time 1701776562
+old [description:"Acabei de montar o banco e importar o Framework. Falta rodar a migração" entry:"1701731511" modified:"1701731554" status:"pending" tags:"next,work" tags_next:"x" tags_work:"x" uuid:"8744266f-9687-4276-a1c4-dbb071d8447f"]
+new [description:"Acabei de montar o banco e importar o Framework. Falta rodar a migração" end:"1701776562" entry:"1701731511" modified:"1701776562" status:"completed" tags:"next,work" tags_next:"x" tags_work:"x" uuid:"8744266f-9687-4276-a1c4-dbb071d8447f"]
+---
+time 1701895357
+new [description:"Renovar carteira de motorista" entry:"1701895357" modified:"1701895357" status:"pending" tags:"chore,home" tags_chore:"x" tags_home:"x" uuid:"5c920316-3ca9-4d36-8d17-e4a5596e9906"]
+---
