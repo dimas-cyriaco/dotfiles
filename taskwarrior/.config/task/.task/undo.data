@@ -160,3 +160,134 @@ new [description:"Acabei de montar o banco e importar o Framework. Falta rodar a
 time 1701895357
 new [description:"Renovar carteira de motorista" entry:"1701895357" modified:"1701895357" status:"pending" tags:"chore,home" tags_chore:"x" tags_home:"x" uuid:"5c920316-3ca9-4d36-8d17-e4a5596e9906"]
 ---
+time 1701904999
+old [description:"Jogos americanos" entry:"1701617723" modified:"1701617723" status:"pending" tags:"natal" tags_natal:"x" uuid:"dda0fe99-87ec-4890-a1c0-13be0dfd2207"]
+new [description:"Jogos americanos" end:"1701904999" entry:"1701617723" modified:"1701904999" status:"completed" tags:"natal" tags_natal:"x" uuid:"dda0fe99-87ec-4890-a1c0-13be0dfd2207"]
+---
+time 1701905001
+old [description:"Toalha de mesa" entry:"1701617704" modified:"1701617704" status:"pending" tags:"natal" tags_natal:"x" uuid:"488c304a-708f-4405-aeea-ec6fb9603c3b"]
+new [description:"Toalha de mesa" end:"1701905001" entry:"1701617704" modified:"1701905001" status:"completed" tags:"natal" tags_natal:"x" uuid:"488c304a-708f-4405-aeea-ec6fb9603c3b"]
+---
+time 1702142651
+new [description:"Review das tasks do Sprint" entry:"1702142651" modified:"1702142651" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"2008f58a-e968-4ac7-b061-dec584477545"]
+---
+time 1702142738
+new [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" modified:"1702142738" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" wait:"1701883538"]
+---
+time 1702142738
+new [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" imask:"0" modified:"1702142738" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+---
+time 1702142738
+new [description:"Pagar fatura do cartão" due:"1704648338" entry:"1702142738" imask:"1" modified:"1702142738" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" uuid:"2dd8402c-24fc-4b16-bb21-c66568ea9f95" wait:"1704561938"]
+---
+time 1702142738
+old [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" modified:"1702142738" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" wait:"1701883538"]
+new [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" mask:"WW" modified:"1702142738" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" wait:"1701883538"]
+---
+time 1702142762
+old [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" mask:"WW" modified:"1702142738" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" wait:"1701883538"]
+new [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" mask:"-W" modified:"1702142762" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" wait:"1701883538"]
+---
+time 1702142762
+old [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" imask:"0" modified:"1702142738" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+new [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" imask:"0" modified:"1702142762" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+---
+time 1702142838
+new [description:"Pagar condomínio" due:"1701970038" entry:"1702142838" modified:"1702142838" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"4ed01a07-c8dd-4429-97bd-9f953e20056b" wait:"1701970037"]
+---
+time 1702142838
+new [description:"Pagar condomínio" due:"1701970038" entry:"1702142838" imask:"0" modified:"1702142838" parent:"4ed01a07-c8dd-4429-97bd-9f953e20056b" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"dd72f901-6bd2-4157-ba1c-46e2607a7ea3" wait:"1701970037"]
+---
+time 1702142838
+new [description:"Pagar condomínio" due:"1704648438" entry:"1702142838" imask:"1" modified:"1702142838" parent:"4ed01a07-c8dd-4429-97bd-9f953e20056b" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"8b63e3a2-fd06-450c-b351-06ecbdd6e55c" wait:"1704648437"]
+---
+time 1702142838
+old [description:"Pagar condomínio" due:"1701970038" entry:"1702142838" modified:"1702142838" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"4ed01a07-c8dd-4429-97bd-9f953e20056b" wait:"1701970037"]
+new [description:"Pagar condomínio" due:"1701970038" entry:"1702142838" mask:"WW" modified:"1702142838" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"4ed01a07-c8dd-4429-97bd-9f953e20056b" wait:"1701970037"]
+---
+time 1702142925
+old [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" imask:"0" modified:"1702142762" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+new [annotation_1702142925:"O porteiro entrega no final do mês anterior" description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" imask:"0" modified:"1702142925" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+---
+time 1702142955
+old [annotation_1702142925:"O porteiro entrega no final do mês anterior" description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" imask:"0" modified:"1702142925" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+new [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" imask:"0" modified:"1702142955" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" tags_bills:"x" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+---
+time 1702142967
+old [description:"Pagar condomínio" due:"1701970038" entry:"1702142838" imask:"0" modified:"1702142838" parent:"4ed01a07-c8dd-4429-97bd-9f953e20056b" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"dd72f901-6bd2-4157-ba1c-46e2607a7ea3" wait:"1701970037"]
+new [annotation_1702142925:"O porteiro entrega no final do mês anterior" description:"Pagar condomínio" due:"1701970038" entry:"1702142838" imask:"0" modified:"1702142967" parent:"4ed01a07-c8dd-4429-97bd-9f953e20056b" recur:"monthly" rtype:"periodic" status:"pending" tags_bills:"x" uuid:"dd72f901-6bd2-4157-ba1c-46e2607a7ea3" wait:"1701970037"]
+---
+time 1702143058
+old [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" mask:"-W" modified:"1702142762" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" wait:"1701883538"]
+new [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" mask:"+W" modified:"1702143058" recur:"monthly" rtype:"periodic" status:"recurring" uuid:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" wait:"1701883538"]
+---
+time 1702143058
+old [description:"Pagar fatura do cartão" due:"1701969938" entry:"1702142738" imask:"0" modified:"1702142955" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+new [description:"Pagar fatura do cartão" due:"1701969938" end:"1702143058" entry:"1702142738" imask:"0" modified:"1702143058" parent:"11dc0bf3-88a6-4dc6-aad8-af4bb27fe3ef" recur:"monthly" rtype:"periodic" status:"completed" tags:"bills" tags_bills:"x" uuid:"2b2cd27c-ff96-40e1-b5ce-25538509335e" wait:"1701883538"]
+---
+time 1702143658
+old [description:"Criar atalhos Desktop para Keymapp" entry:"1701737763" modified:"1701737763" status:"pending" tags:"setup" tags_setup:"x" uuid:"3bacc762-9d77-4d25-a5ca-952debe615ca"]
+new [description:"Criar atalhos Desktop para Keymapp" end:"1702143658" entry:"1701737763" modified:"1702143658" status:"completed" tags:"setup" tags_setup:"x" uuid:"3bacc762-9d77-4d25-a5ca-952debe615ca"]
+---
+time 1702167290
+new [description:"Assistir videos da Jornada" entry:"1702167290" modified:"1702167290" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"6dcd3944-856d-4cd7-b891-08e3362d7017"]
+---
+time 1702170942
+new [description:"Nobreak" entry:"1702170942" modified:"1702170942" status:"pending" tags:"shopping" tags_shopping:"x" uuid:"bb919e32-9f82-4b1d-9471-251e65492038"]
+---
+time 1702301215
+old [description:"Pagar condomínio" due:"1701970038" entry:"1702142838" mask:"WW" modified:"1702142838" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"4ed01a07-c8dd-4429-97bd-9f953e20056b" wait:"1701970037"]
+new [description:"Pagar condomínio" due:"1701970038" entry:"1702142838" mask:"+W" modified:"1702301215" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"4ed01a07-c8dd-4429-97bd-9f953e20056b" wait:"1701970037"]
+---
+time 1702301215
+old [annotation_1702142925:"O porteiro entrega no final do mês anterior" description:"Pagar condomínio" due:"1701970038" entry:"1702142838" imask:"0" modified:"1702142967" parent:"4ed01a07-c8dd-4429-97bd-9f953e20056b" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"dd72f901-6bd2-4157-ba1c-46e2607a7ea3" wait:"1701970037"]
+new [annotation_1702142925:"O porteiro entrega no final do mês anterior" description:"Pagar condomínio" due:"1701970038" end:"1702301215" entry:"1702142838" imask:"0" modified:"1702301215" parent:"4ed01a07-c8dd-4429-97bd-9f953e20056b" recur:"monthly" rtype:"periodic" status:"completed" tags:"bills" tags_bills:"x" uuid:"dd72f901-6bd2-4157-ba1c-46e2607a7ea3" wait:"1701970037"]
+---
+time 1702301256
+old [description:"Presentes de Natal" entry:"1701645940" modified:"1701645940" status:"pending" tags:"natal" tags_natal:"x" uuid:"a8f00bb9-8aed-4dfb-b3ff-0a3157687a63"]
+new [description:"Presentes de Natal" end:"1702301256" entry:"1701645940" modified:"1702301256" status:"completed" tags:"natal" tags_natal:"x" uuid:"a8f00bb9-8aed-4dfb-b3ff-0a3157687a63"]
+---
+time 1702318793
+new [description:"Adicionar db:seed no check_pending_migs" entry:"1702318793" modified:"1702318793" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"7b58b41e-e70a-42bd-bddf-d14e3347a488"]
+---
+time 1702318800
+old [annotation_1701278139:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701186833198689" description:"Ler post de Tagueamento" due:"1701658800" entry:"1701278103" modified:"1701655351" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+new [annotation_1701278139:"https:\/\/motrix.slack.com\/archives\/C065FQDHPSA\/p1701186833198689" description:"Ler post de Tagueamento" due:"1701658800" end:"1702318800" entry:"1701278103" modified:"1702318800" status:"completed" tags:"motrix" tags_motrix:"x" uuid:"cfc5669a-9047-463c-af6a-91fa75caf5d9"]
+---
+time 1702318993
+old [description:"Adicionar db:seed no check_pending_migs" entry:"1702318793" modified:"1702318793" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"7b58b41e-e70a-42bd-bddf-d14e3347a488"]
+new [description:"Adicionar db:seed no check_pending_migs" end:"1702318993" entry:"1702318793" modified:"1702318993" status:"deleted" tags:"motrix" tags_motrix:"x" uuid:"7b58b41e-e70a-42bd-bddf-d14e3347a488"]
+---
+time 1702319028
+new [description:"Criar check de migração com dados prévios (db:seed)" entry:"1702319028" modified:"1702319028" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"9f626f8f-45d6-4085-952e-d3ef66fbf2d0"]
+---
+time 1702323214
+new [description:"Criar arquivo .desktop para o Flameshot" entry:"1702323214" modified:"1702323214" status:"pending" tags:"setup" tags_setup:"x" uuid:"10dc8a91-c836-4313-b974-6ec494af5431"]
+---
+time 1702325242
+new [description:"Comprar livro Atomic Notetaking" entry:"1702325242" modified:"1702325242" status:"pending" tags:"shopping" tags_shopping:"x" uuid:"c74cadb9-659f-48c8-97d5-cf3277ff51c4"]
+---
+time 1702325283
+new [description:"Adicionar filtro de Grade ao endpoint `GET \/tagging\/objects`" entry:"1702325283" modified:"1702325283" status:"pending" tags:"motrix,work" tags_motrix:"x" tags_work:"x" uuid:"dc7040f9-c41a-4bcc-a687-e78002ba40fc"]
+---
+time 1702325308
+old [description:"Adicionar filtro de Grade ao endpoint `GET \/tagging\/objects`" entry:"1702325283" modified:"1702325283" status:"pending" tags:"motrix,work" tags_motrix:"x" tags_work:"x" uuid:"dc7040f9-c41a-4bcc-a687-e78002ba40fc"]
+new [description:"Adicionar filtro de Grade ao endpoint `GET \/tagging\/objects`" entry:"1702325283" modified:"1702325308" status:"pending" tags:"motrix,next,work" tags_motrix:"x" tags_next:"x" tags_work:"x" uuid:"dc7040f9-c41a-4bcc-a687-e78002ba40fc"]
+---
+time 1702325326
+old [description:"Adicionar filtro de Grade ao endpoint `GET \/tagging\/objects`" entry:"1702325283" modified:"1702325308" status:"pending" tags:"motrix,next,work" tags_motrix:"x" tags_next:"x" tags_work:"x" uuid:"dc7040f9-c41a-4bcc-a687-e78002ba40fc"]
+new [annotation_1702325326:"https:\/\/app.clickup.com\/t\/86a1ewb38" description:"Adicionar filtro de Grade ao endpoint `GET \/tagging\/objects`" entry:"1702325283" modified:"1702325326" status:"pending" tags:"motrix,next,work" tags_motrix:"x" tags_next:"x" tags_work:"x" uuid:"dc7040f9-c41a-4bcc-a687-e78002ba40fc"]
+---
+time 1702325378
+new [description:"Configurar Vit para não exibir annotations" entry:"1702325378" modified:"1702325378" status:"pending" tags:"motrix,setup" tags_motrix:"x" tags_setup:"x" uuid:"cf90d2b3-8131-46be-a97a-e0d79b067d50"]
+---
+time 1702325472
+new [description:"Configurar chores recursivos no Taskwarrior" entry:"1702325472" modified:"1702325472" status:"pending" tags:"motrix,setup" tags_motrix:"x" tags_setup:"x" uuid:"c945824b-ce5c-48b5-9cac-60fe5782f191"]
+---
+time 1702325489
+new [description:"Configurar contas recursivos no HLedger" entry:"1702325489" modified:"1702325489" status:"pending" tags:"motrix,setup" tags_motrix:"x" tags_setup:"x" uuid:"9be5a80c-f54d-419a-9d70-ce59e9161cfe"]
+---
+time 1702325966
+old [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655117" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+new [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1702325966" status:"pending" tags:"shopping" tags_shopping:"x" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
+---
