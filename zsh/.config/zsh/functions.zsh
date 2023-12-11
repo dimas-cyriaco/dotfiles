@@ -70,7 +70,7 @@ function test_migration() {
   pnpm db:migration:generate src/shared/db/migrations/test --dr
 }
 
-function t() {
+function trb() {
   local value="$1"
   trans "$value" -brief en:pt-BR
 }

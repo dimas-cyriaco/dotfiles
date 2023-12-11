@@ -291,3 +291,17 @@ time 1702325966
 old [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1701655117" status:"pending" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
 new [annotation_1701654762:"https:\/\/nordweg.com\/products\/desk-pad-workplace-nwa07?variant=42449923408119" description:"Deskpad de couro" entry:"1701622359" modified:"1702325966" status:"pending" tags:"shopping" tags_shopping:"x" uuid:"d91b9305-8f79-48fc-bbbd-817e62591439"]
 ---
+time 1702334485
+old [description:"Criar arquivo .desktop para o Flameshot" entry:"1702323214" modified:"1702323214" status:"pending" tags:"setup" tags_setup:"x" uuid:"10dc8a91-c836-4313-b974-6ec494af5431"]
+new [description:"Criar arquivo .desktop para o Flameshot" end:"1702334485" entry:"1702323214" modified:"1702334485" status:"deleted" tags:"setup" tags_setup:"x" uuid:"10dc8a91-c836-4313-b974-6ec494af5431"]
+---
+time 1702335495
+new [description:"Pagar PredialNet" due:"1704855600" entry:"1702335495" modified:"1702335495" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"f02c8ac2-edb1-4a5d-9b6f-180c33da126c" wait:"1704855599"]
+---
+time 1702335499
+new [description:"Pagar PredialNet" due:"1704855600" entry:"1702335499" imask:"0" modified:"1702335495" parent:"f02c8ac2-edb1-4a5d-9b6f-180c33da126c" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"c4230359-f6a5-4e2d-ba53-0289feef458f" wait:"1704855599"]
+---
+time 1702335499
+old [description:"Pagar PredialNet" due:"1704855600" entry:"1702335495" modified:"1702335495" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"f02c8ac2-edb1-4a5d-9b6f-180c33da126c" wait:"1704855599"]
+new [description:"Pagar PredialNet" due:"1704855600" entry:"1702335495" mask:"W" modified:"1702335499" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"f02c8ac2-edb1-4a5d-9b6f-180c33da126c" wait:"1704855599"]
+---
