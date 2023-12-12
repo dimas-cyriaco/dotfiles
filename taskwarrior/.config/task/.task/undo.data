@@ -305,3 +305,58 @@ time 1702335499
 old [description:"Pagar PredialNet" due:"1704855600" entry:"1702335495" modified:"1702335495" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"f02c8ac2-edb1-4a5d-9b6f-180c33da126c" wait:"1704855599"]
 new [description:"Pagar PredialNet" due:"1704855600" entry:"1702335495" mask:"W" modified:"1702335499" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"f02c8ac2-edb1-4a5d-9b6f-180c33da126c" wait:"1704855599"]
 ---
+time 1702338856
+new [description:"-motrix and -shopping Pagar aula de canto" due:"1702263600" entry:"1702338856" modified:"1702338856" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" wait:"1702263599"]
+---
+time 1702338856
+new [description:"-motrix and -shopping Pagar aula de canto" due:"1702263600" entry:"1702338856" imask:"0" modified:"1702338856" parent:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"24665fed-2fa1-4779-a1b1-c6ea05d6e8f1" wait:"1702263599"]
+---
+time 1702338856
+new [description:"-motrix and -shopping Pagar aula de canto" due:"1704942000" entry:"1702338856" imask:"1" modified:"1702338856" parent:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"17cb2e0d-c1c8-4eaa-b7db-bee28a2c65c0" wait:"1704941999"]
+---
+time 1702338856
+old [description:"-motrix and -shopping Pagar aula de canto" due:"1702263600" entry:"1702338856" modified:"1702338856" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" wait:"1702263599"]
+new [description:"-motrix and -shopping Pagar aula de canto" due:"1702263600" entry:"1702338856" mask:"WW" modified:"1702338856" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" wait:"1702263599"]
+---
+time 1702338893
+old [description:"-motrix and -shopping Pagar aula de canto" due:"1702263600" entry:"1702338856" imask:"0" modified:"1702338856" parent:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"24665fed-2fa1-4779-a1b1-c6ea05d6e8f1" wait:"1702263599"]
+new [description:"Pagar aula de canto" due:"1702263600" entry:"1702338856" imask:"0" modified:"1702338893" parent:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" recur:"monthly" rtype:"periodic" status:"pending" tags_bills:"x" uuid:"24665fed-2fa1-4779-a1b1-c6ea05d6e8f1" wait:"1702263599"]
+---
+time 1702339018
+old [description:"-motrix and -shopping Pagar aula de canto" due:"1702263600" entry:"1702338856" mask:"WW" modified:"1702338856" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" wait:"1702263599"]
+new [description:"-motrix and -shopping Pagar aula de canto" due:"1702263600" entry:"1702338856" mask:"+W" modified:"1702339018" recur:"monthly" rtype:"periodic" status:"recurring" tags:"bills" tags_bills:"x" uuid:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" wait:"1702263599"]
+---
+time 1702339018
+old [description:"Pagar aula de canto" due:"1702263600" entry:"1702338856" imask:"0" modified:"1702338893" parent:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" recur:"monthly" rtype:"periodic" status:"pending" tags:"bills" tags_bills:"x" uuid:"24665fed-2fa1-4779-a1b1-c6ea05d6e8f1" wait:"1702263599"]
+new [description:"Pagar aula de canto" due:"1702263600" end:"1702339018" entry:"1702338856" imask:"0" modified:"1702339018" parent:"ceffe4d7-c9c5-4f05-b374-46399f577c7b" recur:"monthly" rtype:"periodic" status:"completed" tags:"bills" tags_bills:"x" uuid:"24665fed-2fa1-4779-a1b1-c6ea05d6e8f1" wait:"1702263599"]
+---
+time 1702386823
+new [description:"-motrix and -shopping Marcar férias" entry:"1702386823" modified:"1702386823" status:"pending" tags:"motrix" tags_motrix:"x" uuid:"3b7e4e11-2025-4e70-b326-5a0648f6a49b"]
+---
+time 1702411992
+new [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702411992" status:"pending" tags:"work" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+---
+time 1702412003
+old [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702411992" status:"pending" tags:"work" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+new [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702412003" status:"pending" tags:"motrix,work" tags_motrix:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+---
+time 1702412096
+old [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702412003" status:"pending" tags:"motrix,work" tags_motrix:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+new [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702412096" start:"1702412096" status:"pending" tags:"motrix,work" tags_motrix:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+---
+time 1702412729
+old [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702412096" start:"1702412096" status:"pending" tags:"motrix,work" tags_motrix:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+new [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702412729" status:"pending" tags:"motrix,work" tags_motrix:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+---
+time 1702413712
+old [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702412729" status:"pending" tags:"motrix,work" tags_motrix:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+new [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702413712" status:"pending" tags:"motrix,pomodoro,work" tags_motrix:"x" tags_pomodoro:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+---
+time 1702414561
+old [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702413712" status:"pending" tags:"motrix,pomodoro,work" tags_motrix:"x" tags_pomodoro:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+new [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702414561" start:"1702414561" status:"pending" tags:"motrix,pomodoro,work" tags_motrix:"x" tags_pomodoro:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+---
+time 1702416665
+old [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702414561" start:"1702414561" status:"pending" tags:"motrix,pomodoro,work" tags_motrix:"x" tags_pomodoro:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+new [description:"Adicionar importação de Grades em TaggingObjects" entry:"1702411992" modified:"1702416665" status:"pending" tags:"motrix,pomodoro,work" tags_motrix:"x" tags_pomodoro:"x" tags_work:"x" uuid:"94f2a638-d0f0-4f9c-8f8f-3bda75f07e01"]
+---
