@@ -24,4 +24,5 @@ alias dcd="docker compose down -v"
 alias kt="kitty --session ~/.config/kitty/startup.conf"
 alias dv=devbox
 alias dvg="devbox global"
+alias dvs="devbox shell"
 alias t=task
