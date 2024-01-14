@@ -9,4 +9,4 @@ context.motrix.write=+motrix
 context.personal.read=-motrix and -shopping
 context.personal.write=-motrix and -shopping
 news.version=2.6.0
-context=personal
+context=motrix
