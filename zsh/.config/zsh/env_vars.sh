@@ -28,7 +28,7 @@ export TASKRC=~/.config/task/.taskrc
 export TASKDATA=~/.config/task/.task
 # export TERM=xterm-kitty
 export NEOVIDE_MULTIGRID=true
-export LEDGER_FILE=~/ledger/all.journal
+export LEDGER_FILE=~/Ledger/all.journal
 
 # Fzf Theme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
