@@ -23,11 +23,6 @@ for f in "${my_configs[@]}"; do
   [[ -f $my_shdir/$f ]] && . "$my_shdir"/"$f"
 done
 
-source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-antidote load ~/dotfiles/zsh/.config/zsh/plugins.txt
-
-eval "$(starship init zsh)"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # bun completions

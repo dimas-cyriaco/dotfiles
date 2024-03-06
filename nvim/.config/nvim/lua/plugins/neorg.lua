@@ -17,8 +17,8 @@ return {
           ["core.dirman"] = {
             config = {
               workspaces = {
-                notes = "~/Documents/org",
-                motrix = "~/motrix",
+                notes = "~/Notes",
+                motrix = "~/Work",
               },
               default_workspace = "notes",
             },
@@ -29,7 +29,7 @@ return {
       vim.api.nvim_set_hl(0, "@neorg.markup.verbatim", { fg = "#ff9e64", bold = true, italic = true })
     end,
     keys = {
-      { "<leader>no", "<cmd>Neorg index<cr>", desc = "Open Notes" },
+      { "<leader>no", "<cmd>Neorg index<cr>",     desc = "Open Notes" },
       { "<leader>nw", "<cmd>Neorg workspace<cr>", desc = "Current Workspace" },
     },
   },
