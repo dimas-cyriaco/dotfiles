@@ -12,22 +12,23 @@ export HISTFILE="$HOME/.zhistory"
 export HISTFILE=~/.zsh_history #Where to save history to disk
 export HISTSIZE=5000           #How many lines of history to keep in memory
 export KEYTIMEOUT=1
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export PATH="$HOME/.cargo/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+# export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$PATH:$HOME/.pulumi/bin"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="$PATH:$HOME/.dotnet/tools"
-export PATH="$PATH:$DOTNET_ROOT"
+# export PATH="$HOME/bin:$PATH"
+# export PATH="$HOME/go/bin:$PATH"
+# export PATH="$PATH:$HOME/.pulumi/bin"
+# export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+# export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# export PATH="$PATH:$HOME/.dotnet/tools"
+# export PATH="$PATH:$DOTNET_ROOT"
 export SAVEHIST=5000 #Number of history entries to save to disk
 # export TERM=xterm-256color
 export TASKRC=~/.config/task/.taskrc
-export TASKDATA=~/.config/task/.task
-export TERM=xterm-kitty
-export NEOVIDE_MULTIGRID=true
+export TASKDATA=~/tasks
+# export TERM=xterm-kitty
+# export NEOVIDE_MULTIGRID=true
 export LEDGER_FILE=~/ledger/all.journal
 
 # Fzf Theme
@@ -46,7 +47,7 @@ esac
 # pnpm end
 
 # Zsh Vim Mode plugin config
-function zvm_config() {
-  export ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
-  export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-}
+# function zvm_config() {
+#   export ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
+#   export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+# }

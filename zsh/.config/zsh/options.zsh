@@ -14,4 +14,4 @@ autoload -U compinit
 compinit
 
 # VI Mode
-bindkey -v
+# bindkey -v

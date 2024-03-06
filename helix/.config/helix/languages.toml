@@ -22,26 +22,35 @@ formatter = { command = 'npx', args = [
   "typescript",
 ] }
 
-# [[language]]
-# name = "rust"
-# auto-format = true
-#
-# [language.debugger]
-# command = "codelldb"
-# name = "codelldb"
-# port-arg = "--port {}"
-# transport = "tcp"
-#
-# [[language.debugger.templates]]
-# name = "binary"
-# request = "launch"
-# [[language.debugger.templates.completion]]
-# completion = "target/debug/blue_marble"
-# name = "binary"
-#
-# [language.debugger.templates.args]
-# program = "{0}"
-# runInTerminal = true
+[language-server.solargraph]
+command = "solargraph"
+args = ["stdio"]
+config = { diagnostics = false, formatting = false }
+
+[language-server.rubocop]
+command = "rubocop"
+args = ["--lsp", "--stderr", "--fail-level", "fatal"]
+timeout = 3
+
+[[language]]
+name = "ruby"
+language-servers = [
+  "rubocop",
+  { name = "solargraph", except-features = [
+    "format",
+    "diagnostics",
+  ] },
+]
+auto-format = true
+
+[language-server.tailwindcss-language-server]
+command = "./node_modules/.bin/tailwindcss-language-server"
+args = ["-vvv", "--stdio"]
+
+[[language]]
+language-servers = ["tailwindcss-language-server"]
+name = "erb"
+auto-format = true
 
 [[language]]
 name = "markdown"
@@ -62,4 +71,14 @@ name = "css"
 [[language]]
 name = "toml"
 # language-servers = [{ command = "taplo", args = ["lsp", "stdio"] }]
+auto-format = true
+
+[language-server.godot]
+command = "nc"
+args = ["localhost", "6005"]
+
+[[language]]
+name = "gdscript"
+language-servers = ['godot']
+formatter = { command = "git", args = ["stripspace"] }
 auto-format = true

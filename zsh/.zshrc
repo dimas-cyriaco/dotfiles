@@ -31,9 +31,17 @@ eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # bun completions
-[ -s "/Users/dimascyriaco/.bun/_bun" ] && source "/Users/dimascyriaco/.bun/_bun"
+# [ -s "/Users/dimascyriaco/.bun/_bun" ] && source "/Users/dimascyriaco/.bun/_bun"
 
 # eval "$(devbox global shellenv --init-hook)
-eval "$(devbox global shellenv)"
+# eval "$(devbox global shellenv)"
 
-source /Users/dimascyriaco/.config/broot/launcher/bash/br
+# source /Users/dimascyriaco/.config/broot/launcher/bash/br
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+export PATH="$PATH:/opt/homebrew/lib/ruby/gems/3.3.0/bin"
+

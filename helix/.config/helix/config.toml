@@ -4,8 +4,8 @@ theme = "ayu_mirage"
 bufferline = "multiple"
 color-modes = true
 line-number = "relative"
-mouse = false
-rulers = [80]
+# mouse = false
+# rulers = [80]
 scrolloff = 10
 terminal.command = "kitty"
 
@@ -22,6 +22,7 @@ hidden = false
 
 [editor.lsp]
 display-inlay-hints = true
+snippets = true
 
 [editor.statusline]
 left = ["mode", "spinner"]
@@ -37,7 +38,7 @@ esc = ["collapse_selection", "keep_primary_selection"]
 X = "extend_line_above"
 C-s = ":w"
 C-x = ["extend_to_line_bounds", "trim_selections"]
-H = [":buffer-previous"]
+J = [":buffer-previous"]
 L = [":buffer-next"]
 D = ["extend_to_line_end", "delete_selection"]
 V = ["extend_to_line_end"]
@@ -46,6 +47,7 @@ V = ["extend_to_line_end"]
 i = ":toggle lsp.display-inlay-hints"
 w = ":w"
 c = ":buffer-close"
+Q = ":quit"
 
 [keys.insert]
 j = { k = "normal_mode" } # Maps `jk` to exit insert mode
