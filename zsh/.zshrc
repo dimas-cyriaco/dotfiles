@@ -33,10 +33,14 @@ done
 
 # source /Users/dimascyriaco/.config/broot/launcher/bash/br
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-export PATH="$PATH:/opt/homebrew/lib/ruby/gems/3.3.0/bin"
+# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+# export PATH="$PATH:/opt/homebrew/lib/ruby/gems/3.3.0/bin"
 
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+. /opt/asdf-vm/asdf.sh

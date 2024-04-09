@@ -11,6 +11,7 @@ alias dv=devbox
 alias dvg="devbox global"
 alias dvs="devbox shell"
 alias h=hledger
+alias hx=helix
 alias hg="history 1 | grep"
 alias kt="kitty --session ~/.config/kitty/startup.conf"
 alias k="kubectl"
