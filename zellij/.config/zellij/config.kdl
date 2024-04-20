@@ -1,3 +1,14 @@
+default_shell "zsh"
+pane_frames true
+
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
+
+theme "default"
+
 themes {
  	default {
  		fg "#D5C4A1"

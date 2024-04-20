@@ -7,13 +7,13 @@ export AWS_PROFILE=motrix
 export CARGO_UNSTABLE_SPARSE_REGISTRY=true
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
-export EDITOR=nvim
+export EDITOR=helix
 export HISTFILE="$HOME/.zhistory"
 export HISTFILE=~/.zsh_history #Where to save history to disk
 export HISTSIZE=5000           #How many lines of history to keep in memory
 export KEYTIMEOUT=1
 # export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-# export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # export PATH="$HOME/bin:$PATH"
@@ -51,3 +51,5 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 #   export ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
 #   export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 # }
+
+. ~/.asdf/plugins/java/set-java-home.zsh

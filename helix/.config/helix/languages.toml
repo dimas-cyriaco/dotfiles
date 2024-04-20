@@ -1,7 +1,27 @@
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
+
 [[language]]
 name = "typescript"
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
+language-servers = [ "typescript-language-server", "eslint" ]
 formatter = { command = 'npx', args = [
   "prettier",
   "--config",
@@ -82,3 +102,8 @@ name = "gdscript"
 language-servers = ['godot']
 formatter = { command = "git", args = ["stripspace"] }
 auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+
