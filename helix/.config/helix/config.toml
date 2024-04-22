@@ -4,7 +4,7 @@ theme = "gruvbox"
 bufferline = "multiple"
 color-modes = true
 line-number = "relative"
-scrolloff = 999
+scrolloff = 15
 terminal.command = "alacritty"
 popup-border ="all"
 
