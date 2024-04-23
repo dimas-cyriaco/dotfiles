@@ -28,8 +28,8 @@ brew install helix
 
 ### Install Helix
 
-mkdir code
-cd code || return
+mkdir $HOME/code
+# cd $HOME/code || return
 # git clone git@github.com:helix-editor/helix.git
 # cd helix || return
 # cargo install --path helix-term
@@ -52,12 +52,14 @@ echo "127.0.0.1 local.judit.io" | sudo tee -a /etc/hosts
 
 ## Asdf
 
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 ### Node
 
 brew install gpg
 brew install gawk
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf list all nodejs
+# asdf list all nodejs
 asdf install nodejs latest
 asdf global nodejs latest
 

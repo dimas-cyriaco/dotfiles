@@ -29,4 +29,4 @@ done
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-. /opt/asdf-vm/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
