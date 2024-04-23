@@ -5,39 +5,37 @@
 # Overpass Fonts
 # http://overpassfont.org
 
-brew install kitty
-# brew tap homebrew/cask-fonts
+brew install alacritty
+brew tap homebrew/cask-fonts
 # brew install font-fira-code-nerd-font
-brew install lsd
+brew install eza
+brew install zoxide
 brew install antidote
 brew install starship
 brew install stow
-brew install --head neovim
 brew install asdf
 brew install awscli
 brew install bat
-brew install broot
-brew install dynobase
+brew install yazi
 brew install fzf
 brew install lazygit
-brew install pulumi
+# brew install pulumi
 brew install ripgrep
 brew install trash
-brew install --cask karabiner-elements
-brew install --cask amethyst
-brew install google-chrome
-brew install --cask emacs
+# brew install --cask karabiner-elements
+# brew install --cask amethyst
+# brew install google-chrome
 
 # Arch
-yay wl-clipboard
-yay jq
-yay tidy
+# yay wl-clipboard
+# yay jq
+# yay tidy
 
 ## Helix
 
 ### Install Rust
 
-curl https://sh.rustup.rs -sSf | sh
+# curl https://sh.rustup.rs -sSf | sh
 
 ### Install Helix
 
@@ -51,13 +49,13 @@ ln -s "$PWD/runtime" ~/.config/helix/runtime
 # Install FZF extra functionality.
 "$(brew --prefix)/opt/fzf/install"
 
-stow kitty
-stow amethyst
+# stow kitty
+# stow amethyst
 stow bat
-stow broot
+# stow broot
 stow git
 stow helix
-stow karabiner
+# stow karabiner
 stow starship
 stow zsh
 
@@ -65,8 +63,8 @@ stow zsh
 
 ## AstroVim
 
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-nvim +PackerSync
+# git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+# nvim +PackerSync
 
 ## Asdf
 
