@@ -19,6 +19,7 @@ brew install raycast
 brew install ripgrep
 brew install trash
 brew install helix
+brew install insomnia
 
 ## Helix
 

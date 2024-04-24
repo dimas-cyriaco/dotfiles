@@ -107,3 +107,7 @@ auto-format = true
 name = "rust"
 auto-format = true
 
+
+[[language]]
+name = "prisma"
+auto-format = true
