@@ -68,3 +68,5 @@ asdf global nodejs latest
 ### Typescript language server
 
 npm install -g typescript typescript-language-server
+
+# https://github.com/ColemakMods/mod-dh/tree/master/macOS
