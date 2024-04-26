@@ -7,7 +7,7 @@ local opt = vim.opt
 
 opt.linebreak = true
 opt.relativenumber = false
-opt.number = false
+opt.number = true
 opt.swapfile = false
 opt.wrap = false
 opt.scrolloff = 20

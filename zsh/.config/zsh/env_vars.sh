@@ -52,4 +52,4 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 #   export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 # }
 
-. ~/.asdf/plugins/java/set-java-home.zsh
+# . ~/.asdf/plugins/java/set-java-home.zsh

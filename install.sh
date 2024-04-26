@@ -20,6 +20,7 @@ brew install ripgrep
 brew install trash
 brew install helix
 brew install insomnia
+brew install zellij
 
 ## Helix
 
@@ -39,6 +40,7 @@ mkdir $HOME/code
 # Install FZF extra functionality.
 eval "$(fzf --zsh)"
 
+stow alacritty
 stow bat
 stow yabai
 stow skhd

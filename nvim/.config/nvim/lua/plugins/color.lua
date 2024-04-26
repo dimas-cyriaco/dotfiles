@@ -13,13 +13,14 @@ return {
       end,
     },
   },
-  { "rebelot/kanagawa.nvim", event = { "VeryLazy" } },
+  { "rebelot/kanagawa.nvim",     event = { "VeryLazy" } },
   { "olimorris/onedarkpro.nvim", event = { "VeryLazy" } },
-  { "kdheepak/monochrome.nvim", event = { "VeryLazy" } },
+  { "kdheepak/monochrome.nvim",  event = { "VeryLazy" } },
+  { "ellisonleao/gruvbox.nvim",  event = { "VeryLazy" } },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-storm",
+      colorscheme = "gruvbox",
     },
   },
 }

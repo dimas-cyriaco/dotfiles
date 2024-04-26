@@ -21,20 +21,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  group = vim.api.nvim_create_augroup("go_keymaps", { clear = true }),
-  pattern = { "go" },
-  callback = function()
-    vim.keymap.set("n", "<leader>ci", "<cmd>IfErr<cr>", { silent = true, desc = "IfErr" })
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  group = vim.api.nvim_create_augroup("norg_format", { clear = true }),
-  pattern = { "*.norg" },
-  command = 'exe "normal gg=G\\<c-o>]"',
-})
-
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = vim.api.nvim_create_augroup("ts_imports", { clear = true }),
   pattern = { "typescript" },
