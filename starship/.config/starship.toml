@@ -30,7 +30,6 @@ truncate_to_repo = true
 
 [directory.substitutions]
 'dotfiles' = ''
-'org' = 'notes'
 '~' = '󰋜 '
 
 [character]

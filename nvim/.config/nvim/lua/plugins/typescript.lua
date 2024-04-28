@@ -1,13 +1,25 @@
 return {
-  "dmmulroy/tsc.nvim",
-  keys = {
-    {
-      "<leader>cc",
-      "<cmd>TSC<cr>",
-      desc = "Type-check Project",
-    },
+  {
+    "OlegGulevskyy/better-ts-errors.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    config = {
+      keymaps = {
+        toggle = '<leader>dd',        -- default '<leader>dd'
+        go_to_definition = '<leader>dx' -- default '<leader>dx'
+      }
+    }
   },
-  config = function()
-    require("tsc").setup()
-  end,
+  {
+    "dmmulroy/tsc.nvim",
+    keys = {
+      {
+        "<leader>cc",
+        "<cmd>TSC<cr>",
+        desc = "Type-check Project",
+      },
+    },
+    config = function()
+      require("tsc").setup()
+    end,
+  }
 }

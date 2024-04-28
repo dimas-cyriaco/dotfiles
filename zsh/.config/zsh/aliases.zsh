@@ -22,5 +22,6 @@ alias la="eza -la --icons"
 alias ll="eza -l --icons"
 alias ln=lazynpm
 alias rm=trash
-alias t=task
+alias t=taskell
+alias tw="$HOME/code/judit/taskell.md"
 alias v=nvim

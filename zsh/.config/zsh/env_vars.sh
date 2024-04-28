@@ -8,6 +8,7 @@ export CARGO_UNSTABLE_SPARSE_REGISTRY=true
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 export EDITOR=hx
+export NOTES_PATH="/Users/dimas/Library/Mobile Documents/com~apple~CloudDocs/Documents/Notes"
 export HISTFILE="$HOME/.zhistory"
 export HISTFILE=~/.zsh_history #Where to save history to disk
 export HISTSIZE=5000           #How many lines of history to keep in memory
