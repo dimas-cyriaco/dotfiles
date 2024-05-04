@@ -6,8 +6,9 @@ context.chore.read=+chore
 context.chore.write=+chore
 context.judit.read=+judit
 context.judit.write=+judit
-context.personal.read=-motrix and -shopping
-context.personal.write=-motrix and -shopping
+context.personal.read=-judit and -shopping
+context.personal.write=-judit and -shopping
 news.version=2.6.0
 
 include dark-256.theme
+context=personal

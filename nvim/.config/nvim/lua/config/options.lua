@@ -21,4 +21,6 @@ opt.swapfile = false
 opt.textwidth = 100
 opt.wrap = false
 
+vim.g.root_spec = { "cwd" }
+
 vim.cmd([[let g:kitty_navigator_no_mappings = 1]])

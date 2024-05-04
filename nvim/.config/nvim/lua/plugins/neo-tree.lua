@@ -59,6 +59,7 @@ return {
         enabled = true,
         leave_dirs_open = false,
       },
+      bind_to_cwd = false,
       group_empty_dirs = true,
     },
     document_symbols = {
