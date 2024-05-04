@@ -3,6 +3,9 @@ return {
   opts = {
     sections = {
       lualine_z = {},
+      lualine_x = {
+        "rest"
+      },
     },
   },
 }

@@ -3,19 +3,12 @@ return {
   dependencies = { "kevinhwang91/promise-async" },
   ft = { "typescript", "lua" },
   config = function()
-    require("ufo").setup({ close_fold_kinds = { "imports" } })
-
-    vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-      pattern = { "*.norg" },
-      callback = function()
-        local ok, ufo = pcall(require, "ufo")
-
-        if ok then
-          if ufo.hasAttached() then
-            ufo.detach()
-          end
-        end
-      end,
+    require("ufo").setup({
+      close_fold_kinds_for_ft = {
+        default = { 'imports', 'comment' },
+        json = { 'array' },
+        c = { 'comment', 'region' }
+      },
     })
   end,
 }

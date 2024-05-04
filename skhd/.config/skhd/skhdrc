@@ -1,47 +1,6 @@
-hyper - j : yabai -m window --focus prev
-hyper - k : yabai -m window --focus next
-hyper - o : yabai -m display --focus prev
-hyper - y : yabai -m display --focus next
+ctrl + cmd - left : yabai -m window --focus west
+ctrl + cmd - right : yabai -m window --focus east
 
-# maximize a window
-hyper - f : yabai -m window --toggle zoom-fullscreen
-hyper - x : yabai -m space --mirror x-axis
-
-# increase window size
-hyper - r : yabai -m window --resize left:-20:0 ; yabai -m window --resize right:-20:0
-
-# decrease window size
-hyper - w : yabai -m window --resize right:20:0 ; yabai -m window --resize left:20:0
-
-# balance out tree of windows (resize to occupy same area)
-hyper - e : yabai -m space --balance
-
-# Swap windows
-hyper - h : yabai -m window --swap west
-hyper - l : yabai -m window --swap east
-
-# move window to display left and right
-hyper - g : yabai -m window --display prev; yabai -m display --focus prev;
-hyper - s : yabai -m window --display next; yabai -m display --focus next;
-
-#move window to prev and next space
-hyper - p : yabai -m window --space prev;
-hyper - n : yabai -m window --space next;
-
-# move window to space #
-hyper - 1 : yabai -m window --space 1;
-hyper - 2 : yabai -m window --space 2;
-hyper - 3 : yabai -m window --space 3;
-hyper - 4 : yabai -m window --space 4;
-hyper - 5 : yabai -m window --space 5;
-hyper - 6 : yabai -m window --space 6;
-hyper - 7 : yabai -m window --space 7;
-
-# toggle window float
-hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-
-# hyper - q : brew services stop yabai
-# hyper - s : brew services start yabai
-# hyper - r : brew services restart yabai
-
-hyper - kVK_Return : kitty --session none
+#change focus between external displays (left and right)
+ctrl + cmd - s: yabai -m display --focus west
+ctrl + cmd - g: yabai -m display --focus east

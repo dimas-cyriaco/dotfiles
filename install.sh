@@ -21,6 +21,8 @@ brew install trash
 brew install helix
 brew install insomnia
 brew install zellij
+brew install jq
+brew install tidy
 
 ## Helix
 

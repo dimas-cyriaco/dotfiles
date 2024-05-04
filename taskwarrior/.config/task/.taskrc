@@ -4,9 +4,10 @@ context.work.read=+work
 context.work.write=+work
 context.chore.read=+chore
 context.chore.write=+chore
-context.motrix.read=+motrix
-context.motrix.write=+motrix
+context.judit.read=+judit
+context.judit.write=+judit
 context.personal.read=-motrix and -shopping
 context.personal.write=-motrix and -shopping
 news.version=2.6.0
-context=motrix
+
+include dark-256.theme
