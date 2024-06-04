@@ -23,42 +23,6 @@ function mk {
   cd "$1" || exit
 }
 
-function delete_secret() {
-    if [ $# -ne 1 ]; then
-        echo "Usage: delete_secret <secret_id>"
-        return 1
-    fi
-
-    local secret_id="$1"
-    local region="us-east-1"
-
-    aws secretsmanager delete-secret --secret-id "$secret_id" --force-delete-without-recovery --region "$region"
-}
-
-function delete_secrets_for_branch() {
-    local branch_name="$1"
-    local secret_templates=(
-        "eng-api-$branch_name-codebuild-elastic-admin-key"
-        "eng-api-$branch_name-codebuild-cognito-client-secret"
-        "eng-api-$branch_name-codebuild-postgres-password"
-    )
-
-    for secret in "${secret_templates[@]}"; do
-        delete_secret "$secret"
-    done
-}
-
-function destroy_stack() {
-    local branch_name="$1"
-
-    pulumi stack select "motrix/env/$branch_name" --cwd infra/projects/env 2>/dev/null || true
-    pulumi config set branch_name "$branch_name" --cwd infra/projects/env
-    pulumi config set githubConnectionArn arn:aws:codestar-connections:us-east-1:786966036727:connection/5e705a79-3e07-4ea2-ae69-d4a25570ea4e  --cwd infra/projects/env
-    pulumi config set coreReference dev --cwd infra/projects/env
-    pulumi config set coreReference dev --cwd infra/projects/env
-    pulumi destroy --yes --cwd infra/projects/env
-}
-
 function set_env() {
   local new_env="$1"
 

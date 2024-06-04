@@ -17,6 +17,7 @@ my_configs=(
   keybindings.zsh
   functions.zsh
   completions/zellij.sh
+  vim-mode.sh
 )
 
 for f in "${my_configs[@]}"; do
@@ -25,6 +26,11 @@ for f in "${my_configs[@]}"; do
 done
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+antidote load ${ZDOTDIR:-$HOME}/.config/zsh/plugins.txt
+
+ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"

@@ -66,5 +66,5 @@ let-env PATH = ($env.PATH | append '~/.emacs.d/bin')
 
 let-env XDG_CONFIG_HOME = '~/.config'
 
-let-env AWS_PROFILE = 'motrix'
+# let-env AWS_PROFILE = 'motrix'
 let-env EDITOR = 'hx'

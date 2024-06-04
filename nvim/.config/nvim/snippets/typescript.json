@@ -1,0 +1,26 @@
+{
+  "if": {
+    "body": "if (${1:condition}) {\n\t${0}\n}",
+    "prefix": "if"
+  },
+  "function": {
+    "body": "(${1}): ${2:void} => {\n\t${0}\n}",
+    "prefix": "fn"
+  },
+  "async function": {
+    "body": "async (${1}): Promise<${2:void}> => {\n\t${0}\n}",
+    "prefix": "af"
+  },
+  "const async function": {
+    "body": "const ${1} = async (${2}): Promise<${3:void}> => {\n\t${0}\n}",
+    "prefix": "caf"
+  },
+  "it": {
+    "body": "it(\"${1:description}\", async () => {\n\t// Arrange\n\n\t${0}\n\n\t// Act\n\n\n\t// Assert\n\n\n})",
+    "prefix": "tit"
+  },
+  "describe": {
+    "body": "describe(\"${1:description}\", () => {\n\t${0}\n})",
+    "prefix": "tdesc"
+  }
+}

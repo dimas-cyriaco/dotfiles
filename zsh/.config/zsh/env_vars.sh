@@ -3,11 +3,11 @@
 
 unset BROWSER
 
-export AWS_PROFILE=motrix
+# export AWS_PROFILE=motrix
 export CARGO_UNSTABLE_SPARSE_REGISTRY=true
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
-export EDITOR=hx
+export EDITOR=nvim
 export NOTES_PATH="/Users/dimas/Library/Mobile Documents/com~apple~CloudDocs/Documents/Notes"
 export HISTFILE="$HOME/.zhistory"
 export HISTFILE=~/.zsh_history #Where to save history to disk
@@ -54,3 +54,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 # }
 
 # . ~/.asdf/plugins/java/set-java-home.zsh
+
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi

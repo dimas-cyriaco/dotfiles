@@ -9,7 +9,7 @@ export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
 # ALT-C's command
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+# export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 # for more info see fzf/shell/completion.zsh
 _fzf_compgen_path() {

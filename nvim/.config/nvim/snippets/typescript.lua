@@ -2,13 +2,6 @@ local ls = require("luasnip")
 local fmt = require("luasnip.extras.fmt").fmt
 local s = ls.snippet
 local i = ls.insert_node
--- local t = ls.text_node
--- local sn = ls.snippet_node
--- local isn = ls.indent_snippet_node
--- local f = ls.function_node
--- local c = ls.choice_node
--- local d = ls.dynamic_node
--- local r = ls.restore_node
 
 return {
   s(
@@ -28,6 +21,24 @@ return {
     })
   ),
   s(
+    { name = "expect to equal", trig = "ete" },
+    fmt('expect({}).toEqual({})', {
+      i(1),
+      i(2),
+    })
+  ),
+  s(
+    { name = "expect to match object", trig = "emo" },
+    fmt('expect({}).toMatchObject({})', {
+      i(1),
+      i(2),
+    })
+  ),
+  s(
+    { name = "faker person fullname", trig = "fpf" },
+    fmt('faker.person.fullName()', {})
+  ),
+  s(
     { name = "describe", trig = "nd" },
     fmt('describe("{}", () => {{\n\t{}\n}})', {
       i(1),
@@ -36,7 +47,19 @@ return {
   ),
   s(
     { name = "it", trig = "nit" },
-    fmt('it("{}", async () => {{\n\t{}\n}})', {
+    fmt([[
+    it("{}", async () => {{
+      // Arrange
+
+      {}
+
+      // Act
+
+
+      // Assert
+
+    }})
+    ]], {
       i(1),
       i(2),
     })
@@ -55,4 +78,4 @@ return {
       i(2),
     })
   ),
-}, {}
+}

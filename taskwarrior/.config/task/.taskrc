@@ -1,14 +1,14 @@
-context.natal.read=+natal
-context.natal.write=+natal
 context.work.read=+work
 context.work.write=+work
 context.chore.read=+chore
 context.chore.write=+chore
 context.judit.read=+judit
 context.judit.write=+judit
-context.personal.read=-judit and -shopping
-context.personal.write=-judit and -shopping
+context.personal.read=+personal
+context.personal.write=+personal
+context.setup.read=+setup
+context.setup.write=+setup
 news.version=2.6.0
 
 include dark-256.theme
-context=personal
+context=setup
