@@ -16,11 +16,11 @@ return {
   -- { "rebelot/kanagawa.nvim",     event = { "VeryLazy" } },
   -- { "olimorris/onedarkpro.nvim", event = { "VeryLazy" } },
   -- { "kdheepak/monochrome.nvim",  event = { "VeryLazy" } },
-  { "ellisonleao/gruvbox.nvim", event = { "VeryLazy" } },
+  -- { "ellisonleao/gruvbox.nvim", event = { "VeryLazy" } },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "catppuccin",
     },
   },
 }

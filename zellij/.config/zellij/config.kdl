@@ -24,3 +24,48 @@ themes {
  		orange "#D65D0E"
  	}
 }
+
+keybinds {
+    shared_except "locked" {
+        bind "Alt Left" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus_or_tab";
+                payload "left";
+
+                // Plugin Configuration
+                move_mod "alt"; // Optional, should be added on every command if you want to use it
+                resize_mod "ctrl"; // Optional, should be added on every command if you want to use it
+            };
+        }
+
+        bind "Alt Down" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "down";
+
+                move_mod "alt";
+                resize_mod "ctrl";
+            };
+        }
+
+        bind "Alt Up" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "up";
+
+                move_mod "alt";
+                resize_mod "ctrl";
+            };
+        }
+
+        bind "Alt Right" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus_or_tab";
+                payload "right";
+
+                move_mod "alt";
+                resize_mod "ctrl";
+            };
+        }
+    }
+}

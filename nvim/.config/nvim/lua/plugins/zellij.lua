@@ -1,0 +1,21 @@
+return {}
+-- return {
+--   -- {
+--   --   "hiasr/vim-zellij-navigator.nvim",
+--   --   config = function()
+--   --     require("vim-zellij-navigator").setup()
+--   --   end,
+--   -- },
+--   {
+--     "https://git.sr.ht/~swaits/zellij-nav.nvim",
+--     lazy = true,
+--     event = "VeryLazy",
+--     keys = {
+--       { "<M-left>", "<cmd>ZellijNavigateLeft<cr>", { silent = true, desc = "navigate left" } },
+--       { "<M-down>", "<cmd>ZellijNavigateDown<cr>", { silent = true, desc = "navigate down" } },
+--       { "<M-up>", "<cmd>ZellijNavigateUp<cr>", { silent = true, desc = "navigate up" } },
+--       { "<M-right>", "<cmd>ZellijNavigateRight<cr>", { silent = true, desc = "navigate right" } },
+--     },
+--     opts = {},
+--   },
+-- }

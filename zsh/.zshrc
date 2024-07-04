@@ -36,3 +36,15 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/dimas/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# opam configuration
+[[ ! -r /Users/dimas/.opam/opam-init/init.zsh ]] || source /Users/dimas/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

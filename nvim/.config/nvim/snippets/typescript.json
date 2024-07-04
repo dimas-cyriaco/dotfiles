@@ -22,5 +22,9 @@
   "describe": {
     "body": "describe(\"${1:description}\", () => {\n\t${0}\n})",
     "prefix": "tdesc"
+  },
+  "todo": {
+    "body": "// TODO: ${1}\n${0}",
+    "prefix": "td"
   }
 }
