@@ -11,4 +11,4 @@ context.setup.write=+setup
 news.version=2.6.0
 
 include dark-256.theme
-context=judit
+context=personal

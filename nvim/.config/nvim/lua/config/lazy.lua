@@ -30,6 +30,16 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
+  filter_kind = {
+    "Class",
+    "Constructor",
+    "Enum",
+    "Function",
+    "Interface",
+    "Module",
+    "Method",
+    -- "Struct",
+  },
   install = { colorscheme = {} },
   checker = { enabled = true }, -- automatically check for plugin updates
   -- ui = {

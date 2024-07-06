@@ -24,3 +24,8 @@ opt.wrap = false
 vim.g.root_spec = { "cwd" }
 
 vim.cmd([[let g:kitty_navigator_no_mappings = 1]])
+
+-- if vim.g.neovide then
+--   -- Put anything you want to happen only in Neovide here
+--   vim.o.guifont = "JetBrainsMono Nerd Font:h16" -- text below applies for VimScript
+-- end

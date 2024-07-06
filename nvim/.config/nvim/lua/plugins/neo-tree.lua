@@ -48,6 +48,8 @@ return {
           ".DS_Store",
           ".git",
           ".idea",
+          ".next",
+          ".turbo",
           ".vscode",
           "node_modules",
           "dist",
