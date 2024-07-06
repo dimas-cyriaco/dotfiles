@@ -1,0 +1,13 @@
+return {}
+-- return {
+--   "joshuadanpeterson/typewriter",
+--   dependencies = {
+--     "nvim-treesitter/nvim-treesitter",
+--   },
+--   event = "LazyFile",
+--   config = function()
+--     require("typewriter").setup()
+--     vim.cmd("TWToggle")
+--   end,
+--   opts = {},
+-- }
