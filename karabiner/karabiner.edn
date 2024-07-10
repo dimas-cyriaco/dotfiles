@@ -1,0 +1,14 @@
+{:main [{:des "extended layer with left command",
+     :rules [
+            [:!Cj :left_arrow]
+            [:!Ck :down_arrow]
+            [:!Ci :up_arrow]
+            [:!Cl :right_arrow]
+            [:!Cu :home]
+            [:!Co :end]
+            [:!Ch :page_down]
+            [:!Cy :page_up]
+            [:!Csemicolon :delete_or_backspace]
+            [:!Cspacebar :delete_forward]
+      ]}]
+ }

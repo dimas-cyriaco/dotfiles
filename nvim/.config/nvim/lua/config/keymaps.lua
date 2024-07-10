@@ -37,5 +37,9 @@ vim.keymap.set("n", "<C-_>", function()
 end, { silent = true, desc = "Term with border" })
 
 vim.keymap.set("n", "<leader>uk", function()
-  vim.cmd("TWToggle")
+  if vim.opt.scrolloff:get() == 999 then
+    vim.opt.scrolloff = 10
+  else
+    vim.opt.scrolloff = 999
+  end
 end, { silent = true, desc = "Toggle scrolloff" })
