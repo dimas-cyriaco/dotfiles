@@ -16,7 +16,6 @@ my_configs=(
   fzf.zsh
   keybindings.zsh
   functions.zsh
-  completions/zellij.sh
   vim-mode.sh
 )
 
@@ -25,7 +24,8 @@ for f in "${my_configs[@]}"; do
   [[ -f $my_shdir/$f ]] && . "$my_shdir"/"$f"
 done
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 antidote load ${ZDOTDIR:-$HOME}/.config/zsh/plugins.txt

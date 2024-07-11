@@ -5,16 +5,16 @@ return {
     ft = { "typescript" },
     config = {
       keymaps = {
-        toggle = '<leader>dd',          -- default '<leader>dd'
-        go_to_definition = '<leader>dx' -- default '<leader>dx'
-      }
-    }
+        toggle = "<leader>dd", -- default '<leader>dd'
+        go_to_definition = "<leader>dx", -- default '<leader>dx'
+      },
+    },
   },
   {
     "dmmulroy/tsc.nvim",
     keys = {
       {
-        "<leader>cc",
+        "<leader>ct",
         "<cmd>TSC<cr>",
         desc = "Type-check Project",
       },
@@ -22,5 +22,5 @@ return {
     config = function()
       require("tsc").setup({})
     end,
-  }
+  },
 }
