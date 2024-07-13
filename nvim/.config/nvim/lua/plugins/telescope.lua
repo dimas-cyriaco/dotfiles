@@ -1,13 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  dependencies = {
-    {
-      "nvim-telescope/telescope-live-grep-args.nvim",
-      -- This will not install any breaking changes.
-      -- For major updates, this must be adjusted manually.
-      version = "^1.0.0",
-    },
-  },
   keys = {
     {
       "<leader><leader>",
@@ -15,16 +7,23 @@ return {
       desc = "Find files",
     },
     {
-      "<leader>sG",
+      "<leader>/",
       function()
-        -- local dir = vim.env.HOME .. "/"
-        require("telescope").extensions.live_grep_args.live_grep_args({
-          -- search_dirs = { dir },
-          additional_args = { "--hidden", "--no-ignore" },
+        require("telescope.builtin").live_grep({
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+          },
         })
       end,
-      desc = "Live Grep from Home",
-    }
+      desc = "Live Grep",
+    },
   },
   config = function()
     require("telescope").setup({})

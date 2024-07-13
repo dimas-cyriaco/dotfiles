@@ -35,6 +35,9 @@ return {
       inlay_hints = {
         enabled = true,
       },
+      diagnostics = {
+        virtual_text = false,
+      },
     },
   },
 }
