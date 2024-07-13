@@ -1,8 +1,15 @@
-return {}
--- return {
---   "karb94/neoscroll.nvim",
---   event = "LazyFile",
---   config = function()
---     require("neoscroll").setup({})
---   end,
--- }
+return {
+  "joshuadanpeterson/typewriter",
+  event = "LazyFile",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+  },
+  config = function()
+    require("typewriter").setup({
+      enable_horizontal_scroll = false,
+    })
+  end,
+  opts = {
+    enabled = true,
+  },
+}

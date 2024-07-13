@@ -37,8 +37,8 @@ return {
       "kristijanhusak/vim-dadbod-completion",
     },
     config = function()
-      vim.g.db_ui_save_location = vim.fn.stdpath("data") .. "/db_ui"
-      vim.g.db_ui_use_nerd_fonts = true
+      vim.g.db_ui_save_location = "~/code/db"
+      vim.g.db_ui_use_nerd_fonts = 1
       vim.g.db_ui_execute_on_save = true
       vim.g.db_ui_use_nvim_notify = true
 

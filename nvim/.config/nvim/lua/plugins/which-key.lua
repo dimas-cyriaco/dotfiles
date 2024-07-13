@@ -1,8 +1,9 @@
-return {
-  "folke/which-key.nvim",
-  opts = {
-    defaults = {
-      ["<leader>h"] = { name = "+harpoon" },
-    },
-  },
-}
+return {}
+-- return {
+--   "folke/which-key.nvim",
+--   opts = {
+--     defaults = {
+--       { "<leader>h", group = "harpoon" },
+--     },
+--   },
+-- }

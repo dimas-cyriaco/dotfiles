@@ -40,6 +40,7 @@ return {
       end,
     },
   },
+  event = "LazyFile",
   config = function()
     require("ufo").setup({
       open_fold_hl_timeout = 500,

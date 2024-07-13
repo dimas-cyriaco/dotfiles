@@ -20,7 +20,10 @@ return {
       },
     },
     config = function()
-      require("tsc").setup({})
+      require("tsc").setup({
+        use_trouble_qflist = true,
+        use_diagnostics = true,
+      })
     end,
   },
 }

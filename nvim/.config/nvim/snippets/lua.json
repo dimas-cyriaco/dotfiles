@@ -1,0 +1,6 @@
+{
+  "function": {
+    "body": "(${1}): ${2:void} => {\n\t${0}\n}",
+    "prefix": "trig"
+  }
+}
