@@ -7,13 +7,23 @@ return {
     "nvim-neotest/nvim-nio",
     "williamboman/mason.nvim",
   },
-  keys = {
-    {
-      "<leader>dv",
-      function()
-        require("dapui").eval(nil, { enter = true })
-      end,
-      desc = "Toggle auto save"
+  config = function()
+    local dap = require("dap")
+
+    dap.adapters.ocaml = {
+      type = "executable",
+      command = "ocamlearlybird",
+      args = { "debug" },
+      -- cwd = "${workspaceFolder}",
     }
-  },
+
+    dap.configurations.ocaml = {
+      {
+        name = "OCaml Debug Main",
+        type = "ocaml",
+        request = "launch",
+        program = "${workspaceFolder}/_build/default/bin/hello.bc",
+      },
+    }
+  end,
 }

@@ -1,22 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
-    sort_case_insensitive = true,
-    sources = { "filesystem", "buffers", "document_symbols" },
-    enable_normal_mode_for_inputs = true,
-    source_selector = {
-      sources = {
-        { source = "filesystem" },
-        { source = "buffers" },
-        { source = "document_symbols" },
-      },
-    },
-    window = {
-      mappings = {
-        ["e"] = nil, -- disable auto expand; it doesn't work with edgy
-        ["<tab>"] = "toggle_node",
-      },
-    },
     buffers = {
       follow_current_file = {
         enabled = true, -- This will find and focus the file in the active buffer every time
@@ -40,6 +24,17 @@ return {
         },
       },
     },
+    document_symbols = {
+      follow_cursor = true,
+      renderers = {
+        symbol = {
+          { "indent", with_expanders = true },
+          { "kind_icon", default = "?" },
+          { "name", zindex = 10 },
+        },
+      },
+    },
+    enable_normal_mode_for_inputs = true,
     filesystem = {
       filtered_items = {
         visible = true,
@@ -59,19 +54,26 @@ return {
       },
       follow_current_file = {
         enabled = true,
-        leave_dirs_open = false,
+        leave_dirs_open = true,
       },
       bind_to_cwd = false,
-      group_empty_dirs = true,
+      group_empty_dirs = false,
     },
-    document_symbols = {
-      follow_cursor = true,
-      renderers = {
-        symbol = {
-          { "indent", with_expanders = true },
-          { "kind_icon", default = "?" },
-          { "name", zindex = 10 },
-        },
+    popup_border_style = "rounded",
+    sources = { "filesystem", "buffers", "document_symbols" },
+    source_selector = {
+      sources = {
+        { source = "filesystem" },
+        { source = "buffers" },
+        { source = "document_symbols" },
+      },
+    },
+    sort_case_insensitive = true,
+    window = {
+      position = "float",
+      mappings = {
+        ["e"] = nil, -- disable auto expand; it doesn't work with edgy
+        ["<tab>"] = "toggle_node",
       },
     },
   },

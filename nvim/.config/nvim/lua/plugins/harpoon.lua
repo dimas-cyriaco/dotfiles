@@ -1,21 +1,27 @@
-return {}
--- return {
---   {
---     "ThePrimeagen/harpoon",
---     keys = {
---       { "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>",        desc = "Add file" },
---       { "<leader>hf", "<cmd>Telescope harpoon marks<cr>",                       desc = "Show menu" },
---       { "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show menu" },
---       { "gn",         "<cmd>lua require('harpoon.ui').nav_file(1)<cr>",         desc = "Go to Harpoon file 1" },
---       { "<c-n>",      "<cmd>lua require('harpoon.ui').nav_file(1)<cr>",         desc = "Go to Harpoon file 1" },
---       { "ge",         "<cmd>lua require('harpoon.ui').nav_file(2)<cr>",         desc = "Go to Harpoon file 2" },
---       { "<c-m>",      "<cmd>lua require('harpoon.ui').nav_file(2)<cr>",         desc = "Go to Harpoon file 2" },
---       { "gi",         "<cmd>lua require('harpoon.ui').nav_file(3)<cr>",         desc = "Go to Harpoon file 3" },
---       { "<c-,>",      "<cmd>lua require('harpoon.ui').nav_file(3)<cr>",         desc = "Go to Harpoon file 3" },
---       { "go",         "<cmd>lua require('harpoon.ui').nav_file(4)<cr>",         desc = "Go to Harpoon file 4" },
---       { "<c-.>",      "<cmd>lua require('harpoon.ui').nav_file(4)<cr>",         desc = "Go to Harpoon file 4" },
---       { "gm",         "<cmd>lua require('harpoon.term').gotoTerminal(1)<cr>",   desc = "Go to Harpoon terminal 1" },
---       { "g,",         "<cmd>lua require('harpoon.term').gotoTerminal(2)<cr>",   desc = "Go to Harpoon terminal 2" },
---     },
---   },
--- }
+return {
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    opts = {
+      menu = {
+        width = vim.api.nvim_win_get_width(0) - 4,
+      },
+      settings = {
+        save_on_toggle = true,
+      },
+    },
+    keys = {
+      { "<leader>ha", "<cmd>lua require('harpoon'):list():add()<cr>", desc = "Add file" },
+      { "<leader>hf", "<cmd>Telescope harpoon marks<cr>", desc = "Show menu" },
+      {
+        "<leader>hh",
+        "<cmd>lua require('harpoon.ui'):toggle_quick_menu(require('harpoon'):list())<cr>",
+        desc = "Show menu",
+      },
+      { "gn", "<cmd>lua require('harpoon'):list():select(1)<cr>", desc = "Go to Harpoon file 1" },
+      { "ge", "<cmd>lua require('harpoon'):list():select(2)<cr>", desc = "Go to Harpoon file 2" },
+      { "gi", "<cmd>lua require('harpoon'):list():select(3)<cr>", desc = "Go to Harpoon file 3" },
+      { "go", "<cmd>lua require('harpoon'):list():select(4)<cr>", desc = "Go to Harpoon file 4" },
+    },
+  },
+}
