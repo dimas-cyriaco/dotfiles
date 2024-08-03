@@ -28,7 +28,7 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>dW", "<Plug>(DBUI_SaveQuery)", { silent = true, desc = "Save Query" })
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal toggle<cr>", { silent = true, desc = "Neotree Reveal" })
+vim.keymap.set("n", "<leader>n", "<cmd>Neotree reveal toggle<cr>", { silent = true, desc = "Neotree Reveal Foo" })
 
 vim.keymap.set("n", "<leader>ft", function()
   Util.terminal(nil, { border = "rounded" })
@@ -56,3 +56,18 @@ vim.keymap.set("n", "<leader>W", "<cmd>close<cr>", { silent = true, desc = "Clos
 vim.keymap.set("n", "<leader>wh", "<C-w>t<C-w>H", { silent = true, desc = "Change Split to Horizontal" })
 
 vim.keymap.set("n", "<leader>wk", "<C-w>t<C-w>K", { silent = true, desc = "Change Split to Vertical" })
+
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+
+vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
+
+vim.keymap.set("n", "zm", require("ufo").closeFoldsWith)
+
+vim.keymap.set("n", "K", function()
+  local winid = require("ufo").peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsp.buf.hover()
+  end
+end)

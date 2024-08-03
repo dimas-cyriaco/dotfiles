@@ -52,10 +52,12 @@ return {
           "tmp",
         },
       },
-      follow_current_file = {
-        enabled = true,
-        leave_dirs_open = true,
-      },
+      follow_current_file = { enabled = true },
+      use_libuv_file_watcher = true,
+      -- follow_current_file = {
+      --   enabled = true,
+      --   leave_dirs_open = true,
+      -- },
       bind_to_cwd = false,
       group_empty_dirs = false,
     },

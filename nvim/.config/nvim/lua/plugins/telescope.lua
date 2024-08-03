@@ -1,11 +1,11 @@
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
-    {
-      "<leader><leader>",
-      "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
-      desc = "Find files",
-    },
+    -- {
+    --   "<leader><leader>",
+    --   "<cmd>Telescope find_files hidden=true no_ignore=false<cr>",
+    --   desc = "Find files",
+    -- },
     {
       "<leader>/",
       function()

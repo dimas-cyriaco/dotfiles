@@ -27,3 +27,4 @@ alias rm=trash
 alias t=taskwarrior-tui
 alias tw="~/code/judit/taskell.md"
 alias v=nvim
+alias yz=yazi
