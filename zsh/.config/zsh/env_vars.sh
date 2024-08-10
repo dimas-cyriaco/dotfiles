@@ -3,34 +3,22 @@
 
 unset BROWSER
 
-# export AWS_PROFILE=motrix
 export CARGO_UNSTABLE_SPARSE_REGISTRY=true
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 export EDITOR=nvim
-export NOTES_PATH="/Users/dimas/Library/Mobile Documents/com~apple~CloudDocs/Documents/Notes"
 export HISTFILE="$HOME/.zhistory"
 export HISTFILE=~/.zsh_history #Where to save history to disk
 export HISTSIZE=5000           #How many lines of history to keep in memory
 export KEYTIMEOUT=1
-# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export NOTES_PATH="/Users/dimas/Library/Mobile Documents/com~apple~CloudDocs/Documents/Notes"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-# export PATH="$HOME/bin:$PATH"
-# export PATH="$HOME/go/bin:$PATH"
-# export PATH="$PATH:$HOME/.pulumi/bin"
-# export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-# export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-# export PATH="$PATH:$HOME/.dotnet/tools"
-# export PATH="$PATH:$DOTNET_ROOT"
 export SAVEHIST=5000 #Number of history entries to save to disk
-export TERM=xterm-256color
-export TASKRC=~/.config/task/.taskrc
 export TASKDATA=~/tasks
-# export TERM=xterm-kitty
-# export NEOVIDE_MULTIGRID=true
-export LEDGER_FILE=~/ledger/all.journal
+export TASKRC=~/.config/task/.taskrc
+export TERM=xterm-256color
 
 # Fzf Theme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -38,22 +26,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 	--color=fg+:#FFFFFF,bg+:#1a1b26,hl+:#7dcfff
 	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff
 	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
-
-# pnpm
-# export PNPM_HOME="/Users/dimascyriaco/Library/pnpm"
-# case ":$PATH:" in
-# *":$PNPM_HOME:"*) ;;
-# *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-# pnpm end
-
-# Zsh Vim Mode plugin config
-# function zvm_config() {
-#   export ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
-#   export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-# }
-
-# . ~/.asdf/plugins/java/set-java-home.zsh
 
 if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"

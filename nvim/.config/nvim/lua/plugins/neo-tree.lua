@@ -62,12 +62,13 @@ return {
       group_empty_dirs = false,
     },
     popup_border_style = "rounded",
-    sources = { "filesystem", "buffers", "document_symbols" },
+    sources = { "filesystem", "buffers", "document_symbols", "git_status" },
     source_selector = {
       sources = {
         { source = "filesystem" },
         { source = "buffers" },
         { source = "document_symbols" },
+        { source = "git_status" },
       },
     },
     sort_case_insensitive = true,

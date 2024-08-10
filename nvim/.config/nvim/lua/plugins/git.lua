@@ -26,6 +26,7 @@ return {
       require("gitlinker").setup()
     end,
   },
+  { "diffview.nvim" },
   {
     "NeogitOrg/neogit",
     dependencies = {

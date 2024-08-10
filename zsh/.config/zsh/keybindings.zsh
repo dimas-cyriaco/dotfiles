@@ -7,3 +7,7 @@ bindkey -M vicmd '^f' nf
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
+# Use arrrow to navigate histori
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+
